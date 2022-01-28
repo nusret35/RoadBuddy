@@ -1,0 +1,20 @@
+PODS:
+  - DropDown (2.3.13)
+  - FloatingPanel (2.4.1)
+
+DEPENDENCIES:
+  - DropDown
+  - FloatingPanel
+
+SPEC REPOS:
+  trunk:
+    - DropDown
+    - FloatingPanel
+
+SPEC CHECKSUMS:
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  FloatingPanel: 1d58b4d05af0e6286cbefa6a6922d9f6a266d855
+
+PODFILE CHECKSUM: b54d3f4366b064141fefbb1eede8e274dddce210
+
+COCOAPODS: 1.10.2
