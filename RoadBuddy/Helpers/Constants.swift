@@ -9,6 +9,9 @@
 struct Constants {
     
     struct Storyboard {
+        
+        static let HomePageViewController = "HomePageVC"
+        
         static let FromWhereToViewController = "FromWhereVC"
         
         static let VC = "VC"

@@ -20,11 +20,8 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setUpElements()
     }
 
-    func setUpElements() {
-    }
     @IBAction func SignUpButtonTapped(_ sender: Any) {
     }
     

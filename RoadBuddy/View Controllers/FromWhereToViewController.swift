@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import FirebaseAuth
 import MapKit
 
 var SearchFrom = ""
@@ -33,6 +34,7 @@ class FromWhereToViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        authenticateUser()
         errorLabel.alpha = 0
         WhereToButton.setTitle(buttontitle, for: .normal)
         WhereToButton.setTitleColor(.white, for: .normal)
@@ -55,6 +57,20 @@ class FromWhereToViewController: UIViewController{
         errorLabel.text = message
         errorLabel.alpha = 1
         }
+    
+    //API
+    func authenticateUser()
+    {
+        if Auth.auth().currentUser == nil
+        {
+        DispatchQueue.main.async
+            {
+                
+                let homePageViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePageVC") as! HomePageViewController
+                self.present(homePageViewController, animated: true, completion: nil)
+            }
+        }
+    }
     
     //BUTTON ACTIONS
     

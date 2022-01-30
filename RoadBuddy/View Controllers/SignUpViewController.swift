@@ -30,8 +30,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var SchoolNameTextField: UITextField!
     
     @IBOutlet weak var PhoneNumberTextField: UITextField!
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -147,6 +146,8 @@ class SignUpViewController: UIViewController {
 
             
         }
+        
+    
     func showError (message:String)
         {
         

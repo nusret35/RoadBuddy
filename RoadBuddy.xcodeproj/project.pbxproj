@@ -16,6 +16,11 @@
 		8075BAC327A3F1B70064CCB7 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8075BAC227A3F1B70064CCB7 /* InboxViewController.swift */; };
 		8075BAC627A3F4B70064CCB7 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8075BAC427A3F4B70064CCB7 /* MessageTableViewCell.swift */; };
 		8075BAC727A3F4B70064CCB7 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8075BAC527A3F4B70064CCB7 /* MessageTableViewCell.xib */; };
+		8075BACA27A6ED980064CCB7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8075BAC927A6ED980064CCB7 /* RealmSwift */; };
+		8075BACD27A6EE140064CCB7 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8075BACC27A6EE140064CCB7 /* MessageKit */; };
+		8075BAD027A6EE9A0064CCB7 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 8075BACF27A6EE9A0064CCB7 /* JGProgressHUD */; };
+		8075BAD327A6EF020064CCB7 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8075BAD227A6EF020064CCB7 /* SDWebImage */; };
+		8075BAD527A6EF020064CCB7 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8075BAD427A6EF020064CCB7 /* SDWebImageMapKit */; };
 		8076F138275AAF2D00BC6EB2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8076F137275AAF2D00BC6EB2 /* FirebaseAnalytics */; };
 		8076F13A275AAF2D00BC6EB2 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 8076F139275AAF2D00BC6EB2 /* FirebaseAnalyticsSwift-Beta */; };
 		8076F13C275AAF2D00BC6EB2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 8076F13B275AAF2D00BC6EB2 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -65,11 +70,9 @@
 		80D5E791271C81ED000F1F5B /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5E790271C81ED000F1F5B /* PostViewController.swift */; };
 		80D9B09626FC9249001EB6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B09526FC9249001EB6BD /* AppDelegate.swift */; };
 		80D9B09826FC9249001EB6BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B09726FC9249001EB6BD /* SceneDelegate.swift */; };
-		80D9B09A26FC9249001EB6BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B09926FC9249001EB6BD /* ViewController.swift */; };
 		80D9B09D26FC9249001EB6BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D9B09B26FC9249001EB6BD /* Main.storyboard */; };
 		80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D9B09E26FC9251001EB6BD /* Assets.xcassets */; };
 		80D9B0AB26FC938B001EB6BD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B0AA26FC938B001EB6BD /* LocationManager.swift */; };
-		80D9B0AD26FC93BF001EB6BD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B0AC26FC93BF001EB6BD /* SearchViewController.swift */; };
 		80D9B0AF26FDE7F6001EB6BD /* FromWhereToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B0AE26FDE7F5001EB6BD /* FromWhereToViewController.swift */; };
 		80DDEBF8276BCFFC0093BB3F /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDEBF7276BCFFC0093BB3F /* APICaller.swift */; };
 		80DDEBFD277347E10093BB3F /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDEBFB277347E10093BB3F /* PostTableViewCell.swift */; };
@@ -115,12 +118,10 @@
 		80D9B09226FC9249001EB6BD /* RoadBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D9B09526FC9249001EB6BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80D9B09726FC9249001EB6BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80D9B09926FC9249001EB6BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		80D9B09C26FC9249001EB6BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80D9B09E26FC9251001EB6BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80D9B0A326FC9251001EB6BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80D9B0AA26FC938B001EB6BD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		80D9B0AC26FC93BF001EB6BD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		80D9B0AE26FDE7F5001EB6BD /* FromWhereToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromWhereToViewController.swift; sourceTree = "<group>"; };
 		80DDEBF7276BCFFC0093BB3F /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		80DDEBFB277347E10093BB3F /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -140,12 +141,16 @@
 			files = (
 				8076F148275AAF2D00BC6EB2 /* FirebaseDatabase in Frameworks */,
 				8076F156275AAF2D00BC6EB2 /* FirebaseFunctionsCombine-Community in Frameworks */,
+				8075BAD327A6EF020064CCB7 /* SDWebImage in Frameworks */,
 				8076F14E275AAF2D00BC6EB2 /* FirebaseFirestore in Frameworks */,
 				8076F166275AAF2E00BC6EB2 /* FirebaseStorage in Frameworks */,
 				8076F13A275AAF2D00BC6EB2 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
 				8076F16A275AAF2E00BC6EB2 /* FirebaseStorageSwift-Beta in Frameworks */,
+				8075BAD527A6EF020064CCB7 /* SDWebImageMapKit in Frameworks */,
 				8076F138275AAF2D00BC6EB2 /* FirebaseAnalytics in Frameworks */,
+				8075BACA27A6ED980064CCB7 /* RealmSwift in Frameworks */,
 				24347E856DDF698E826216F1 /* Pods_RoadBuddy.framework in Frameworks */,
+				8075BACD27A6EE140064CCB7 /* MessageKit in Frameworks */,
 				8073AA222775CCCD007457FD /* SkeletonView in Frameworks */,
 				8076F15E275AAF2E00BC6EB2 /* FirebaseMLModelDownloader in Frameworks */,
 				8076F13E275AAF2D00BC6EB2 /* FirebaseAppCheck in Frameworks */,
@@ -165,6 +170,7 @@
 				8076F14C275AAF2D00BC6EB2 /* FirebaseDynamicLinks in Frameworks */,
 				8076F150275AAF2D00BC6EB2 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				8076F160275AAF2E00BC6EB2 /* FirebaseMessaging in Frameworks */,
+				8075BAD027A6EE9A0064CCB7 /* JGProgressHUD in Frameworks */,
 				8076F15C275AAF2E00BC6EB2 /* FirebaseInstallations in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,8 +238,6 @@
 				80C996362765682100B5A3C7 /* HomePageViewController.swift */,
 				80C996382765697B00B5A3C7 /* SignUpViewController.swift */,
 				80C9963A2766919300B5A3C7 /* LoginViewController.swift */,
-				80D9B09926FC9249001EB6BD /* ViewController.swift */,
-				80D9B0AC26FC93BF001EB6BD /* SearchViewController.swift */,
 				80D9B0AE26FDE7F5001EB6BD /* FromWhereToViewController.swift */,
 				807F1F3A2701E6AB000C89CB /* VC.swift */,
 				807E9BC827074CE20008F523 /* ToViewController.swift */,
@@ -321,6 +325,11 @@
 				8076F167275AAF2E00BC6EB2 /* FirebaseStorageCombine-Community */,
 				8076F169275AAF2E00BC6EB2 /* FirebaseStorageSwift-Beta */,
 				8073AA212775CCCD007457FD /* SkeletonView */,
+				8075BAC927A6ED980064CCB7 /* RealmSwift */,
+				8075BACC27A6EE140064CCB7 /* MessageKit */,
+				8075BACF27A6EE9A0064CCB7 /* JGProgressHUD */,
+				8075BAD227A6EF020064CCB7 /* SDWebImage */,
+				8075BAD427A6EF020064CCB7 /* SDWebImageMapKit */,
 			);
 			productName = RoadBuddy;
 			productReference = 80D9B09226FC9249001EB6BD /* RoadBuddy.app */;
@@ -352,6 +361,10 @@
 			packageReferences = (
 				8076F136275AAF2D00BC6EB2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8073AA202775CCCD007457FD /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				8075BAC827A6ED960064CCB7 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				8075BACB27A6EE140064CCB7 /* XCRemoteSwiftPackageReference "MessageKit" */,
+				8075BACE27A6EE990064CCB7 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				8075BAD127A6EF020064CCB7 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 80D9B09326FC9249001EB6BD /* Products */;
 			projectDirPath = "";
@@ -429,7 +442,6 @@
 				807E9BCD27076DE90008F523 /* ResultsViewController.swift in Sources */,
 				80CA933B270A034D009A1469 /* PostTripViewController.swift in Sources */,
 				80CA9347270C7F33009A1469 /* PostTripFromViewController.swift in Sources */,
-				80D9B0AD26FC93BF001EB6BD /* SearchViewController.swift in Sources */,
 				80CA934B270D91B4009A1469 /* PassengerPriceViewController.swift in Sources */,
 				807E99482755643100EA88F0 /* STTimeViewController.swift in Sources */,
 				80D9B0AF26FDE7F6001EB6BD /* FromWhereToViewController.swift in Sources */,
@@ -437,7 +449,6 @@
 				8075BAC627A3F4B70064CCB7 /* MessageTableViewCell.swift in Sources */,
 				80D9B0AB26FC938B001EB6BD /* LocationManager.swift in Sources */,
 				80E7A514274AE59F00423EB3 /* STFromViewController.swift in Sources */,
-				80D9B09A26FC9249001EB6BD /* ViewController.swift in Sources */,
 				80E7A510274550DD00423EB3 /* MainTabController.swift in Sources */,
 				807E9BC927074CE20008F523 /* ToViewController.swift in Sources */,
 				80E7A516274AE5AF00423EB3 /* STToViewController.swift in Sources */,
@@ -668,6 +679,38 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		8075BAC827A6ED960064CCB7 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		8075BACB27A6EE140064CCB7 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		8075BACE27A6EE990064CCB7 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		8075BAD127A6EF020064CCB7 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		8076F136275AAF2D00BC6EB2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -683,6 +726,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8073AA202775CCCD007457FD /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
+		};
+		8075BAC927A6ED980064CCB7 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8075BAC827A6ED960064CCB7 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		8075BACC27A6EE140064CCB7 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8075BACB27A6EE140064CCB7 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
+		8075BACF27A6EE9A0064CCB7 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8075BACE27A6EE990064CCB7 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
+		8075BAD227A6EF020064CCB7 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8075BAD127A6EF020064CCB7 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		8075BAD427A6EF020064CCB7 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8075BAD127A6EF020064CCB7 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
 		};
 		8076F137275AAF2D00BC6EB2 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

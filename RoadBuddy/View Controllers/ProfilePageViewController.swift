@@ -21,6 +21,7 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet weak var AboutYouLabel: UILabel!
     @IBOutlet weak var PhoneLabel: UILabel!
     @IBOutlet weak var ProfilePicture: UIImageView!
+    @IBOutlet weak var signOutButton: UIButton!
     
     var ref:DatabaseReference?
     let db = Firestore.firestore()
@@ -93,6 +94,22 @@ class ProfilePageViewController: UIViewController {
             EmailLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
             PhoneLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
         }
+    }
+    
+    
+    @IBAction func signOutButtonAction(_ sender: Any)
+    {
+        do
+        {
+        try Auth.auth().signOut()
+            let homePageViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePageVC") as! HomePageViewController
+            self.present(homePageViewController, animated: true, completion: nil)
+        }
+        catch
+        {
+            print("sign out error")
+        }
+        
     }
     
 

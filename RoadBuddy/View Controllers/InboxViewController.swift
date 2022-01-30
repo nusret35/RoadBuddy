@@ -8,8 +8,11 @@
 import UIKit
 
 class InboxViewController: UIViewController {
-
-    override func viewDidLoad() {
+    
+    @IBOutlet weak var chatTableView: UITableView!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
