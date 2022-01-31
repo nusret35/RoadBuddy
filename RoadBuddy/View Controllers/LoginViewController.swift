@@ -7,10 +7,11 @@
 
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 
 class LoginViewController: UIViewController {
-
     
+    private let spinner = JGProgressHUD(style: .dark)
     
     @IBOutlet weak var EmailTextField: UITextField!
     
@@ -75,8 +76,14 @@ class LoginViewController: UIViewController {
         
         let password = PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
+            spinner.show(in: view)
+            
         //Signing in the user
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            DispatchQueue.main.async
+            {
+                self.spinner.dismiss()
+            }
             if error != nil
             {
                 //Couldn't sign in

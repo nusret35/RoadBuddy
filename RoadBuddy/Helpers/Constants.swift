@@ -49,5 +49,15 @@ struct Constants {
         static let BookTripViewController = "BookTripVC"
         
         static let InboxViewController = "InboxVC"
+        
     }
 }
+
+struct BackgroundColor
+{
+    static let defaultBackgroundColor = color.UIColorFromRGB(rgbValue: 0x0b2f44)
+    
+    static let secondaryBackgroundColor = color.UIColorFromRGB(rgbValue:0x1c3b4e)
+    
+}
+

@@ -21,6 +21,9 @@
 		8075BAD027A6EE9A0064CCB7 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 8075BACF27A6EE9A0064CCB7 /* JGProgressHUD */; };
 		8075BAD327A6EF020064CCB7 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8075BAD227A6EF020064CCB7 /* SDWebImage */; };
 		8075BAD527A6EF020064CCB7 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8075BAD427A6EF020064CCB7 /* SDWebImageMapKit */; };
+		8075BAD727A6F7E10064CCB7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8075BAD627A6F7E00064CCB7 /* ChatViewController.swift */; };
+		8075BADD27A7EBA30064CCB7 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8075BADC27A7EBA30064CCB7 /* Registration.storyboard */; };
+		8075BAE027A7FD760064CCB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8075BADE27A7FD760064CCB7 /* Main.storyboard */; };
 		8076F138275AAF2D00BC6EB2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8076F137275AAF2D00BC6EB2 /* FirebaseAnalytics */; };
 		8076F13A275AAF2D00BC6EB2 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 8076F139275AAF2D00BC6EB2 /* FirebaseAnalyticsSwift-Beta */; };
 		8076F13C275AAF2D00BC6EB2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 8076F13B275AAF2D00BC6EB2 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -70,7 +73,6 @@
 		80D5E791271C81ED000F1F5B /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5E790271C81ED000F1F5B /* PostViewController.swift */; };
 		80D9B09626FC9249001EB6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B09526FC9249001EB6BD /* AppDelegate.swift */; };
 		80D9B09826FC9249001EB6BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B09726FC9249001EB6BD /* SceneDelegate.swift */; };
-		80D9B09D26FC9249001EB6BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D9B09B26FC9249001EB6BD /* Main.storyboard */; };
 		80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D9B09E26FC9251001EB6BD /* Assets.xcassets */; };
 		80D9B0AB26FC938B001EB6BD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B0AA26FC938B001EB6BD /* LocationManager.swift */; };
 		80D9B0AF26FDE7F6001EB6BD /* FromWhereToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B0AE26FDE7F5001EB6BD /* FromWhereToViewController.swift */; };
@@ -94,6 +96,9 @@
 		8075BAC227A3F1B70064CCB7 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		8075BAC427A3F4B70064CCB7 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		8075BAC527A3F4B70064CCB7 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		8075BAD627A6F7E00064CCB7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		8075BADC27A7EBA30064CCB7 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		8075BADF27A7FD760064CCB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8076F16B275ABE0500BC6EB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		807E99472755643100EA88F0 /* STTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTimeViewController.swift; sourceTree = "<group>"; };
 		807E9BC827074CE20008F523 /* ToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +123,6 @@
 		80D9B09226FC9249001EB6BD /* RoadBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D9B09526FC9249001EB6BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80D9B09726FC9249001EB6BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80D9B09C26FC9249001EB6BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80D9B09E26FC9251001EB6BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80D9B0A326FC9251001EB6BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80D9B0AA26FC938B001EB6BD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -225,7 +229,8 @@
 				80E7A50F274550DD00423EB3 /* MainTabController.swift */,
 				8073AA1E2773DC88007457FD /* ResultsNavigationController.swift */,
 				80D9B0AA26FC938B001EB6BD /* LocationManager.swift */,
-				80D9B09B26FC9249001EB6BD /* Main.storyboard */,
+				8075BADC27A7EBA30064CCB7 /* Registration.storyboard */,
+				8075BADE27A7FD760064CCB7 /* Main.storyboard */,
 				80D9B09E26FC9251001EB6BD /* Assets.xcassets */,
 				80D9B0A326FC9251001EB6BD /* Info.plist */,
 			);
@@ -258,6 +263,7 @@
 				804AF855279EB80F00315A82 /* TaxiResultViewController.swift */,
 				80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */,
 				8075BAC227A3F1B70064CCB7 /* InboxViewController.swift */,
+				8075BAD627A6F7E00064CCB7 /* ChatViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -380,9 +386,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8075BAE027A7FD760064CCB7 /* Main.storyboard in Resources */,
 				804AF862279EBCC300315A82 /* TaxiTableViewCell.xib in Resources */,
 				80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */,
-				80D9B09D26FC9249001EB6BD /* Main.storyboard in Resources */,
+				8075BADD27A7EBA30064CCB7 /* Registration.storyboard in Resources */,
 				8076F16C275ABE0500BC6EB2 /* GoogleService-Info.plist in Resources */,
 				80DDEBFE277347E10093BB3F /* PostTableViewCell.xib in Resources */,
 				8075BAC727A3F4B70064CCB7 /* MessageTableViewCell.xib in Resources */,
@@ -471,6 +478,7 @@
 				807F1F262700B892000C89CB /* Constants.swift in Sources */,
 				80E7A512274587F300423EB3 /* ShareTaxiViewController.swift in Sources */,
 				80CA933F270B2150009A1469 /* DateButton.swift in Sources */,
+				8075BAD727A6F7E10064CCB7 /* ChatViewController.swift in Sources */,
 				80D5E7722715B634000F1F5B /* PostFinalViewController.swift in Sources */,
 				8073AA1F2773DC88007457FD /* ResultsNavigationController.swift in Sources */,
 				8075BAC327A3F1B70064CCB7 /* InboxViewController.swift in Sources */,
@@ -480,10 +488,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		80D9B09B26FC9249001EB6BD /* Main.storyboard */ = {
+		8075BADE27A7FD760064CCB7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				80D9B09C26FC9249001EB6BD /* Base */,
+				8075BADF27A7FD760064CCB7 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
