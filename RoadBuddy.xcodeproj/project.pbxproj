@@ -23,7 +23,6 @@
 		8075BAD527A6EF020064CCB7 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8075BAD427A6EF020064CCB7 /* SDWebImageMapKit */; };
 		8075BAD727A6F7E10064CCB7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8075BAD627A6F7E00064CCB7 /* ChatViewController.swift */; };
 		8075BADD27A7EBA30064CCB7 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8075BADC27A7EBA30064CCB7 /* Registration.storyboard */; };
-		8075BAE027A7FD760064CCB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8075BADE27A7FD760064CCB7 /* Main.storyboard */; };
 		8076F138275AAF2D00BC6EB2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8076F137275AAF2D00BC6EB2 /* FirebaseAnalytics */; };
 		8076F13A275AAF2D00BC6EB2 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 8076F139275AAF2D00BC6EB2 /* FirebaseAnalyticsSwift-Beta */; };
 		8076F13C275AAF2D00BC6EB2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 8076F13B275AAF2D00BC6EB2 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -57,6 +56,8 @@
 		807E9BCD27076DE90008F523 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E9BCC27076DE90008F523 /* ResultsViewController.swift */; };
 		807F1F262700B892000C89CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F1F252700B892000C89CB /* Constants.swift */; };
 		807F1F3B2701E6AB000C89CB /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F1F3A2701E6AB000C89CB /* VC.swift */; };
+		80A8933427A800AE00CE83AB /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A8933327A800AE00CE83AB /* Maps.storyboard */; };
+		80A8933727A8014A00CE83AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A8933527A8014900CE83AB /* Main.storyboard */; };
 		80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */; };
 		80C996372765682100B5A3C7 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C996362765682100B5A3C7 /* HomePageViewController.swift */; };
 		80C996392765697B00B5A3C7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C996382765697B00B5A3C7 /* SignUpViewController.swift */; };
@@ -98,7 +99,6 @@
 		8075BAC527A3F4B70064CCB7 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		8075BAD627A6F7E00064CCB7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8075BADC27A7EBA30064CCB7 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
-		8075BADF27A7FD760064CCB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8076F16B275ABE0500BC6EB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		807E99472755643100EA88F0 /* STTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTimeViewController.swift; sourceTree = "<group>"; };
 		807E9BC827074CE20008F523 /* ToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +106,8 @@
 		807E9BCC27076DE90008F523 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		807F1F252700B892000C89CB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		807F1F3A2701E6AB000C89CB /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
+		80A8933327A800AE00CE83AB /* Maps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
+		80A8933627A8014900CE83AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTripViewController.swift; sourceTree = "<group>"; };
 		80C996362765682100B5A3C7 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		80C996382765697B00B5A3C7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -229,8 +231,9 @@
 				80E7A50F274550DD00423EB3 /* MainTabController.swift */,
 				8073AA1E2773DC88007457FD /* ResultsNavigationController.swift */,
 				80D9B0AA26FC938B001EB6BD /* LocationManager.swift */,
+				80A8933527A8014900CE83AB /* Main.storyboard */,
 				8075BADC27A7EBA30064CCB7 /* Registration.storyboard */,
-				8075BADE27A7FD760064CCB7 /* Main.storyboard */,
+				80A8933327A800AE00CE83AB /* Maps.storyboard */,
 				80D9B09E26FC9251001EB6BD /* Assets.xcassets */,
 				80D9B0A326FC9251001EB6BD /* Info.plist */,
 			);
@@ -386,13 +389,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8075BAE027A7FD760064CCB7 /* Main.storyboard in Resources */,
 				804AF862279EBCC300315A82 /* TaxiTableViewCell.xib in Resources */,
 				80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */,
 				8075BADD27A7EBA30064CCB7 /* Registration.storyboard in Resources */,
+				80A8933727A8014A00CE83AB /* Main.storyboard in Resources */,
 				8076F16C275ABE0500BC6EB2 /* GoogleService-Info.plist in Resources */,
 				80DDEBFE277347E10093BB3F /* PostTableViewCell.xib in Resources */,
 				8075BAC727A3F4B70064CCB7 /* MessageTableViewCell.xib in Resources */,
+				80A8933427A800AE00CE83AB /* Maps.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,10 +492,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8075BADE27A7FD760064CCB7 /* Main.storyboard */ = {
+		80A8933527A8014900CE83AB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8075BADF27A7FD760064CCB7 /* Base */,
+				80A8933627A8014900CE83AB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
