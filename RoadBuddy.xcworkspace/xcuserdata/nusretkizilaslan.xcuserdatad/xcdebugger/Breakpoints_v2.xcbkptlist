@@ -14,8 +14,8 @@
             filePath = "RoadBuddy/View Controllers/FromWhereToViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -30,13 +30,13 @@
             filePath = "RoadBuddy/View Controllers/DateTimeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "DateTimeViewController"
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - ad1d022cc3ced627"
+                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - ad1d022cc3ced1ed"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -46,12 +46,12 @@
                   urlString = "file:///Users/nusretkizilaslan/Desktop/START_UP/RoadBuddy/RoadBuddy/View%20Controllers/DateTimeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
                   offsetFromSymbolStart = "166">
                </Location>
                <Location
-                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - 9e1cf6e35a685633"
+                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - 9e1cf6e35a6851f9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -61,8 +61,8 @@
                   urlString = "file:///Users/nusretkizilaslan/Desktop/START_UP/RoadBuddy/RoadBuddy/View%20Controllers/DateTimeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
                   offsetFromSymbolStart = "132">
                </Location>
                <Location
@@ -81,7 +81,7 @@
                   offsetFromSymbolStart = "20">
                </Location>
                <Location
-                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - 388c40b3ce01d85d"
+                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - 388c40b3ce01df97"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -91,12 +91,12 @@
                   urlString = "file:///Users/nusretkizilaslan/Desktop/START_UP/RoadBuddy/RoadBuddy/View%20Controllers/DateTimeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
                   offsetFromSymbolStart = "17">
                </Location>
                <Location
-                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - 929bbb1bf5c5d231"
+                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - 929bbb1bf5c5d5fb"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -106,12 +106,12 @@
                   urlString = "file:///Users/nusretkizilaslan/Desktop/START_UP/RoadBuddy/RoadBuddy/View%20Controllers/DateTimeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "266">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "223">
                </Location>
                <Location
-                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - e992bbeca48fc744"
+                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - e992bbeca48fc08e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -121,12 +121,12 @@
                   urlString = "file:///Users/nusretkizilaslan/Desktop/START_UP/RoadBuddy/RoadBuddy/View%20Controllers/DateTimeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "223">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "180">
                </Location>
                <Location
-                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - b2ee4595db7de58d"
+                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - b2ee4595db7de2c7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -136,8 +136,8 @@
                   urlString = "file:///Users/nusretkizilaslan/Desktop/START_UP/RoadBuddy/RoadBuddy/View%20Controllers/DateTimeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
                   offsetFromSymbolStart = "38">
                </Location>
             </Locations>
@@ -169,8 +169,8 @@
             filePath = "RoadBuddy/View Controllers/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "SignUpTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -201,10 +201,26 @@
             filePath = "RoadBuddy/View Controllers/FromWhereToViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "FromWhereToViewController"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "972EAB02-3F8F-4732-9895-DE0AEB3485C0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RoadBuddy/View Controllers/STToViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

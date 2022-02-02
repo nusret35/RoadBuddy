@@ -12,11 +12,9 @@ import FirebaseAuth
 import Firebase
 import FirebaseStorage
 
-protocol PostFinalViewControllerDelegate: AnyObject {
-    func postFinalViewController(_ vc: PostFinalViewController)
-}
 
-class PostFinalViewController: UIViewController, PostTripToViewControllerDelegate, PostTripFromViewControllerDelegate {
+class PostFinalViewController: UIViewController
+{
     
     @IBOutlet weak var FromButton: UIButton!
     
@@ -30,11 +28,11 @@ class PostFinalViewController: UIViewController, PostTripToViewControllerDelegat
     
     @IBOutlet weak var ContinueButton: UIButton!
     
+    let mapsStoryboard = UIStoryboard(name: "Maps", bundle: nil)
+    
     var ref:DatabaseReference?
     
     let db = Firestore.firestore()
-    
-    weak var delegate: PostFinalViewControllerDelegate?
     
     var fullname = ""
     
@@ -44,19 +42,8 @@ class PostFinalViewController: UIViewController, PostTripToViewControllerDelegat
     
     var tripIsSet = false
     
-    var fromCoordinateLatitude: Double = 1.3234234234
-    
-    var fromCoodinateLongitude: Double = 1.234234234
-    
-    var toCoordinateLatitude: Double = 1.456456
-    
-    var toCoordinateLongitude: Double = 1.567858
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let PostTripFromViewController = storyboard?.instantiateViewController(withIdentifier: "PostTripFromVC") as! PostTripFromViewController
-        let PostTripToViewController = storyboard?.instantiateViewController(withIdentifier: "PostTripToVC") as! PostTripToViewController
-        PostTripToViewController.delegate = self
         ref = Database.database().reference()
         FromButton.setTitle(fromLoc, for: .normal)
         ToButton.setTitle(toLoc, for: .normal)
@@ -97,34 +84,21 @@ class PostFinalViewController: UIViewController, PostTripToViewControllerDelegat
     
     
     //direk global vardan yap bu olacak gibi değil
-    func postTripToViewControlle(_ vc: PostTripToViewController, didSelectLocationWith coordinates: CLLocationCoordinate2D, btitle: String)
-    {
-        print("coordinates.to: " + String(coordinates.latitude))
-        self.toCoordinateLatitude = coordinates.latitude
-        self.toCoordinateLongitude = coordinates.longitude
-    }
-    
-    func postTripFromViewController(_ vc: PostTripFromViewController, didSelectLocationWith coordinates: CLLocationCoordinate2D, btitle: String) {
-        self.fromCoordinateLatitude = coordinates.latitude
-        self.fromCoodinateLongitude = coordinates.longitude
-    }
 
     @IBAction func FromButtonAction(_ sender: Any) {
-        changingLoc = true
-        let PostTripFromViewController = storyboard?.instantiateViewController(withIdentifier: "PostTripFromVC") as! PostTripFromViewController
+        let PostTripFromViewController = mapsStoryboard.instantiateViewController(withIdentifier: "PostTripFromVC") as! PostTripFromViewController
         present(PostTripFromViewController, animated: true, completion: nil)
     }
     
     @IBAction func ToButtonAction(_ sender: Any)
     {
-        changingLoc = true
-        let PostTripToViewController = storyboard?.instantiateViewController(withIdentifier: "PostTripToVC") as! PostTripToViewController
+        let PostTripToViewController = mapsStoryboard.instantiateViewController(withIdentifier: "PostTripToVC") as! PostTripToViewController
         present(PostTripToViewController, animated: true, completion: nil)
     }
     
     @IBAction func TimeButtonAction(_ sender: Any)
     {
-        changingTime = true
+        
         let DateTimeViewController = storyboard?.instantiateViewController(withIdentifier: "DateTimeVC") as! DateTimeViewController
         present(DateTimeViewController, animated: true, completion: nil)
         
@@ -148,10 +122,7 @@ class PostFinalViewController: UIViewController, PostTripToViewControllerDelegat
     
     @IBAction func ContinueButtonAction(_ sender: Any)
     {
-       
-        
         //validate the fields
-        
         let post = ["fullname": fullname,
                     "uid": uid,
                     "from": fromLoc,
@@ -159,15 +130,15 @@ class PostFinalViewController: UIViewController, PostTripToViewControllerDelegat
                     "time": timeString,
                     "number of passengers": passengerNumber,
                     "price": priceString,
-                    "fromCoordinateLatitude": ptFromLatitude,
-                    "fromCoordinateLongitude": ptFromLongitude,
-                    "toCoordinateLatitude": ptToLatitude,
-                    "toCoordinateLongitude": ptToLongitude] as [String:Any]
+                    "fromCoordinateLatitude": ptFromLocation.coordinate.latitude,
+                    "fromCoordinateLongitude": ptFromLocation.coordinate.longitude,
+                    "toCoordinateLatitude": ptToLocation.coordinate.latitude,
+                    "toCoordinateLongitude": ptToLocation.coordinate.longitude
+                    ] as [String:Any]
             ref?.child("Trips").child(uid).setValue(post)
             db.collection("users").document(uid).updateData(["TripIsSet":true])
             let mainTabController = storyboard?.instantiateViewController(withIdentifier: "MainTabController") as! MainTabController
             mainTabController.selectedViewController = mainTabController.viewControllers?[2]
-            print("fromcoordinatelongtitude: " + String(fromCoordinateLatitude))
             present(mainTabController, animated: true, completion: nil)
     }
     

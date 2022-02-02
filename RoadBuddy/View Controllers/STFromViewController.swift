@@ -10,9 +10,7 @@ import MapKit
 import CoreLocation
 import FloatingPanel
 
-var stFromLatitude:Double = 0.0
-
-var stFromLongitude:Double = 0.0
+var stFromLocation = CLLocation(latitude:0.0,longitude:0.0)
 
 protocol STFromViewControllerDelegate:AnyObject
 {
@@ -108,11 +106,8 @@ class STFromViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     
     @IBAction func continueButtonAction(_ sender: Any)
     {
-        stFromLatitude = coordinate.latitude
-        stFromLongitude = coordinate.longitude
-        delegate?.stFromViewController(self, didSelectLocationWith: coordinate, btitle: locname)
-            let TaxiTripSetViewController = storyboard?.instantiateViewController(withIdentifier: "TaxiTripSetVC") as! TaxiTripSetViewController
-            present(TaxiTripSetViewController, animated: true, completion: nil)
+        stFromLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        dismiss(animated: true,completion: nil)
     }
     
 }

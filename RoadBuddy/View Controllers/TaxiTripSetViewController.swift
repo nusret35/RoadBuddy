@@ -12,16 +12,11 @@ import FirebaseDatabase
 import Firebase
 import FirebaseStorage
 
-var fromLocTaxi = ""
+var fromLocTaxi = "Choose a location..."
 
-var toLocTaxi = ""
+var toLocTaxi = "Choose a location..."
 
-var timeStringTaxi = ""
-
-protocol TaxiTripSetViewControllerDelegate: AnyObject
-{
-    func taxiTripSetViewController(_ vc: TaxiTripSetViewController, fromLoc: String, toLoc: String, time: String)
-}
+var timeStringTaxi = "Choose date and time..."
 
 class TaxiTripSetViewController: UIViewController {
 
@@ -41,9 +36,7 @@ class TaxiTripSetViewController: UIViewController {
     
     let db = Firestore.firestore()
     
-    var buttonTitle:String! = "Choose a location..."
-
-    var timeButtonTitle:String! = "Choose date and time..."
+    let mapsStoryboard = UIStoryboard(name:"Maps",bundle:nil)
     
     var uid = ""
     
@@ -51,15 +44,14 @@ class TaxiTripSetViewController: UIViewController {
     
     var fullname = ""
     
-    weak var delegate:TaxiTripSetViewControllerDelegate?
 
     override func viewDidLoad(){
         super.viewDidLoad()
         
         ref = Database.database().reference()
-        FromButton.setTitle(buttonTitle, for: .normal)
-        ToButton.setTitle(buttonTitle, for: .normal)
-        timeButton.setTitle(timeButtonTitle, for: .normal)
+        FromButton.setTitle(fromLocTaxi, for: .normal)
+        ToButton.setTitle(toLocTaxi, for: .normal)
+        timeButton.setTitle(timeStringTaxi, for: .normal)
         Utilities.styleFilledButton(continueButton)
         errorLabel.alpha = 0
         guard let userID = Auth.auth().currentUser?.uid else {
@@ -115,23 +107,20 @@ class TaxiTripSetViewController: UIViewController {
     
     @IBAction func fromButtonAction(_ sender: Any)
     {
-        let STFromViewController = storyboard?.instantiateViewController(withIdentifier:  "STFromVC") as! STFromViewController
-        STFromViewController.delegate = self
-        present(STFromViewController, animated: true, completion: nil)
+        let STFromNavigationController = mapsStoryboard.instantiateViewController(withIdentifier:  "STFromNC") as! STFromViewController
+        present(STFromNavigationController, animated: true, completion: nil)
     }
     
     
     @IBAction func toButtonAction(_ sender: Any)
     {
-        let STToViewController = storyboard?.instantiateViewController(withIdentifier: "STToVC") as! STToViewController
-        STToViewController.delegate = self
-        present(STToViewController, animated: true, completion: nil)
+        let STToNavigationController = mapsStoryboard.instantiateViewController(withIdentifier: "STToNC") as! STToViewController
+        present(STToNavigationController, animated: true, completion: nil)
     }
     
     @IBAction func timeButtonAction(_ sender: Any)
     {
         let STTimeViewController = storyboard?.instantiateViewController(withIdentifier: "STTimeVC") as! STTimeViewController
-        STTimeViewController.delegate = self
         present(STTimeViewController, animated: true, completion: nil)
     }
     
@@ -144,17 +133,16 @@ class TaxiTripSetViewController: UIViewController {
         }
         else
         {
-                delegate?.taxiTripSetViewController(self, fromLoc: fromLoc, toLoc: toLoc, time: timeString)
                 db.collection("users").document(uid).updateData(["TaxiTripIsSet":true])
                 let post = ["fullname":fullname,
                             "uid":self.uid,
                             "from": fromLocTaxi,
                              "to":   toLocTaxi,
                             "time": timeStringTaxi,
-                            "fromCoordinateLatitude": stFromLatitude,
-                            "fromCoordinateLongitude": stFromLongitude,
-                            "toCoordinateLatitude": stToLatitude,
-                            "toCoordinateLongitude": stToLongitude
+                            "fromCoordinateLatitude": stFromLocation.coordinate.latitude,
+                            "fromCoordinateLongitude": stFromLocation.coordinate.longitude,
+                            "toCoordinateLatitude": stToLocation.coordinate.latitude,
+                            "toCoordinateLongitude": stToLocation.coordinate.longitude
                 ] as [String : Any]
     
                     ref?.child("Taxi_Trips").child(uid).setValue(post)
@@ -172,30 +160,3 @@ class TaxiTripSetViewController: UIViewController {
     
 }
 
-extension TaxiTripSetViewController: STFromViewControllerDelegate
-{
-    func stFromViewController(_ vc: STFromViewController, didSelectLocationWith coordinates: CLLocationCoordinate2D, btitle: String)
-    {
-        fromLocTaxi = btitle
-        FromButton.setTitle(btitle, for: .normal)
-        dismiss(animated: true, completion: nil)
-    }
-}
-
-extension TaxiTripSetViewController: STToViewControllerDelegate
-{
-    func stToViewController(_ vc: STToViewController, didSelectLocationWith coordinates: CLLocationCoordinate2D, btitle: String) {
-        toLocTaxi = btitle
-        ToButton.setTitle(btitle, for: .normal)
-        dismiss(animated: true, completion: nil)
-    }
-}
-
-extension TaxiTripSetViewController: STTimeViewControllerDelegate
-{
-    func stTimeViewController(_ vc: STTimeViewController, time: String) {
-        timeStringTaxi = time
-        timeButton.setTitle(time, for: .normal)
-        dismiss(animated: true, completion: nil)
-    }
-}

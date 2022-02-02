@@ -10,13 +10,7 @@ import CoreLocation
 import MapKit
 import FloatingPanel
 
-protocol PostTripToViewControllerDelegate:AnyObject {
-    func postTripToViewControlle(_ vc: PostTripToViewController, didSelectLocationWith coordinates: CLLocationCoordinate2D, btitle: String )
-}
-
-var ptToLatitude:Double = 0.0
-
-var ptToLongitude:Double = 0.0
+var ptToLocation = CLLocation(latitude: 0.0, longitude: 0.0)
 
 class PostTripToViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
 
@@ -38,7 +32,6 @@ class PostTripToViewController: UIViewController, UITextFieldDelegate, UITableVi
 
     var locname: String! = "Choose a location..."
     
-    weak var delegate: PostTripToViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,21 +100,9 @@ class PostTripToViewController: UIViewController, UITextFieldDelegate, UITableVi
 
     
     @IBAction func ContinueButtonTapped(_ sender: Any) {
-        delegate?.postTripToViewControlle(self, didSelectLocationWith: coordinate, btitle: locname)
-        if changingLoc == false
-        {
-            ptToLatitude = coordinate.latitude
-            ptToLongitude = coordinate.longitude
-            let PostTripViewController = storyboard?.instantiateViewController(withIdentifier: "PostTripVC") as! PostTripViewController
-            present(PostTripViewController, animated: true, completion: nil)
-            
-        }
-        else
-        {
-            toLoc = locname
-            let PostFinalViewController = storyboard?.instantiateViewController(withIdentifier: "PostFinalVC") as! PostFinalViewController
-            present(PostFinalViewController, animated: true, completion: nil)
-        }
+        ptToLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        toLoc = locname
+        dismiss(animated: true, completion: nil)
     }
 }
 

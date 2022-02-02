@@ -88,9 +88,6 @@ class SignUpViewController: UIViewController {
     }
     
     
-    @IBAction func BackButtonTapped(_ sender: Any) {
-    }
-    
     @IBAction func SignUpTapped(_ sender: Any)
     {
         // Validate the fields

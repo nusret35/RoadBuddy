@@ -106,8 +106,9 @@ class ToViewController: UIViewController, UITextFieldDelegate, UITableViewDelega
         }
     
     @IBAction func ContinueButtonTapped(_ sender: Any) {
-        delegate?.toViewController(self, didSelectLocationWith: coordinate, btitle: locname)
+        SearchTo = locname
         SearchToLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        dismiss(animated: true, completion: nil)
     }
 
 }

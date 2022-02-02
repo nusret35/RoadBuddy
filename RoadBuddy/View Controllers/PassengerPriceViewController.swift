@@ -137,9 +137,3 @@ class PassengerPriceViewController: UIViewController, UIPickerViewDelegate, UIPi
     
 }
 
-extension PassengerPriceViewController: PostTripViewControllerDelegate {
-    func postTripViewController(_ vc: PostTripViewController) {
-        dismiss(animated: true, completion: nil)
-    }
-}
-

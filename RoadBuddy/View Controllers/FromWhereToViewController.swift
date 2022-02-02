@@ -10,15 +10,18 @@ import CoreLocation
 import FirebaseAuth
 import MapKit
 
-var SearchFrom = ""
+var SearchFrom = "Choose a location..."
 
-var SearchTo = ""
+var SearchTo = "Choose a location..."
 
 
 class FromWhereToViewController: UIViewController{
 
-    //From button
-    @IBOutlet weak var WhereToButton: UIButton!
+    let mapsStoryboard = UIStoryboard(name: "Maps", bundle: nil)
+    
+    let registrationStoryboard = UIStoryboard(name:"Registration",bundle:nil)
+    
+    @IBOutlet weak var WhereToButton: UIButton! //From button
     
     @IBOutlet weak var WhereToLabel: UILabel!
     
@@ -29,16 +32,14 @@ class FromWhereToViewController: UIViewController{
     @IBOutlet weak var errorLabel: UILabel!
     
     
-    var buttontitle: String! = "Choose a location..."
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticateUser()
         errorLabel.alpha = 0
-        WhereToButton.setTitle(buttontitle, for: .normal)
+        WhereToButton.setTitle(SearchFrom, for: .normal)
         WhereToButton.setTitleColor(.white, for: .normal)
-        ToButton.setTitle(buttontitle, for: .normal)
+        ToButton.setTitle(SearchTo, for: .normal)
         ToButton.setTitleColor(.white, for: .normal)
     }
     
@@ -66,8 +67,8 @@ class FromWhereToViewController: UIViewController{
         DispatchQueue.main.async
             {
                 
-                let homePageViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePageVC") as! HomePageViewController
-                self.present(homePageViewController, animated: true, completion: nil)
+                let homePageNavigationController = self.registrationStoryboard.instantiateViewController(withIdentifier: "HomePageNC") as! UINavigationController
+                self.present(homePageNavigationController, animated: true, completion: nil)
             }
         }
     }
@@ -75,15 +76,13 @@ class FromWhereToViewController: UIViewController{
     //BUTTON ACTIONS
     
     @IBAction func ButtonAction(_ sender: Any) {  //From button action
-        let viewcontroller = storyboard?.instantiateViewController(withIdentifier: "VC") as! VC
-        viewcontroller.delegate = self
+        let viewcontroller = mapsStoryboard.instantiateViewController(withIdentifier: "VC") as! VC
         present(viewcontroller, animated: true, completion: nil)
     }
     
     
     @IBAction func ToButtonAction(_ sender: Any) {
-        let ToViewController = storyboard?.instantiateViewController(withIdentifier: "ToVC") as! ToViewController
-        ToViewController.delegate = self
+        let ToViewController = mapsStoryboard.instantiateViewController(withIdentifier: "ToVC") as! ToViewController
         present(ToViewController, animated: true, completion: nil)
     }
     
@@ -102,22 +101,6 @@ class FromWhereToViewController: UIViewController{
     }
     
     
-}
-
-extension FromWhereToViewController: VCDelegate {
-    func vcfunction(_ vc: VC, didSelectLocationWith coordinates: CLLocationCoordinate2D, btitle:String){
-        WhereToButton.setTitle(btitle, for: .normal)
-        SearchFrom = btitle
-        dismiss(animated: true, completion: nil)
-    }
-}
-
-extension  FromWhereToViewController: ToViewControllerDelegate {
-    func toViewController(_ viewcontroller: ToViewController, didSelectLocationWith coordinates: CLLocationCoordinate2D, btitle: String) {
-        ToButton.setTitle(btitle, for: .normal)
-        SearchTo = btitle
-        dismiss(animated: true, completion: nil)
-    }
 }
 
 

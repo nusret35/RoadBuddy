@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--VC-->
+        <!--From?-->
         <scene sceneID="TNC-I4-1bk">
             <objects>
                 <viewController storyboardIdentifier="VC" modalPresentationStyle="fullScreen" id="NDj-xj-PfY" customClass="VC" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,27 +35,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgs-x5-iXm">
-                                <rect key="frame" x="20" y="53" width="95" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXY-Nc-zAv">
-                                <rect key="frame" x="288" y="50" width="119" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Continue" cornerStyle="large">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="ContinueButtonTapped:" destination="NDj-xj-PfY" eventType="touchUpInside" id="rg9-WI-Tei"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dpt-5B-QXC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -66,8 +45,14 @@
                             <constraint firstItem="5iz-Jv-dsb" firstAttribute="leading" secondItem="oLR-Hj-7Xa" secondAttribute="leading" id="p76-9u-NzI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="From?" id="h6G-mA-YPB">
+                        <barButtonItem key="rightBarButtonItem" title="Continue" style="done" id="udc-03-ffG">
+                            <connections>
+                                <action selector="ContinueButtonTapped:" destination="NDj-xj-PfY" id="hcL-iT-i1t"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="ContinueButton" destination="JXY-Nc-zAv" id="YSS-Bb-vG7"/>
                         <outlet property="Field" destination="vTS-iN-OAi" id="avn-jb-MHX"/>
                         <outlet property="MapView" destination="5iz-Jv-dsb" id="wtT-wk-DMA"/>
                         <outlet property="tableView" destination="0Iq-Lg-xGj" id="wW1-3w-stE"/>
@@ -75,9 +60,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsK-8i-P32" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="258" y="761"/>
+            <point key="canvasLocation" x="4207.2463768115949" y="760.71428571428567"/>
         </scene>
-        <!--Post Trip From View Controller-->
+        <!--From?-->
         <scene sceneID="22b-kn-1Qw">
             <objects>
                 <viewController storyboardIdentifier="PostTripFromVC" modalPresentationStyle="fullScreen" id="VUG-su-HEt" customClass="PostTripFromViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,27 +79,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pi3-7r-L9P">
-                                <rect key="frame" x="20" y="54" width="95" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyv-Bg-0pN">
-                                <rect key="frame" x="297" y="54" width="109" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Continue" cornerStyle="large">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="ContinueButtonTapped:" destination="VUG-su-HEt" eventType="touchUpInside" id="lOc-d0-vsd"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Choose a location..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JmJ-jZ-F1H">
                                 <rect key="frame" x="0.0" y="487" width="414" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -133,20 +97,24 @@
                             <constraint firstAttribute="bottom" secondItem="O1a-0V-AFv" secondAttribute="bottom" constant="-97" id="zac-Ad-bed"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Ev3-IY-4zW"/>
+                    <navigationItem key="navigationItem" title="From?" id="Ev3-IY-4zW">
+                        <barButtonItem key="rightBarButtonItem" title="Continue" style="done" id="T2q-pX-DkP">
+                            <connections>
+                                <action selector="ContinueButtonTapped:" destination="VUG-su-HEt" id="Xxq-iO-AO3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="ContinueButton" destination="hyv-Bg-0pN" id="q3Y-Ky-Pyk"/>
                         <outlet property="Field" destination="JmJ-jZ-F1H" id="8Lg-Ds-R8T"/>
-                        <outlet property="FromLabel" destination="Pi3-7r-L9P" id="RUZ-cd-gaG"/>
                         <outlet property="MapView" destination="O1a-0V-AFv" id="bug-3m-jHX"/>
                         <outlet property="tableView" destination="j9Y-Ez-awl" id="DdU-gR-Mv0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOQ-FB-ZGm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1997" y="761"/>
+            <point key="canvasLocation" x="-2400" y="750"/>
         </scene>
-        <!--Post Trip To View Controller-->
+        <!--Where To?-->
         <scene sceneID="lPO-vl-LOs">
             <objects>
                 <viewController storyboardIdentifier="PostTripToVC" modalPresentationStyle="fullScreen" id="NSs-jC-lJp" customClass="PostTripToViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
@@ -163,27 +131,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where To?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJg-8X-odI">
-                                <rect key="frame" x="20" y="56" width="159" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4H4-f8-yVi">
-                                <rect key="frame" x="292" y="56" width="115" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Continue" cornerStyle="large">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="ContinueButtonTapped:" destination="NSs-jC-lJp" eventType="touchUpInside" id="jUg-QB-r5p"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Choose a location..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gkv-ml-45Q">
                                 <rect key="frame" x="0.0" y="490" width="414" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -202,19 +149,20 @@
                             <constraint firstItem="odx-Ys-lNS" firstAttribute="trailing" secondItem="gXx-jt-Vyn" secondAttribute="trailing" id="snd-hP-i1i"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Where To?" id="13m-qq-7rN">
+                        <barButtonItem key="rightBarButtonItem" title="Continue" style="done" id="i9K-eK-rwp"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="ContinueButton" destination="4H4-f8-yVi" id="a5E-n3-vEH"/>
                         <outlet property="MapView" destination="odx-Ys-lNS" id="IcM-lV-IdI"/>
                         <outlet property="TextField" destination="Gkv-ml-45Q" id="fqk-Kd-luP"/>
-                        <outlet property="ToLabel" destination="QJg-8X-odI" id="RMo-Nf-E0c"/>
                         <outlet property="tableView" destination="ZEN-Ah-MAw" id="bvw-OO-MNR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ki1-GY-oPG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1368.1159420289855" y="760.71428571428567"/>
+            <point key="canvasLocation" x="452.17391304347831" y="760.71428571428567"/>
         </scene>
-        <!--To View Controller-->
+        <!--Where To?-->
         <scene sceneID="Wvn-PO-O18">
             <objects>
                 <viewController storyboardIdentifier="ToVC" modalPresentationStyle="fullScreen" id="EBi-Mj-mJL" customClass="ToViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
@@ -232,20 +180,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="opaqueSeparatorColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2o-Kf-0cA">
-                                <rect key="frame" x="292" y="53" width="116" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Continue" cornerStyle="large">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="ContinueButtonTapped:" destination="EBi-Mj-mJL" eventType="touchUpInside" id="slC-YY-raI"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Choose a location" textAlignment="natural" minimumFontSize="17" id="Q74-CM-ZXN">
                                 <rect key="frame" x="0.0" y="490" width="414" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -254,13 +188,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where To?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwE-E3-j0L">
-                                <rect key="frame" x="20" y="56" width="159" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nUf-iU-ZQ7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -271,19 +198,24 @@
                             <constraint firstItem="mMx-if-hFv" firstAttribute="leading" secondItem="wS3-Ug-sh7" secondAttribute="leading" id="vql-wm-AEF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Where To?" id="Kwo-cM-e34">
+                        <barButtonItem key="rightBarButtonItem" title="Continue" style="done" id="oKe-wS-GUH">
+                            <connections>
+                                <action selector="ContinueButtonTapped:" destination="EBi-Mj-mJL" id="QkN-qR-xrl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="ContinueButton" destination="j2o-Kf-0cA" id="Hxa-wz-1Td"/>
                         <outlet property="MapView" destination="mMx-if-hFv" id="gW7-no-o45"/>
                         <outlet property="TextField" destination="Q74-CM-ZXN" id="5pf-fm-FeY"/>
-                        <outlet property="WhereToLabel" destination="HwE-E3-j0L" id="NXa-dk-fdA"/>
                         <outlet property="tableView" destination="KIX-69-y9k" id="SjB-76-Ky1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0i-HO-c8y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-704" y="761"/>
+            <point key="canvasLocation" x="2523.1884057971015" y="760.71428571428567"/>
         </scene>
-        <!--From View Controller-->
+        <!--From?-->
         <scene sceneID="rrI-is-RfN">
             <objects>
                 <viewController storyboardIdentifier="STFromVC" modalPresentationStyle="fullScreen" id="H6U-7G-hvP" customClass="STFromViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
@@ -309,33 +241,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dF9-r2-xZW">
-                                <rect key="frame" x="20" y="68" width="95" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aD-0m-Qzm">
-                                <rect key="frame" x="275" y="44" width="119" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Continue" cornerStyle="large">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="continueButtonAction:" destination="H6U-7G-hvP" eventType="touchUpInside" id="y6Q-Yr-6N9"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eap-dQ-Sms"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="From?" id="Ovm-yT-Svg">
+                        <barButtonItem key="rightBarButtonItem" title="Continue" style="done" id="YLW-Rl-Ib9">
+                            <connections>
+                                <action selector="continueButtonAction:" destination="H6U-7G-hvP" id="Mmb-Ce-SCb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="continueButton" destination="9aD-0m-Qzm" id="Vzq-Mv-lso"/>
                         <outlet property="mapView" destination="LOH-Jh-HMI" id="DPA-W5-czG"/>
                         <outlet property="tableView" destination="rZe-sE-pqO" id="HKk-Dd-7nQ"/>
                         <outlet property="textField" destination="JNg-TQ-teW" id="Fgh-bZ-VJg"/>
@@ -343,9 +260,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hxt-GJ-5tx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561" y="761"/>
+            <point key="canvasLocation" x="6679.7101449275369" y="760.71428571428567"/>
         </scene>
-        <!--To View Controller-->
+        <!--Where To?-->
         <scene sceneID="ZX7-5J-5m1">
             <objects>
                 <viewController storyboardIdentifier="STToVC" modalPresentationStyle="fullScreen" id="XGm-BC-J5b" customClass="STToViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
@@ -363,27 +280,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="opaqueSeparatorColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where To?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afm-rs-592">
-                                <rect key="frame" x="20" y="31" width="168" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hf-SP-s32">
-                                <rect key="frame" x="275" y="44" width="119" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Continue" cornerStyle="large">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="continueButtonAction:" destination="XGm-BC-J5b" eventType="touchUpInside" id="bZH-2I-JHr"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Choose a location" textAlignment="natural" minimumFontSize="17" id="CpG-RG-PHQ">
                                 <rect key="frame" x="0.0" y="490" width="414" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -396,8 +292,14 @@
                         <viewLayoutGuide key="safeArea" id="chF-CX-0Fk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Where To?" id="0si-UG-sTq">
+                        <barButtonItem key="rightBarButtonItem" title="Continue" style="done" id="U2i-zv-dVM">
+                            <connections>
+                                <action selector="continueButtonAction:" destination="XGm-BC-J5b" id="5yR-KA-8vt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="continueButton" destination="6Hf-SP-s32" id="r8f-hk-a8B"/>
                         <outlet property="mapView" destination="2BN-R6-K25" id="jEZ-UO-qty"/>
                         <outlet property="tableView" destination="bBq-Fs-enH" id="cPm-p0-Zth"/>
                         <outlet property="textField" destination="CpG-RG-PHQ" id="P2h-yB-OJt"/>
@@ -405,7 +307,115 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krZ-A5-rQp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2175" y="761"/>
+            <point key="canvasLocation" x="9057.971014492754" y="750"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ojN-dU-aX3">
+            <objects>
+                <navigationController storyboardIdentifier="PostTripFromNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="qwg-e8-xTa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="5EN-DI-TBc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VUG-su-HEt" kind="relationship" relationship="rootViewController" id="c3W-IV-Cgg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1IR-yR-QWW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3271" y="750"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s8B-U9-XIp">
+            <objects>
+                <navigationController storyboardIdentifier="PostTripToNC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="OWS-eA-17E" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="d9i-2H-Nka">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NSs-jC-lJp" kind="relationship" relationship="rootViewController" id="W75-mf-p6h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DxI-me-f5k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-457.97101449275368" y="760.71428571428567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VMc-kW-uxM">
+            <objects>
+                <navigationController storyboardIdentifier="ToNC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="p3C-on-uSb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="zwN-PF-AfY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EBi-Mj-mJL" kind="relationship" relationship="rootViewController" id="1MR-Rx-1Qh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BbV-ZB-e7i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1613.0434782608697" y="760.71428571428567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1PN-Xs-hMT">
+            <objects>
+                <navigationController storyboardIdentifier="VCNC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="3Kf-Qv-v1q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="sDt-xy-TKX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NDj-xj-PfY" kind="relationship" relationship="rootViewController" id="DIQ-C3-YS1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EOl-oj-zbT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3297.1014492753625" y="760.71428571428567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3hP-yx-xXk">
+            <objects>
+                <navigationController storyboardIdentifier="STFromNC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="TvB-wJ-cQC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="TaF-Xa-I6S">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="H6U-7G-hvP" kind="relationship" relationship="rootViewController" id="NhQ-v5-QcD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1rc-fa-R8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5769.5652173913049" y="760.71428571428567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jAF-ex-x3B">
+            <objects>
+                <navigationController storyboardIdentifier="STToNC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Xtf-u8-Qk9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="qVt-jg-2ke">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XGm-BC-J5b" kind="relationship" relationship="rootViewController" id="Sou-cw-B1C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dlX-L3-u7M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8147.826086956522" y="750"/>
         </scene>
     </scenes>
     <resources>
@@ -414,9 +424,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

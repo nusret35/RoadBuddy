@@ -70,8 +70,6 @@ class BookTripViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
         if textField == self.textBox {
             self.dropDown.isHidden = false
-            //if you dont want the users to see the keyboard type:
-
             textField.endEditing(true)
         }
 

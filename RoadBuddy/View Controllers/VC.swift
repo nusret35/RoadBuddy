@@ -101,7 +101,6 @@ class VC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableVie
         
         let pin = MKPointAnnotation()
         pin.coordinate = coordinate
-        SearchFromLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         MapView.addAnnotation(pin)
         MapView.setRegion(MKCoordinateRegion(center: coordinate,
                                              span: MKCoordinateSpan(
@@ -112,8 +111,11 @@ class VC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableVie
         animated: true)
         }
     
-    @IBAction func ContinueButtonTapped(_ sender: Any) {
-        delegate?.vcfunction(self, didSelectLocationWith: coordinate, btitle: locname)
+    @IBAction func ContinueButtonTapped(_ sender: Any)
+    {
+        SearchFrom = locname
+        SearchFromLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        dismiss(animated: true,completion: nil)
     }
     
     

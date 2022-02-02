@@ -8,19 +8,11 @@
 import UIKit
 import CoreLocation
 
-var fromLoc = ""
+var fromLoc = "Choose a location..."
 
-var toLoc = ""
+var toLoc = "Choose a location..."
 
-var timeString = ""
-
-var changingLoc = false
-
-var changingTime = false
-
-protocol PostTripViewControllerDelegate: AnyObject {
-    func postTripViewController(_ vc: PostTripViewController)
-}
+var timeString = "Choose date and time..."
 
 class PostTripViewController: UIViewController {
 
@@ -36,17 +28,13 @@ class PostTripViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
-    var timeButtonTitle:String! = "Choose date and time..."
     
-    var buttonTitle:String! = "Choose a location..."
-    
-    weak var delegate: PostTripViewControllerDelegate?
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        TimeButton.setTitle(timeButtonTitle, for: .normal)
-        FromButton.setTitle(buttonTitle, for: .normal)
-        ToButton.setTitle(buttonTitle, for: .normal)
+        TimeButton.setTitle(timeString, for: .normal)
+        FromButton.setTitle(fromLoc, for: .normal)
+        ToButton.setTitle(toLoc, for: .normal)
         errorLabel.alpha = 0
     }
     
@@ -75,20 +63,17 @@ class PostTripViewController: UIViewController {
     
     @IBAction func TimeButtonAction(_ sender: Any) {
         let DateTimeViewController = storyboard?.instantiateViewController(withIdentifier: "DateTimeVC") as! DateTimeViewController
-        DateTimeViewController.delegate = self  //PostTripViewController declaring itself to be the delegate
         present(DateTimeViewController, animated: true, completion: nil)
     }
     
     
     @IBAction func FromButtonAction(_ sender: Any) {
         let PostTripFromViewController = storyboard?.instantiateViewController(withIdentifier: "PostTripFromVC") as! PostTripFromViewController
-        PostTripFromViewController.delegate = self
         present(PostTripFromViewController, animated: true, completion: nil)
     }
     
     @IBAction func ToButtonAction(_ sender: Any) {
         let PostTripToViewController = storyboard?.instantiateViewController(withIdentifier: "PostTripToVC") as! PostTripToViewController
-        PostTripToViewController.delegate = self
         present(PostTripToViewController, animated: true, completion: nil)
     }
     
@@ -115,28 +100,3 @@ class PostTripViewController: UIViewController {
     
     }
 
-
-
-extension PostTripViewController: DateTimeViewControllerDelegate {
-    func dateTimeViewController(_ vc: DateTimeViewController, time: String) {
-        timeString = time
-        TimeButton.setTitle(time, for: .normal)
-        dismiss(animated: true, completion: nil)
-    }
-}
-
-extension PostTripViewController: PostTripFromViewControllerDelegate {
-    func postTripFromViewController(_ vc: PostTripFromViewController, didSelectLocationWith coordinates: CLLocationCoordinate2D, btitle: String) {
-        fromLoc = btitle
-        FromButton.setTitle(btitle, for: .normal)
-        dismiss(animated: true, completion: nil)
-    }
-}
-
-extension PostTripViewController: PostTripToViewControllerDelegate {
-    func postTripToViewControlle(_ vc: PostTripToViewController, didSelectLocationWith coordinates: CLLocationCoordinate2D, btitle: String) {
-        toLoc = btitle
-        ToButton.setTitle(btitle, for: .normal)
-        dismiss(animated: true, completion: nil)
-    }
-}

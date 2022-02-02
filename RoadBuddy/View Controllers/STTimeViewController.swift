@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol STTimeViewControllerDelegate: AnyObject
-{
-    func stTimeViewController(_ vc:STTimeViewController, time:String)
-}
 
 class STTimeViewController: UIViewController {
 
@@ -19,7 +15,6 @@ class STTimeViewController: UIViewController {
     @IBOutlet weak var continueButton: UIButton!
     
     
-    weak var delegate: STTimeViewControllerDelegate?
     
     private lazy var dateTimePicker: DateTimePicker = {
        let picker = DateTimePicker()
@@ -42,12 +37,9 @@ class STTimeViewController: UIViewController {
         print(sender.date)
     }
 
-    //bu niye calismiyo aq
-    @IBAction func continueButtonAction(_ sender: Any) {
-       
-        delegate?.stTimeViewController(self, time: textField.text!)
-        let TaxiTripSetViewController = storyboard?.instantiateViewController(withIdentifier: "TaxiTripSetVC") as! TaxiTripSetViewController
-            present(TaxiTripSetViewController, animated: true, completion: nil)
+    @IBAction func continueButtonAction(_ sender: Any)
+    {
+        timeStringTaxi = textField.text ?? ""
     }
 
 }

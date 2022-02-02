@@ -7,18 +7,12 @@
 
 import UIKit
 
-protocol DateTimeViewControllerDelegate: AnyObject {
-    func dateTimeViewController (_ vc: DateTimeViewController, time:String)
-}
-
 class DateTimeViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     
     @IBOutlet weak var ContinueButton: UIButton!
     
-    
-    weak var delegate: DateTimeViewControllerDelegate?
     
     private lazy var dateTimePicker: DateTimePicker = {
        let picker = DateTimePicker()
@@ -32,7 +26,6 @@ class DateTimeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.inputView = dateTimePicker.inputView
-        // Do any additional setup after loading the view.
     }
     
     @objc func datePickerValueChanged(sender: UIDatePicker)
@@ -41,18 +34,10 @@ class DateTimeViewController: UIViewController, UITextFieldDelegate {
     }
     
 
-    @IBAction func ContinueButtonAction(_ sender: Any) {
-        delegate?.dateTimeViewController(self, time: textField.text!)
-        if changingTime == false
-        {
-            let PostTripViewController = storyboard?.instantiateViewController(withIdentifier: "PostTripVC") as! PostTripViewController
-                present(PostTripViewController, animated: true, completion: nil)
-        }
-        else
-        {
-            let PostFinalViewController = storyboard?.instantiateViewController(withIdentifier: "PostFinalVC") as! PostFinalViewController
-            present(PostFinalViewController, animated: true, completion: nil)
-        }
+    @IBAction func ContinueButtonAction(_ sender: Any)
+    {
+        timeString = textField.text ?? ""
+        dismiss(animated: true, completion: nil)
     }
     
 }
