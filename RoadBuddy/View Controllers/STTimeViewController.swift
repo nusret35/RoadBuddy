@@ -40,6 +40,7 @@ class STTimeViewController: UIViewController {
     @IBAction func continueButtonAction(_ sender: Any)
     {
         timeStringTaxi = textField.text ?? ""
+        dismiss(animated: true, completion: nil)
     }
 
 }

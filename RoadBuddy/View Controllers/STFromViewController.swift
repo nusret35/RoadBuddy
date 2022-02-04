@@ -107,6 +107,7 @@ class STFromViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     @IBAction func continueButtonAction(_ sender: Any)
     {
         stFromLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        fromLocTaxi = locname
         dismiss(animated: true,completion: nil)
     }
     

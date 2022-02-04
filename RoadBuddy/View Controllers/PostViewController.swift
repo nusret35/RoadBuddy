@@ -132,6 +132,9 @@ class PostViewController: UIViewController {
             Database.database().reference().child("Trips").child(self.uid).removeValue()
             self.db.collection("users").document(self.uid).updateData(["TripIsSet":false])
             mainTabController.selectedViewController = mainTabController.viewControllers?[2]
+            fromLoc = "Choose a location..."
+            toLoc = "Choose a location..."
+            timeString = "Choose date and time..."
             present(mainTabController, animated: false, completion: nil)
             alert.dismiss(animated: true, completion: nil)
         }))

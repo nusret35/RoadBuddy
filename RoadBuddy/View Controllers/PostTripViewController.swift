@@ -16,7 +16,6 @@ var timeString = "Choose date and time..."
 
 class PostTripViewController: UIViewController {
 
-    @IBOutlet weak var BackButton: UIButton!
     
     @IBOutlet weak var FromButton: UIButton!
     
@@ -28,14 +27,20 @@ class PostTripViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    let mapsStoryboard = UIStoryboard(name:"Maps",bundle:nil)
     
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        errorLabel.alpha = 0
+    }
+    
+    override func viewDidAppear(_ animated:Bool)
+    {
+        super.viewDidAppear(true)
         TimeButton.setTitle(timeString, for: .normal)
         FromButton.setTitle(fromLoc, for: .normal)
         ToButton.setTitle(toLoc, for: .normal)
-        errorLabel.alpha = 0
     }
     
     //FUNCTIONS
@@ -68,12 +73,12 @@ class PostTripViewController: UIViewController {
     
     
     @IBAction func FromButtonAction(_ sender: Any) {
-        let PostTripFromViewController = storyboard?.instantiateViewController(withIdentifier: "PostTripFromVC") as! PostTripFromViewController
+        let PostTripFromViewController = mapsStoryboard.instantiateViewController(withIdentifier: "PostTripFromNC") as! UINavigationController
         present(PostTripFromViewController, animated: true, completion: nil)
     }
     
     @IBAction func ToButtonAction(_ sender: Any) {
-        let PostTripToViewController = storyboard?.instantiateViewController(withIdentifier: "PostTripToVC") as! PostTripToViewController
+        let PostTripToViewController = mapsStoryboard.instantiateViewController(withIdentifier: "PostTripToNC") as! UINavigationController
         present(PostTripToViewController, animated: true, completion: nil)
     }
     
@@ -86,17 +91,14 @@ class PostTripViewController: UIViewController {
         }
         else
             {
-                
-                let passengerPriceViewController = storyboard?.instantiateViewController(withIdentifier: "PassengerPriceVC") as! PassengerPriceViewController
-                present(passengerPriceViewController, animated: true, completion: nil)
+                let vc = storyboard?.instantiateViewController(withIdentifier: "PassengerPriceVC") as! PassengerPriceViewController
+                vc.title = "How many passengers?"
+                vc.navigationItem.largeTitleDisplayMode = .always
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
     
     
-    @IBAction func BackButtonAction(_ sender: Any)
-    {
-       dismiss(animated: true, completion: nil)
-    }
     
     }
 

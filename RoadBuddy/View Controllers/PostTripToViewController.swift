@@ -16,8 +16,6 @@ class PostTripToViewController: UIViewController, UITextFieldDelegate, UITableVi
 
     @IBOutlet weak var MapView: MKMapView!
     
-    @IBOutlet weak var ToLabel: UILabel!
-    
     @IBOutlet weak var TextField: UITextField!
     
     @IBOutlet weak var tableView: UITableView!

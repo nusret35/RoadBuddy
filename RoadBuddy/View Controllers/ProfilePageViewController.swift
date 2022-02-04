@@ -18,7 +18,6 @@ class ProfilePageViewController: UIViewController {
     @IBOutlet weak var UniversityNameLabel: UILabel!
     @IBOutlet weak var UsernameLabel: UILabel!
     @IBOutlet weak var EmailLabel: UILabel!
-    @IBOutlet weak var AboutYouLabel: UILabel!
     @IBOutlet weak var PhoneLabel: UILabel!
     @IBOutlet weak var ProfilePicture: UIImageView!
     @IBOutlet weak var signOutButton: UIButton!
@@ -28,7 +27,6 @@ class ProfilePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute:{
         guard let userID = Auth.auth().currentUser?.uid else {
             print("User not found")
@@ -62,28 +60,16 @@ class ProfilePageViewController: UIViewController {
             self.EmailLabel.text = email
             self.PhoneLabel.text = phoneNumber
             self.UniversityNameLabel.text = schoolName
-            
-            if (profileDataLoad == false)
-            {
-                self.NameLastnameLabel.stopSkeletonAnimation()
-                self.UniversityNameLabel.stopSkeletonAnimation()
-                self.UsernameLabel.stopSkeletonAnimation()
-                self.EmailLabel.stopSkeletonAnimation()
-                self.PhoneLabel.stopSkeletonAnimation()
-                self.view.hideSkeleton()
-                profileDataLoad = true
-            }
-            
+            profileDataLoad = true
             }
         })
     }
     
     override func viewDidAppear(_ animated: Bool)
     {
-        super.viewDidAppear(animated)
+        super.viewDidAppear(true)
         if (profileDataLoad == false)
-        {
-            NameLastnameLabel.isSkeletonable = true
+        {            NameLastnameLabel.isSkeletonable = true
             UniversityNameLabel.isSkeletonable = true
             UsernameLabel.isSkeletonable = true
             EmailLabel.isSkeletonable = true
@@ -94,6 +80,16 @@ class ProfilePageViewController: UIViewController {
             EmailLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
             PhoneLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
         }
+        
+       if (profileDataLoad == true)
+       {
+            NameLastnameLabel.stopSkeletonAnimation()
+            UniversityNameLabel.stopSkeletonAnimation()
+            UsernameLabel.stopSkeletonAnimation()
+            EmailLabel.stopSkeletonAnimation()
+            PhoneLabel.stopSkeletonAnimation()
+            view.hideSkeleton()
+        }
     }
     
     
@@ -102,7 +98,8 @@ class ProfilePageViewController: UIViewController {
         do
         {
         try Auth.auth().signOut()
-            let homePageViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePageVC") as! HomePageViewController
+            let registrationStoryboard = UIStoryboard(name:"Registration",bundle:nil)
+            let homePageViewController = registrationStoryboard.instantiateViewController(withIdentifier: "HomePageVC") as! HomePageViewController
             self.present(homePageViewController, animated: true, completion: nil)
         }
         catch

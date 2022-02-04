@@ -106,6 +106,7 @@ class STToViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     @IBAction func continueButtonAction(_ sender: Any)
     {
         stToLocation = CLLocation(latitude:coordinate.latitude, longitude: coordinate.longitude)
+        toLocTaxi = locname
         dismiss(animated: true, completion: nil)
         
     }

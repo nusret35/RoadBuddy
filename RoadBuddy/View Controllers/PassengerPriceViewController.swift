@@ -128,7 +128,9 @@ class PassengerPriceViewController: UIViewController, UIPickerViewDelegate, UIPi
             priceString = priceTextField.text!
             delegate?.passengerPriceViewController(self, passengers: textBox.text! , price: priceTextField.text!)
             let PostFinalViewController = storyboard?.instantiateViewController(withIdentifier: "PostFinalVC") as! PostFinalViewController
-            present(PostFinalViewController, animated: true, completion: nil)
+            PostFinalViewController.title = "Your Trip"
+            PostFinalViewController.navigationItem.largeTitleDisplayMode = .always
+            navigationController?.pushViewController(PostFinalViewController, animated: true)
         }
     }
     

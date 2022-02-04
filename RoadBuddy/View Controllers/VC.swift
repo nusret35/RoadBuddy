@@ -25,8 +25,6 @@ class VC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var MapView: MKMapView!
     
-    @IBOutlet weak var WhereToLabel: UILabel!
-    
     @IBOutlet weak var Field: UITextField!
     
     @IBOutlet weak var ContinueButton: UIButton!

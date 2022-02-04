@@ -49,10 +49,6 @@ class TaxiTripSetViewController: UIViewController {
         super.viewDidLoad()
         
         ref = Database.database().reference()
-        FromButton.setTitle(fromLocTaxi, for: .normal)
-        ToButton.setTitle(toLocTaxi, for: .normal)
-        timeButton.setTitle(timeStringTaxi, for: .normal)
-        Utilities.styleFilledButton(continueButton)
         errorLabel.alpha = 0
         guard let userID = Auth.auth().currentUser?.uid else {
             print("User not found")
@@ -82,6 +78,13 @@ class TaxiTripSetViewController: UIViewController {
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        FromButton.setTitle(fromLocTaxi, for: .normal)
+        ToButton.setTitle(toLocTaxi, for: .normal)
+        timeButton.setTitle(timeStringTaxi, for: .normal)
+    }
+    
     //FUNCTIONS
     
     func validateFields() ->String? {
@@ -107,14 +110,15 @@ class TaxiTripSetViewController: UIViewController {
     
     @IBAction func fromButtonAction(_ sender: Any)
     {
-        let STFromNavigationController = mapsStoryboard.instantiateViewController(withIdentifier:  "STFromNC") as! STFromViewController
+        let STFromNavigationController = mapsStoryboard.instantiateViewController(withIdentifier:  "STFromNC") as!
+        UINavigationController
         present(STFromNavigationController, animated: true, completion: nil)
     }
     
     
     @IBAction func toButtonAction(_ sender: Any)
     {
-        let STToNavigationController = mapsStoryboard.instantiateViewController(withIdentifier: "STToNC") as! STToViewController
+        let STToNavigationController = mapsStoryboard.instantiateViewController(withIdentifier: "STToNC") as! UINavigationController
         present(STToNavigationController, animated: true, completion: nil)
     }
     
@@ -150,11 +154,6 @@ class TaxiTripSetViewController: UIViewController {
                 mainTabController.selectedViewController = mainTabController.viewControllers?[3]
                 present(mainTabController, animated: true, completion: nil)
         }
-    }
-    
-    @IBAction func backButtonAction(_ sender: Any)
-    {
-        dismiss(animated: true, completion: nil)
     }
     
     

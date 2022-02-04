@@ -23,8 +23,6 @@ class ShareTaxiViewController: UIViewController
     
     @IBOutlet weak var addButton: UIButton!
     
-    @IBOutlet weak var plusImage: UIImageView!
-    
     @IBOutlet weak var backgroundView: UIView!
     
     let db = Firestore.firestore()
@@ -66,7 +64,6 @@ class ShareTaxiViewController: UIViewController
                 self.timeLabel.text = res["time"] as! String
             }
             self.addButton.alpha = 0
-            self.plusImage.alpha = 0
             self.fromLabel.alpha = 1
             self.toLabel.alpha = 1
             self.timeLabel.alpha = 1
@@ -76,7 +73,6 @@ class ShareTaxiViewController: UIViewController
         else
         {
             self.addButton.alpha = 1
-            self.plusImage.alpha = 1
             self.fromLabel.alpha = 0
             self.toLabel.alpha = 0
             self.timeLabel.alpha = 0

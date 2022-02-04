@@ -22,7 +22,6 @@ class ToViewController: UIViewController, UITextFieldDelegate, UITableViewDelega
     
     @IBOutlet weak var MapView: MKMapView!
     
-    @IBOutlet weak var WhereToLabel: UILabel!
     
     @IBOutlet weak var TextField: UITextField!
     
