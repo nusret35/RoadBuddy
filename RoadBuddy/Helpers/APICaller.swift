@@ -42,62 +42,58 @@ struct TaxiTripData
     
 }
 
-class DataList
+class CurrentUserData
 {
-}
-
-//bi class yap. arraySize için
-class APICaller
-{
-    let ref = Database.database().reference()
+    let db = Firestore.firestore()
     
-    var datas: [Data] = []
+    var Fullname = ""
     
-   /* func  fetchData(fromLocation:CLLocation,toLocation:CLLocation) -> Void
-    //swift tarzı yazman lazım!
+    var Username = ""
+    
+    var Email = ""
+    
+    var PhoneNumber = ""
+    
+    var SchoolName = ""
+    
+    func fetchData()
     {
-        print("inside fetch data")
-        var trips:[Data] = []
-
-        ref.child("Trips").observeSingleEvent(of: .value, with: { (snapshot)  in
-            for child in snapshot.children
-            {
-                let snap = child as! DataSnapshot
-                guard let res = snap.value as? [String:Any] else {return}
-                let name = res["fullname"] as! String
-                print(name)
-                let from = res["from"] as! String
-                let to = res["to"] as! String
-                let price = res["price"] as! String
-                let time = res["time"] as! String
-                let numberOfPassengers = res["number of passengers"] as! String
-                let fromLat = res["fromCoordinateLatitude"] as! Double
-                let fromLong = res["fromCoordinateLongitude"] as! Double
-                let toLat = res["toCoordinateLatitude"] as! Double
-                let toLong = res["toCoordinateLongitude"] as! Double
-                let dataFromLocation = CLLocation(latitude: fromLat, longitude: fromLong)
-                let fromDistance = fromLocation.distance(from: dataFromLocation) / 1000
-                print(fromDistance)
-                if (fromDistance <= 8)
-                {
-                    print("inside from distance")
-                    let dataToLocation = CLLocation(latitude: toLat, longitude: toLong)
-                    let toDistance = toLocation.distance(from: dataToLocation) / 1000
-                    print(toDistance)
-                    if (toDistance <= 8)
-                    {
-                        print("inside to distance")
-                        let data = Data(driverName: name, fromLocation: from, toLocation: to, price: price, time: time, numberOfPassengers: numberOfPassengers)
-                        trips.append(data)
-                        print(trips[0].driverName)
-                        print(trips[0].time)
-                    }
-                }
-            }
-            self.datas = trips
-            print(self.datas[0].driverName)
-            print(self.datas[1].driverName)
-        })
-    } */
+        guard let userID = Auth.auth().currentUser?.uid else {
+            print("User not found")
+            return
+        }
+        let docRef = self.db.collection("users").document(userID)
+    docRef.getDocument{ snapshot, error in
+        guard let data = snapshot?.data(), error == nil else {
+            return
+        }
+        guard let firstname = data["firstname"] as? String else{
+            return
+        }
+        guard let lastname = data["lastname"] as? String else{
+            return
+        }
+        guard let username = data["username"] as? String else{
+            return
+        }
+        guard let email = data["email"] as? String else{
+            return
+        }
+        guard let phoneNumber = data["phoneNumber"] as? String else{
+            return
+        }
+        guard let schoolName = data["schoolName"] as? String else{
+            return
+        }
+        
+        self.Fullname = firstname + " " + lastname
+        self.Username = "@" + username
+        self.Email = email
+        self.PhoneNumber = phoneNumber
+        self.SchoolName = schoolName
+        print("Fullname: " + self.Fullname)
+        print("Schoolname: " + self.SchoolName)
+        }
+    }
     
 }

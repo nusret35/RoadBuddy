@@ -27,87 +27,92 @@ class ProfilePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute:{
-        guard let userID = Auth.auth().currentUser?.uid else {
-            print("User not found")
-            return
-        }
-            let docRef = self.db.collection("users").document(userID)
-        docRef.getDocument{ snapshot, error in
-            guard let data = snapshot?.data(), error == nil else {
-                return
-            }
-            guard let firstname = data["firstname"] as? String else{
-                return
-            }
-            guard let lastname = data["lastname"] as? String else{
-                return
-            }
-            guard let username = data["username"] as? String else{
-                return
-            }
-            guard let email = data["email"] as? String else{
-                return
-            }
-            guard let phoneNumber = data["phoneNumber"] as? String else{
-                return
-            }
-            guard let schoolName = data["schoolName"] as? String else{
-                return
-            }
-            self.NameLastnameLabel.text = firstname + " " + lastname
-            self.UsernameLabel.text = "@" + username
-            self.EmailLabel.text = email
-            self.PhoneLabel.text = phoneNumber
-            self.UniversityNameLabel.text = schoolName
-            profileDataLoad = true
-            }
+        print(currentUser.Fullname)
+      //
+        
+        self.NameLastnameLabel.isSkeletonable = true
+        self.UniversityNameLabel.isSkeletonable = true
+        self.UsernameLabel.isSkeletonable = true
+        self.EmailLabel.isSkeletonable = true
+        self.PhoneLabel.isSkeletonable = true
+        
+        self.NameLastnameLabel.showAnimatedGradientSkeleton()
+        self.UniversityNameLabel.showAnimatedGradientSkeleton()
+        self.UsernameLabel.showAnimatedGradientSkeleton()
+        self.EmailLabel.showAnimatedGradientSkeleton()
+        self.PhoneLabel.showAnimatedGradientSkeleton()
+
+            self.NameLastnameLabel.text = currentUser.Fullname
+            self.UniversityNameLabel.text = currentUser.SchoolName
+            self.UsernameLabel.text = currentUser.Username
+            self.EmailLabel.text = currentUser.Email
+            self.PhoneLabel.text = currentUser.PhoneNumber
+       /*
+            self.NameLastnameLabel.stopSkeletonAnimation()
+            self.UniversityNameLabel.stopSkeletonAnimation()
+            self.UsernameLabel.stopSkeletonAnimation()
+            self.EmailLabel.stopSkeletonAnimation()
+            self.PhoneLabel.stopSkeletonAnimation()
+            self.view.hideSkeleton()
+        */
+        //})
+                
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute:{
+            self.NameLastnameLabel.hideSkeleton()
+            self.UniversityNameLabel.hideSkeleton()
+            self.UsernameLabel.hideSkeleton()
+            self.EmailLabel.hideSkeleton()
+            self.PhoneLabel.hideSkeleton()
         })
     }
     
     override func viewDidAppear(_ animated: Bool)
     {
-        super.viewDidAppear(true)
-        if (profileDataLoad == false)
-        {            NameLastnameLabel.isSkeletonable = true
-            UniversityNameLabel.isSkeletonable = true
-            UsernameLabel.isSkeletonable = true
-            EmailLabel.isSkeletonable = true
-            PhoneLabel.isSkeletonable = true
-            NameLastnameLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
-            UniversityNameLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
-            UsernameLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
-            EmailLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
-            PhoneLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
-        }
-        
-       if (profileDataLoad == true)
-       {
-            NameLastnameLabel.stopSkeletonAnimation()
-            UniversityNameLabel.stopSkeletonAnimation()
-            UsernameLabel.stopSkeletonAnimation()
-            EmailLabel.stopSkeletonAnimation()
-            PhoneLabel.stopSkeletonAnimation()
-            view.hideSkeleton()
-        }
+        super.viewDidAppear(animated)
+        /*
+        NameLastnameLabel.isSkeletonable = true
+           UniversityNameLabel.isSkeletonable = true
+           UsernameLabel.isSkeletonable = true
+           EmailLabel.isSkeletonable = true
+           PhoneLabel.isSkeletonable = true
+           NameLastnameLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
+           UniversityNameLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
+           UsernameLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
+           EmailLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
+           PhoneLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
+        */
     }
     
     
     @IBAction func signOutButtonAction(_ sender: Any)
     {
-        do
-        {
-        try Auth.auth().signOut()
-            let registrationStoryboard = UIStoryboard(name:"Registration",bundle:nil)
-            let homePageViewController = registrationStoryboard.instantiateViewController(withIdentifier: "HomePageVC") as! HomePageViewController
-            self.present(homePageViewController, animated: true, completion: nil)
-        }
-        catch
-        {
-            print("sign out error")
-        }
-        
+        createAlert(title: "Sign Out", message: "Are you sure you want to sign out?")
     }
     
-
+    func createAlert(title:String, message:String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Sign Out", style: UIAlertAction.Style.destructive, handler: { [self] (action) in
+            do
+            {
+            try Auth.auth().signOut()
+                let registrationStoryboard = UIStoryboard(name:"Registration",bundle:nil)
+                let homePageViewController = registrationStoryboard.instantiateViewController(withIdentifier: "HomePageNC") as! UINavigationController
+                self.present(homePageViewController, animated: true, completion: nil)
+            }
+            catch
+            {
+                print("sign out error")
+            }
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated:true, completion: nil)
+    }
+    
 }

@@ -14,6 +14,7 @@ var SearchFrom = "Choose a location..."
 
 var SearchTo = "Choose a location..."
 
+var currentUser = CurrentUserData()
 
 class FromWhereToViewController: UIViewController{
 
@@ -36,6 +37,7 @@ class FromWhereToViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticateUser()
+        currentUser.fetchData()
         errorLabel.alpha = 0
         WhereToButton.setTitle(SearchFrom, for: .normal)
         WhereToButton.setTitleColor(.white, for: .normal)
@@ -76,13 +78,13 @@ class FromWhereToViewController: UIViewController{
     //BUTTON ACTIONS
     
     @IBAction func ButtonAction(_ sender: Any) {  //From button action
-        let viewcontroller = mapsStoryboard.instantiateViewController(withIdentifier: "VC") as! VC
+        let viewcontroller = mapsStoryboard.instantiateViewController(withIdentifier: "VCNC") as! UINavigationController
         present(viewcontroller, animated: true, completion: nil)
     }
     
     
     @IBAction func ToButtonAction(_ sender: Any) {
-        let ToViewController = mapsStoryboard.instantiateViewController(withIdentifier: "ToVC") as! ToViewController
+        let ToViewController = mapsStoryboard.instantiateViewController(withIdentifier: "ToNC") as! UINavigationController
         present(ToViewController, animated: true, completion: nil)
     }
     
