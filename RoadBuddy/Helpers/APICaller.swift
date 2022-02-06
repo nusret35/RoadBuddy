@@ -25,6 +25,8 @@ struct Data
     
     var numberOfPassengers:Int
     
+    var uid:String
+    
 }
 
 struct TaxiTripData
