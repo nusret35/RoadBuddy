@@ -25,7 +25,6 @@ struct Data
     
     var numberOfPassengers:Int
     
-    var uid:String
 }
 
 struct TaxiTripData
@@ -56,6 +55,8 @@ class CurrentUserData
     
     var SchoolName = ""
     
+    var UID = ""
+    
     func fetchData()
     {
         guard let userID = Auth.auth().currentUser?.uid else {
@@ -73,6 +74,11 @@ class CurrentUserData
         guard let lastname = data["lastname"] as? String else{
             return
         }
+        
+        guard let uid =  data["uid"] as? String else{
+            return
+        }
+        
         guard let username = data["username"] as? String else{
             return
         }
@@ -88,6 +94,7 @@ class CurrentUserData
         
         self.Fullname = firstname + " " + lastname
         self.Username = "@" + username
+        self.UID = uid
         self.Email = email
         self.PhoneNumber = phoneNumber
         self.SchoolName = schoolName

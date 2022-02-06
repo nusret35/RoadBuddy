@@ -47,16 +47,6 @@ class ProfilePageViewController: UIViewController {
             self.UsernameLabel.text = currentUser.Username
             self.EmailLabel.text = currentUser.Email
             self.PhoneLabel.text = currentUser.PhoneNumber
-       /*
-            self.NameLastnameLabel.stopSkeletonAnimation()
-            self.UniversityNameLabel.stopSkeletonAnimation()
-            self.UsernameLabel.stopSkeletonAnimation()
-            self.EmailLabel.stopSkeletonAnimation()
-            self.PhoneLabel.stopSkeletonAnimation()
-            self.view.hideSkeleton()
-        */
-        //})
-                
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute:{
             self.NameLastnameLabel.hideSkeleton()
@@ -70,18 +60,6 @@ class ProfilePageViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
-        /*
-        NameLastnameLabel.isSkeletonable = true
-           UniversityNameLabel.isSkeletonable = true
-           UsernameLabel.isSkeletonable = true
-           EmailLabel.isSkeletonable = true
-           PhoneLabel.isSkeletonable = true
-           NameLastnameLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
-           UniversityNameLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
-           UsernameLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
-           EmailLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
-           PhoneLabel.showSkeleton(usingColor: .gray, transition: .crossDissolve(0.25))
-        */
     }
     
     

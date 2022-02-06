@@ -34,12 +34,6 @@ class PostFinalViewController: UIViewController
     
     let db = Firestore.firestore()
     
-    var fullname = ""
-    
-    var username = ""
-    
-    var uid = ""
-    
     var tripIsSet = false
     
     override func viewDidLoad() {
@@ -50,40 +44,8 @@ class PostFinalViewController: UIViewController
         TimeButton.setTitle(timeString, for: .normal)
         Passengers.setTitle(String(passengerNumber), for: .normal)
         Price.setTitle(priceString, for: .normal)
-        guard let userID = Auth.auth().currentUser?.uid else {
-            print("User not found")
-            return
-        }
-        let docRef = db.collection("users").document(userID)
-        docRef.getDocument{ snapshot, error in
-            guard let data = snapshot?.data(), error == nil else {
-                return
-            }
-            guard let firstname = data["firstname"] as? String else{
-                return
-            }
-            guard let lastname = data["lastname"] as? String else{
-                return
-            }
-            guard let userName = data["username"] as? String else{
-                return
-            }
-            guard let UID = data["uid"] as? String else{
-                return
-            }
-            guard let tis = data["TripIsSet"] as? Bool else{
-                return
-            }
-            self.fullname = firstname + " " + lastname
-            self.username = userName
-            self.uid = UID
-            self.tripIsSet = tis
-        }
-        
     }
-    
-    
-    //direk global vardan yap bu olacak gibi değil
+
 
     @IBAction func FromButtonAction(_ sender: Any) {
         let PostTripFromViewController = mapsStoryboard.instantiateViewController(withIdentifier: "PostTripFromVC") as! PostTripFromViewController
@@ -123,8 +85,8 @@ class PostFinalViewController: UIViewController
     @IBAction func ContinueButtonAction(_ sender: Any)
     {
         //validate the fields
-        let post = ["fullname": fullname,
-                    "uid": uid,
+        let post = ["fullname": currentUser.Fullname,
+                    "uid": currentUser.UID,
                     "from": fromLoc,
                      "to":   toLoc,
                     "time": timeString,
@@ -135,8 +97,8 @@ class PostFinalViewController: UIViewController
                     "toCoordinateLatitude": ptToLocation.coordinate.latitude,
                     "toCoordinateLongitude": ptToLocation.coordinate.longitude
                     ] as [String:Any]
-            ref?.child("Trips").child(uid).setValue(post)
-            db.collection("users").document(uid).updateData(["TripIsSet":true])
+        ref?.child("Trips").child(currentUser.UID).setValue(post)
+        db.collection("users").document(currentUser.UID).updateData(["TripIsSet":true])
             let mainTabController = storyboard?.instantiateViewController(withIdentifier: "MainTabController") as! MainTabController
             mainTabController.selectedViewController = mainTabController.viewControllers?[2]
             present(mainTabController, animated: true, completion: nil)
