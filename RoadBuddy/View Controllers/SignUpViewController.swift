@@ -87,6 +87,10 @@ class SignUpViewController: UIViewController {
         return nil
     }
     
+    @IBAction func backButtonAction(_ sender: Any)
+    {
+        dismiss(animated: true)
+    }
     
     @IBAction func SignUpTapped(_ sender: Any)
     {

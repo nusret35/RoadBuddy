@@ -14,8 +14,8 @@
             filePath = "RoadBuddy/View Controllers/FromWhereToViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -169,8 +169,8 @@
             filePath = "RoadBuddy/View Controllers/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "SignUpTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -201,8 +201,8 @@
             filePath = "RoadBuddy/View Controllers/FromWhereToViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "FromWhereToViewController"
             landmarkType = "3">
          </BreakpointContent>

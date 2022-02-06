@@ -8,6 +8,11 @@
 import UIKit
 import MessageKit
 
+struct Message
+{
+    var text:String
+}
+
 class ChatViewController: MessagesViewController {
 
     
@@ -36,4 +41,5 @@ extension ChatViewController: MessagesDataSource, MessagesLayoutDelegate, Messag
     }
     
     
-}*/
+}
+ */

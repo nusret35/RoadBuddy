@@ -39,12 +39,17 @@ class FromWhereToViewController: UIViewController{
         authenticateUser()
         currentUser.fetchData()
         errorLabel.alpha = 0
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        errorLabel.alpha = 0
         WhereToButton.setTitle(SearchFrom, for: .normal)
         WhereToButton.setTitleColor(.white, for: .normal)
         ToButton.setTitle(SearchTo, for: .normal)
         ToButton.setTitleColor(.white, for: .normal)
     }
-    
     //FUNCTIONS
     
     func validateFields() ->String? {

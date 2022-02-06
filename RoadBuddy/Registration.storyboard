@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -216,18 +215,7 @@
                             <constraint firstItem="HOl-7E-p0J" firstAttribute="leading" secondItem="TZI-3O-eKP" secondAttribute="leading" constant="40" id="xeO-dv-gkd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="V5J-sl-8ak">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" style="plain" id="8Pc-OP-iYG">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="5Gr-SY-0uS">
-                                <rect key="frame" x="20" y="4.5" width="92" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=" Back">
-                                    <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
-                                </buttonConfiguration>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="V5J-sl-8ak"/>
                     <connections>
                         <outlet property="EmailTextField" destination="zvu-zU-7V8" id="UYw-SU-i1U"/>
                         <outlet property="FirstNameTextField" destination="Udk-WV-Nes" id="t77-Ne-iaC"/>
@@ -268,6 +256,7 @@
                                             <constraint firstAttribute="width" constant="334" id="PRN-oH-ep0"/>
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WAh-LJ-Qy0">
@@ -319,16 +308,7 @@
                             <constraint firstItem="rXS-BA-Top" firstAttribute="top" secondItem="vfl-fc-0Pp" secondAttribute="top" constant="20" id="eei-zw-asz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="NDe-JX-MtF">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="fhP-sg-sGT">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="EQ7-mb-n8j">
-                                <rect key="frame" x="20" y="4.5" width="92" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system" title=" Back"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="NDe-JX-MtF"/>
                     <connections>
                         <outlet property="EmailTextField" destination="erg-Om-4QX" id="mzf-tq-oBg"/>
                         <outlet property="LogInButton" destination="Ng2-nv-RH9" id="phj-r7-1nB"/>
@@ -361,7 +341,6 @@
     </scenes>
     <resources>
         <image name="background (2)" width="540" height="960"/>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="intro_background (2)" width="540" height="960"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
