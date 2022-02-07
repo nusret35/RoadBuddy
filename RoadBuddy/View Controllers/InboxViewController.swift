@@ -35,6 +35,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    
         view.addSubview(tableView)
         view.addSubview(noMessagesLabel)
         setUpTableView()
@@ -49,6 +50,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private func setUpTableView()
     {
+        tableView.backgroundColor = BackgroundColor.defaultBackgroundColor
         tableView.isHidden = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
@@ -69,6 +71,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = "hello"
         cell.accessoryType = .disclosureIndicator
+        cell.backgroundColor = BackgroundColor.secondaryBackgroundColor
         return cell
     }
     

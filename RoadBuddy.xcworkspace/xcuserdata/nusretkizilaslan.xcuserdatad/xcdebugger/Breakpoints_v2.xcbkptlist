@@ -14,8 +14,8 @@
             filePath = "RoadBuddy/View Controllers/FromWhereToViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -30,13 +30,13 @@
             filePath = "RoadBuddy/View Controllers/DateTimeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "DateTimeViewController"
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - ad1d022cc3ced1ed"
+                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - ad1d022cc3ced627"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -46,12 +46,12 @@
                   urlString = "file:///Users/nusretkizilaslan/Desktop/START_UP/RoadBuddy/RoadBuddy/View%20Controllers/DateTimeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
                   offsetFromSymbolStart = "166">
                </Location>
                <Location
-                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - 9e1cf6e35a6851f9"
+                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - 9e1cf6e35a685633"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -61,8 +61,8 @@
                   urlString = "file:///Users/nusretkizilaslan/Desktop/START_UP/RoadBuddy/RoadBuddy/View%20Controllers/DateTimeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
                   offsetFromSymbolStart = "132">
                </Location>
                <Location
@@ -81,7 +81,7 @@
                   offsetFromSymbolStart = "20">
                </Location>
                <Location
-                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - 388c40b3ce01df97"
+                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - 388c40b3ce01d85d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -91,12 +91,12 @@
                   urlString = "file:///Users/nusretkizilaslan/Desktop/START_UP/RoadBuddy/RoadBuddy/View%20Controllers/DateTimeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
                   offsetFromSymbolStart = "17">
                </Location>
                <Location
-                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - 929bbb1bf5c5d5fb"
+                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - 929bbb1bf5c5d231"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -106,12 +106,12 @@
                   urlString = "file:///Users/nusretkizilaslan/Desktop/START_UP/RoadBuddy/RoadBuddy/View%20Controllers/DateTimeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "223">
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "266">
                </Location>
                <Location
-                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - e992bbeca48fc08e"
+                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - e992bbeca48fc744"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -121,12 +121,12 @@
                   urlString = "file:///Users/nusretkizilaslan/Desktop/START_UP/RoadBuddy/RoadBuddy/View%20Controllers/DateTimeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "180">
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "223">
                </Location>
                <Location
-                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - b2ee4595db7de2c7"
+                  uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - b2ee4595db7de58d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -136,8 +136,8 @@
                   urlString = "file:///Users/nusretkizilaslan/Desktop/START_UP/RoadBuddy/RoadBuddy/View%20Controllers/DateTimeViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
                   offsetFromSymbolStart = "38">
                </Location>
             </Locations>
@@ -153,8 +153,8 @@
             filePath = "RoadBuddy/View Controllers/PostViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "PostViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -201,46 +201,25 @@
             filePath = "RoadBuddy/View Controllers/FromWhereToViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-<<<<<<< HEAD
-            landmarkName = "authenticateUser()"
-            landmarkType = "7">
-=======
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "FromWhereToViewController"
             landmarkType = "3">
->>>>>>> a393e2b24b1bdb7ea01c11e3c415c2aede9450df
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "972EAB02-3F8F-4732-9895-DE0AEB3485C0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RoadBuddy/View Controllers/STToViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D2B0B403-4010-4B74-B721-5A8A59030052"
+            uuid = "4B1C8A3F-0F3E-477F-BEF4-6D88D0D909FB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RoadBuddy/Helpers/APICaller.swift"
+            filePath = "RoadBuddy/View Controllers/InboxViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "CurrentUserData"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "InboxViewController"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
