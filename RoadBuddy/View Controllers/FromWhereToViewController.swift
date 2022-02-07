@@ -10,9 +10,9 @@ import CoreLocation
 import FirebaseAuth
 import MapKit
 
-var SearchFrom = "Choose a location..."
+var SearchFrom = "From..."
 
-var SearchTo = "Choose a location..."
+var SearchTo = "To..."
 
 var currentUser = CurrentUserData()
 
@@ -53,7 +53,7 @@ class FromWhereToViewController: UIViewController{
     //FUNCTIONS
     
     func validateFields() ->String? {
-        if WhereToButton.titleLabel!.text! == "Choose a location..." || ToButton.titleLabel!.text! == "Choose a location..."
+        if WhereToButton.titleLabel!.text! == "From..." || ToButton.titleLabel!.text! == "To..."
         {
             return "Please choose a location"
         }

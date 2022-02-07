@@ -35,7 +35,7 @@ class VC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableVie
     
     var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(0.0, 0.0)
     
-    var locname: String! = "Choose a location..."
+    var locname: String! = "From..."
     
     weak var delegate: VCDelegate?
     // OVERRIDE FUNCTIONS
