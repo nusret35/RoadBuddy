@@ -46,9 +46,7 @@ class FromWhereToViewController: UIViewController{
         super.viewDidAppear(animated)
         errorLabel.alpha = 0
         WhereToButton.setTitle(SearchFrom, for: .normal)
-        WhereToButton.setTitleColor(.white, for: .normal)
         ToButton.setTitle(SearchTo, for: .normal)
-        ToButton.setTitleColor(.white, for: .normal)
     }
     //FUNCTIONS
     
