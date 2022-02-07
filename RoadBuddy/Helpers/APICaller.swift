@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseStorage
 import CoreLocation
 
-struct Data
+struct DriverData
 {
     var driverName:String
     
@@ -47,17 +47,19 @@ class CurrentUserData
 {
     let db = Firestore.firestore()
     
-    var Fullname = ""
+    var Fullname:String = ""
     
-    var Username = ""
+    var Username:String = ""
     
-    var Email = ""
+    var Email:String = ""
     
-    var PhoneNumber = ""
+    var PhoneNumber:String = ""
     
-    var SchoolName = ""
+    var SchoolName:String = ""
     
-    var UID = ""
+    var UID:String = ""
+    
+    var profilePictureIsSet:Bool = false
     
     func fetchData()
     {
@@ -93,6 +95,9 @@ class CurrentUserData
         guard let schoolName = data["schoolName"] as? String else{
             return
         }
+        guard let ppIsSet = data["profilePictureIsSet"] as? Bool else{
+            return
+        }
         
         self.Fullname = firstname + " " + lastname
         self.Username = "@" + username
@@ -100,6 +105,7 @@ class CurrentUserData
         self.Email = email
         self.PhoneNumber = phoneNumber
         self.SchoolName = schoolName
+        self.profilePictureIsSet = ppIsSet
         print("Fullname: " + self.Fullname)
         print("Schoolname: " + self.SchoolName)
         }

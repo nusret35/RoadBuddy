@@ -12,7 +12,7 @@ import Firebase
 import FirebaseStorage
 import SkeletonView
 
-class ProfilePageViewController: UIViewController {
+class ProfilePageViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var NameLastnameLabel: UILabel!
     @IBOutlet weak var UniversityNameLabel: UILabel!
@@ -24,6 +24,8 @@ class ProfilePageViewController: UIViewController {
     
     var ref:DatabaseReference?
     let db = Firestore.firestore()
+    let storage = Storage.storage().reference()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,15 @@ class ProfilePageViewController: UIViewController {
             self.UsernameLabel.text = currentUser.Username
             self.EmailLabel.text = currentUser.Email
             self.PhoneLabel.text = currentUser.PhoneNumber
+        if currentUser.profilePictureIsSet
+        {
+            print("there exist a pp")
+            profilePictureLoad()
+        }
+        else
+        {
+            self.ProfilePicture.image = UIImage(named: "emptyProfilePicture")
+        }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute:{
             self.NameLastnameLabel.hideSkeleton()
@@ -67,6 +78,42 @@ class ProfilePageViewController: UIViewController {
     {
         createAlert(title: "Sign Out", message: "Are you sure you want to sign out?")
     }
+    
+    
+    @IBAction func changeProfilePictureButtonAction(_ sender: Any)
+    {
+        presentPhotoActionSheet()
+    }
+
+    func profilePictureLoad()
+    {
+        let docRef = db.collection("users").document(currentUser.UID)
+        docRef.getDocument{ snapshot, error in
+            self.storage.child("/images/\(currentUser.UID)").downloadURL(completion: { (url, error) in
+                guard let url = url else
+                {
+                    print("profile photo url not found")
+                    return
+                }
+                
+                do
+                {
+                    let data = try Data(contentsOf: url)
+                    let image = UIImage(data: data)
+                    self.ProfilePicture.image = image
+                    self.ProfilePicture.layer.borderWidth = 1.0
+                    self.ProfilePicture.layer.masksToBounds = false
+                    self.ProfilePicture.layer.cornerRadius = self.ProfilePicture.image!.size.width/2
+                    self.ProfilePicture.clipsToBounds = true
+                }
+                catch
+                {
+                    print("profile photo error")
+                }
+            })
+            }
+    }
+    
     
     func createAlert(title:String, message:String)
     {
@@ -93,4 +140,52 @@ class ProfilePageViewController: UIViewController {
         self.present(alert, animated:true, completion: nil)
     }
     
+}
+
+extension ProfilePageViewController:UIImagePickerControllerDelegate
+{
+    func presentPhotoActionSheet(){
+        let actionSheet = UIAlertController(title: "Profile Picture", message: "You can choose your profile picture from your library or take a photo", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        actionSheet.addAction(UIAlertAction(title: "Choose Photo", style: .default, handler: {[weak self]_ in
+            self?.presentPhotoPicker()
+            
+        }))
+    present(actionSheet, animated: true)
+    }
+    
+    func presentPhotoPicker(){
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else{
+            return
+        }
+        self.ProfilePicture.image = selectedImage
+        guard let imageData = selectedImage.pngData() else {
+            return
+        }
+        
+        let docRef = db.collection("users").document(currentUser.UID)
+        docRef.updateData(["profilePictureIsSet":true])
+        
+        docRef.getDocument{ snapshot, error in
+                
+            self.storage.child("/images/\(currentUser.UID)").putData(imageData, metadata: nil, completion: nil)
+            }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+
 }

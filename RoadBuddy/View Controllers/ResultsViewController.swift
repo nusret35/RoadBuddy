@@ -33,7 +33,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var models = [TripPost]()
     
-    var datas: [Data] = []
+    var datas: [DriverData] = []
     
     let ref = Database.database().reference()
     
@@ -98,7 +98,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func SetUpElements()
     {
-        var trips:[Data] = []
+        var trips:[DriverData] = []
 
         ref.child("Trips").observeSingleEvent(of: .value, with: { (snapshot)  in
             for child in snapshot.children
@@ -134,7 +134,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
                         if (toDistance <= 8)
                         {
                             print("inside to distance")
-                            let data = Data(driverName: name, fromLocation: from, toLocation: to, price: price, time: time, numberOfPassengers: numberOfPassengers,uid:dUID)
+                            let data = DriverData(driverName: name, fromLocation: from, toLocation: to, price: price, time: time, numberOfPassengers: numberOfPassengers,uid:dUID)
                             trips.append(data)
                             print(trips[0].driverName)
                         }
