@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import QuartzCore
 import FirebaseDatabase
 import FirebaseAuth
 import Firebase

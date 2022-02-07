@@ -20,7 +20,6 @@ class ChatViewController: MessagesViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         view.backgroundColor = BackgroundColor.defaultBackgroundColor
     }
     
