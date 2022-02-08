@@ -98,11 +98,11 @@ class TaxiResultViewController: UIViewController, UITableViewDelegate, UITableVi
                 }
                 if (currentUserID != uid)
                 {
-                    if (fromDistance <= 8)
+                    if (fromDistance <= 3)
                     {
                         let dataToLocation = CLLocation(latitude: toLat, longitude: toLong)
                         let toDistance = SearchToLocation.distance(from: dataToLocation) / 1000
-                        if (toDistance <= 8)
+                        if (toDistance <= 3)
                         {
                             let data = TaxiTripData(passengerName:name,
                                                     uid:uid,fromLocation: from, toLocation: to, time: time)

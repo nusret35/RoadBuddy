@@ -14,7 +14,6 @@ var SearchFrom = "From..."
 
 var SearchTo = "To..."
 
-var currentUser = CurrentUserData()
 
 class FromWhereToViewController: UIViewController{
 
@@ -36,8 +35,6 @@ class FromWhereToViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        authenticateUser()
-        currentUser.fetchData()
         errorLabel.alpha = 0
     }
     
@@ -64,19 +61,7 @@ class FromWhereToViewController: UIViewController{
         errorLabel.alpha = 1
         }
     
-    //API
-    func authenticateUser()
-    {
-        if Auth.auth().currentUser == nil
-        {
-        DispatchQueue.main.async
-            {
-                
-                let homePageNavigationController = self.registrationStoryboard.instantiateViewController(withIdentifier: "HomePageNC") as! UINavigationController
-                self.present(homePageNavigationController, animated: true, completion: nil)
-            }
-        }
-    }
+
     
     //BUTTON ACTIONS
     

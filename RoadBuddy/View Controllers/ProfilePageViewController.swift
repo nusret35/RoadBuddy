@@ -101,9 +101,7 @@ class ProfilePageViewController: UIViewController, UINavigationControllerDelegat
                     let data = try Data(contentsOf: url)
                     let image = UIImage(data: data)
                     self.ProfilePicture.image = image
-                    self.ProfilePicture.layer.borderWidth = 1.0
-                    self.ProfilePicture.layer.masksToBounds = false
-                    self.ProfilePicture.layer.cornerRadius = self.ProfilePicture.image!.size.width/2
+                    self.ProfilePicture.layer.cornerRadius = self.ProfilePicture.frame.size.width/2
                     self.ProfilePicture.clipsToBounds = true
                 }
                 catch
