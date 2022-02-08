@@ -7,7 +7,6 @@
 
 import UIKit
 import FirebaseAuth
-import ViewAnimator
 
 
 var currentUser = CurrentUserData()
