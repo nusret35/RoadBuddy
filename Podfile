@@ -9,5 +9,4 @@ target 'RoadBuddy' do
 pod 'FloatingPanel'
 pod 'DropDown'
 pod 'RealmSwift'
-pod 'ViewAnimator'
 end
