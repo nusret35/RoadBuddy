@@ -85,6 +85,9 @@
 		80E7A514274AE59F00423EB3 /* STFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E7A513274AE59F00423EB3 /* STFromViewController.swift */; };
 		80E7A516274AE5AF00423EB3 /* STToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E7A515274AE5AF00423EB3 /* STToViewController.swift */; };
 		80E7A518274AE5E400423EB3 /* TaxiTripSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E7A517274AE5E400423EB3 /* TaxiTripSetViewController.swift */; };
+		C08B7A6E27B287900027684E /* ViewAnimator in Frameworks */ = {isa = PBXBuildFile; productRef = C08B7A6D27B287900027684E /* ViewAnimator */; };
+		C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B7A7127B2895D0027684E /* FirstTableViewCell.swift */; };
+		C08B7A7427B2895D0027684E /* FirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08B7A7227B2895D0027684E /* FirstTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +142,8 @@
 		80E7A515274AE5AF00423EB3 /* STToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STToViewController.swift; sourceTree = "<group>"; };
 		80E7A517274AE5E400423EB3 /* TaxiTripSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiTripSetViewController.swift; sourceTree = "<group>"; };
 		BD4FE229515EAE9346E4B422 /* Pods_RoadBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C08B7A7127B2895D0027684E /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
+		C08B7A7227B2895D0027684E /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +162,7 @@
 				8076F138275AAF2D00BC6EB2 /* FirebaseAnalytics in Frameworks */,
 				24347E856DDF698E826216F1 /* Pods_RoadBuddy.framework in Frameworks */,
 				8075BACD27A6EE140064CCB7 /* MessageKit in Frameworks */,
+				C08B7A6E27B287900027684E /* ViewAnimator in Frameworks */,
 				8073AA222775CCCD007457FD /* SkeletonView in Frameworks */,
 				8076F15E275AAF2E00BC6EB2 /* FirebaseMLModelDownloader in Frameworks */,
 				8076F13E275AAF2D00BC6EB2 /* FirebaseAppCheck in Frameworks */,
@@ -199,6 +205,8 @@
 				804AF860279EBCC200315A82 /* TaxiTableViewCell.xib */,
 				8075BAC427A3F4B70064CCB7 /* MessageTableViewCell.swift */,
 				8075BAC527A3F4B70064CCB7 /* MessageTableViewCell.xib */,
+				C08B7A7127B2895D0027684E /* FirstTableViewCell.swift */,
+				C08B7A7227B2895D0027684E /* FirstTableViewCell.xib */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -370,6 +378,7 @@
 				8075BACF27A6EE9A0064CCB7 /* JGProgressHUD */,
 				8075BAD227A6EF020064CCB7 /* SDWebImage */,
 				8075BAD427A6EF020064CCB7 /* SDWebImageMapKit */,
+				C08B7A6D27B287900027684E /* ViewAnimator */,
 			);
 			productName = RoadBuddy;
 			productReference = 80D9B09226FC9249001EB6BD /* RoadBuddy.app */;
@@ -404,6 +413,7 @@
 				8075BACB27A6EE140064CCB7 /* XCRemoteSwiftPackageReference "MessageKit" */,
 				8075BACE27A6EE990064CCB7 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 				8075BAD127A6EF020064CCB7 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				C08B7A6C27B287900027684E /* XCRemoteSwiftPackageReference "ViewAnimator" */,
 			);
 			productRefGroup = 80D9B09326FC9249001EB6BD /* Products */;
 			projectDirPath = "";
@@ -420,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				804AF862279EBCC300315A82 /* TaxiTableViewCell.xib in Resources */,
+				C08B7A7427B2895D0027684E /* FirstTableViewCell.xib in Resources */,
 				80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */,
 				8075BADD27A7EBA30064CCB7 /* Registration.storyboard in Resources */,
 				80A8933727A8014A00CE83AB /* Main.storyboard in Resources */,
@@ -497,6 +508,7 @@
 				804AF861279EBCC200315A82 /* TaxiTableViewCell.swift in Sources */,
 				80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */,
 				80D5E791271C81ED000F1F5B /* PostViewController.swift in Sources */,
+				C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */,
 				80C996392765697B00B5A3C7 /* SignUpViewController.swift in Sources */,
 				807F1F3B2701E6AB000C89CB /* VC.swift in Sources */,
 				80C9963B2766919300B5A3C7 /* LoginViewController.swift in Sources */,
@@ -881,6 +893,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		C08B7A6C27B287900027684E /* XCRemoteSwiftPackageReference "ViewAnimator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcosgriselli/ViewAnimator.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1193,6 +1213,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8076F136275AAF2D00BC6EB2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageSwift-Beta";
+		};
+		C08B7A6D27B287900027684E /* ViewAnimator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C08B7A6C27B287900027684E /* XCRemoteSwiftPackageReference "ViewAnimator" */;
+			productName = ViewAnimator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

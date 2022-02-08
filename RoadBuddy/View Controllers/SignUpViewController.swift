@@ -159,9 +159,8 @@ class SignUpViewController: UIViewController {
     func transitionToHome ()
         {
             let mainStoryboard = UIStoryboard(name:"Main",bundle:nil)
-            let mainTabController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabController") as! MainTabController
-            mainTabController.selectedViewController = mainTabController.viewControllers?[0]
-            present(mainTabController, animated: true, completion: nil)
+            let firstNavigationController = mainStoryboard.instantiateViewController(withIdentifier: "FirstNC") as! UINavigationController
+            present(firstNavigationController, animated: true, completion: nil)
         }
         
         

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="064-qB-5bv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mij-2U-hi9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -852,7 +852,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="S36-R8-GIk">
-                                                        <rect key="frame" x="85" y="-2.5" width="299" height="43.5"/>
+                                                        <rect key="frame" x="85" y="-3.5" width="299" height="45.5"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="38.5" id="ppu-fo-y5f"/>
@@ -891,7 +891,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="target" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="azF-dh-o3D">
-                                                                <rect key="frame" x="42.5" y="-2" width="341.5" height="42.5"/>
+                                                                <rect key="frame" x="42.5" y="-3" width="341.5" height="44.5"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="38.5" id="zr3-vT-fr4"/>
@@ -929,7 +929,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9LL-hK-yQN">
-                                                                        <rect key="frame" x="86.5" y="-2" width="297.5" height="42.5"/>
+                                                                        <rect key="frame" x="86.5" y="-3" width="297.5" height="44.5"/>
                                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="38.5" id="GE7-8c-NDx"/>
@@ -1139,7 +1139,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kax-nV-29J">
-                                                                <rect key="frame" x="85" y="-2.5" width="281" height="43.5"/>
+                                                                <rect key="frame" x="85" y="-3.5" width="281" height="45.5"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                             </imageView>
@@ -1173,7 +1173,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="target" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HPm-Uu-9ur">
-                                                                        <rect key="frame" x="42.5" y="-2" width="323.5" height="42.5"/>
+                                                                        <rect key="frame" x="42.5" y="-3" width="323.5" height="44.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="38.5" id="3Q9-uV-IDu"/>
                                                                         </constraints>
@@ -1212,7 +1212,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RlT-Gs-wfq">
-                                                                                <rect key="frame" x="78.5" y="-2" width="287.5" height="42.5"/>
+                                                                                <rect key="frame" x="78.5" y="-3" width="287.5" height="44.5"/>
                                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                                             </imageView>
@@ -1292,7 +1292,7 @@
         <!--FromWhereVC-->
         <scene sceneID="hkI-B9-IPb">
             <objects>
-                <viewController storyboardIdentifier="FromWhereVC" title="FromWhereVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TyB-6e-X12" customClass="FromWhereToViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FromWhereVC" title="FromWhereVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TyB-6e-X12" customClass="FromWhereToViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ra4-cL-k3A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1317,7 +1317,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" image="mappin.and.ellipse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DwA-gr-8Tu">
-                                                        <rect key="frame" x="80.5" y="-2.5" width="303.5" height="43.5"/>
+                                                        <rect key="frame" x="80.5" y="-3.5" width="303.5" height="45.5"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                     </imageView>
@@ -1356,7 +1356,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="target" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Bf7-bU-OXx">
-                                                        <rect key="frame" x="42.5" y="-2" width="341.5" height="42.5"/>
+                                                        <rect key="frame" x="42.5" y="-3" width="341.5" height="44.5"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                     </imageView>
@@ -1650,7 +1650,7 @@
         <!--Trip-->
         <scene sceneID="DTA-7A-mUn">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Sft-09-rvd" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PostNC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Sft-09-rvd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Trip" image="car" catalog="system" selectedImage="car" id="MQw-xo-s27">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
@@ -1682,7 +1682,7 @@
         <!--Share Taxi-->
         <scene sceneID="bXw-W4-PYX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="32k-b3-J0T" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ShareTaxiNC" automaticallyAdjustsScrollViewInsets="NO" id="32k-b3-J0T" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Share Taxi" image="person.2" catalog="system" selectedImage="person.2" id="yB1-cS-Zsc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="aLK-pX-xdN">
@@ -1750,58 +1750,12 @@
         <!--Choose-->
         <scene sceneID="HEn-14-RIJ">
             <objects>
-                <viewController id="lS8-Hq-lzc" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="lS8-Hq-lzc" customClass="FirstViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OPL-rd-A7x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kcU-IV-Xhx">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPb-v1-sJz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="240" id="hi6-hP-QJd"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button">
-                                            <backgroundConfiguration key="background">
-                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                            </backgroundConfiguration>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvc-Mq-jm6">
-                                        <rect key="frame" x="0.0" y="240" width="414" height="240"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="240" id="NG9-Rl-8Y2"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button">
-                                            <backgroundConfiguration key="background">
-                                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                            </backgroundConfiguration>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8G-hu-4Iy">
-                                        <rect key="frame" x="0.0" y="480" width="414" height="242"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button">
-                                            <backgroundConfiguration key="background">
-                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                            </backgroundConfiguration>
-                                        </buttonConfiguration>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="W6g-7D-bwS"/>
                         <color key="backgroundColor" red="0.042423643169999997" green="0.18285921220000001" blue="0.2660535872" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="kcU-IV-Xhx" firstAttribute="top" secondItem="W6g-7D-bwS" secondAttribute="top" id="1Ic-XJ-Auu"/>
-                            <constraint firstItem="W6g-7D-bwS" firstAttribute="trailing" secondItem="kcU-IV-Xhx" secondAttribute="trailing" id="HQ1-av-hAu"/>
-                            <constraint firstItem="kcU-IV-Xhx" firstAttribute="leading" secondItem="W6g-7D-bwS" secondAttribute="leading" id="b5P-Sr-iJh"/>
-                            <constraint firstItem="W6g-7D-bwS" firstAttribute="bottom" secondItem="kcU-IV-Xhx" secondAttribute="bottom" id="jgy-VI-erR"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Choose" id="VwS-J4-Idv"/>
                 </viewController>
@@ -1812,7 +1766,7 @@
         <!--Search-->
         <scene sceneID="uXJ-To-aQ5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cZ1-CO-8Dh" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FromWhereNC" automaticallyAdjustsScrollViewInsets="NO" id="cZ1-CO-8Dh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" id="Jyk-ps-TPT">
                         <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1843,7 +1797,7 @@
         <!--Navigation Controller-->
         <scene sceneID="0zK-vk-Vq7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mij-2U-hi9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FirstNC" automaticallyAdjustsScrollViewInsets="NO" id="mij-2U-hi9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="nuE-yq-hMU">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -1877,17 +1831,8 @@
         <image name="target" catalog="system" width="128" height="121"/>
         <image name="text.bubble" catalog="system" width="128" height="110"/>
         <image name="timer" catalog="system" width="128" height="121"/>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
