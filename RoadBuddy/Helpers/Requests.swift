@@ -14,6 +14,8 @@ struct SearchTripRequest
     
     var uid:String
     
+    var time:String
+    
     var fromLocationName:String
     
     var toLocationName:String
@@ -28,4 +30,24 @@ struct SearchTripRequest
     
 }
 
+struct TaxiTripRequest
+{
+    var fullname:String
+    
+    var uid:String
+    
+    var time:String
+    
+    var fromLocationName:String
+    
+    var toLocationName:String
+    
+    var fromCoordinateLat:Double
+    
+    var fromCoordinateLong:Double
+    
+    var toCoordinateLat:Double
+    
+    var toCoordinateLong:Double
+}
 

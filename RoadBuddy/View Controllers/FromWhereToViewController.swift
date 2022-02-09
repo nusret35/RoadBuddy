@@ -85,7 +85,8 @@ class FromWhereToViewController: UIViewController{
         }
         else
         {
-            let request = SearchTripRequest(fullname: currentUser.Fullname, uid: currentUser.UID, fromLocationName: SearchFrom, toLocationName: SearchTo, fromCoordinateLat: SearchFromLocation.coordinate.latitude, fromCoordinateLong: SearchFromLocation.coordinate.longitude, toCoordinateLat: SearchToLocation.coordinate.latitude, toCoordinateLong: SearchToLocation.coordinate.longitude)
+            let request = SearchTripRequest(fullname: currentUser.Fullname, uid: currentUser.UID, time: timeString, fromLocationName: SearchFrom, toLocationName: SearchTo, fromCoordinateLat: SearchFromLocation.coordinate.latitude, fromCoordinateLong: SearchFromLocation.coordinate.longitude, toCoordinateLat: SearchToLocation.coordinate.latitude, toCoordinateLong: SearchToLocation.coordinate.longitude)
+
             
         }
     }

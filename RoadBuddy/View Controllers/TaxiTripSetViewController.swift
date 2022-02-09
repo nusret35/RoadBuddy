@@ -44,6 +44,7 @@ class TaxiTripSetViewController: UIViewController {
     
     var fullname = ""
     
+    var requests = [TaxiTripRequest]()
 
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -128,6 +129,72 @@ class TaxiTripSetViewController: UIViewController {
         present(STTimeViewController, animated: true, completion: nil)
     }
     
+    func matchRequest()
+    {
+        var trips:[TaxiTripRequest] = []
+        ref?.child("Taxi_Trips").observeSingleEvent(of: .value, with: { (snapshot)  in
+            for child in snapshot.children
+            {
+                let snap = child as! DataSnapshot
+                guard let res = snap.value as? [String:Any] else {return}
+                let name = res["fullname"] as! String
+                let uid = res["uid"] as! String
+                let from = res["from"] as! String
+                let to = res["to"] as! String
+                let time = res["time"] as! String
+                let fromLat = res["fromCoordinateLatitude"] as! Double
+                let fromLong = res["fromCoordinateLongitude"] as! Double
+                let toLat = res["toCoordinateLatitude"] as! Double
+                let toLong = res["toCoordinateLongitude"] as! Double
+                let dataFromLocation = CLLocation(latitude: fromLat, longitude: fromLong)
+                let fromDistance = stFromLocation.distance(from: dataFromLocation) / 1000
+                guard let currentUserID = Auth.auth().currentUser?.uid else
+                {
+                    print("user not found")
+                    return
+                }
+                if (currentUserID != uid)
+                {
+                    if (fromDistance <= 8)
+                    {
+                        let dataToLocation = CLLocation(latitude: toLat, longitude: toLong)
+                        let toDistance = stToLocation.distance(from: dataToLocation) / 1000
+                        if (toDistance <= 8)
+                        {
+                            let data = TaxiTripRequest(fullname: name, uid: uid, time: time, fromLocationName: from, toLocationName: to, fromCoordinateLat: fromLat, fromCoordinateLong: fromLong, toCoordinateLat:toLat, toCoordinateLong: toLong)
+                            trips.append(data)
+                        }
+                    }
+                }
+            }
+            if trips.isEmpty == false
+            {
+                print("match found")
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+                /*var sortedRequests = [TaxiTripRequest]()
+                for i in trips
+                {
+                    for temp in trips
+                    {
+                        if Date(i.time) < Date(temp.time)
+                        {
+                            sortedRequests.append(i)
+                        }
+                    }
+                }*/
+            }
+            else
+            {
+                print("no matches found. pending...")
+            }
+            
+        })
+        
+    }
+    
     @IBAction func continueButtonAction(_ sender: Any)
     {
         let error = validateFields()
@@ -138,7 +205,7 @@ class TaxiTripSetViewController: UIViewController {
         else
         {
                 db.collection("users").document(uid).updateData(["TaxiTripIsSet":true])
-                let post = ["fullname":fullname,
+                let request = ["fullname":fullname,
                             "uid":self.uid,
                             "from": fromLocTaxi,
                              "to":   toLocTaxi,
@@ -149,13 +216,10 @@ class TaxiTripSetViewController: UIViewController {
                             "toCoordinateLongitude": stToLocation.coordinate.longitude
                 ] as [String : Any]
     
-                    ref?.child("Taxi_Trips").child(uid).setValue(post)
-                let mainTabController = storyboard?.instantiateViewController(withIdentifier: "MainTabController") as! MainTabController
-                mainTabController.selectedViewController = mainTabController.viewControllers?[3]
-                present(mainTabController, animated: true, completion: nil)
+                    ref?.child("Taxi_Trips").child(uid).setValue(request)
+                    matchRequest()
         }
     }
-    
-    
+        
 }
 
