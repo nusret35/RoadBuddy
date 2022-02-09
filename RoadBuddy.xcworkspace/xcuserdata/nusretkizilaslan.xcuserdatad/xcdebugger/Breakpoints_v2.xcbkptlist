@@ -30,8 +30,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "DateTimeViewController"
-            landmarkType = "3">
+            landmarkName = "dateTimePicker"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E - ad1d022cc3ced627"

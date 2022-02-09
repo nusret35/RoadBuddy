@@ -28,36 +28,36 @@ class ChatViewController: MessagesViewController {
 
     private var messages = [Message]()
     
-    private let selfSender = Sender(photoURL: "", senderId: "1", displayName: "Nusret Ali Kızılaslan")
+    private let selfSender = Sender(photoURL: currentUser.profilePictureURL, senderId: currentUser.UID, displayName: currentUser.Fullname)
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         view.backgroundColor = BackgroundColor.defaultBackgroundColor
-        /*
+        
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-         */
+         
     }
     
 }
-/*
+
 extension ChatViewController: MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate
 {
     func currentSender() -> SenderType
     {
-        
+        return selfSender
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        <#code#>
+        return messages[indexPath.section]
     }
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        return 1
+        return messages.count
     }
     
     
 }
-*/
+

@@ -89,7 +89,7 @@ class ProfilePageViewController: UIViewController, UINavigationControllerDelegat
     {
         let docRef = db.collection("users").document(currentUser.UID)
         docRef.getDocument{ snapshot, error in
-            self.storage.child("/images/\(currentUser.UID)").downloadURL(completion: { (url, error) in
+            self.storage.child("/images/\(currentUser.profilePictureURL)").downloadURL(completion: { (url, error) in
                 guard let url = url else
                 {
                     print("profile photo url not found")

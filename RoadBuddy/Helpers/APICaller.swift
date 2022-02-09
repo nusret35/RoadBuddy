@@ -61,6 +61,8 @@ class CurrentUserData
     
     var profilePictureIsSet:Bool = false
     
+    var profilePictureURL = ""
+    
     func fetchData()
     {
         guard let userID = Auth.auth().currentUser?.uid else {
@@ -106,6 +108,7 @@ class CurrentUserData
         self.PhoneNumber = phoneNumber
         self.SchoolName = schoolName
         self.profilePictureIsSet = ppIsSet
+        self.profilePictureURL = "/images/\(uid)"
         print("Fullname: " + self.Fullname)
         print("Schoolname: " + self.SchoolName)
         }

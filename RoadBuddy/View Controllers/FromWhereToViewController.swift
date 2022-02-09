@@ -85,8 +85,8 @@ class FromWhereToViewController: UIViewController{
         }
         else
         {
-            let ResultsViewController = storyboard?.instantiateViewController(withIdentifier: "ResultsNC") as! ResultsNavigationController
-            present(ResultsViewController, animated: true, completion: nil)
+            let request = SearchTripRequest(fullname: currentUser.Fullname, uid: currentUser.UID, fromLocationName: SearchFrom, toLocationName: SearchTo, fromCoordinateLat: SearchFromLocation.coordinate.latitude, fromCoordinateLong: SearchFromLocation.coordinate.longitude, toCoordinateLat: SearchToLocation.coordinate.latitude, toCoordinateLong: SearchToLocation.coordinate.longitude)
+            
         }
     }
     

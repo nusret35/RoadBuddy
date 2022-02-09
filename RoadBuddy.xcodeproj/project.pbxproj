@@ -56,6 +56,19 @@
 		807E9BCD27076DE90008F523 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E9BCC27076DE90008F523 /* ResultsViewController.swift */; };
 		807F1F262700B892000C89CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F1F252700B892000C89CB /* Constants.swift */; };
 		807F1F3B2701E6AB000C89CB /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F1F3A2701E6AB000C89CB /* VC.swift */; };
+		809B9C5927B39554004EB9C4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 809B9C5527B39554004EB9C4 /* README.md */; };
+		809B9C5A27B39554004EB9C4 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C5627B39554004EB9C4 /* Animator.swift */; };
+		809B9C5B27B39554004EB9C4 /* AnimationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C5727B39554004EB9C4 /* AnimationFactory.swift */; };
+		809B9C5C27B39554004EB9C4 /* ATableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C5827B39554004EB9C4 /* ATableView.swift */; };
+		809B9C6A27B39B1E004EB9C4 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 809B9C5F27B39B1E004EB9C4 /* .gitkeep */; };
+		809B9C6B27B39B1E004EB9C4 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6127B39B1E004EB9C4 /* Directions.swift */; };
+		809B9C6C27B39B1E004EB9C4 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6227B39B1E004EB9C4 /* AnimationType.swift */; };
+		809B9C6D27B39B1E004EB9C4 /* UITableView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6427B39B1E004EB9C4 /* UITableView + ViewAnimator.swift */; };
+		809B9C6E27B39B1E004EB9C4 /* UICollectionView + ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6527B39B1E004EB9C4 /* UICollectionView + ViewAnimator.swift */; };
+		809B9C6F27B39B1E004EB9C4 /* ViewAnimatorConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6627B39B1E004EB9C4 /* ViewAnimatorConfig.swift */; };
+		809B9C7027B39B1E004EB9C4 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6727B39B1E004EB9C4 /* ViewAnimator.swift */; };
+		809B9C7127B39B1E004EB9C4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6927B39B1E004EB9C4 /* Animation.swift */; };
+		809B9C7327B3A395004EB9C4 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C7227B3A395004EB9C4 /* Requests.swift */; };
 		80A8933427A800AE00CE83AB /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A8933327A800AE00CE83AB /* Maps.storyboard */; };
 		80A8933727A8014A00CE83AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A8933527A8014900CE83AB /* Main.storyboard */; };
 		80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */; };
@@ -85,7 +98,6 @@
 		80E7A514274AE59F00423EB3 /* STFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E7A513274AE59F00423EB3 /* STFromViewController.swift */; };
 		80E7A516274AE5AF00423EB3 /* STToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E7A515274AE5AF00423EB3 /* STToViewController.swift */; };
 		80E7A518274AE5E400423EB3 /* TaxiTripSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E7A517274AE5E400423EB3 /* TaxiTripSetViewController.swift */; };
-		C08B7A6E27B287900027684E /* ViewAnimator in Frameworks */ = {isa = PBXBuildFile; productRef = C08B7A6D27B287900027684E /* ViewAnimator */; };
 		C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B7A7127B2895D0027684E /* FirstTableViewCell.swift */; };
 		C08B7A7427B2895D0027684E /* FirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08B7A7227B2895D0027684E /* FirstTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -110,6 +122,20 @@
 		807E9BCC27076DE90008F523 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		807F1F252700B892000C89CB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		807F1F3A2701E6AB000C89CB /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
+		809B9C5527B39554004EB9C4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		809B9C5627B39554004EB9C4 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		809B9C5727B39554004EB9C4 /* AnimationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationFactory.swift; sourceTree = "<group>"; };
+		809B9C5827B39554004EB9C4 /* ATableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATableView.swift; sourceTree = "<group>"; };
+		809B9C5D27B39933004EB9C4 /* ViewAnimator-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ViewAnimator-master"; path = "../../../Downloads/ViewAnimator-master"; sourceTree = "<group>"; };
+		809B9C5F27B39B1E004EB9C4 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		809B9C6127B39B1E004EB9C4 /* Directions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
+		809B9C6227B39B1E004EB9C4 /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
+		809B9C6427B39B1E004EB9C4 /* UITableView + ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView + ViewAnimator.swift"; sourceTree = "<group>"; };
+		809B9C6527B39B1E004EB9C4 /* UICollectionView + ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView + ViewAnimator.swift"; sourceTree = "<group>"; };
+		809B9C6627B39B1E004EB9C4 /* ViewAnimatorConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimatorConfig.swift; sourceTree = "<group>"; };
+		809B9C6727B39B1E004EB9C4 /* ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimator.swift; sourceTree = "<group>"; };
+		809B9C6927B39B1E004EB9C4 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		809B9C7227B3A395004EB9C4 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		80A8933327A800AE00CE83AB /* Maps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
 		80A8933627A8014900CE83AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTripViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +188,6 @@
 				8076F138275AAF2D00BC6EB2 /* FirebaseAnalytics in Frameworks */,
 				24347E856DDF698E826216F1 /* Pods_RoadBuddy.framework in Frameworks */,
 				8075BACD27A6EE140064CCB7 /* MessageKit in Frameworks */,
-				C08B7A6E27B287900027684E /* ViewAnimator in Frameworks */,
 				8073AA222775CCCD007457FD /* SkeletonView in Frameworks */,
 				8076F15E275AAF2E00BC6EB2 /* FirebaseMLModelDownloader in Frameworks */,
 				8076F13E275AAF2D00BC6EB2 /* FirebaseAppCheck in Frameworks */,
@@ -199,6 +224,7 @@
 				80CA933C270B1AAA009A1469 /* DateTimePicker.swift */,
 				80CA933E270B2150009A1469 /* DateButton.swift */,
 				80DDEBF7276BCFFC0093BB3F /* APICaller.swift */,
+				809B9C7227B3A395004EB9C4 /* Requests.swift */,
 				80DDEBFB277347E10093BB3F /* PostTableViewCell.swift */,
 				80DDEBFC277347E10093BB3F /* PostTableViewCell.xib */,
 				804AF85F279EBCC200315A82 /* TaxiTableViewCell.swift */,
@@ -209,6 +235,58 @@
 				C08B7A7227B2895D0027684E /* FirstTableViewCell.xib */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		809B9C5427B39554004EB9C4 /* TableViewAnimation-master */ = {
+			isa = PBXGroup;
+			children = (
+				809B9C5527B39554004EB9C4 /* README.md */,
+				809B9C5627B39554004EB9C4 /* Animator.swift */,
+				809B9C5727B39554004EB9C4 /* AnimationFactory.swift */,
+				809B9C5827B39554004EB9C4 /* ATableView.swift */,
+			);
+			name = "TableViewAnimation-master";
+			path = "../../../Downloads/TableViewAnimation-master";
+			sourceTree = "<group>";
+		};
+		809B9C5E27B39B1E004EB9C4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				809B9C5F27B39B1E004EB9C4 /* .gitkeep */,
+				809B9C6027B39B1E004EB9C4 /* Models */,
+				809B9C6327B39B1E004EB9C4 /* Extensions */,
+				809B9C6627B39B1E004EB9C4 /* ViewAnimatorConfig.swift */,
+				809B9C6727B39B1E004EB9C4 /* ViewAnimator.swift */,
+				809B9C6827B39B1E004EB9C4 /* Protocols */,
+			);
+			name = Sources;
+			path = "../../../Downloads/ViewAnimator-master/Sources";
+			sourceTree = "<group>";
+		};
+		809B9C6027B39B1E004EB9C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				809B9C6127B39B1E004EB9C4 /* Directions.swift */,
+				809B9C6227B39B1E004EB9C4 /* AnimationType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		809B9C6327B39B1E004EB9C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				809B9C6427B39B1E004EB9C4 /* UITableView + ViewAnimator.swift */,
+				809B9C6527B39B1E004EB9C4 /* UICollectionView + ViewAnimator.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		809B9C6827B39B1E004EB9C4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				809B9C6927B39B1E004EB9C4 /* Animation.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		80D9B08926FC9249001EB6BD = {
@@ -232,6 +310,9 @@
 		80D9B09426FC9249001EB6BD /* RoadBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				809B9C5E27B39B1E004EB9C4 /* Sources */,
+				809B9C5D27B39933004EB9C4 /* ViewAnimator-master */,
+				809B9C5427B39554004EB9C4 /* TableViewAnimation-master */,
 				807F1F242700B78A000C89CB /* Helpers */,
 				80D9B0A926FC926D001EB6BD /* View Controllers */,
 				80D9B09526FC9249001EB6BD /* AppDelegate.swift */,
@@ -378,7 +459,6 @@
 				8075BACF27A6EE9A0064CCB7 /* JGProgressHUD */,
 				8075BAD227A6EF020064CCB7 /* SDWebImage */,
 				8075BAD427A6EF020064CCB7 /* SDWebImageMapKit */,
-				C08B7A6D27B287900027684E /* ViewAnimator */,
 			);
 			productName = RoadBuddy;
 			productReference = 80D9B09226FC9249001EB6BD /* RoadBuddy.app */;
@@ -413,7 +493,6 @@
 				8075BACB27A6EE140064CCB7 /* XCRemoteSwiftPackageReference "MessageKit" */,
 				8075BACE27A6EE990064CCB7 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 				8075BAD127A6EF020064CCB7 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				C08B7A6C27B287900027684E /* XCRemoteSwiftPackageReference "ViewAnimator" */,
 			);
 			productRefGroup = 80D9B09326FC9249001EB6BD /* Products */;
 			projectDirPath = "";
@@ -431,6 +510,8 @@
 			files = (
 				804AF862279EBCC300315A82 /* TaxiTableViewCell.xib in Resources */,
 				C08B7A7427B2895D0027684E /* FirstTableViewCell.xib in Resources */,
+				809B9C6A27B39B1E004EB9C4 /* .gitkeep in Resources */,
+				809B9C5927B39554004EB9C4 /* README.md in Resources */,
 				80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */,
 				8075BADD27A7EBA30064CCB7 /* Registration.storyboard in Resources */,
 				80A8933727A8014A00CE83AB /* Main.storyboard in Resources */,
@@ -495,8 +576,11 @@
 				80CA933B270A034D009A1469 /* PostTripViewController.swift in Sources */,
 				80CA9347270C7F33009A1469 /* PostTripFromViewController.swift in Sources */,
 				80CA934B270D91B4009A1469 /* PassengerPriceViewController.swift in Sources */,
+				809B9C5C27B39554004EB9C4 /* ATableView.swift in Sources */,
 				807E99482755643100EA88F0 /* STTimeViewController.swift in Sources */,
 				80D9B0AF26FDE7F6001EB6BD /* FromWhereToViewController.swift in Sources */,
+				809B9C5B27B39554004EB9C4 /* AnimationFactory.swift in Sources */,
+				809B9C6F27B39B1E004EB9C4 /* ViewAnimatorConfig.swift in Sources */,
 				80C996372765682100B5A3C7 /* HomePageViewController.swift in Sources */,
 				8075BAC627A3F4B70064CCB7 /* MessageTableViewCell.swift in Sources */,
 				80D9B0AB26FC938B001EB6BD /* LocationManager.swift in Sources */,
@@ -504,24 +588,32 @@
 				805A7B4E27B26DCE00DDB80A /* FirstViewController.swift in Sources */,
 				80E7A510274550DD00423EB3 /* MainTabController.swift in Sources */,
 				807E9BC927074CE20008F523 /* ToViewController.swift in Sources */,
+				809B9C6E27B39B1E004EB9C4 /* UICollectionView + ViewAnimator.swift in Sources */,
 				80E7A516274AE5AF00423EB3 /* STToViewController.swift in Sources */,
 				804AF861279EBCC200315A82 /* TaxiTableViewCell.swift in Sources */,
 				80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */,
 				80D5E791271C81ED000F1F5B /* PostViewController.swift in Sources */,
 				C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */,
+				809B9C6D27B39B1E004EB9C4 /* UITableView + ViewAnimator.swift in Sources */,
 				80C996392765697B00B5A3C7 /* SignUpViewController.swift in Sources */,
+				809B9C5A27B39554004EB9C4 /* Animator.swift in Sources */,
+				809B9C7127B39B1E004EB9C4 /* Animation.swift in Sources */,
 				807F1F3B2701E6AB000C89CB /* VC.swift in Sources */,
 				80C9963B2766919300B5A3C7 /* LoginViewController.swift in Sources */,
 				80CA933927091D63009A1469 /* ProfilePageViewController.swift in Sources */,
 				80CA9349270C84CF009A1469 /* PostTripToViewController.swift in Sources */,
 				80D9B09626FC9249001EB6BD /* AppDelegate.swift in Sources */,
 				80DDEBF8276BCFFC0093BB3F /* APICaller.swift in Sources */,
+				809B9C7327B3A395004EB9C4 /* Requests.swift in Sources */,
 				804AF856279EB80F00315A82 /* TaxiResultViewController.swift in Sources */,
 				80CA933D270B1AAA009A1469 /* DateTimePicker.swift in Sources */,
 				80CA9345270C3AD9009A1469 /* DateTimeViewController.swift in Sources */,
+				809B9C7027B39B1E004EB9C4 /* ViewAnimator.swift in Sources */,
 				80D9B09826FC9249001EB6BD /* SceneDelegate.swift in Sources */,
 				807E9BCB270769E30008F523 /* Utilities.swift in Sources */,
+				809B9C6B27B39B1E004EB9C4 /* Directions.swift in Sources */,
 				80DDEBFD277347E10093BB3F /* PostTableViewCell.swift in Sources */,
+				809B9C6C27B39B1E004EB9C4 /* AnimationType.swift in Sources */,
 				807F1F262700B892000C89CB /* Constants.swift in Sources */,
 				80E7A512274587F300423EB3 /* ShareTaxiViewController.swift in Sources */,
 				80CA933F270B2150009A1469 /* DateButton.swift in Sources */,
@@ -893,14 +985,6 @@
 				minimumVersion = 8.0.0;
 			};
 		};
-		C08B7A6C27B287900027684E /* XCRemoteSwiftPackageReference "ViewAnimator" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/marcosgriselli/ViewAnimator.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1213,11 +1297,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8076F136275AAF2D00BC6EB2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageSwift-Beta";
-		};
-		C08B7A6D27B287900027684E /* ViewAnimator */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C08B7A6C27B287900027684E /* XCRemoteSwiftPackageReference "ViewAnimator" */;
-			productName = ViewAnimator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

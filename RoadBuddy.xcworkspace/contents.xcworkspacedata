@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:RoadBuddy/View Controllers/../../Deneme1ViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:RoadBuddy.xcodeproj">
    </FileRef>
    <FileRef

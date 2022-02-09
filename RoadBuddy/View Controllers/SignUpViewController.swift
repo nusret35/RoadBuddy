@@ -133,7 +133,6 @@ class SignUpViewController: UIViewController {
                     let db = Firestore.firestore()
                     let uid = result!.user.uid
                     db.collection("users").document(String(uid)).setData( ["firstname":firstName,"lastname":lastName,"username":userName,"uid":result!.user.uid,"email":email,"password":password,"phoneNumber":phoneNumber,"schoolName":schoolName, "TripIsSet":false,"TaxiTripIsSet":false,"profilePictureIsSet":false]) { (error) in
-            
                         
                         if error != nil {
                             //Show error message

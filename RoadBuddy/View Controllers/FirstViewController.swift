@@ -29,6 +29,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.dataSource = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let animation = AnimationType.from(direction: .bottom, offset: 300)
+        UIView.animate(views: tableView.visibleCells, animations: [animation], delay: 0.5, duration: 1)
+    }
+    
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
@@ -92,5 +99,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             present(shareTaxiNavigationController, animated: true, completion: nil)
         }
     }
+    
 
 }
