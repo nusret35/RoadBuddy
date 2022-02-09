@@ -173,23 +173,46 @@ class TaxiTripSetViewController: UIViewController {
                 
                 let dateFormatter = DateFormatter()
                 dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-                /*var sortedRequests = [TaxiTripRequest]()
-                for i in trips
+                dateFormatter.dateFormat = "EEEE, MMM d, yyyy '('h:mm a')'"
+                var sortedRequests:[TaxiTripRequest] = []
+                while trips.isEmpty == false
                 {
-                    for temp in trips
+                    var date1 = dateFormatter.date(from: trips[0].time) as! Date
+                    var date1_index = 0
+                    if (trips.count != 1)
                     {
-                        if Date(i.time) < Date(temp.time)
+                        for temp in 0...trips.count-1
                         {
-                            sortedRequests.append(i)
+                            var date2 = dateFormatter.date(from: trips[temp].time) as! Date
+                            if date2 < date1
+                            {
+                                print("date2 < date1 (date2: "+trips[temp].time+" date1: "+trips[date1_index].time)
+                                date1_index = temp
+                                date1 = date2
+                            }
                         }
                     }
-                }*/
+                    sortedRequests.append(trips[date1_index])
+                    while date1_index != trips.count-1
+                    {
+                        trips[date1_index] = trips[date1_index+1]
+                        date1_index+=1
+                    }
+                    let dummy = trips.popLast()
+                }
+               /*
+                for i in sortedRequests
+                {
+                    print(i.time)
+                }
+                */
+                print(sortedRequests[0])
             }
             else
             {
                 print("no matches found. pending...")
             }
+            
             
         })
         
@@ -205,7 +228,7 @@ class TaxiTripSetViewController: UIViewController {
         else
         {
                 db.collection("users").document(uid).updateData(["TaxiTripIsSet":true])
-                let request = ["fullname":fullname,
+              let request = ["fullname":fullname,
                             "uid":self.uid,
                             "from": fromLocTaxi,
                              "to":   toLocTaxi,

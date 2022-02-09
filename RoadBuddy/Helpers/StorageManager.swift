@@ -2,47 +2,43 @@
 //  StorageManager.swift
 //  RoadBuddy
 //
-//  Created by Nusret Kızılaslan on 1.02.2022.
+//  Created by Nusret Kızılaslan on 9.02.2022.
 //
 
-import Foundation
+import UIKit
+import Firebase
 import FirebaseStorage
+import FirebaseDatabase
 
-final class StorageManager {
+class StorageManager
+{
+    var ref:DatabaseReference?
+    let db = Firestore.firestore()
+    let storage = Storage.storage().reference()
+    var profileImage = UIImage()
     
-    static let shared = StorageManager()
-    
-    private let storage = Storage.storage().reference()
-    
-    public typealias UploadPictureCompletion = (Result<String,Error>) -> Void
-    
-    ///Uploads picture to firebase storage and returns completion with url string to download
-    public func uploadProfilePicture(with data:Data , fileName:String, completion: @escaping UploadPictureCompletion)
+    func profilePictureLoad()
     {
-        storage.child("images/\(fileName)").putData(data, metadata:nil, completion:{metadata, error in
-            guard error == nil else {
-                print("Failed to upload data to firebase for picture")
-                completion(.failure(StorageErrors.failedToUpload))
-                return
-            }
-            
-            let reference = self.storage.child("images/\(fileName)").downloadURL(completion: {url, error in
-                guard let url = url else {
-                    print("failed to get download url")
-                    completion(.failure(StorageErrors.failedToGetDownURL))
+        let docRef = db.collection("users").document(currentUser.UID)
+        docRef.getDocument{ snapshot, error in
+            self.storage.child("/images/\(currentUser.profilePictureURL)").downloadURL(completion: { (url, error) in
+                guard let url = url else
+                {
+                    print("profile photo url not found")
                     return
                 }
                 
-                let urlString = url.absoluteString
-                print("download url returned: \(urlString)")
-                completion(.success(urlString))
+                do
+                {
+                    let data = try Data(contentsOf: url)
+                    let image = UIImage(data: data)
+                    self.profileImage = image!
+                }
+                catch
+                {
+                    print("profile photo error")
+                }
             })
-        })
+            }
     }
-    
-    public enum StorageErrors: Error {
-        case failedToUpload
-        case failedToGetDownURL
-    }
-    
 }

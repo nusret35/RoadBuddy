@@ -1,0 +1,267 @@
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "0le-VG-yMN"; */
+"0le-VG-yMN.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1dU-xv-Rlc"; */
+"1dU-xv-Rlc.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Search for trips"; ObjectID = "2N0-pw-Qiu"; */
+"2N0-pw-Qiu.title" = "选择地点";
+
+/* Class = "UILabel"; text = "Choose a time frame"; ObjectID = "2zq-RP-ZR9"; */
+"2zq-RP-ZR9.text" = "什么时候想起";
+
+/* Class = "UILabel"; text = "From"; ObjectID = "3cV-qB-ARR"; */
+"3cV-qB-ARR.text" = "从";
+
+/* Class = "UILabel"; text = "Name Surename"; ObjectID = "4YK-0W-0J4"; */
+"4YK-0W-0J4.text" = "姓 名";
+
+/* Class = "UIButton"; configuration.title = "You don't have any trip plan. Tap to add one"; ObjectID = "8k8-w2-QCx"; */
+"8k8-w2-QCx.configuration.title" = "没有任何路程， 请按添加路程。";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8k8-w2-QCx"; */
+"8k8-w2-QCx.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Delete Trip"; ObjectID = "9kO-rb-ZaN"; */
+"9kO-rb-ZaN.configuration.title" = "删除路程";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9kO-rb-ZaN"; */
+"9kO-rb-ZaN.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "99W-N0-I5D"; */
+"99W-N0-I5D.text" = "到";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "a1T-2W-EHN"; */
+"a1T-2W-EHN.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Tap to add a taxi trip"; ObjectID = "Adn-ma-w4t"; */
+"Adn-ma-w4t.configuration.title" = "请点添加计程车路程";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Adn-ma-w4t"; */
+"Adn-ma-w4t.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Taxi Trip Results"; ObjectID = "ANh-Yw-gtL"; */
+"ANh-Yw-gtL.title" = "计程车路程结果";
+
+/* Class = "UILabel"; text = "namelastname@email.com"; ObjectID = "bqI-jP-TfQ"; */
+"bqI-jP-TfQ.text" = "namelastname@email.com";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "BVM-Rg-f1A"; */
+"BVM-Rg-f1A.text" = "时间";
+
+/* Class = "UITextField"; text = "Choose date and time..."; ObjectID = "DhY-SF-PXe"; */
+"DhY-SF-PXe.text" = "选择日期和时间";
+
+/* Class = "UIButton"; configuration.title = "Continue"; ObjectID = "dn8-0o-vcE"; */
+"dn8-0o-vcE.configuration.title" = "继续";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "dn8-0o-vcE"; */
+"dn8-0o-vcE.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Inbox"; ObjectID = "DQT-Bz-mDr"; */
+"DQT-Bz-mDr.title" = "信息部";
+
+/* Class = "UILabel"; text = "₺"; ObjectID = "e4f-7x-Ja3"; */
+"e4f-7x-Ja3.text" = "₺";
+
+/* Class = "UINavigationItem"; title = "Friend Trip Results"; ObjectID = "eAd-13-hhc"; */
+"eAd-13-hhc.title" = "Friend Trip Results";
+
+/* Class = "UIButton"; configuration.title = "Continue"; ObjectID = "F2b-gO-cKX"; */
+"F2b-gO-cKX.configuration.title" = "继续";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "F2b-gO-cKX"; */
+"F2b-gO-cKX.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Continue"; ObjectID = "f5l-bx-nK7"; */
+"f5l-bx-nK7.configuration.title" = "Continue";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "f5l-bx-nK7"; */
+"f5l-bx-nK7.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "To Button"; ObjectID = "fsL-Ur-12E"; */
+"fsL-Ur-12E.configuration.title" = "To Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fsL-Ur-12E"; */
+"fsL-Ur-12E.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gaa-bi-BUd"; */
+"gaa-bi-BUd.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Continue"; ObjectID = "GOG-aT-Ttx"; */
+"GOG-aT-Ttx.configuration.title" = "继续";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "GOG-aT-Ttx"; */
+"GOG-aT-Ttx.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "From Button"; ObjectID = "h7e-Wz-kkA"; */
+"h7e-Wz-kkA.configuration.title" = "From Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "h7e-Wz-kkA"; */
+"h7e-Wz-kkA.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Sign Out"; ObjectID = "hS0-sD-NNV"; */
+"hS0-sD-NNV.configuration.title" = "退出";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hS0-sD-NNV"; */
+"hS0-sD-NNV.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Passengers"; ObjectID = "IOT-8M-Vzl"; */
+"IOT-8M-Vzl.configuration.title" = "乘客";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "IOT-8M-Vzl"; */
+"IOT-8M-Vzl.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "i22-IJ-M81"; */
+"i22-IJ-M81.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "How many passengers"; ObjectID = "j9z-zi-1DT"; */
+"j9z-zi-1DT.title" = "乘客人数";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "jfp-8j-62n"; */
+"jfp-8j-62n.title" = "个人档案";
+
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "Jyk-ps-TPT"; */
+"Jyk-ps-TPT.title" = "查找";
+
+/* Class = "UINavigationItem"; title = "Inbox"; ObjectID = "KDD-zS-CVN"; */
+"KDD-zS-CVN.title" = "Inbox";
+
+/* Class = "UIButton"; configuration.title = "Book The Trip"; ObjectID = "KnA-QG-Fjm"; */
+"KnA-QG-Fjm.configuration.title" = "预约路程";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "KnA-QG-Fjm"; */
+"KnA-QG-Fjm.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Choose a time frame"; ObjectID = "kOC-JK-dN9"; */
+"kOC-JK-dN9.text" = "选择日期和时间";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "KPE-nS-84z"; */
+"KPE-nS-84z.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "    Select number of seats"; ObjectID = "Kv7-cg-4Y4"; */
+"Kv7-cg-4Y4.text" = "选择乘客人数";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kyq-tk-J8Z"; */
+"kyq-tk-J8Z.text" = "Label";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "lbb-oG-ajN"; */
+"lbb-oG-ajN.text" = "邮件：";
+
+/* Class = "UILabel"; text = "Phone:"; ObjectID = "LMZ-St-fj4"; */
+"LMZ-St-fj4.text" = "电话号码：";
+
+/* Class = "UILabel"; text = "From"; ObjectID = "mLf-Nv-zd0"; */
+"mLf-Nv-zd0.text" = "从";
+
+/* Class = "UITabBarItem"; title = "Trip"; ObjectID = "MQw-xo-s27"; */
+"MQw-xo-s27.title" = "路程";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "n4b-My-Cvn"; */
+"n4b-My-Cvn.text" = "时间";
+
+/* Class = "UILabel"; text = "    Price?"; ObjectID = "noM-eU-eJi"; */
+"noM-eU-eJi.text" = "价格？";
+
+/* Class = "UINavigationItem"; title = "Share Taxi"; ObjectID = "Nqv-ni-RN3"; */
+"Nqv-ni-RN3.title" = "分享计程车";
+
+/* Class = "UINavigationItem"; title = "Set Your Trip"; ObjectID = "nvi-Si-wiV"; */
+"nvi-Si-wiV.title" = "安排你的路程";
+
+/* Class = "UIButton"; configuration.title = "Continue"; ObjectID = "o0e-Oy-Qjv"; */
+"o0e-Oy-Qjv.configuration.title" = "继续";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "o0e-Oy-Qjv"; */
+"o0e-Oy-Qjv.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "OCx-lk-zuv"; */
+"OCx-lk-zuv.text" = "到";
+
+/* Class = "UITabBarItem"; title = "Post"; ObjectID = "Q8P-Vk-lLf"; */
+"Q8P-Vk-lLf.title" = "Post";
+
+/* Class = "UIButton"; configuration.title = "Time Button"; ObjectID = "RDe-Tw-BgG"; */
+"RDe-Tw-BgG.configuration.title" = "Time Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "RDe-Tw-BgG"; */
+"RDe-Tw-BgG.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Set Taxi Trip"; ObjectID = "rLx-0i-BhA"; */
+"rLx-0i-BhA.title" = "安排计程车路程";
+
+/* Class = "UILabel"; text = "username"; ObjectID = "RXH-Mq-4pC"; */
+"RXH-Mq-4pC.text" = "用户名";
+
+/* Class = "UIButton"; configuration.title = "Continue"; ObjectID = "sul-1b-3YM"; */
+"sul-1b-3YM.configuration.title" = "继续";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "sul-1b-3YM"; */
+"sul-1b-3YM.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Change profile picture"; ObjectID = "T5c-Jg-WME"; */
+"T5c-Jg-WME.configuration.title" = "换头像";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "T5c-Jg-WME"; */
+"T5c-Jg-WME.normalTitle" = "Button";
+
+/* Class = "UIViewController"; title = "FromWhereVC"; ObjectID = "TyB-6e-X12"; */
+"TyB-6e-X12.title" = "FromWhereVC";
+
+/* Class = "UILabel"; text = "₺"; ObjectID = "tZz-wo-e0P"; */
+"tZz-wo-e0P.text" = "₺";
+
+/* Class = "UILabel"; text = "Error Label"; ObjectID = "U07-HE-aFb"; */
+"U07-HE-aFb.text" = "Error Label";
+
+/* Class = "UIButton"; configuration.title = "Continue"; ObjectID = "UHV-po-Moe"; */
+"UHV-po-Moe.configuration.title" = "Continue";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "UHV-po-Moe"; */
+"UHV-po-Moe.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Your Posted Trip"; ObjectID = "uUu-br-RHJ"; */
+"uUu-br-RHJ.title" = "你的路程";
+
+/* Class = "UILabel"; text = "From"; ObjectID = "UxA-Ah-xTD"; */
+"UxA-Ah-xTD.text" = "从";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "VbJ-TX-qZw"; */
+"VbJ-TX-qZw.text" = "到";
+
+/* Class = "UILabel"; text = "₺"; ObjectID = "VSN-5r-0LW"; */
+"VSN-5r-0LW.text" = "₺";
+
+/* Class = "UILabel"; text = "+900555555555555"; ObjectID = "VU8-AJ-tMM"; */
+"VU8-AJ-tMM.text" = "+900555555555555";
+
+/* Class = "UINavigationItem"; title = "Choose"; ObjectID = "VwS-J4-Idv"; */
+"VwS-J4-Idv.title" = "选择";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "wFh-aL-JUg"; */
+"wFh-aL-JUg.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Wiu-8X-PJm"; */
+"Wiu-8X-PJm.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Error"; ObjectID = "Wno-g2-l9E"; */
+"Wno-g2-l9E.text" = "Error";
+
+/* Class = "UITextField"; text = "Choose date and time..."; ObjectID = "WUF-4W-yu1"; */
+"WUF-4W-yu1.text" = "选择日期和时间";
+
+/* Class = "UITabBarItem"; title = "Share Taxi"; ObjectID = "yB1-cS-Zsc"; */
+"yB1-cS-Zsc.title" = "分享计程车";
+
+/* Class = "UILabel"; text = "University"; ObjectID = "Yba-5y-Me4"; */
+"Yba-5y-Me4.text" = "大学";
+
+/* Class = "UIButton"; configuration.title = "Price"; ObjectID = "ZEq-eG-w83"; */
+"ZEq-eG-w83.configuration.title" = "价格";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ZEq-eG-w83"; */
+"ZEq-eG-w83.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ZTf-hw-Hse"; */
+"ZTf-hw-Hse.normalTitle" = "Button";
+

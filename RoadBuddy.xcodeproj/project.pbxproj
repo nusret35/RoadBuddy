@@ -68,6 +68,9 @@
 		80A8933427A800AE00CE83AB /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A8933327A800AE00CE83AB /* Maps.storyboard */; };
 		80A8933727A8014A00CE83AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A8933527A8014900CE83AB /* Main.storyboard */; };
 		80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */; };
+		80AE818B27B45240007BBC2B /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AE818927B45240007BBC2B /* ProfileHeaderTableViewCell.swift */; };
+		80AE818C27B45240007BBC2B /* ProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80AE818A27B45240007BBC2B /* ProfileHeaderTableViewCell.xib */; };
+		80AE818E27B45928007BBC2B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AE818D27B45928007BBC2B /* StorageManager.swift */; };
 		80C996372765682100B5A3C7 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C996362765682100B5A3C7 /* HomePageViewController.swift */; };
 		80C996392765697B00B5A3C7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C996382765697B00B5A3C7 /* SignUpViewController.swift */; };
 		80C9963B2766919300B5A3C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C9963A2766919300B5A3C7 /* LoginViewController.swift */; };
@@ -131,6 +134,9 @@
 		80A8933327A800AE00CE83AB /* Maps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
 		80A8933627A8014900CE83AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTripViewController.swift; sourceTree = "<group>"; };
+		80AE818927B45240007BBC2B /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		80AE818A27B45240007BBC2B /* ProfileHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		80AE818D27B45928007BBC2B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		80C996362765682100B5A3C7 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		80C996382765697B00B5A3C7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		80C9963A2766919300B5A3C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +224,7 @@
 				80CA933C270B1AAA009A1469 /* DateTimePicker.swift */,
 				80CA933E270B2150009A1469 /* DateButton.swift */,
 				80DDEBF7276BCFFC0093BB3F /* APICaller.swift */,
+				80AE818D27B45928007BBC2B /* StorageManager.swift */,
 				809B9C7227B3A395004EB9C4 /* Requests.swift */,
 				80DDEBFB277347E10093BB3F /* PostTableViewCell.swift */,
 				80DDEBFC277347E10093BB3F /* PostTableViewCell.xib */,
@@ -227,6 +234,8 @@
 				8075BAC527A3F4B70064CCB7 /* MessageTableViewCell.xib */,
 				C08B7A7127B2895D0027684E /* FirstTableViewCell.swift */,
 				C08B7A7227B2895D0027684E /* FirstTableViewCell.xib */,
+				80AE818927B45240007BBC2B /* ProfileHeaderTableViewCell.swift */,
+				80AE818A27B45240007BBC2B /* ProfileHeaderTableViewCell.xib */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -497,6 +506,7 @@
 				80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */,
 				8075BADD27A7EBA30064CCB7 /* Registration.storyboard in Resources */,
 				80A8933727A8014A00CE83AB /* Main.storyboard in Resources */,
+				80AE818C27B45240007BBC2B /* ProfileHeaderTableViewCell.xib in Resources */,
 				8076F16C275ABE0500BC6EB2 /* GoogleService-Info.plist in Resources */,
 				80DDEBFE277347E10093BB3F /* PostTableViewCell.xib in Resources */,
 				8075BAC727A3F4B70064CCB7 /* MessageTableViewCell.xib in Resources */,
@@ -569,6 +579,8 @@
 				80E7A510274550DD00423EB3 /* MainTabController.swift in Sources */,
 				807E9BC927074CE20008F523 /* ToViewController.swift in Sources */,
 				809B9C6E27B39B1E004EB9C4 /* UICollectionView + ViewAnimator.swift in Sources */,
+				80AE818B27B45240007BBC2B /* ProfileHeaderTableViewCell.swift in Sources */,
+				80AE818E27B45928007BBC2B /* StorageManager.swift in Sources */,
 				80E7A516274AE5AF00423EB3 /* STToViewController.swift in Sources */,
 				804AF861279EBCC200315A82 /* TaxiTableViewCell.swift in Sources */,
 				80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */,
