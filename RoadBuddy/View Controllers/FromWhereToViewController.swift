@@ -21,6 +21,8 @@ class FromWhereToViewController: UIViewController{
     
     let registrationStoryboard = UIStoryboard(name:"Registration",bundle:nil)
     
+    
+    
     @IBOutlet weak var WhereToButton: UIButton! //From button
     
     @IBOutlet weak var WhereToLabel: UILabel!
@@ -36,6 +38,7 @@ class FromWhereToViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.alpha = 0
+        
     }
     
     override func viewDidAppear(_ animated: Bool)

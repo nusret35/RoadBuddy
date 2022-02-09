@@ -15,6 +15,8 @@ var toLoc = "Choose a location..."
 var timeString = "Choose date and time..."
 
 class PostTripViewController: UIViewController {
+    
+   
 
     
     @IBOutlet weak var FromButton: UIButton!

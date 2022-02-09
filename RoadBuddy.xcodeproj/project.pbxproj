@@ -56,10 +56,6 @@
 		807E9BCD27076DE90008F523 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E9BCC27076DE90008F523 /* ResultsViewController.swift */; };
 		807F1F262700B892000C89CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F1F252700B892000C89CB /* Constants.swift */; };
 		807F1F3B2701E6AB000C89CB /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F1F3A2701E6AB000C89CB /* VC.swift */; };
-		809B9C5927B39554004EB9C4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 809B9C5527B39554004EB9C4 /* README.md */; };
-		809B9C5A27B39554004EB9C4 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C5627B39554004EB9C4 /* Animator.swift */; };
-		809B9C5B27B39554004EB9C4 /* AnimationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C5727B39554004EB9C4 /* AnimationFactory.swift */; };
-		809B9C5C27B39554004EB9C4 /* ATableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C5827B39554004EB9C4 /* ATableView.swift */; };
 		809B9C6A27B39B1E004EB9C4 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 809B9C5F27B39B1E004EB9C4 /* .gitkeep */; };
 		809B9C6B27B39B1E004EB9C4 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6127B39B1E004EB9C4 /* Directions.swift */; };
 		809B9C6C27B39B1E004EB9C4 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6227B39B1E004EB9C4 /* AnimationType.swift */; };
@@ -122,10 +118,6 @@
 		807E9BCC27076DE90008F523 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		807F1F252700B892000C89CB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		807F1F3A2701E6AB000C89CB /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
-		809B9C5527B39554004EB9C4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		809B9C5627B39554004EB9C4 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
-		809B9C5727B39554004EB9C4 /* AnimationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationFactory.swift; sourceTree = "<group>"; };
-		809B9C5827B39554004EB9C4 /* ATableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATableView.swift; sourceTree = "<group>"; };
 		809B9C5D27B39933004EB9C4 /* ViewAnimator-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ViewAnimator-master"; path = "../../../Downloads/ViewAnimator-master"; sourceTree = "<group>"; };
 		809B9C5F27B39B1E004EB9C4 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		809B9C6127B39B1E004EB9C4 /* Directions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
@@ -168,6 +160,8 @@
 		80E7A515274AE5AF00423EB3 /* STToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STToViewController.swift; sourceTree = "<group>"; };
 		80E7A517274AE5E400423EB3 /* TaxiTripSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiTripSetViewController.swift; sourceTree = "<group>"; };
 		BD4FE229515EAE9346E4B422 /* Pods_RoadBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C07E758427B3F0D80004C3C2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		C07E758527B3F0DF0004C3C2 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		C08B7A7127B2895D0027684E /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		C08B7A7227B2895D0027684E /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,18 +231,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		809B9C5427B39554004EB9C4 /* TableViewAnimation-master */ = {
-			isa = PBXGroup;
-			children = (
-				809B9C5527B39554004EB9C4 /* README.md */,
-				809B9C5627B39554004EB9C4 /* Animator.swift */,
-				809B9C5727B39554004EB9C4 /* AnimationFactory.swift */,
-				809B9C5827B39554004EB9C4 /* ATableView.swift */,
-			);
-			name = "TableViewAnimation-master";
-			path = "../../../Downloads/TableViewAnimation-master";
-			sourceTree = "<group>";
-		};
 		809B9C5E27B39B1E004EB9C4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,7 +294,6 @@
 			children = (
 				809B9C5E27B39B1E004EB9C4 /* Sources */,
 				809B9C5D27B39933004EB9C4 /* ViewAnimator-master */,
-				809B9C5427B39554004EB9C4 /* TableViewAnimation-master */,
 				807F1F242700B78A000C89CB /* Helpers */,
 				80D9B0A926FC926D001EB6BD /* View Controllers */,
 				80D9B09526FC9249001EB6BD /* AppDelegate.swift */,
@@ -485,6 +466,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				tr,
 			);
 			mainGroup = 80D9B08926FC9249001EB6BD;
 			packageReferences = (
@@ -511,7 +494,6 @@
 				804AF862279EBCC300315A82 /* TaxiTableViewCell.xib in Resources */,
 				C08B7A7427B2895D0027684E /* FirstTableViewCell.xib in Resources */,
 				809B9C6A27B39B1E004EB9C4 /* .gitkeep in Resources */,
-				809B9C5927B39554004EB9C4 /* README.md in Resources */,
 				80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */,
 				8075BADD27A7EBA30064CCB7 /* Registration.storyboard in Resources */,
 				80A8933727A8014A00CE83AB /* Main.storyboard in Resources */,
@@ -576,10 +558,8 @@
 				80CA933B270A034D009A1469 /* PostTripViewController.swift in Sources */,
 				80CA9347270C7F33009A1469 /* PostTripFromViewController.swift in Sources */,
 				80CA934B270D91B4009A1469 /* PassengerPriceViewController.swift in Sources */,
-				809B9C5C27B39554004EB9C4 /* ATableView.swift in Sources */,
 				807E99482755643100EA88F0 /* STTimeViewController.swift in Sources */,
 				80D9B0AF26FDE7F6001EB6BD /* FromWhereToViewController.swift in Sources */,
-				809B9C5B27B39554004EB9C4 /* AnimationFactory.swift in Sources */,
 				809B9C6F27B39B1E004EB9C4 /* ViewAnimatorConfig.swift in Sources */,
 				80C996372765682100B5A3C7 /* HomePageViewController.swift in Sources */,
 				8075BAC627A3F4B70064CCB7 /* MessageTableViewCell.swift in Sources */,
@@ -596,7 +576,6 @@
 				C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */,
 				809B9C6D27B39B1E004EB9C4 /* UITableView + ViewAnimator.swift in Sources */,
 				80C996392765697B00B5A3C7 /* SignUpViewController.swift in Sources */,
-				809B9C5A27B39554004EB9C4 /* Animator.swift in Sources */,
 				809B9C7127B39B1E004EB9C4 /* Animation.swift in Sources */,
 				807F1F3B2701E6AB000C89CB /* VC.swift in Sources */,
 				80C9963B2766919300B5A3C7 /* LoginViewController.swift in Sources */,
@@ -758,6 +737,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				80A8933627A8014900CE83AB /* Base */,
+				C07E758427B3F0D80004C3C2 /* zh-Hans */,
+				C07E758527B3F0DF0004C3C2 /* tr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -769,6 +750,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -830,6 +812,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
