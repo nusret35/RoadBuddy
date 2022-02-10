@@ -11,6 +11,8 @@ import FirebaseAuth
 
 var CurrentUser = CurrentUserData()
 
+var storageManager = StorageManager()
+
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 

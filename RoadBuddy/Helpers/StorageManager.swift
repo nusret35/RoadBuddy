@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 class StorageManager
 {
-    var ref:DatabaseReference?
+    let ref = Database.database().reference()
     let db = Firestore.firestore()
     let storage = Storage.storage().reference()
     var profileImage = UIImage()

@@ -173,7 +173,7 @@ class TaxiTripSetViewController: UIViewController {
                 
                 let dateFormatter = DateFormatter()
                 dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-                dateFormatter.dateFormat = "EEEE, MMM d, yyyy '('h:mm a')'"
+                dateFormatter.dateFormat = "EEEE, MMM d, yyyy '('HH:mm')'"
                 var sortedRequests:[TaxiTripRequest] = []
                 while trips.isEmpty == false
                 {

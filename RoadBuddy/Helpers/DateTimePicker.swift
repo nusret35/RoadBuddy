@@ -175,7 +175,7 @@ extension Date {
     dayFormatter.dateFormat = "EEEE, MMM d, yyyy"
 
     let startTimeFormatter = DateFormatter()
-    startTimeFormatter.dateFormat = "h:mm a"
+    startTimeFormatter.dateFormat = "HH:mm"
     
     
     return String(format: "%@ (%@)",
