@@ -106,14 +106,14 @@
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hS0-sD-NNV"; */
 "hS0-sD-NNV.normalTitle" = "Button";
 
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "i22-IJ-M81"; */
+"i22-IJ-M81.normalTitle" = "Button";
+
 /* Class = "UIButton"; configuration.title = "Passengers"; ObjectID = "IOT-8M-Vzl"; */
 "IOT-8M-Vzl.configuration.title" = "Yolcular";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "IOT-8M-Vzl"; */
 "IOT-8M-Vzl.normalTitle" = "Button";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "i22-IJ-M81"; */
-"i22-IJ-M81.normalTitle" = "Button";
 
 /* Class = "UINavigationItem"; title = "How many passengers"; ObjectID = "j9z-zi-1DT"; */
 "j9z-zi-1DT.title" = "Kaç tane yolcu eklemek isterseniz ?";
@@ -164,7 +164,7 @@
 "noM-eU-eJi.text" = "Ücret ";
 
 /* Class = "UINavigationItem"; title = "Share Taxi"; ObjectID = "Nqv-ni-RN3"; */
-"Nqv-ni-RN3.title" = "Taksi Paylaş";
+"Nqv-ni-RN3.title" = "Taxi Paylaş";
 
 /* Class = "UINavigationItem"; title = "Set Your Trip"; ObjectID = "nvi-Si-wiV"; */
 "nvi-Si-wiV.title" = "Yolculuğu Ayarla";

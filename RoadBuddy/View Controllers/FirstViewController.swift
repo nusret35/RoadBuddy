@@ -21,7 +21,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func profileButtonAction(_ sender: Any)
     {
-        let profilePageViewController = storyboard?.instantiateViewController(withIdentifier: "ProfilePageVC") as! ProfilePageViewController
+        let profilePageViewController = storyboard?.instantiateViewController(withIdentifier:"ProfilePageVC") as! ProfilePageViewController
         present(profilePageViewController,animated: true,completion: nil)
     }
     

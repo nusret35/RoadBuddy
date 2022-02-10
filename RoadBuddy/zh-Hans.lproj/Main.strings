@@ -106,14 +106,14 @@
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hS0-sD-NNV"; */
 "hS0-sD-NNV.normalTitle" = "Button";
 
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "i22-IJ-M81"; */
+"i22-IJ-M81.normalTitle" = "Button";
+
 /* Class = "UIButton"; configuration.title = "Passengers"; ObjectID = "IOT-8M-Vzl"; */
 "IOT-8M-Vzl.configuration.title" = "乘客";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "IOT-8M-Vzl"; */
 "IOT-8M-Vzl.normalTitle" = "Button";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "i22-IJ-M81"; */
-"i22-IJ-M81.normalTitle" = "Button";
 
 /* Class = "UINavigationItem"; title = "How many passengers"; ObjectID = "j9z-zi-1DT"; */
 "j9z-zi-1DT.title" = "乘客人数";
