@@ -1334,7 +1334,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title=""/>
                                                 <connections>
-                                                    <action selector="ButtonAction:" destination="TyB-6e-X12" eventType="touchUpInside" id="Iet-6X-u4J"/>
+                                                    <action selector="FromButtonAction:" destination="TyB-6e-X12" eventType="touchUpInside" id="hAs-mf-riW"/>
                                                 </connections>
                                             </button>
                                         </subviews>

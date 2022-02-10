@@ -55,7 +55,7 @@
 		807E9BCB270769E30008F523 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E9BCA270769E30008F523 /* Utilities.swift */; };
 		807E9BCD27076DE90008F523 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E9BCC27076DE90008F523 /* ResultsViewController.swift */; };
 		807F1F262700B892000C89CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F1F252700B892000C89CB /* Constants.swift */; };
-		807F1F3B2701E6AB000C89CB /* VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F1F3A2701E6AB000C89CB /* VC.swift */; };
+		807F1F3B2701E6AB000C89CB /* FromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F1F3A2701E6AB000C89CB /* FromViewController.swift */; };
 		809B9C6A27B39B1E004EB9C4 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 809B9C5F27B39B1E004EB9C4 /* .gitkeep */; };
 		809B9C6B27B39B1E004EB9C4 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6127B39B1E004EB9C4 /* Directions.swift */; };
 		809B9C6C27B39B1E004EB9C4 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6227B39B1E004EB9C4 /* AnimationType.swift */; };
@@ -120,7 +120,7 @@
 		807E9BCA270769E30008F523 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		807E9BCC27076DE90008F523 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		807F1F252700B892000C89CB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		807F1F3A2701E6AB000C89CB /* VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC.swift; sourceTree = "<group>"; };
+		807F1F3A2701E6AB000C89CB /* FromViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromViewController.swift; sourceTree = "<group>"; };
 		809B9C5D27B39933004EB9C4 /* ViewAnimator-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ViewAnimator-master"; path = "../../../Downloads/ViewAnimator-master"; sourceTree = "<group>"; };
 		809B9C5F27B39B1E004EB9C4 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		809B9C6127B39B1E004EB9C4 /* Directions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
@@ -326,7 +326,7 @@
 				80C996382765697B00B5A3C7 /* SignUpViewController.swift */,
 				80C9963A2766919300B5A3C7 /* LoginViewController.swift */,
 				80D9B0AE26FDE7F5001EB6BD /* FromWhereToViewController.swift */,
-				807F1F3A2701E6AB000C89CB /* VC.swift */,
+				807F1F3A2701E6AB000C89CB /* FromViewController.swift */,
 				807E9BC827074CE20008F523 /* ToViewController.swift */,
 				807E9BCC27076DE90008F523 /* ResultsViewController.swift */,
 				80CA933827091D63009A1469 /* ProfilePageViewController.swift */,
@@ -589,7 +589,7 @@
 				809B9C6D27B39B1E004EB9C4 /* UITableView + ViewAnimator.swift in Sources */,
 				80C996392765697B00B5A3C7 /* SignUpViewController.swift in Sources */,
 				809B9C7127B39B1E004EB9C4 /* Animation.swift in Sources */,
-				807F1F3B2701E6AB000C89CB /* VC.swift in Sources */,
+				807F1F3B2701E6AB000C89CB /* FromViewController.swift in Sources */,
 				80C9963B2766919300B5A3C7 /* LoginViewController.swift in Sources */,
 				80CA933927091D63009A1469 /* ProfilePageViewController.swift in Sources */,
 				80CA9349270C84CF009A1469 /* PostTripToViewController.swift in Sources */,

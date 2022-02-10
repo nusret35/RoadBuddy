@@ -111,16 +111,22 @@ class TaxiTripSetViewController: UIViewController {
     
     @IBAction func fromButtonAction(_ sender: Any)
     {
-        let STFromNavigationController = mapsStoryboard.instantiateViewController(withIdentifier:  "STFromNC") as!
-        UINavigationController
-        present(STFromNavigationController, animated: true, completion: nil)
+        let STFromViewController = mapsStoryboard.instantiateViewController(withIdentifier:  "STFromVC") as!
+       STFromViewController
+        
+
+        navigationController?.pushViewController(STFromViewController, animated: true)
+        
     }
     
     
     @IBAction func toButtonAction(_ sender: Any)
     {
-        let STToNavigationController = mapsStoryboard.instantiateViewController(withIdentifier: "STToNC") as! UINavigationController
-        present(STToNavigationController, animated: true, completion: nil)
+        let STToViewController = mapsStoryboard.instantiateViewController(withIdentifier:  "STToVC") as!
+       STToViewController
+        
+
+        navigationController?.pushViewController(STToViewController, animated: true)
     }
     
     @IBAction func timeButtonAction(_ sender: Any)

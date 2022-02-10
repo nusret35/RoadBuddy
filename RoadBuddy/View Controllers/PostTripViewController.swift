@@ -75,13 +75,16 @@ class PostTripViewController: UIViewController {
     
     
     @IBAction func FromButtonAction(_ sender: Any) {
-        let PostTripFromViewController = mapsStoryboard.instantiateViewController(withIdentifier: "PostTripFromNC") as! UINavigationController
-        present(PostTripFromViewController, animated: true, completion: nil)
+
+        let PostTripFromViewController = mapsStoryboard.instantiateViewController(withIdentifier:  "PostTripFromVC") as! PostTripFromViewController
+ 
+        navigationController?.pushViewController(PostTripFromViewController, animated: true)
     }
     
-    @IBAction func ToButtonAction(_ sender: Any) {
-        let PostTripToViewController = mapsStoryboard.instantiateViewController(withIdentifier: "PostTripToNC") as! UINavigationController
-        present(PostTripToViewController, animated: true, completion: nil)
+    @IBAction func ToButtonAction(_ sender: Any) {        
+        let PostTripToViewController = mapsStoryboard.instantiateViewController(withIdentifier:  "PostTripToVC") as! PostTripToViewController
+ 
+        navigationController?.pushViewController(PostTripToViewController, animated: true)
     }
     
     

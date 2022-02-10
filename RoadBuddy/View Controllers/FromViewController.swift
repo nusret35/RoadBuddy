@@ -13,11 +13,8 @@ import FloatingPanel
 
 var SearchFromLocation = CLLocation(latitude: 0.0, longitude: 0.0)
 
-protocol VCDelegate: AnyObject {
-    func vcfunction( _ vc: VC, didSelectLocationWith coordinates: CLLocationCoordinate2D, btitle: String)
-}
 
-class VC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+class FromViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
 
     // VARIABLES
     
@@ -37,7 +34,6 @@ class VC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableVie
     
     var locname: String! = "From..."
     
-    weak var delegate: VCDelegate?
     // OVERRIDE FUNCTIONS
 
     override func viewDidLoad() {

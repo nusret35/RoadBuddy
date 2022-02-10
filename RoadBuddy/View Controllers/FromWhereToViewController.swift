@@ -76,15 +76,18 @@ class FromWhereToViewController: UIViewController{
     
     //BUTTON ACTIONS
     
-    @IBAction func ButtonAction(_ sender: Any) {  //From button action
-        let viewcontroller = mapsStoryboard.instantiateViewController(withIdentifier: "VCNC") as! UINavigationController
-        present(viewcontroller, animated: true, completion: nil)
+    @IBAction func FromButtonAction(_ sender: Any) {  //From button action        
+        let FromViewController = mapsStoryboard.instantiateViewController(withIdentifier:  "FromVC") as! FromViewController
+ 
+        navigationController?.pushViewController(FromViewController, animated: true)
     }
     
     
     @IBAction func ToButtonAction(_ sender: Any) {
-        let ToViewController = mapsStoryboard.instantiateViewController(withIdentifier: "ToNC") as! UINavigationController
-        present(ToViewController, animated: true, completion: nil)
+        let ToViewController = mapsStoryboard.instantiateViewController(withIdentifier:  "ToVC") as! ToViewController
+ 
+        navigationController?.pushViewController(ToViewController, animated: true)
+    
     }
     
     @IBAction func timebuttonAction(_ sender: Any)

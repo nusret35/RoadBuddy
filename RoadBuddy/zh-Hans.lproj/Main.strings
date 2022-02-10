@@ -17,7 +17,7 @@
 "4YK-0W-0J4.text" = "姓 名";
 
 /* Class = "UIButton"; configuration.title = "You don't have any trip plan. Tap to add one"; ObjectID = "8k8-w2-QCx"; */
-"8k8-w2-QCx.configuration.title" = "没有任何路程， 请按添加路程。";
+"8k8-w2-QCx.configuration.title" = "没有任何路程，请按添加路程。";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8k8-w2-QCx"; */
 "8k8-w2-QCx.normalTitle" = "Button";
@@ -74,7 +74,7 @@
 "F2b-gO-cKX.normalTitle" = "Button";
 
 /* Class = "UIButton"; configuration.title = "Continue"; ObjectID = "f5l-bx-nK7"; */
-"f5l-bx-nK7.configuration.title" = "Continue";
+"f5l-bx-nK7.configuration.title" = "继续";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "f5l-bx-nK7"; */
 "f5l-bx-nK7.normalTitle" = "Button";
@@ -215,7 +215,7 @@
 "U07-HE-aFb.text" = "Error Label";
 
 /* Class = "UIButton"; configuration.title = "Continue"; ObjectID = "UHV-po-Moe"; */
-"UHV-po-Moe.configuration.title" = "Continue";
+"UHV-po-Moe.configuration.title" = "继续";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "UHV-po-Moe"; */
 "UHV-po-Moe.normalTitle" = "Button";
