@@ -31,7 +31,7 @@ class ProfilePageViewController: UIViewController, UINavigationControllerDelegat
         super.viewDidLoad()
         print(CurrentUser.Fullname)
       //
-        
+        CurrentUser.fetchData()
         self.NameLastnameLabel.isSkeletonable = true
         self.UniversityNameLabel.isSkeletonable = true
         self.UsernameLabel.isSkeletonable = true
@@ -89,7 +89,7 @@ class ProfilePageViewController: UIViewController, UINavigationControllerDelegat
     {
         let docRef = db.collection("users").document(CurrentUser.UID)
         docRef.getDocument{ snapshot, error in
-            self.storage.child("/images/\(CurrentUser.profilePictureURL)").downloadURL(completion: { (url, error) in
+            self.storage.child(CurrentUser.profilePictureURL).downloadURL(completion: { (url, error) in
                 guard let url = url else
                 {
                     print("profile photo url not found")

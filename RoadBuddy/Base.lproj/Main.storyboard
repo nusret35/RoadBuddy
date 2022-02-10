@@ -1456,7 +1456,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4P-L3-FMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="189.85507246376812" y="71.651785714285708"/>
+            <point key="canvasLocation" x="170" y="-593"/>
         </scene>
         <!--Profile-->
         <scene sceneID="DPz-VS-XE6">
@@ -1774,7 +1774,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Choose" id="VwS-J4-Idv">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="fbM-Iq-wJa">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <action selector="profileButtonAction:" destination="lS8-Hq-lzc" id="Jkb-ac-4IN"/>
                             </connections>
@@ -1783,30 +1783,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Myb-wm-dMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1460.8695652173915" y="69.642857142857139"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="2kc-6p-oWq">
-            <objects>
-                <viewController id="xWk-tC-8s1" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="a5b-1Q-Q7I">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBV-X5-fc8">
-                                <rect key="frame" x="72" y="336" width="270" height="117"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="JBn-LE-FEg"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PYi-9K-fWr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1433" y="797"/>
+            <point key="canvasLocation" x="-1122" y="70"/>
         </scene>
         <!--Search From View Controller-->
         <scene sceneID="Ryu-43-16C">
@@ -1814,7 +1791,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pz8-J5-iy3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SearchFromVC" id="f1d-r4-VFV" customClass="SearchFromViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController"/>
             </objects>
-            <point key="canvasLocation" x="-570" y="798"/>
+            <point key="canvasLocation" x="-317" y="76"/>
         </scene>
         <!--Search-->
         <scene sceneID="uXJ-To-aQ5">
@@ -1845,7 +1822,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDk-II-awU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-720.28985507246387" y="71.651785714285708"/>
+            <point key="canvasLocation" x="-694" y="-603"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0zK-vk-Vq7">
@@ -1855,8 +1832,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="nuE-yq-hMU">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <color key="barTintColor" systemColor="labelColor"/>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" systemColor="labelColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2588,8 +2567,8 @@ nQAAAAAAAAAAAAAAAAAAoos
         <image name="target" catalog="system" width="128" height="121"/>
         <image name="text.bubble" catalog="system" width="128" height="110"/>
         <image name="timer" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
