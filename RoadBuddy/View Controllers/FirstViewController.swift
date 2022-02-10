@@ -33,7 +33,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         authenticateUser()
         CurrentUser.fetchData()
         view.addSubview(tableView)
-        tableView.backgroundColor = BackgroundColor.defaultBackgroundColor
+        tableView.backgroundColor = .systemBackground
         tableView.register(FirstTableViewCell.nib(),forCellReuseIdentifier: FirstTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
