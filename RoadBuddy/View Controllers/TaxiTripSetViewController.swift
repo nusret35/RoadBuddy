@@ -12,11 +12,11 @@ import FirebaseDatabase
 import Firebase
 import FirebaseStorage
 
-var fromLocTaxi = "Choose a location..."
+var FromLocTaxi = "Choose a location..."
 
-var toLocTaxi = "Choose a location..."
+var ToLocTaxi = "Choose a location..."
 
-var timeStringTaxi = "Choose date and time..."
+var TimeStringTaxi = "Choose date and time..."
 
 class TaxiTripSetViewController: UIViewController {
 
@@ -81,9 +81,9 @@ class TaxiTripSetViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        FromButton.setTitle(fromLocTaxi, for: .normal)
-        ToButton.setTitle(toLocTaxi, for: .normal)
-        timeButton.setTitle(timeStringTaxi, for: .normal)
+        FromButton.setTitle(FromLocTaxi, for: .normal)
+        ToButton.setTitle(ToLocTaxi, for: .normal)
+        timeButton.setTitle(TimeStringTaxi, for: .normal)
     }
     
     //FUNCTIONS
@@ -147,7 +147,7 @@ class TaxiTripSetViewController: UIViewController {
                 let toLat = res["toCoordinateLatitude"] as! Double
                 let toLong = res["toCoordinateLongitude"] as! Double
                 let dataFromLocation = CLLocation(latitude: fromLat, longitude: fromLong)
-                let fromDistance = stFromLocation.distance(from: dataFromLocation) / 1000
+                let fromDistance = StFromLocation.distance(from: dataFromLocation) / 1000
                 guard let currentUserID = Auth.auth().currentUser?.uid else
                 {
                     print("user not found")
@@ -158,7 +158,7 @@ class TaxiTripSetViewController: UIViewController {
                     if (fromDistance <= 8)
                     {
                         let dataToLocation = CLLocation(latitude: toLat, longitude: toLong)
-                        let toDistance = stToLocation.distance(from: dataToLocation) / 1000
+                        let toDistance = StToLocation.distance(from: dataToLocation) / 1000
                         if (toDistance <= 8)
                         {
                             let data = TaxiTripRequest(fullname: name, uid: uid, time: time, fromLocationName: from, toLocationName: to, fromCoordinateLat: fromLat, fromCoordinateLong: fromLong, toCoordinateLat:toLat, toCoordinateLong: toLong)
@@ -230,13 +230,13 @@ class TaxiTripSetViewController: UIViewController {
                 db.collection("users").document(uid).updateData(["TaxiTripIsSet":true])
               let request = ["fullname":fullname,
                             "uid":self.uid,
-                            "from": fromLocTaxi,
-                             "to":   toLocTaxi,
-                            "time": timeStringTaxi,
-                            "fromCoordinateLatitude": stFromLocation.coordinate.latitude,
-                            "fromCoordinateLongitude": stFromLocation.coordinate.longitude,
-                            "toCoordinateLatitude": stToLocation.coordinate.latitude,
-                            "toCoordinateLongitude": stToLocation.coordinate.longitude
+                            "from": FromLocTaxi,
+                             "to":   ToLocTaxi,
+                            "time": TimeStringTaxi,
+                            "fromCoordinateLatitude": StFromLocation.coordinate.latitude,
+                            "fromCoordinateLongitude": StFromLocation.coordinate.longitude,
+                            "toCoordinateLatitude": StToLocation.coordinate.latitude,
+                            "toCoordinateLongitude": StToLocation.coordinate.longitude
                 ] as [String : Any]
     
                     ref?.child("Taxi_Trips").child(uid).setValue(request)

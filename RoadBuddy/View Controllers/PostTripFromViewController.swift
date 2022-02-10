@@ -10,7 +10,7 @@ import MapKit
 import CoreLocation
 import FloatingPanel
 
-var ptFromLocation = CLLocation(latitude:0.0, longitude:0.0)
+var PtFromLocation = CLLocation(latitude:0.0, longitude:0.0)
 
 protocol PostTripFromViewControllerDelegate: AnyObject {
     func postTripFromViewController(_ vc: PostTripFromViewController, didSelectLocationWith coordinates: CLLocationCoordinate2D, btitle: String)
@@ -107,8 +107,8 @@ class PostTripFromViewController: UIViewController, UITextFieldDelegate, UITable
         }
     
     @IBAction func ContinueButtonTapped(_ sender: Any) {
-        ptFromLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        fromLoc = locname
+        PtFromLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        FromLoc = locname
         dismiss(animated: true, completion: nil)
     }
     

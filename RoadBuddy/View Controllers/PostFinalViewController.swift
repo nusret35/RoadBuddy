@@ -39,11 +39,11 @@ class PostFinalViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        FromButton.setTitle(fromLoc, for: .normal)
-        ToButton.setTitle(toLoc, for: .normal)
-        TimeButton.setTitle(timeString, for: .normal)
-        Passengers.setTitle(String(passengerNumber), for: .normal)
-        Price.setTitle(priceString, for: .normal)
+        FromButton.setTitle(FromLoc, for: .normal)
+        ToButton.setTitle(ToLoc, for: .normal)
+        TimeButton.setTitle(TimeString, for: .normal)
+        Passengers.setTitle(String(PassengerNumber), for: .normal)
+        Price.setTitle(PriceString, for: .normal)
     }
 
 
@@ -85,20 +85,20 @@ class PostFinalViewController: UIViewController
     @IBAction func ContinueButtonAction(_ sender: Any)
     {
         //validate the fields
-        let post = ["fullname": currentUser.Fullname,
-                    "uid": currentUser.UID,
-                    "from": fromLoc,
-                     "to":   toLoc,
-                    "time": timeString,
-                    "number of passengers": passengerNumber,
-                    "price": priceString,
-                    "fromCoordinateLatitude": ptFromLocation.coordinate.latitude,
-                    "fromCoordinateLongitude": ptFromLocation.coordinate.longitude,
-                    "toCoordinateLatitude": ptToLocation.coordinate.latitude,
-                    "toCoordinateLongitude": ptToLocation.coordinate.longitude
+        let post = ["fullname": CurrentUser.Fullname,
+                    "uid": CurrentUser.UID,
+                    "from": FromLoc,
+                     "to":   ToLoc,
+                    "time": TimeString,
+                    "number of passengers": PassengerNumber,
+                    "price": PriceString,
+                    "fromCoordinateLatitude": PtFromLocation.coordinate.latitude,
+                    "fromCoordinateLongitude": PtFromLocation.coordinate.longitude,
+                    "toCoordinateLatitude": PtToLocation.coordinate.latitude,
+                    "toCoordinateLongitude": PtToLocation.coordinate.longitude
                     ] as [String:Any]
-        ref?.child("Trips").child(currentUser.UID).setValue(post)
-        db.collection("users").document(currentUser.UID).updateData(["TripIsSet":true])
+        ref?.child("Trips").child(CurrentUser.UID).setValue(post)
+        db.collection("users").document(CurrentUser.UID).updateData(["TripIsSet":true])
             let mainTabController = storyboard?.instantiateViewController(withIdentifier: "MainTabController") as! MainTabController
             mainTabController.selectedViewController = mainTabController.viewControllers?[2]
             present(mainTabController, animated: true, completion: nil)

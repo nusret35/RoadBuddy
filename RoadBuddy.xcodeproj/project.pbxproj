@@ -166,10 +166,10 @@
 		80E7A515274AE5AF00423EB3 /* STToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STToViewController.swift; sourceTree = "<group>"; };
 		80E7A517274AE5E400423EB3 /* TaxiTripSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiTripSetViewController.swift; sourceTree = "<group>"; };
 		BD4FE229515EAE9346E4B422 /* Pods_RoadBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C07E758427B3F0D80004C3C2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		C07E758527B3F0DF0004C3C2 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 		C08B7A7127B2895D0027684E /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		C08B7A7227B2895D0027684E /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
+		C090E41B27B523C400286CE2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		C090E41C27B523CA00286CE2 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -749,8 +749,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				80A8933627A8014900CE83AB /* Base */,
-				C07E758427B3F0D80004C3C2 /* zh-Hans */,
-				C07E758527B3F0DF0004C3C2 /* tr */,
+				C090E41B27B523C400286CE2 /* zh-Hans */,
+				C090E41C27B523CA00286CE2 /* tr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

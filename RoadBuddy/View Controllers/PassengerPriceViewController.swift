@@ -7,9 +7,9 @@
 
 import UIKit
 
-var passengerNumber = 0
+var PassengerNumber = 0
 
-var priceString = ""
+var PriceString = ""
 
 protocol PassengerPriceViewControllerDelegate: AnyObject {
     func passengerPriceViewController (_ vc:PassengerPriceViewController, passengers: String, price: String)
@@ -124,8 +124,8 @@ class PassengerPriceViewController: UIViewController, UIPickerViewDelegate, UIPi
         }
         else
         {
-            passengerNumber = Int(textBox.text!) ?? 0
-            priceString = priceTextField.text!
+            PassengerNumber = Int(textBox.text!) ?? 0
+            PriceString = priceTextField.text!
             delegate?.passengerPriceViewController(self, passengers: textBox.text! , price: priceTextField.text!)
             let PostFinalViewController = storyboard?.instantiateViewController(withIdentifier: "PostFinalVC") as! PostFinalViewController
             PostFinalViewController.title = "Your Trip"

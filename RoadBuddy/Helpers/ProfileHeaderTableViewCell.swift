@@ -33,7 +33,7 @@ class ProfileHeaderTableViewCell: UITableViewCell, UINavigationControllerDelegat
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        if currentUser.profilePictureIsSet
+        if CurrentUser.profilePictureIsSet
         {
             profilePictureLoad()
         }
@@ -57,10 +57,10 @@ class ProfileHeaderTableViewCell: UITableViewCell, UINavigationControllerDelegat
     
     func profilePictureLoad()
     {
-        let docRef = db.collection("users").document(currentUser.UID)
+        let docRef = db.collection("users").document(CurrentUser.UID)
         docRef.getDocument{ snapshot, error in
             self.storage
-                .child("/images/\(currentUser.profilePictureURL)").downloadURL(completion: { (url, error) in
+                .child("/images/\(CurrentUser.profilePictureURL)").downloadURL(completion: { (url, error) in
                 guard let url = url else
                 {
                     print("profile photo url not found")
@@ -119,12 +119,12 @@ extension ProfileHeaderTableViewCell:UIImagePickerControllerDelegate
             return
         }
         
-        let docRef = db.collection("users").document(currentUser.UID)
+        let docRef = db.collection("users").document(CurrentUser.UID)
         docRef.updateData(["profilePictureIsSet":true])
         
         docRef.getDocument{ snapshot, error in
                 
-            self.storage.child("/images/\(currentUser.UID)").putData(imageData, metadata: nil, completion: nil)
+            self.storage.child("/images/\(CurrentUser.UID)").putData(imageData, metadata: nil, completion: nil)
             }
     }
     

@@ -88,10 +88,11 @@ class FromWhereToViewController: UIViewController{
         }
         else
         {
-            let request = SearchTripRequest(fullname: currentUser.Fullname, uid: currentUser.UID, time: timeString, fromLocationName: SearchFrom, toLocationName: SearchTo, fromCoordinateLat: SearchFromLocation.coordinate.latitude, fromCoordinateLong: SearchFromLocation.coordinate.longitude, toCoordinateLat: SearchToLocation.coordinate.latitude, toCoordinateLong: SearchToLocation.coordinate.longitude)
-
+            let request = ["fullname": CurrentUser.Fullname, "uid": CurrentUser.UID, "time": TimeString,"number of passengers": PassengerNumber , "fromLocationName": SearchFrom, "toLocationName": SearchTo, "fromCoordinateLat": SearchFromLocation.coordinate.latitude,"fromCoordinateLong": SearchFromLocation.coordinate.longitude, "toCoordinateLat": SearchToLocation.coordinate.latitude, "toCoordinateLong": SearchToLocation.coordinate.longitude ] as [String : Any]
             
         }
+        
+        
     }
     
     

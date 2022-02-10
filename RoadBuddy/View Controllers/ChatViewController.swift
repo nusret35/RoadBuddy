@@ -28,7 +28,7 @@ class ChatViewController: MessagesViewController {
 
     private var messages = [Message]()
     
-    private let selfSender = Sender(photoURL: currentUser.profilePictureURL, senderId: currentUser.UID, displayName: currentUser.Fullname)
+    private let selfSender = Sender(photoURL: CurrentUser.profilePictureURL, senderId: CurrentUser.UID, displayName: CurrentUser.Fullname)
     
     override func viewDidLoad()
     {

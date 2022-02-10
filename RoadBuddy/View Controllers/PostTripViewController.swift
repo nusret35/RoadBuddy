@@ -8,11 +8,11 @@
 import UIKit
 import CoreLocation
 
-var fromLoc = "Choose a location..."
+var FromLoc = "Choose a location..."
 
-var toLoc = "Choose a location..."
+var ToLoc = "Choose a location..."
 
-var timeString = "Choose date and time..."
+var TimeString = "Choose date and time..."
 
 class PostTripViewController: UIViewController {
     
@@ -40,9 +40,9 @@ class PostTripViewController: UIViewController {
     override func viewDidAppear(_ animated:Bool)
     {
         super.viewDidAppear(true)
-        TimeButton.setTitle(timeString, for: .normal)
-        FromButton.setTitle(fromLoc, for: .normal)
-        ToButton.setTitle(toLoc, for: .normal)
+        TimeButton.setTitle(TimeString, for: .normal)
+        FromButton.setTitle(FromLoc, for: .normal)
+        ToButton.setTitle(ToLoc, for: .normal)
     }
     
     //FUNCTIONS

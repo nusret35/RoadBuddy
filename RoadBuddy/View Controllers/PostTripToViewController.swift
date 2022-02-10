@@ -10,7 +10,7 @@ import CoreLocation
 import MapKit
 import FloatingPanel
 
-var ptToLocation = CLLocation(latitude: 0.0, longitude: 0.0)
+var PtToLocation = CLLocation(latitude: 0.0, longitude: 0.0)
 
 class PostTripToViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
 
@@ -98,8 +98,8 @@ class PostTripToViewController: UIViewController, UITextFieldDelegate, UITableVi
 
     
     @IBAction func ContinueButtonTapped(_ sender: Any) {
-        ptToLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        toLoc = locname
+        PtToLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        ToLoc = locname
         dismiss(animated: true, completion: nil)
     }
 }

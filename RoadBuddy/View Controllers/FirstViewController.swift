@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 
 
-var currentUser = CurrentUserData()
+var CurrentUser = CurrentUserData()
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -29,7 +29,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticateUser()
-        currentUser.fetchData()
+        CurrentUser.fetchData()
         view.addSubview(tableView)
         tableView.backgroundColor = BackgroundColor.defaultBackgroundColor
         tableView.register(FirstTableViewCell.nib(),forCellReuseIdentifier: FirstTableViewCell.identifier)

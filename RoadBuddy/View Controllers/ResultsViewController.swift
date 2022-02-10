@@ -11,11 +11,11 @@ import CoreLocation
 import FirebaseAuth
 import FirebaseStorage
 
-var driverUID = ""
+var DriverUID = ""
 
-var seatsAvaliable = 0
+var SeatsAvaliable = 0
 
-var seatsList = [String]()
+var SeatsList = [String]()
 
 class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource //,PostTableViewCellDelegate
 {
@@ -71,16 +71,16 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedTrip = models[indexPath.row]
-        driverUID = selectedTrip.uid
-        ref.child("Trips").child(driverUID).observeSingleEvent(of: .value) { [self] (snapshot) in
+        DriverUID = selectedTrip.uid
+        ref.child("Trips").child(DriverUID).observeSingleEvent(of: .value) { [self] (snapshot) in
             guard let res = snapshot.value as? [String:Any] else {return}
-            seatsAvaliable = res["number of passengers"] as! Int
-            print(seatsAvaliable)
-            print("driverUID: " + driverUID)
+            SeatsAvaliable = res["number of passengers"] as! Int
+            print(SeatsAvaliable)
+            print("driverUID: " + DriverUID)
             var i = 1
-            while (i <= seatsAvaliable)
+            while (i <= SeatsAvaliable)
             {
-                seatsList.append(String(i))
+                SeatsList.append(String(i))
                 i+=1
             }
             present(bookTripViewController, animated: true, completion: nil)

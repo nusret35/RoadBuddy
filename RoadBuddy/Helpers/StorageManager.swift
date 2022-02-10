@@ -19,9 +19,9 @@ class StorageManager
     
     func profilePictureLoad()
     {
-        let docRef = db.collection("users").document(currentUser.UID)
+        let docRef = db.collection("users").document(CurrentUser.UID)
         docRef.getDocument{ snapshot, error in
-            self.storage.child("/images/\(currentUser.profilePictureURL)").downloadURL(completion: { (url, error) in
+            self.storage.child("/images/\(CurrentUser.profilePictureURL)").downloadURL(completion: { (url, error) in
                 guard let url = url else
                 {
                     print("profile photo url not found")

@@ -29,7 +29,7 @@ class ProfilePageViewController: UIViewController, UINavigationControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(currentUser.Fullname)
+        print(CurrentUser.Fullname)
       //
         
         self.NameLastnameLabel.isSkeletonable = true
@@ -44,12 +44,12 @@ class ProfilePageViewController: UIViewController, UINavigationControllerDelegat
         self.EmailLabel.showAnimatedGradientSkeleton()
         self.PhoneLabel.showAnimatedGradientSkeleton()
 
-            self.NameLastnameLabel.text = currentUser.Fullname
-            self.UniversityNameLabel.text = currentUser.SchoolName
-            self.UsernameLabel.text = currentUser.Username
-            self.EmailLabel.text = currentUser.Email
-            self.PhoneLabel.text = currentUser.PhoneNumber
-        if currentUser.profilePictureIsSet
+            self.NameLastnameLabel.text = CurrentUser.Fullname
+            self.UniversityNameLabel.text = CurrentUser.SchoolName
+            self.UsernameLabel.text = CurrentUser.Username
+            self.EmailLabel.text = CurrentUser.Email
+            self.PhoneLabel.text = CurrentUser.PhoneNumber
+        if CurrentUser.profilePictureIsSet
         {
             print("there exist a pp")
             profilePictureLoad()
@@ -87,9 +87,9 @@ class ProfilePageViewController: UIViewController, UINavigationControllerDelegat
 
     func profilePictureLoad()
     {
-        let docRef = db.collection("users").document(currentUser.UID)
+        let docRef = db.collection("users").document(CurrentUser.UID)
         docRef.getDocument{ snapshot, error in
-            self.storage.child("/images/\(currentUser.profilePictureURL)").downloadURL(completion: { (url, error) in
+            self.storage.child("/images/\(CurrentUser.profilePictureURL)").downloadURL(completion: { (url, error) in
                 guard let url = url else
                 {
                     print("profile photo url not found")
@@ -172,12 +172,12 @@ extension ProfilePageViewController:UIImagePickerControllerDelegate
             return
         }
         
-        let docRef = db.collection("users").document(currentUser.UID)
+        let docRef = db.collection("users").document(CurrentUser.UID)
         docRef.updateData(["profilePictureIsSet":true])
         
         docRef.getDocument{ snapshot, error in
                 
-            self.storage.child("/images/\(currentUser.UID)").putData(imageData, metadata: nil, completion: nil)
+            self.storage.child("/images/\(CurrentUser.UID)").putData(imageData, metadata: nil, completion: nil)
             }
     }
     

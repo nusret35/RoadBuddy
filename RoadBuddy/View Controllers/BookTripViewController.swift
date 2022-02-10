@@ -46,23 +46,23 @@ class BookTripViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        return seatsAvaliable
+        return SeatsAvaliable
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         self.view.endEditing(true)
-        return seatsList[row]
+        return SeatsList[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString?
     {
-        return NSAttributedString(string: seatsList[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        return NSAttributedString(string: SeatsList[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        self.textBox.text = seatsList[row]
+        self.textBox.text = SeatsList[row]
         self.dropDown.isHidden = true
     }
     

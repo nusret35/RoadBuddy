@@ -36,7 +36,7 @@ class DateTimeViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func ContinueButtonAction(_ sender: Any)
     {
-        timeString = textField.text ?? ""
+        TimeString = textField.text ?? ""
         dismiss(animated: true, completion: nil)
     }
     
