@@ -94,8 +94,9 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0
         {
-            let fromWhereNavigationController = storyboard?.instantiateViewController(withIdentifier: "FromWhereNC") as! UINavigationController
-            present(fromWhereNavigationController, animated: true, completion: nil)
+            let searchFromViewController = storyboard?.instantiateViewController(withIdentifier: "SearchFromVC") as! SearchFromViewController
+            navigationController?.pushViewController(searchFromViewController, animated: true)
+            
         }
         if indexPath.row == 1
         {

@@ -169,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYR-5p-uIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3201.449275362319" y="796.875"/>
+            <point key="canvasLocation" x="4111.594202898551" y="796.875"/>
         </scene>
         <!--Taxi Trip Results-->
         <scene sceneID="fj4-v3-iV2">
@@ -1067,7 +1067,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a77-6X-Tkx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4438" y="798"/>
+            <point key="canvasLocation" x="5347.826086956522" y="797.54464285714278"/>
         </scene>
         <!--Friend Trip Results-->
         <scene sceneID="Z18-iX-gaM">
@@ -1284,7 +1284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pc3-eS-GYx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1762" y="798"/>
+            <point key="canvasLocation" x="2671.0144927536235" y="797.54464285714278"/>
         </scene>
         <!--FromWhereVC-->
         <scene sceneID="hkI-B9-IPb">
@@ -1660,7 +1660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="duT-q7-2bi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2500" y="798"/>
+            <point key="canvasLocation" x="3408.6956521739135" y="797.54464285714278"/>
         </scene>
         <!--Trip-->
         <scene sceneID="DTA-7A-mUn">
@@ -1784,6 +1784,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Myb-wm-dMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1460.8695652173915" y="69.642857142857139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2kc-6p-oWq">
+            <objects>
+                <viewController id="xWk-tC-8s1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a5b-1Q-Q7I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBV-X5-fc8">
+                                <rect key="frame" x="72" y="336" width="270" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JBn-LE-FEg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PYi-9K-fWr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1433" y="797"/>
+        </scene>
+        <!--Search From View Controller-->
+        <scene sceneID="Ryu-43-16C">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pz8-J5-iy3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="SearchFromVC" id="f1d-r4-VFV" customClass="SearchFromViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="-570" y="798"/>
         </scene>
         <!--Search-->
         <scene sceneID="uXJ-To-aQ5">
@@ -2557,6 +2588,9 @@ nQAAAAAAAAAAAAAAAAAAoos
         <image name="target" catalog="system" width="128" height="121"/>
         <image name="text.bubble" catalog="system" width="128" height="110"/>
         <image name="timer" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
