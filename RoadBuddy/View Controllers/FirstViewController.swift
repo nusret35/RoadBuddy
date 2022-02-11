@@ -33,6 +33,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         authenticateUser()
         CurrentUser.fetchData()
         view.addSubview(tableView)
+        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.left")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.left")
         tableView.backgroundColor = BackgroundColor.defaultBackgroundColor
         tableView.register(FirstTableViewCell.nib(),forCellReuseIdentifier: FirstTableViewCell.identifier)
         tableView.delegate = self

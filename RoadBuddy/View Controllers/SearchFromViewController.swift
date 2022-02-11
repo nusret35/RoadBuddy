@@ -17,9 +17,11 @@ class ResultsVC: UIViewController,UITableViewDelegate,UITableViewDataSource
 {
     weak var delegate:ResultsVCDelegate?
     
-    let tableView = UITableView()
+    private let tableView = UITableView()
     
     var locations = [Location]()
+    
+    var vc = UIViewController()
     
     var selectedLocation = CLLocationCoordinate2D()
     override func viewDidLoad() {
@@ -51,13 +53,12 @@ class ResultsVC: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.text = locations[indexPath.row].title
-        cell.textLabel?.numberOfLines = 0
-        cell.contentView.backgroundColor = .secondarySystemBackground
-        cell.backgroundColor = .secondarySystemBackground
-        print(String(locations.count))
-        return cell
+            cell.textLabel?.text = locations[indexPath.row].title
+            cell.textLabel?.numberOfLines = 0
+            cell.contentView.backgroundColor = .secondarySystemBackground
+            cell.backgroundColor = .secondarySystemBackground
+            print(String(locations.count))
+            return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -75,19 +76,14 @@ class SearchFromViewController: UIViewController, UISearchResultsUpdating {
     
     let searchController = UISearchController(searchResultsController: ResultsVC())
     
-    var locations = [Location]()
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.left")
         navigationItem.title = "Where are you?"
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
-        
     }
-    
     
     func updateSearchResults(for searchController: UISearchController)
     {
@@ -107,28 +103,39 @@ extension SearchFromViewController: ResultsVCDelegate
 {
     func didTapPlace(with coordinates: CLLocationCoordinate2D, address: String) {
         searchController.searchBar.text = address
-        let searchMapVC = SearchMapViewController()
+        //Setting the next map view controller
+        let searchMapVC = SearchMapFromViewController()
         searchMapVC.coordinates = coordinates
+        //Setting navigation bar buttons
+        let backButton = UIBarButtonItem()
+        backButton.title = "Back"
+        navigationItem.backBarButtonItem = backButton
+        //right bar button setting
+        let rightBarButton = UIBarButtonItem(image: UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(rightButtonAction))
+        searchMapVC.navigationItem.rightBarButtonItem = rightBarButton
+        //Setting navigation bar title
+        searchMapVC.title = address
+        searchMapVC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(searchMapVC, animated: true)
     }
+    
+    @objc func rightButtonAction()
+    {
+        let vc = SearchToViewController()
+        vc.navigationItem.largeTitleDisplayMode = .always
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
 }
 
-class SearchMapViewController: UIViewController
+class SearchMapFromViewController: UIViewController
 {
     let mapView = MKMapView()
-    let resultsVC = ResultsVC()
-    let searchFromVC = SearchFromViewController()
     var coordinates = CLLocationCoordinate2D()
-    
-    
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         view.addSubview(mapView)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(continueButtonAction))
-        navigationItem.rightBarButtonItem?.image = UIImage(systemName: "chevron.right")
-        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.left")
         pinTheLocation()
     }
     
@@ -143,11 +150,6 @@ class SearchMapViewController: UIViewController
         mapView.setRegion(MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)), animated: true)
     }
     
-    @objc func continueButtonAction()
-    {
-        navigationController?.pushViewController(FirstViewController(), animated: true)
-        print("button pushed")
-    }
     
 }
 

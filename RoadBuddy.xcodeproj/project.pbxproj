@@ -12,6 +12,7 @@
 		804AF861279EBCC200315A82 /* TaxiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804AF85F279EBCC200315A82 /* TaxiTableViewCell.swift */; };
 		804AF862279EBCC300315A82 /* TaxiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804AF860279EBCC200315A82 /* TaxiTableViewCell.xib */; };
 		804B3AAB27B54EAF0041A7DC /* SearchFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B3AAA27B54EAF0041A7DC /* SearchFromViewController.swift */; };
+		804B3AAD27B64C9D0041A7DC /* SearchToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B3AAC27B64C9D0041A7DC /* SearchToViewController.swift */; };
 		805A7B4E27B26DCE00DDB80A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A7B4D27B26DCC00DDB80A /* FirstViewController.swift */; };
 		8073AA1F2773DC88007457FD /* ResultsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073AA1E2773DC88007457FD /* ResultsNavigationController.swift */; };
 		8073AA222775CCCD007457FD /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 8073AA212775CCCD007457FD /* SkeletonView */; };
@@ -109,6 +110,7 @@
 		804AF85F279EBCC200315A82 /* TaxiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiTableViewCell.swift; sourceTree = "<group>"; };
 		804AF860279EBCC200315A82 /* TaxiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaxiTableViewCell.xib; sourceTree = "<group>"; };
 		804B3AAA27B54EAF0041A7DC /* SearchFromViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFromViewController.swift; sourceTree = "<group>"; };
+		804B3AAC27B64C9D0041A7DC /* SearchToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchToViewController.swift; sourceTree = "<group>"; };
 		805A7B4D27B26DCC00DDB80A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		8073AA1E2773DC88007457FD /* ResultsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsNavigationController.swift; sourceTree = "<group>"; };
 		8075BAC227A3F1B70064CCB7 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				80C996382765697B00B5A3C7 /* SignUpViewController.swift */,
 				80C9963A2766919300B5A3C7 /* LoginViewController.swift */,
 				804B3AAA27B54EAF0041A7DC /* SearchFromViewController.swift */,
+				804B3AAC27B64C9D0041A7DC /* SearchToViewController.swift */,
 				80D9B0AE26FDE7F5001EB6BD /* FromWhereToViewController.swift */,
 				807F1F3A2701E6AB000C89CB /* FromViewController.swift */,
 				807E9BC827074CE20008F523 /* ToViewController.swift */,
@@ -577,6 +580,7 @@
 				809B9C6F27B39B1E004EB9C4 /* ViewAnimatorConfig.swift in Sources */,
 				80C996372765682100B5A3C7 /* HomePageViewController.swift in Sources */,
 				8075BAC627A3F4B70064CCB7 /* MessageTableViewCell.swift in Sources */,
+				804B3AAD27B64C9D0041A7DC /* SearchToViewController.swift in Sources */,
 				80D9B0AB26FC938B001EB6BD /* LocationManager.swift in Sources */,
 				80E7A514274AE59F00423EB3 /* STFromViewController.swift in Sources */,
 				805A7B4E27B26DCE00DDB80A /* FirstViewController.swift in Sources */,
