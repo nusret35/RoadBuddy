@@ -109,6 +109,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if indexPath.row == 1
         {
             let postViewController = PostTripFromViewController2()
+            print("y")
             navigationController?.pushViewController(postViewController, animated: true)
         }
         

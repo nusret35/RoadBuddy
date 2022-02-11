@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F19D551F-E8B4-462C-BFC5-B1AB0A6A968E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RoadBuddy/View Controllers/DateTimeViewController.swift"
@@ -142,8 +142,8 @@
             filePath = "RoadBuddy/View Controllers/SearchToViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "SearchToViewController"
             landmarkType = "21">
          </BreakpointContent>
