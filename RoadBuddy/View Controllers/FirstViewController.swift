@@ -13,6 +13,8 @@ var CurrentUser = CurrentUserData()
 
 var storageManager = StorageManager()
 
+var firstAppearance = true
+
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 
@@ -37,13 +39,18 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.register(FirstTableViewCell.nib(),forCellReuseIdentifier: FirstTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigationController?.navigationBar.backgroundColor = BackgroundColor.defaultBackgroundColor
-        let animation = AnimationType.from(direction: .bottom, offset: 300)
-        UIView.animate(views: tableView.visibleCells, animations: [animation], delay: 0.5, duration: 1)
+        navigationController?.navigationBar.backgroundColor = .systemBackground
+        if firstAppearance
+        {
+            let animation = AnimationType.from(direction: .bottom, offset: 300)
+            UIView.animate(views: tableView.visibleCells, animations: [animation], delay: 0.5, duration: 1)
+            firstAppearance = false
+        }
     }
     
     
@@ -96,20 +103,19 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if indexPath.row == 0
         {
             let searchFromViewController = storyboard?.instantiateViewController(withIdentifier: "SearchFromVC") as! SearchFromViewController
-            navigationController?.navigationBar.backgroundColor = .systemBackground
             navigationController?.pushViewController(searchFromViewController, animated: true)
             
         }
         if indexPath.row == 1
         {
-            let postNavigationController = storyboard?.instantiateViewController(withIdentifier: "PostNC") as! UINavigationController
-            present(postNavigationController, animated: true, completion: nil)
+            let postViewController = PostTripFromViewController2()
+            navigationController?.pushViewController(postViewController, animated: true)
         }
         
         if indexPath.row == 2
         {
-            let shareTaxiNavigationController = storyboard?.instantiateViewController(withIdentifier: "ShareTaxiNC") as! UINavigationController
-            present(shareTaxiNavigationController, animated: true, completion: nil)
+            let shareTaxiViewController = ShareTaxiFromViewController2()
+            navigationController?.pushViewController(shareTaxiViewController, animated: true)
         }
     }
     

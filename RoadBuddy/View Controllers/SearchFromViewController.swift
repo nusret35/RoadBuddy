@@ -74,6 +74,7 @@ class ResultsVC: UIViewController,UITableViewDelegate,UITableViewDataSource
 
 class SearchFromViewController: UIViewController, UISearchResultsUpdating {
     
+    
     let searchController = UISearchController(searchResultsController: ResultsVC())
     
     override func viewDidLoad()
@@ -90,9 +91,12 @@ class SearchFromViewController: UIViewController, UISearchResultsUpdating {
 
         let vc = searchController.searchResultsController as! ResultsVC
         vc.delegate = self
-        if let text = searchController.searchBar.text, !text.isEmpty{
-            LocationManager.shared.findLocations(with: text, mapView: MKMapView()){
-                locations in DispatchQueue.main.async{
+        if let text = searchController.searchBar.text, !text.isEmpty
+        {
+            LocationManager.shared.findLocations(with: text, mapView: MKMapView())
+            {
+                locations in DispatchQueue.main.async
+                {
                     vc.updateData(locations)
                 }
             }
@@ -104,7 +108,7 @@ extension SearchFromViewController: ResultsVCDelegate
     func didTapPlace(with coordinates: CLLocationCoordinate2D, address: String) {
         searchController.searchBar.text = address
         //Setting the next map view controller
-        let searchMapVC = SearchMapFromViewController()
+        let searchMapVC = SearchMapViewController()
         searchMapVC.coordinates = coordinates
         //Setting navigation bar buttons
         let backButton = UIBarButtonItem()
@@ -129,7 +133,7 @@ extension SearchFromViewController: ResultsVCDelegate
 
 }
 
-class SearchMapFromViewController: UIViewController
+class SearchMapViewController: UIViewController
 {
     let mapView = MKMapView()
     var coordinates = CLLocationCoordinate2D()

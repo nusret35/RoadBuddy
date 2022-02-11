@@ -42,7 +42,7 @@ extension SearchToViewController: ResultsVCDelegate
     func didTapPlace(with coordinates: CLLocationCoordinate2D, address: String)
     {
         searchController.searchBar.text = address
-        let searchMapVC = SearchMapToViewController()
+        let searchMapVC = SearchMapViewController()
 
         searchMapVC.coordinates = coordinates
         //Setting navigation bar buttons
@@ -63,31 +63,5 @@ extension SearchToViewController: ResultsVCDelegate
         navigationController?.pushViewController(FirstViewController(), animated: true)
     }
 
-}
-
-class SearchMapToViewController: UIViewController
-{
-    let mapView = MKMapView()
-    var coordinates = CLLocationCoordinate2D()
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        view.addSubview(mapView)
-        view.backgroundColor = .systemBackground
-        pinTheLocation()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        mapView.frame = CGRect(x:0,y:view.safeAreaInsets.top,width:view.frame.size.width,height: view.frame.size.height)
-    }
-    
-    func pinTheLocation() {
-        let pin = MKPointAnnotation()
-        pin.coordinate = coordinates
-        mapView.addAnnotation(pin)
-        mapView.setRegion(MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)), animated: true)
-    }
-    
 }
 
