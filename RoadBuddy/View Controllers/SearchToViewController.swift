@@ -74,6 +74,7 @@ class SearchMapToViewController: UIViewController
     {
         super.viewDidLoad()
         view.addSubview(mapView)
+        view.backgroundColor = .systemBackground
         pinTheLocation()
     }
     

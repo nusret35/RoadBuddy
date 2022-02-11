@@ -33,8 +33,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         authenticateUser()
         CurrentUser.fetchData()
         view.addSubview(tableView)
-        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "chevron.left")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.left")
         tableView.backgroundColor = BackgroundColor.defaultBackgroundColor
         tableView.register(FirstTableViewCell.nib(),forCellReuseIdentifier: FirstTableViewCell.identifier)
         tableView.delegate = self
@@ -43,6 +41,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navigationController?.navigationBar.backgroundColor = BackgroundColor.defaultBackgroundColor
         let animation = AnimationType.from(direction: .bottom, offset: 300)
         UIView.animate(views: tableView.visibleCells, animations: [animation], delay: 0.5, duration: 1)
     }
@@ -97,6 +96,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if indexPath.row == 0
         {
             let searchFromViewController = storyboard?.instantiateViewController(withIdentifier: "SearchFromVC") as! SearchFromViewController
+            navigationController?.navigationBar.backgroundColor = .systemBackground
             navigationController?.pushViewController(searchFromViewController, animated: true)
             
         }

@@ -116,6 +116,7 @@ extension SearchFromViewController: ResultsVCDelegate
         //Setting navigation bar title
         searchMapVC.title = address
         searchMapVC.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.backgroundColor = .systemBackground
         navigationController?.pushViewController(searchMapVC, animated: true)
     }
     
@@ -136,6 +137,7 @@ class SearchMapFromViewController: UIViewController
     {
         super.viewDidLoad()
         view.addSubview(mapView)
+        view.backgroundColor = .systemBackground
         pinTheLocation()
     }
     
