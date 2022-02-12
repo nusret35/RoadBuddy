@@ -18,7 +18,7 @@ class PostTripFromViewController2: UIViewController, UISearchResultsUpdating{
     {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        navigationItem.title = "From where ?"
+        navigationItem.title = "From where?"
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
 
@@ -54,16 +54,14 @@ extension PostTripFromViewController2: ResultsVCDelegate
         let postMapVC = SearchMapViewController()
         postMapVC.coordinates = coordinates
         
-        let backButton = UIBarButtonItem()
-        backButton.title = "Back"
+        //NEW ADDED
+        let action = #selector(rightButtonAction)
         
-        navigationItem.backBarButtonItem = backButton
-        
-        let rightBarButton = UIBarButtonItem(image:
-                                                UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(rightButtonAction))
-        
+        let rightBarButton = Buttons.createDefaultRightButton(self,action)
+
         postMapVC.navigationItem.rightBarButtonItem = rightBarButton
-        
+        postMapVC.navigationItem.backBarButtonItem = Buttons.defaultBackButton
+        //
         postMapVC.title = address
         postMapVC.navigationItem.largeTitleDisplayMode = .never
         
@@ -76,7 +74,7 @@ extension PostTripFromViewController2: ResultsVCDelegate
     @objc func rightButtonAction()
     {
         let viewController = PostTripToViewController2()
-        viewController.navigationItem.largeTitleDisplayMode = .always
+        viewController.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(viewController, animated: true)
     }
 

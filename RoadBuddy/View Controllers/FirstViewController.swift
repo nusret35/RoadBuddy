@@ -35,7 +35,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         authenticateUser()
         CurrentUser.fetchData()
         view.addSubview(tableView)
-        tableView.backgroundColor = .systemBackground
+        navigationItem.backBarButtonItem = Buttons.defaultBackButtonWithoutTitle
         tableView.register(FirstTableViewCell.nib(),forCellReuseIdentifier: FirstTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
@@ -44,7 +44,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        navigationController?.navigationBar.backgroundColor = .systemBackground
+
         if firstAppearance
         {
             let animation = AnimationType.from(direction: .bottom, offset: 300)
@@ -76,17 +76,21 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FirstTableViewCell.identifier, for: indexPath) as! FirstTableViewCell
+        cell.accessoryType = .disclosureIndicator
         if indexPath.row == 0
         {
-            cell.view.backgroundColor = UIColor.yellow
+            cell.backgroundColor = UIColor.yellow
+            //cell.accessoryView.tintColor = UIColor.yellow
         }
         if indexPath.row == 1
         {
-            cell.view.backgroundColor = UIColor.red
+            cell.backgroundColor = UIColor.red
+           // cell.accessoryView.tintColor = UIColor.red
         }
         if indexPath.row == 2
         {
-            cell.view.backgroundColor = UIColor.blue
+            cell.backgroundColor = UIColor.blue
+            //cell.accessoryView.tintColor = UIColor.blue
         }
         return cell
     }
@@ -100,16 +104,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 0
         {
-            let searchFromViewController = storyboard?.instantiateViewController(withIdentifier: "SearchFromVC") as! SearchFromViewController
+            let searchFromViewController = SearchFromViewController()
+            //searchFromViewController.navigationItem.backBarButtonItem
             navigationController?.pushViewController(searchFromViewController, animated: true)
             
         }
         if indexPath.row == 1
         {
             let postViewController = PostTripFromViewController2()
-            print("y")
             navigationController?.pushViewController(postViewController, animated: true)
         }
         

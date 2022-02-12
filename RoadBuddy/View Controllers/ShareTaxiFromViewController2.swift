@@ -54,10 +54,7 @@ extension ShareTaxiFromViewController2: ResultsVCDelegate
         let ShareMapVC = SearchMapViewController()
         ShareMapVC.coordinates = coordinates
         
-        let backButton = UIBarButtonItem()
-        backButton.title = "Back"
         
-        navigationItem.backBarButtonItem = backButton
         
         let rightBarButton = UIBarButtonItem(image:
                                                 UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(rightButtonAction))

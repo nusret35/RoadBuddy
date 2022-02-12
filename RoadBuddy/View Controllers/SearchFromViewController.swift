@@ -9,6 +9,9 @@ import UIKit
 import MapKit
 import CoreLocation
 
+//create the request
+var UserSearchTripRequest = SearchTripRequest()
+
 protocol ResultsVCDelegate: AnyObject {
     func didTapPlace(with coordinates: CLLocationCoordinate2D, address: String)
 }
@@ -107,16 +110,19 @@ extension SearchFromViewController: ResultsVCDelegate
 {
     func didTapPlace(with coordinates: CLLocationCoordinate2D, address: String) {
         searchController.searchBar.text = address
+        //Add from address and coordinates to request
+        UserSearchTripRequest.fromLocationName = address
+        UserSearchTripRequest.fromCoordinateLat = Double(coordinates.latitude)
+        UserSearchTripRequest.fromCoordinateLong = Double(coordinates.longitude)
         //Setting the next map view controller
         let searchMapVC = SearchMapViewController()
         searchMapVC.coordinates = coordinates
         //Setting navigation bar buttons
-        let backButton = UIBarButtonItem()
-        backButton.title = "Back"
-        navigationItem.backBarButtonItem = backButton
         //right bar button setting
-        let rightBarButton = UIBarButtonItem(image: UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(rightButtonAction))
+        let action = #selector(rightButtonAction)
+        let rightBarButton = Buttons.createDefaultRightButton(self,action)
         searchMapVC.navigationItem.rightBarButtonItem = rightBarButton
+        searchMapVC.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         //Setting navigation bar title
         searchMapVC.title = address
         searchMapVC.navigationItem.largeTitleDisplayMode = .never

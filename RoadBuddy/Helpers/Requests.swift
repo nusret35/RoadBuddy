@@ -8,25 +8,22 @@
 import Foundation
 import CoreLocation
 
-struct SearchTripRequest
+class SearchTripRequest
 {
-    var fullname:String
     
-    var uid:String
+    var time = String()
     
-    var time:String
+    var fromLocationName = String()
     
-    var fromLocationName:String
+    var toLocationName = String()
     
-    var toLocationName:String
+    var fromCoordinateLat = Double()
     
-    var fromCoordinateLat:Double
+    var fromCoordinateLong = Double()
     
-    var fromCoordinateLong:Double
+    var toCoordinateLat = Double()
     
-    var toCoordinateLat:Double
-    
-    var toCoordinateLong:Double
+    var toCoordinateLong = Double()
     
 }
 

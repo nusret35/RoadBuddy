@@ -119,22 +119,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B2BB4F18-09B5-45CC-BDFD-DCAC7D94D813"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RoadBuddy/View Controllers/TaxiTripSetViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "matchRequest()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A2B3DE7C-5F67-46A4-A6B1-01FC908413B6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -142,10 +126,10 @@
             filePath = "RoadBuddy/View Controllers/SearchToViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "SearchToViewController"
-            landmarkType = "21">
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "SearchMapToViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

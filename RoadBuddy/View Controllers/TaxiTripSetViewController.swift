@@ -183,13 +183,13 @@ class TaxiTripSetViewController: UIViewController {
                 var sortedRequests:[TaxiTripRequest] = []
                 while trips.isEmpty == false
                 {
-                    var date1 = dateFormatter.date(from: trips[0].time) as! Date
+                    var date1 = myDateFormat.stringToDate(trips[0].time)
                     var date1_index = 0
                     if (trips.count != 1)
                     {
                         for temp in 0...trips.count-1
                         {
-                            var date2 = dateFormatter.date(from: trips[temp].time) as! Date
+                            let date2 = myDateFormat.stringToDate(trips[temp].time)
                             if date2 < date1
                             {
                                 print("date2 < date1 (date2: "+trips[temp].time+" date1: "+trips[date1_index].time)

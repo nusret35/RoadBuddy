@@ -8,7 +8,6 @@
 import UIKit
 import MapKit
 import CoreLocation
-import SwiftUI
 
 class SearchToViewController: UIViewController, UISearchResultsUpdating {
     let searchController = UISearchController(searchResultsController: ResultsVC())
@@ -41,17 +40,21 @@ extension SearchToViewController: ResultsVCDelegate
 {
     func didTapPlace(with coordinates: CLLocationCoordinate2D, address: String)
     {
+        //adding datas to request
+        UserSearchTripRequest.toCoordinateLat = Double(coordinates.latitude)
+        UserSearchTripRequest.fromCoordinateLong = Double(coordinates.longitude)
+        //setting up the view controller
         searchController.searchBar.text = address
-        let searchMapVC = SearchMapViewController()
+        let searchMapVC = SearchMapToViewController()
 
         searchMapVC.coordinates = coordinates
         //Setting navigation bar buttons
-        let backButton = UIBarButtonItem()
-        backButton.title = "Back"
-        navigationItem.backBarButtonItem = backButton
+        navigationItem.backBarButtonItem = Buttons.defaultBackButton
         //right bar button action
-        let rightBarButton = UIBarButtonItem(image: UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(rightButtonAction))
+        let action = #selector(rightButtonAction)
+        let rightBarButton = Buttons.createDefaultRightButton(self,action)
         searchMapVC.navigationItem.rightBarButtonItem = rightBarButton
+        searchMapVC.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         //Setting navigation bar title
         searchMapVC.title = address
         searchMapVC.navigationItem.largeTitleDisplayMode = .never
@@ -60,8 +63,40 @@ extension SearchToViewController: ResultsVCDelegate
     
     @objc func rightButtonAction()
     {
-        navigationController?.pushViewController(FirstViewController(), animated: true)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = mainStoryboard.instantiateViewController(withIdentifier: "SearchTimeVC") as! SearchTimeViewController
+        vc.view.backgroundColor = .systemBackground
+        vc.navigationItem.backBarButtonItem = Buttons.defaultBackButton
+        vc.title = "Set Time"
+        vc.navigationItem.largeTitleDisplayMode = .always
+        navigationController?.pushViewController(vc, animated: true)
     }
 
+}
+
+class SearchMapToViewController: UIViewController
+{
+    let mapView = MKMapView()
+    var coordinates = CLLocationCoordinate2D()
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        view.addSubview(mapView)
+        view.backgroundColor = .systemBackground
+        pinTheLocation()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        mapView.frame = CGRect(x:0,y:view.safeAreaInsets.top,width:view.frame.size.width,height: view.frame.size.height)
+    }
+    
+    func pinTheLocation() {
+        let pin = MKPointAnnotation()
+        pin.coordinate = coordinates
+        mapView.addAnnotation(pin)
+        mapView.setRegion(MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)), animated: true)
+    }
+    
 }
 

@@ -55,12 +55,11 @@ extension PostTripToViewController2: ResultsVCDelegate
         let postMapVC = SearchMapViewController()
         postMapVC.coordinates = coordinates
         
-        let backButton = UIBarButtonItem()
-        backButton.title = "Back"
-        navigationItem.backBarButtonItem = backButton
-        
-        let rightBarButton = UIBarButtonItem( image: UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(rightButtonAction))
-        postMapVC.navigationItem.rightBarButtonItem = rightBarButton
+        //NEW ADDED
+        let action = #selector(rightButtonAction)
+        postMapVC.navigationItem.rightBarButtonItem = Buttons.createDefaultRightButton(self,action)
+        postMapVC.navigationItem.backBarButtonItem = Buttons.defaultBackButton
+        //
         
         postMapVC.title = address
         postMapVC.navigationItem.largeTitleDisplayMode = .never

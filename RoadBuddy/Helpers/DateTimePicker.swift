@@ -29,8 +29,8 @@ class DateTimePicker: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
   }
   
   func setup() {
-    dayFormatter.dateFormat = "EE d MMM"
-    timeFormatter.timeStyle = .short
+    dayFormatter.dateFormat = "EEEE, MMM d, yyyy"
+      timeFormatter.timeStyle = .short
     days = setDays()
     startTimes = setStartTimes()
   }
@@ -182,4 +182,29 @@ extension Date {
                   dayFormatter.string(from: dayDate),
                   startTimeFormatter.string(from: startDate))
   }
+}
+
+class myDateFormat
+{
+    static let dateFormatter = DateFormatter()
+    
+    static func stringToDate(_ from:String) -> Date
+    {
+        formatDate(dateFormatter)
+        let date = dateFormatter.date(from: from)!
+        return date
+    }
+    
+    static func dateToString(_ from:Date) -> String
+    {
+        formatDate(dateFormatter)
+        return dateFormatter.string(from: from)
+    }
+
+    
+    static func formatDate(_ formatter: DateFormatter)
+    {
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "EEEE, MMM d, yyyy '('HH:mm')'"
+    }
 }
