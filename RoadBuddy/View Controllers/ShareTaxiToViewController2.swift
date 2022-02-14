@@ -16,6 +16,7 @@ class ShareTaxiToViewController2: UIViewController, UISearchResultsUpdating
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationItem.title = "Where will you go ?"
+        navigationItem.backButtonTitle = "Back"
         searhController.searchResultsUpdater = self
         navigationItem.searchController = searhController
         
@@ -61,7 +62,7 @@ extension ShareTaxiToViewController2: ResultsVCDelegate
         
         ShareMapVC.navigationItem.rightBarButtonItem = rightBarButton
         
-        ShareMapVC.title = address
+        //ShareMapVC.title = address
         ShareMapVC.navigationItem.largeTitleDisplayMode = .never
         
         navigationController?.navigationBar.backgroundColor = .systemBackground

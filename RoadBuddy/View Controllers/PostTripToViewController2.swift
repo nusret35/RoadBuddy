@@ -18,6 +18,7 @@ class PostTripToViewController2: UIViewController, UISearchResultsUpdating
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationItem.title = "Where will you go?"
+        navigationItem.backButtonTitle = "Back"
         searhController.searchResultsUpdater = self
         navigationItem.searchController = searhController
         
@@ -60,7 +61,7 @@ extension PostTripToViewController2: ResultsVCDelegate
         postMapVC.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         //
         
-        postMapVC.title = address
+        //postMapVC.title = address
         postMapVC.navigationItem.largeTitleDisplayMode = .never
         
         navigationController?.navigationBar.backgroundColor = .systemBackground

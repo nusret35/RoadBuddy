@@ -18,7 +18,8 @@ class PostTripFromViewController2: UIViewController, UISearchResultsUpdating{
     {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        navigationItem.title = "From where?"
+        navigationItem.title = "Where are you ?"
+        navigationItem.backButtonTitle = "Back"
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
 
@@ -62,7 +63,7 @@ extension PostTripFromViewController2: ResultsVCDelegate
         postMapVC.navigationItem.rightBarButtonItem = rightBarButton
         postMapVC.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         //
-        postMapVC.title = address
+        //postMapVC.title = "42"
         postMapVC.navigationItem.largeTitleDisplayMode = .never
         
         navigationController?.navigationBar.backgroundColor = .systemBackground

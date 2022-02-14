@@ -85,6 +85,7 @@ class SearchFromViewController: UIViewController, UISearchResultsUpdating {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationItem.title = "Where are you?"
+        navigationItem.backButtonTitle = "Back"
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
     }

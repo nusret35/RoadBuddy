@@ -108,7 +108,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if indexPath.row == 0
         {
             let searchFromViewController = SearchFromViewController()
-            searchFromViewController.navigationItem.backBarButtonItem 
+            
             navigationController?.pushViewController(searchFromViewController, animated: true)
             
         }

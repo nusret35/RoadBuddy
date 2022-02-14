@@ -17,6 +17,7 @@ class SearchToViewController: UIViewController, UISearchResultsUpdating {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationItem.title = "Where to?"
+        navigationItem.backButtonTitle = "Back"
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
     }
@@ -56,7 +57,7 @@ extension SearchToViewController: ResultsVCDelegate
         searchMapVC.navigationItem.rightBarButtonItem = rightBarButton
         searchMapVC.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         //Setting navigation bar title
-        searchMapVC.title = address
+        //searchMapVC.title = address
         searchMapVC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(searchMapVC, animated: true)
     }
