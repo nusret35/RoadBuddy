@@ -73,7 +73,19 @@ extension ShareTaxiToViewController2: ResultsVCDelegate
     
     @objc func rightButtonAction()
     {
-        navigationController?.pushViewController(FirstViewController(), animated: true)
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let viewController = mainStoryBoard.instantiateViewController(withIdentifier: "SearchTimeVC") as! SearchTimeViewController
+        
+        viewController.view.backgroundColor = .systemBackground
+        
+        viewController.navigationItem.backBarButtonItem = Buttons.defaultBackButton
+        
+        viewController.title = "Set Time"
+        
+        viewController.navigationItem.largeTitleDisplayMode = .always
+        
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
 }

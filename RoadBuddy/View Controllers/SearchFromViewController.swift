@@ -124,7 +124,7 @@ extension SearchFromViewController: ResultsVCDelegate
         searchMapVC.navigationItem.rightBarButtonItem = rightBarButton
         searchMapVC.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         //Setting navigation bar title
-        searchMapVC.title = address
+        //searchMapVC.title = address
         searchMapVC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.backgroundColor = .systemBackground
         navigationController?.pushViewController(searchMapVC, animated: true)
