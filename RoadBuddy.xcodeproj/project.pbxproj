@@ -68,6 +68,8 @@
 		809B9C7027B39B1E004EB9C4 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6727B39B1E004EB9C4 /* ViewAnimator.swift */; };
 		809B9C7127B39B1E004EB9C4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6927B39B1E004EB9C4 /* Animation.swift */; };
 		809B9C7327B3A395004EB9C4 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C7227B3A395004EB9C4 /* Requests.swift */; };
+		809F674227B937E400D67E56 /* SearchPassengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F674127B937E400D67E56 /* SearchPassengerViewController.swift */; };
+		809F674427B949C100D67E56 /* SearchMatchRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F674327B949C100D67E56 /* SearchMatchRequestViewController.swift */; };
 		80A8933427A800AE00CE83AB /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A8933327A800AE00CE83AB /* Maps.storyboard */; };
 		80A8933727A8014A00CE83AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A8933527A8014900CE83AB /* Main.storyboard */; };
 		80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */; };
@@ -141,6 +143,8 @@
 		809B9C6727B39B1E004EB9C4 /* ViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAnimator.swift; sourceTree = "<group>"; };
 		809B9C6927B39B1E004EB9C4 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		809B9C7227B3A395004EB9C4 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		809F674127B937E400D67E56 /* SearchPassengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPassengerViewController.swift; sourceTree = "<group>"; };
+		809F674327B949C100D67E56 /* SearchMatchRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMatchRequestViewController.swift; sourceTree = "<group>"; };
 		80A8933327A800AE00CE83AB /* Maps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
 		80A8933627A8014900CE83AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTripViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +298,22 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		809F674027B9338000D67E56 /* Old View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80D9B0AE26FDE7F5001EB6BD /* FromWhereToViewController.swift */,
+				80CA9344270C3AD9009A1469 /* DateTimeViewController.swift */,
+				80CA9348270C84CF009A1469 /* PostTripToViewController.swift */,
+				80CA9346270C7F33009A1469 /* PostTripFromViewController.swift */,
+				807E99472755643100EA88F0 /* STTimeViewController.swift */,
+				80E7A515274AE5AF00423EB3 /* STToViewController.swift */,
+				80E7A513274AE59F00423EB3 /* STFromViewController.swift */,
+				807E9BC827074CE20008F523 /* ToViewController.swift */,
+				807F1F3A2701E6AB000C89CB /* FromViewController.swift */,
+			);
+			path = "Old View Controllers";
+			sourceTree = "<group>";
+		};
 		80D9B08926FC9249001EB6BD = {
 			isa = PBXGroup;
 			children = (
@@ -339,35 +359,29 @@
 				80C996362765682100B5A3C7 /* HomePageViewController.swift */,
 				80C996382765697B00B5A3C7 /* SignUpViewController.swift */,
 				80C9963A2766919300B5A3C7 /* LoginViewController.swift */,
+				805A7B4D27B26DCC00DDB80A /* FirstViewController.swift */,
 				804B3AAA27B54EAF0041A7DC /* SearchFromViewController.swift */,
 				804B3AAC27B64C9D0041A7DC /* SearchToViewController.swift */,
 				804B3AAE27B66F320041A7DC /* SearchTimeViewController.swift */,
-				80D9B0AE26FDE7F5001EB6BD /* FromWhereToViewController.swift */,
-				807F1F3A2701E6AB000C89CB /* FromViewController.swift */,
-				807E9BC827074CE20008F523 /* ToViewController.swift */,
+				809F674127B937E400D67E56 /* SearchPassengerViewController.swift */,
+				809F674327B949C100D67E56 /* SearchMatchRequestViewController.swift */,
+				C02FE7F527B68AE6006E5C14 /* PostTripFromViewController2.swift */,
+				C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */,
+				C02FE7F927B69DBB006E5C14 /* ShareTaxiFromViewController2.swift */,
+				C02FE7FB27B69DD7006E5C14 /* ShareTaxiToViewController2.swift */,
+				809F674027B9338000D67E56 /* Old View Controllers */,
 				807E9BCC27076DE90008F523 /* ResultsViewController.swift */,
 				80CA933827091D63009A1469 /* ProfilePageViewController.swift */,
 				80CA933A270A034D009A1469 /* PostTripViewController.swift */,
-				80CA9344270C3AD9009A1469 /* DateTimeViewController.swift */,
-				80CA9346270C7F33009A1469 /* PostTripFromViewController.swift */,
-				80CA9348270C84CF009A1469 /* PostTripToViewController.swift */,
 				80CA934A270D91B3009A1469 /* PassengerPriceViewController.swift */,
 				80D5E7712715B634000F1F5B /* PostFinalViewController.swift */,
 				80D5E790271C81ED000F1F5B /* PostViewController.swift */,
 				80E7A511274587F300423EB3 /* ShareTaxiViewController.swift */,
 				80E7A517274AE5E400423EB3 /* TaxiTripSetViewController.swift */,
-				80E7A513274AE59F00423EB3 /* STFromViewController.swift */,
-				80E7A515274AE5AF00423EB3 /* STToViewController.swift */,
-				807E99472755643100EA88F0 /* STTimeViewController.swift */,
 				804AF855279EB80F00315A82 /* TaxiResultViewController.swift */,
 				80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */,
 				8075BAC227A3F1B70064CCB7 /* InboxViewController.swift */,
 				8075BAD627A6F7E00064CCB7 /* ChatViewController.swift */,
-				805A7B4D27B26DCC00DDB80A /* FirstViewController.swift */,
-				C02FE7F527B68AE6006E5C14 /* PostTripFromViewController2.swift */,
-				C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */,
-				C02FE7F927B69DBB006E5C14 /* ShareTaxiFromViewController2.swift */,
-				C02FE7FB27B69DD7006E5C14 /* ShareTaxiToViewController2.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -602,6 +616,7 @@
 				80E7A514274AE59F00423EB3 /* STFromViewController.swift in Sources */,
 				805A7B4E27B26DCE00DDB80A /* FirstViewController.swift in Sources */,
 				80E7A510274550DD00423EB3 /* MainTabController.swift in Sources */,
+				809F674227B937E400D67E56 /* SearchPassengerViewController.swift in Sources */,
 				807E9BC927074CE20008F523 /* ToViewController.swift in Sources */,
 				C02FE7F627B68AE6006E5C14 /* PostTripFromViewController2.swift in Sources */,
 				809B9C6E27B39B1E004EB9C4 /* UICollectionView + ViewAnimator.swift in Sources */,
@@ -609,6 +624,7 @@
 				80AE818E27B45928007BBC2B /* StorageManager.swift in Sources */,
 				80E7A516274AE5AF00423EB3 /* STToViewController.swift in Sources */,
 				804AF861279EBCC200315A82 /* TaxiTableViewCell.swift in Sources */,
+				809F674427B949C100D67E56 /* SearchMatchRequestViewController.swift in Sources */,
 				80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */,
 				80D5E791271C81ED000F1F5B /* PostViewController.swift in Sources */,
 				C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */,

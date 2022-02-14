@@ -176,10 +176,6 @@ class TaxiTripSetViewController: UIViewController {
             if trips.isEmpty == false
             {
                 print("match found")
-                
-                let dateFormatter = DateFormatter()
-                dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-                dateFormatter.dateFormat = "EEEE, MMM d, yyyy '('HH:mm')'"
                 var sortedRequests:[TaxiTripRequest] = []
                 while trips.isEmpty == false
                 {
@@ -206,12 +202,6 @@ class TaxiTripSetViewController: UIViewController {
                     }
                     let dummy = trips.popLast()
                 }
-               /*
-                for i in sortedRequests
-                {
-                    print(i.time)
-                }
-                */
                 print(sortedRequests[0])
             }
             else

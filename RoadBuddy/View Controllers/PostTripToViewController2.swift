@@ -8,7 +8,6 @@
 import UIKit
 import MapKit
 import CoreLocation
-import SwiftUI
 
 class PostTripToViewController2: UIViewController, UISearchResultsUpdating
 {
@@ -18,7 +17,7 @@ class PostTripToViewController2: UIViewController, UISearchResultsUpdating
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        navigationItem.title = "Where will you go ?"
+        navigationItem.title = "Where will you go?"
         searhController.searchResultsUpdater = self
         navigationItem.searchController = searhController
         

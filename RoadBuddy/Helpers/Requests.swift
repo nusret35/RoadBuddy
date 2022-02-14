@@ -13,6 +13,8 @@ class SearchTripRequest
     
     var time = String()
     
+    var numberOfPassengers = Int()
+    
     var fromLocationName = String()
     
     var toLocationName = String()
@@ -24,6 +26,8 @@ class SearchTripRequest
     var toCoordinateLat = Double()
     
     var toCoordinateLong = Double()
+    
+    
     
 }
 

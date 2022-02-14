@@ -12,10 +12,11 @@ class SearchTimeViewController: UIViewController{
     
     @IBOutlet weak var timePicker: UIDatePicker!
     
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        let moment = Date()
+        timePicker.minimumDate = moment
     }
     @objc func timePickerValueChanged(sender: UIDatePicker)
     {
@@ -25,6 +26,11 @@ class SearchTimeViewController: UIViewController{
     
     @IBAction func timeButtonAction(_ sender: Any)
     {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = mainStoryboard.instantiateViewController(withIdentifier: "SearchPassengerVC") as! SearchPassengerViewController
+        vc.title = "How many people are you with?"
+        vc.navigationItem.backBarButtonItem = Buttons.defaultBackButton
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     

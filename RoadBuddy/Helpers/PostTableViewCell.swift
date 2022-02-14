@@ -16,8 +16,7 @@ class PostTableViewCell: UITableViewCell {
 
     var cellDelegate: PostTableViewCellDelegate?
     
-    @IBOutlet var userImageView: UIImageView!
-    @IBOutlet var usernameLabel: UILabel!
+    
     @IBOutlet var fromLocationLabel: UILabel!
     @IBOutlet var toLocationLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
@@ -40,8 +39,6 @@ class PostTableViewCell: UITableViewCell {
     
     func configure(with model: TripPost)
     {
-        self.usernameLabel.text = model.username
-        self.userImageView.image = model.profilePicture
         self.fromLocationLabel.text = model.fromLocation
         self.toLocationLabel.text =  model.toLocation
         self.timeLabel.text =  model.time
