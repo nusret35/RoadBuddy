@@ -51,7 +51,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         view.addSubview(noTripsLabel)
         sendTheRequest()
         matchRequest()
-        setUpView()
+
     }
     
     override func viewDidLayoutSubviews() {
@@ -75,8 +75,8 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     
     private func setUpTableView()
     {
-        tableView.backgroundColor = .systemBackground
         tableView.isHidden = false
+        tableView.backgroundColor = .systemBackground
         tableView.register(PostTableViewCell.nib(), forCellReuseIdentifier: PostTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
@@ -120,7 +120,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     {
 
         storageManager.ref.child("Trips")
-        .observeSingleEvent(of: .value, with: { (snapshot)  in
+            .observeSingleEvent(of: .value, with: { [self] (snapshot)  in
             for child in snapshot.children
             {
                 let snap = child as! DataSnapshot
@@ -140,22 +140,31 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
                 let dataFromLocation = CLLocation(latitude: fromLat, longitude: fromLong)
                 
                 let fromDistance = self.searchFromLocation.distance(from: dataFromLocation) / 1000
+                print("searchFromLat: " + String(self.searchFromLocation.coordinate.latitude))
+                print("searchFromLong: " +  String(self.searchFromLocation.coordinate.longitude))
+                print("searchToLat: " + String(self.searchToLocation.coordinate.latitude))
+                print("searchToLong: " + String(self.searchToLocation.coordinate.longitude))
+                print("fromDistance: " + String(fromDistance))
                 let currentUserID = CurrentUser.UID
                 if (currentUserID != dUID)
                 {
                     if (fromDistance <= 8)
                     {
+                        print("inside from distance")
                         let dataToLocation = CLLocation(latitude: toLat, longitude: toLong)
                         let toDistance = self.searchToLocation.distance(from: dataToLocation) / 1000
                         if (toDistance <= 8)
                         {
+                            print("inside to distance")
                             if (UserSearchTripRequest.numberOfPassengers <= numberOfPassengers)
                             {
+                                print("passengers found")
                                 let dataTime = myDateFormat.stringToDate(time)
                                 let requestTime = myDateFormat.stringToDate(UserSearchTripRequest.time)
             
                                 if dataTime <= (requestTime.addingTimeInterval(60*120)) && dataTime >= requestTime
                                 {
+                                    print("dates are matched")
                                     let data = DriverData(driverName: name, fromLocation: from, toLocation: to, price: price, time: time, numberOfPassengers: numberOfPassengers,uid:dUID)
                                     self.trips.append(data)
                                     print(self.trips[0].driverName)
@@ -167,7 +176,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
             }
             self.sortTrips()
             self.fillModelsArray()
-            
+            self.setUpView()
             
         })
         
@@ -220,6 +229,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         {
             self.models.append(TripPost(username: i.driverName, uid: i.uid, profilePicture: UIImage(named:"emptyProfilePicture")!, fromLocation: i.fromLocation, toLocation: i.toLocation, time: i.time, numberOfPassengers: i.numberOfPassengers, price: i.price))
         }
+        print(String(models.count))
         self.tableView.reloadData()
     }
 

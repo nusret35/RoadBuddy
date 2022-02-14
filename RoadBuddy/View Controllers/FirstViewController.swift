@@ -108,7 +108,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if indexPath.row == 0
         {
             let searchFromViewController = SearchFromViewController()
-            
             navigationController?.pushViewController(searchFromViewController, animated: true)
             
         }
@@ -116,7 +115,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         {
             let postViewController = PostTripFromViewController2()
             navigationController?.pushViewController(postViewController, animated: true)
-            
         }
         
         if indexPath.row == 2

@@ -17,11 +17,7 @@ class SearchTimeViewController: UIViewController{
         super.viewDidLoad()
         let moment = Date()
         timePicker.minimumDate = moment
-    }
-    @objc func timePickerValueChanged(sender: UIDatePicker)
-    {
-        UserSearchTripRequest.time = myDateFormat.dateToString(sender.date)
-        print(UserSearchTripRequest.time)
+        UserSearchTripRequest.time = myDateFormat.dateToString(moment)
     }
     
     @IBAction func timeButtonAction(_ sender: Any)

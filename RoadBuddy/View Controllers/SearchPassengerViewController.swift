@@ -67,6 +67,9 @@ class SearchPassengerViewController: UIViewController {
     @IBAction func continueButtonAction(_ sender: Any)
     {
         UserSearchTripRequest.numberOfPassengers = numberOfPassengers
+        let vc = SearchMatchRequestViewController()
+        vc.title = "Searching for trips"
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
