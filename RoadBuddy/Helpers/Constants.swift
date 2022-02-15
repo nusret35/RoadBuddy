@@ -55,12 +55,45 @@ struct Constants {
     }
 }
 
-struct BackgroundColor
+class BackgroundColor
 {
-    static let defaultBackgroundColor = color.UIColorFromRGB(rgbValue: 0x0b2f44)
+    struct darkMode
+    {
+        static let defaultBackgroundColor = color.UIColorFromRGB(rgbValue: 0x0b2f44)
+        
+        static let secondaryBackgroundColor = color.UIColorFromRGB(rgbValue:0x1c3b4e)
+    }
     
-    static let secondaryBackgroundColor = color.UIColorFromRGB(rgbValue:0x1c3b4e)
+    struct lightMode
+    {
+        static let defaultBackgroundColor = color.UIColorFromRGB(rgbValue: 0xf8f8f9)
+    }
     
+    static func setViewBackgroundColor(_ vc: UIViewController)
+    {
+        switch vc.traitCollection.userInterfaceStyle {
+        case .dark:
+            vc.view.backgroundColor = BackgroundColor.darkMode.defaultBackgroundColor
+        case .light:
+            vc.view.backgroundColor = BackgroundColor.lightMode.defaultBackgroundColor
+        default:
+            break
+    }
+    
+}
+    
+    static func setTableViewBackgroundColor(_ vc: UIViewController,_ tableView: UITableView)
+    {
+        switch vc.traitCollection.userInterfaceStyle {
+        case .dark:
+            tableView.backgroundColor = BackgroundColor.darkMode.defaultBackgroundColor
+        case .light:
+            tableView.backgroundColor = BackgroundColor.lightMode.defaultBackgroundColor
+        default:
+            break
+                                
+        }
+    }
 }
 
 struct Buttons

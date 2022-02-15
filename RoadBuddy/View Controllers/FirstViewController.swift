@@ -32,6 +32,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        BackgroundColor.setViewBackgroundColor(self)
+        BackgroundColor.setTableViewBackgroundColor(self, tableView)
         authenticateUser()
         CurrentUser.fetchData()
         view.addSubview(tableView)
@@ -39,7 +41,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.register(FirstTableViewCell.nib(),forCellReuseIdentifier: FirstTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
-        
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?)
+    {
+        BackgroundColor.setViewBackgroundColor(self)
+        BackgroundColor.setTableViewBackgroundColor(self, tableView)
     }
     
     override func viewDidAppear(_ animated: Bool) {

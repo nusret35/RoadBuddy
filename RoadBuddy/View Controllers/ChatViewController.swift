@@ -32,9 +32,7 @@ class ChatViewController: MessagesViewController {
     
     override func viewDidLoad()
     {
-        super.viewDidLoad()
-        view.backgroundColor = BackgroundColor.defaultBackgroundColor
-        
+        super.viewDidLoad()        
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
