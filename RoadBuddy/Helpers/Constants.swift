@@ -94,6 +94,18 @@ class BackgroundColor
                                 
         }
     }
+    
+    static func setTableViewCellBackgroundColor(_ view: UIView)
+        {
+        switch view.traitCollection.userInterfaceStyle {
+        case .dark:
+           view.backgroundColor = BackgroundColor.darkMode.secondaryBackgroundColor
+        case .light:
+            view.backgroundColor = .gray
+        default:
+            break
+        }
+    }
 }
 
 struct Buttons
@@ -122,4 +134,5 @@ struct Buttons
         return rightButton
     }
 }
+
 

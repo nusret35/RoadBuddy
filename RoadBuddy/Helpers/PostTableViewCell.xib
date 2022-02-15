@@ -198,6 +198,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="fromLocationLabel" destination="PLF-hQ-pLh" id="dFd-pO-WmD"/>
+                <outlet property="groundView" destination="Sfg-MB-wh2" id="Zyi-Cp-kQF"/>
                 <outlet property="numberOfPassengersLabel" destination="2mK-xc-YFh" id="IOw-Px-s1G"/>
                 <outlet property="priceLabel" destination="Jpr-7p-ZgL" id="50J-Iz-zQm"/>
                 <outlet property="timeLabel" destination="HE9-Tn-5Tp" id="dUK-mT-d43"/>

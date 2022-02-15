@@ -40,7 +40,7 @@ class SearchPassengerViewController: UIViewController {
             }
             else if numberOfPassengers == 3
             {
-                plusButton.tintColor = .label
+                plusButton.tintColor = .systemTeal
             }
         }
     }
@@ -58,11 +58,17 @@ class SearchPassengerViewController: UIViewController {
             }
             else if numberOfPassengers == 2
             {
-                minusButton.tintColor = .label
+                minusButton.tintColor = .systemTeal
             }
         }
         
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?)
+    {
+        
+    }
+    
     
     @IBAction func continueButtonAction(_ sender: Any)
     {

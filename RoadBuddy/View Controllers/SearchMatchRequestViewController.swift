@@ -99,7 +99,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 427
+        return 270
     }
     
     

@@ -22,6 +22,8 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var numberOfPassengersLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var groundView: UIView!
+    
     
     static let identifier = "PostTableViewCell"
     
@@ -29,8 +31,10 @@ class PostTableViewCell: UITableViewCell {
     {
         return UINib(nibName: "PostTableViewCell", bundle: nil)
     }
-    override func awakeFromNib() {
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
+        BackgroundColor.setTableViewCellBackgroundColor(groundView)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
