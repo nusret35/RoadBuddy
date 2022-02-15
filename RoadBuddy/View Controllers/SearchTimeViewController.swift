@@ -24,7 +24,7 @@ class SearchTimeViewController: UIViewController{
     {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = mainStoryboard.instantiateViewController(withIdentifier: "SearchPassengerVC") as! SearchPassengerViewController
-        vc.title = "How many people are you with?"
+        vc.title = "How many people are you with?".localized()
         vc.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         navigationController?.pushViewController(vc, animated: true)
         

@@ -105,6 +105,8 @@
 		C02FE7F827B69860006E5C14 /* PostTripToViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */; };
 		C02FE7FA27B69DBB006E5C14 /* ShareTaxiFromViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7F927B69DBB006E5C14 /* ShareTaxiFromViewController2.swift */; };
 		C02FE7FC27B69DD7006E5C14 /* ShareTaxiToViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7FB27B69DD7006E5C14 /* ShareTaxiToViewController2.swift */; };
+		C07DC91C27BBF03B00C44329 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07DC91B27BBF03B00C44329 /* Languages.swift */; };
+		C07DC92027BBF17D00C44329 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C07DC92227BBF17D00C44329 /* Localizable.strings */; };
 		C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B7A7127B2895D0027684E /* FirstTableViewCell.swift */; };
 		C08B7A7427B2895D0027684E /* FirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08B7A7227B2895D0027684E /* FirstTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -182,10 +184,14 @@
 		C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripToViewController2.swift; sourceTree = "<group>"; };
 		C02FE7F927B69DBB006E5C14 /* ShareTaxiFromViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTaxiFromViewController2.swift; sourceTree = "<group>"; };
 		C02FE7FB27B69DD7006E5C14 /* ShareTaxiToViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTaxiToViewController2.swift; sourceTree = "<group>"; };
+		C07DC91B27BBF03B00C44329 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		C07DC91D27BBF13600C44329 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		C07DC92127BBF17D00C44329 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C07DC92327BBF17E00C44329 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C07DC92427BBF54300C44329 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		C07DC92527BBF54A00C44329 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C08B7A7127B2895D0027684E /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		C08B7A7227B2895D0027684E /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
-		C090E41B27B523C400286CE2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		C090E41C27B523CA00286CE2 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +258,7 @@
 				C08B7A7227B2895D0027684E /* FirstTableViewCell.xib */,
 				80AE818927B45240007BBC2B /* ProfileHeaderTableViewCell.swift */,
 				80AE818A27B45240007BBC2B /* ProfileHeaderTableViewCell.xib */,
+				C07DC91B27BBF03B00C44329 /* Languages.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -346,6 +353,7 @@
 				8075BADC27A7EBA30064CCB7 /* Registration.storyboard */,
 				80D9B09E26FC9251001EB6BD /* Assets.xcassets */,
 				80D9B0A326FC9251001EB6BD /* Info.plist */,
+				C07DC92227BBF17D00C44329 /* Localizable.strings */,
 			);
 			path = RoadBuddy;
 			sourceTree = "<group>";
@@ -534,6 +542,7 @@
 			files = (
 				804AF862279EBCC300315A82 /* TaxiTableViewCell.xib in Resources */,
 				C08B7A7427B2895D0027684E /* FirstTableViewCell.xib in Resources */,
+				C07DC92027BBF17D00C44329 /* Localizable.strings in Resources */,
 				809B9C6A27B39B1E004EB9C4 /* .gitkeep in Resources */,
 				80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */,
 				8075BADD27A7EBA30064CCB7 /* Registration.storyboard in Resources */,
@@ -597,6 +606,7 @@
 				C02FE7FC27B69DD7006E5C14 /* ShareTaxiToViewController2.swift in Sources */,
 				80E7A518274AE5E400423EB3 /* TaxiTripSetViewController.swift in Sources */,
 				807E9BCD27076DE90008F523 /* ResultsViewController.swift in Sources */,
+				C07DC91C27BBF03B00C44329 /* Languages.swift in Sources */,
 				80CA933B270A034D009A1469 /* PostTripViewController.swift in Sources */,
 				80CA9347270C7F33009A1469 /* PostTripFromViewController.swift in Sources */,
 				804B3AAB27B54EAF0041A7DC /* SearchFromViewController.swift in Sources */,
@@ -789,10 +799,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				80A8933627A8014900CE83AB /* Base */,
-				C090E41B27B523C400286CE2 /* zh-Hans */,
-				C090E41C27B523CA00286CE2 /* tr */,
+				C07DC91D27BBF13600C44329 /* zh-Hans */,
+				C07DC92427BBF54300C44329 /* tr */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C07DC92227BBF17D00C44329 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C07DC92127BBF17D00C44329 /* en */,
+				C07DC92327BBF17E00C44329 /* zh-Hans */,
+				C07DC92527BBF54A00C44329 /* tr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

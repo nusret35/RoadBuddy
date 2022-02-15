@@ -17,8 +17,8 @@ class PostTripToViewController2: UIViewController, UISearchResultsUpdating
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        navigationItem.title = "Where will you go?"
-        navigationItem.backButtonTitle = "Back"
+        navigationItem.title = "Where will you go?".localized()
+        navigationItem.backButtonTitle = "Back".localized()
         searhController.searchResultsUpdater = self
         navigationItem.searchController = searhController
         
@@ -78,7 +78,7 @@ extension PostTripToViewController2: ResultsVCDelegate
         viewController.view.backgroundColor = .systemBackground
         
         viewController.navigationItem.backBarButtonItem = Buttons.defaultBackButton
-        viewController.title = "Set Time"
+        viewController.title = "Set Time".localized()
         
         viewController.navigationItem.largeTitleDisplayMode = .always
         

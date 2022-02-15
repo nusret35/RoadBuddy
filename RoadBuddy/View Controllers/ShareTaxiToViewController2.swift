@@ -15,8 +15,8 @@ class ShareTaxiToViewController2: UIViewController, UISearchResultsUpdating
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        navigationItem.title = "Where will you go?"
-        navigationItem.backButtonTitle = "Back"
+        navigationItem.title = "Where will you go?".localized()
+        navigationItem.backButtonTitle = "Back".localized()
         searhController.searchResultsUpdater = self
         navigationItem.searchController = searhController
         
@@ -53,7 +53,7 @@ extension ShareTaxiToViewController2: ResultsVCDelegate
         ShareMapVC.coordinates = coordinates
         
         let backButton = UIBarButtonItem()
-        backButton.title = "Back"
+        backButton.title = "Back".localized()
         
         navigationItem.backBarButtonItem = backButton
         
@@ -82,7 +82,7 @@ extension ShareTaxiToViewController2: ResultsVCDelegate
         
         viewController.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         
-        viewController.title = "Set Time"
+        viewController.title = "Set Time".localized()
         
         viewController.navigationItem.largeTitleDisplayMode = .always
         

@@ -16,8 +16,8 @@ class SearchToViewController: UIViewController, UISearchResultsUpdating {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        navigationItem.title = "Where to?"
-        navigationItem.backButtonTitle = "Back"
+        navigationItem.title = "Where to?".localized()
+        navigationItem.backButtonTitle = "Back".localized()
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
     }
@@ -68,7 +68,7 @@ extension SearchToViewController: ResultsVCDelegate
         let vc = mainStoryboard.instantiateViewController(withIdentifier: "SearchTimeVC") as! SearchTimeViewController
         vc.view.backgroundColor = .systemBackground
         vc.navigationItem.backBarButtonItem = Buttons.defaultBackButton
-        vc.title = "Set Time"
+        vc.title = "Set Time".localized()
         vc.navigationItem.largeTitleDisplayMode = .always
         navigationController?.pushViewController(vc, animated: true)
     }

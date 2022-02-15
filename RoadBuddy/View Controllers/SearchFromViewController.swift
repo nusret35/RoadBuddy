@@ -84,8 +84,8 @@ class SearchFromViewController: UIViewController, UISearchResultsUpdating {
     {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        navigationItem.title = "Where are you?"
-        navigationItem.backButtonTitle = "Back"
+        navigationItem.title = "Where are you?".localized()
+        navigationItem.backButtonTitle = "Back".localized()
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
     }
@@ -138,6 +138,7 @@ extension SearchFromViewController: ResultsVCDelegate
     }
 
 }
+
 
 class SearchMapViewController: UIViewController
 {

@@ -123,7 +123,7 @@ struct Buttons
     {
         let backButton = UIBarButtonItem()
         backButton.tintColor = .label
-        backButton.title = "Back"
+        backButton.title = "Back".localized()
         return backButton
     }
     

@@ -74,7 +74,7 @@ class SearchPassengerViewController: UIViewController {
     {
         UserSearchTripRequest.numberOfPassengers = numberOfPassengers
         let vc = SearchMatchRequestViewController()
-        vc.title = "Searching for trips"
+        vc.title = "Searching for trips".localized()
         navigationController?.pushViewController(vc, animated: true)
     }
     
