@@ -70,7 +70,6 @@
 		809B9C7327B3A395004EB9C4 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C7227B3A395004EB9C4 /* Requests.swift */; };
 		809F674227B937E400D67E56 /* SearchPassengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F674127B937E400D67E56 /* SearchPassengerViewController.swift */; };
 		809F674427B949C100D67E56 /* SearchMatchRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F674327B949C100D67E56 /* SearchMatchRequestViewController.swift */; };
-		80A8933427A800AE00CE83AB /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A8933327A800AE00CE83AB /* Maps.storyboard */; };
 		80A8933727A8014A00CE83AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A8933527A8014900CE83AB /* Main.storyboard */; };
 		80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */; };
 		80AE818B27B45240007BBC2B /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AE818927B45240007BBC2B /* ProfileHeaderTableViewCell.swift */; };
@@ -145,7 +144,6 @@
 		809B9C7227B3A395004EB9C4 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		809F674127B937E400D67E56 /* SearchPassengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPassengerViewController.swift; sourceTree = "<group>"; };
 		809F674327B949C100D67E56 /* SearchMatchRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMatchRequestViewController.swift; sourceTree = "<group>"; };
-		80A8933327A800AE00CE83AB /* Maps.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Maps.storyboard; sourceTree = "<group>"; };
 		80A8933627A8014900CE83AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTripViewController.swift; sourceTree = "<group>"; };
 		80AE818927B45240007BBC2B /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -346,7 +344,6 @@
 				8073AA1E2773DC88007457FD /* ResultsNavigationController.swift */,
 				80A8933527A8014900CE83AB /* Main.storyboard */,
 				8075BADC27A7EBA30064CCB7 /* Registration.storyboard */,
-				80A8933327A800AE00CE83AB /* Maps.storyboard */,
 				80D9B09E26FC9251001EB6BD /* Assets.xcassets */,
 				80D9B0A326FC9251001EB6BD /* Info.plist */,
 			);
@@ -545,7 +542,6 @@
 				8076F16C275ABE0500BC6EB2 /* GoogleService-Info.plist in Resources */,
 				80DDEBFE277347E10093BB3F /* PostTableViewCell.xib in Resources */,
 				8075BAC727A3F4B70064CCB7 /* MessageTableViewCell.xib in Resources */,
-				80A8933427A800AE00CE83AB /* Maps.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,7 +923,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PVXU599K2W;
+				DEVELOPMENT_TEAM = G789X37L59;
 				INFOPLIST_FILE = RoadBuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -947,7 +943,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PVXU599K2W;
+				DEVELOPMENT_TEAM = G789X37L59;
 				INFOPLIST_FILE = RoadBuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

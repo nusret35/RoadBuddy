@@ -32,8 +32,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        BackgroundColor.setViewBackgroundColor(self)
-        BackgroundColor.setTableViewBackgroundColor(self, tableView)
+        //BackgroundColor.setViewBackgroundColor(self)
+        //BackgroundColor.setTableViewBackgroundColor(self, tableView)
         authenticateUser()
         CurrentUser.fetchData()
         view.addSubview(tableView)
@@ -42,12 +42,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
+    /*
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?)
     {
         BackgroundColor.setViewBackgroundColor(self)
         BackgroundColor.setTableViewBackgroundColor(self, tableView)
     }
+     */
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -114,20 +115,28 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 0
         {
-            let searchFromViewController = SearchFromViewController()
-            navigationController?.pushViewController(searchFromViewController, animated: true)
+            let navigationController = storyboard?.instantiateViewController(withIdentifier: "SearchFromNC") as! UINavigationController
+            present(navigationController, animated: true)
+            //let searchFromViewController = SearchFromViewController()
+            //navigationController?.pushViewController(searchFromViewController, animated: true)
             
         }
         if indexPath.row == 1
         {
-            let postViewController = PostTripFromViewController2()
-            navigationController?.pushViewController(postViewController, animated: true)
+            let navigationController = storyboard?.instantiateViewController(withIdentifier: "PostTripNC") as! UINavigationController
+            present(navigationController, animated: true)
+            
+            //let postViewController = PostTripFromViewController2()
+            //navigationController?.pushViewController(postViewController, animated: true)
         }
         
         if indexPath.row == 2
         {
-            let shareTaxiViewController = ShareTaxiFromViewController2()
-            navigationController?.pushViewController(shareTaxiViewController, animated: true)
+            let navigationController = storyboard?.instantiateViewController(withIdentifier: "ShareTaxiNC") as! UINavigationController
+            present(navigationController, animated: true)
+            
+            //let shareTaxiViewController = ShareTaxiFromViewController2()
+            //navigationController?.pushViewController(shareTaxiViewController, animated: true)
         }
     }
     

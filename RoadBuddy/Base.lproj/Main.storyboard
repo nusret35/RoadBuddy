@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mij-2U-hi9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mij-2U-hi9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -280,6 +280,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3G-Yz-JRg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3488" y="964"/>
+        </scene>
+        <!--Search From View Controller-->
+        <scene sceneID="6c2-XX-aS4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCN-Cm-jWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="8mW-BP-hpi" customClass="SearchFromViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="W0u-Vv-MF8"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-2379.7101449275365" y="1795.9821428571427"/>
         </scene>
         <!--Profile-->
         <scene sceneID="DPz-VS-XE6">
@@ -712,6 +722,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEY-nw-AVN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5345" y="88"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FxU-RG-KOj">
+            <objects>
+                <navigationController storyboardIdentifier="SearchFromNC" automaticallyAdjustsScrollViewInsets="NO" id="76x-PI-s71" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VXr-Hv-NNE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8mW-BP-hpi" kind="relationship" relationship="rootViewController" id="tSe-DK-Owf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VbT-LU-D8v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3289.8550724637685" y="1795.9821428571427"/>
+        </scene>
+        <!--Post Trip From View Controller2-->
+        <scene sceneID="GAI-Qm-Y5l">
+            <objects>
+                <viewController id="m2n-1f-kFa" customClass="PostTripFromViewController2" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ipe-bc-ZX5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5aH-Uq-oNQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="331.8840579710145" y="1795.9821428571427"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fSL-WY-Ydn">
+            <objects>
+                <navigationController storyboardIdentifier="PostTripNC" automaticallyAdjustsScrollViewInsets="NO" id="c0x-UH-Fuf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="axY-mK-kiU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="m2n-1f-kFa" kind="relationship" relationship="rootViewController" id="Kww-w8-Yaf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QrN-VW-BpL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-578.26086956521749" y="1795.9821428571427"/>
+        </scene>
+        <!--Share Taxi From View Controller2-->
+        <scene sceneID="Npv-xH-iXY">
+            <objects>
+                <viewController id="byo-fr-VBt" customClass="ShareTaxiFromViewController2" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Yr3-H7-SOH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XU4-Zi-8TG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1471.0144927536232" y="2550.6696428571427"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OMi-be-aRs">
+            <objects>
+                <navigationController storyboardIdentifier="ShareTaxiNC" automaticallyAdjustsScrollViewInsets="NO" id="fJv-7R-zue" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="os8-2U-PGe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="byo-fr-VBt" kind="relationship" relationship="rootViewController" id="VD7-AL-JnJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Opw-12-GAt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2381.1594202898555" y="2550.6696428571427"/>
         </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
