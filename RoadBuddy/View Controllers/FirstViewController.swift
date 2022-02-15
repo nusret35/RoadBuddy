@@ -106,20 +106,20 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 0
         {
-            let searchFromViewController = SearchFromViewController()
-            navigationController?.pushViewController(searchFromViewController, animated: true)
+            let searchFromNavigationController = storyboard?.instantiateViewController(withIdentifier: "SearchFromNC") as! UINavigationController
+            present(searchFromNavigationController, animated: true)
             
         }
         if indexPath.row == 1
         {
-            let postViewController = PostTripFromViewController2()
-            navigationController?.pushViewController(postViewController, animated: true)
+            let postTripNavigationController2 = storyboard?.instantiateViewController(withIdentifier: "PostTripNC") as! UINavigationController
+            present(postTripNavigationController2,animated:true)
         }
         
         if indexPath.row == 2
         {
-            let shareTaxiViewController = ShareTaxiFromViewController2()
-            navigationController?.pushViewController(shareTaxiViewController, animated: true)
+            let shareTaxiNavigationController2 = storyboard?.instantiateViewController(withIdentifier: "ShareTaxiNC") as! UINavigationController
+            present(shareTaxiNavigationController2, animated:true)
         }
     }
     

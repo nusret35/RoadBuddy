@@ -15,7 +15,7 @@ class ShareTaxiToViewController2: UIViewController, UISearchResultsUpdating
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        navigationItem.title = "Where will you go ?"
+        navigationItem.title = "Where will you go?"
         navigationItem.backButtonTitle = "Back"
         searhController.searchResultsUpdater = self
         navigationItem.searchController = searhController
