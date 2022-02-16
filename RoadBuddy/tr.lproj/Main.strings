@@ -41,7 +41,7 @@
 "MQw-xo-s27.title" = "Yolculuk";
 
 /* Class = "UILabel"; text = "username"; ObjectID = "RXH-Mq-4pC"; */
-"RXH-Mq-4pC.text" = "Kullanıcıadı";
+"RXH-Mq-4pC.text" = "Kullanıcı Adı";
 
 /* Class = "UIButton"; configuration.title = "Change profile picture"; ObjectID = "T5c-Jg-WME"; */
 "T5c-Jg-WME.configuration.title" = "Profil Resmini Değiştir";

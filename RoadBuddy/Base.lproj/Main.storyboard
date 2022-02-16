@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mij-2U-hi9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mij-2U-hi9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -580,6 +580,98 @@
             </objects>
             <point key="canvasLocation" x="-2171" y="88"/>
         </scene>
+        <!--Post Trip Price View Controller-->
+        <scene sceneID="nVY-RM-N7K">
+            <objects>
+                <viewController storyboardIdentifier="PostTripPriceVC" id="q6a-qk-wAw" customClass="PostTripPriceViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3cm-aV-GHn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="LDG-LG-NVV">
+                                <rect key="frame" x="20" y="365" width="375" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47T-Ok-sZK">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="YRz-be-WTY"/>
+                                            <constraint firstAttribute="width" constant="70" id="t1K-1O-yNf"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemTealColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" image="minus.circle.fill" catalog="system"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="minusButtonAction:" destination="q6a-qk-wAw" eventType="touchUpInside" id="ylY-dt-x6F"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 ₺" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzh-6M-rFy">
+                                        <rect key="frame" x="106" y="0.0" width="163" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="163" id="D2z-Q8-VDi"/>
+                                            <constraint firstAttribute="height" constant="70" id="kgF-Db-eGM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="57"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEr-ae-UTx">
+                                        <rect key="frame" x="305" y="0.0" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Oec-1a-qVr"/>
+                                            <constraint firstAttribute="width" constant="70" id="XYv-pC-KVP"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemTealColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="">
+                                            <backgroundConfiguration key="background" image="plus.circle.fill" catalog="system"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="plusButtonAction:" destination="q6a-qk-wAw" eventType="touchUpInside" id="e4j-Y3-aWS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ko9-eQ-vw8">
+                                <rect key="frame" x="36" y="579" width="342" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="GXd-yx-NOz"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Continue" cornerStyle="large">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="37"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="continueButtonAction:" destination="q6a-qk-wAw" eventType="touchUpInside" id="zQh-UA-CZN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="71B-EF-LkP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LDG-LG-NVV" firstAttribute="top" secondItem="71B-EF-LkP" secondAttribute="top" constant="321" id="1lX-pM-inX"/>
+                            <constraint firstItem="ko9-eQ-vw8" firstAttribute="top" secondItem="LDG-LG-NVV" secondAttribute="bottom" constant="144" id="3kA-6I-aGC"/>
+                            <constraint firstItem="71B-EF-LkP" firstAttribute="trailing" secondItem="LDG-LG-NVV" secondAttribute="trailing" constant="19" id="4KD-HB-S5p"/>
+                            <constraint firstItem="71B-EF-LkP" firstAttribute="trailing" secondItem="ko9-eQ-vw8" secondAttribute="trailing" constant="36" id="R15-As-hXm"/>
+                            <constraint firstItem="LDG-LG-NVV" firstAttribute="leading" secondItem="71B-EF-LkP" secondAttribute="leading" constant="20" id="agh-r2-NNX"/>
+                            <constraint firstItem="ko9-eQ-vw8" firstAttribute="leading" secondItem="71B-EF-LkP" secondAttribute="leading" constant="36" id="plR-1R-azO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="ko9-eQ-vw8" id="c8h-uz-za6"/>
+                        <outlet property="minusButton" destination="47T-Ok-sZK" id="uej-Rp-37G"/>
+                        <outlet property="numberLabel" destination="Gzh-6M-rFy" id="50g-KQ-A1z"/>
+                        <outlet property="plusButton" destination="qEr-ae-UTx" id="eJY-bE-MWB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bCj-FL-CqZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1343" y="88"/>
+        </scene>
         <!--Search Match Request View Controller-->
         <scene sceneID="fmR-jj-lt0">
             <objects>
@@ -632,6 +724,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VXr-Hv-NNE">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -660,6 +753,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="axY-mK-kiU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -688,6 +782,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="os8-2U-PGe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

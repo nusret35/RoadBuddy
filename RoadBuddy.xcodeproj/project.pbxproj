@@ -96,6 +96,7 @@
 		80DDEBF8276BCFFC0093BB3F /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDEBF7276BCFFC0093BB3F /* APICaller.swift */; };
 		80DDEBFD277347E10093BB3F /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDEBFB277347E10093BB3F /* PostTableViewCell.swift */; };
 		80DDEBFE277347E10093BB3F /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80DDEBFC277347E10093BB3F /* PostTableViewCell.xib */; };
+		80E3783727BDA0530053C2FC /* PostTripPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3783627BDA0530053C2FC /* PostTripPriceViewController.swift */; };
 		80E7A510274550DD00423EB3 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E7A50F274550DD00423EB3 /* MainTabController.swift */; };
 		80E7A512274587F300423EB3 /* ShareTaxiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E7A511274587F300423EB3 /* ShareTaxiViewController.swift */; };
 		80E7A514274AE59F00423EB3 /* STFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E7A513274AE59F00423EB3 /* STFromViewController.swift */; };
@@ -176,6 +177,7 @@
 		80DDEBF7276BCFFC0093BB3F /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		80DDEBFB277347E10093BB3F /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		80DDEBFC277347E10093BB3F /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		80E3783627BDA0530053C2FC /* PostTripPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripPriceViewController.swift; sourceTree = "<group>"; };
 		80E7A50F274550DD00423EB3 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		80E7A511274587F300423EB3 /* ShareTaxiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTaxiViewController.swift; sourceTree = "<group>"; };
 		80E7A513274AE59F00423EB3 /* STFromViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STFromViewController.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				809F674327B949C100D67E56 /* SearchMatchRequestViewController.swift */,
 				C02FE7F527B68AE6006E5C14 /* PostTripFromViewController2.swift */,
 				C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */,
+				80E3783627BDA0530053C2FC /* PostTripPriceViewController.swift */,
 				C02FE7F927B69DBB006E5C14 /* ShareTaxiFromViewController2.swift */,
 				C02FE7FB27B69DD7006E5C14 /* ShareTaxiToViewController2.swift */,
 				809F674027B9338000D67E56 /* Old View Controllers */,
@@ -614,6 +617,7 @@
 				807E9BCD27076DE90008F523 /* ResultsViewController.swift in Sources */,
 				C032962C27BD400100C21736 /* CreatePasswordViewController.swift in Sources */,
 				C07DC91C27BBF03B00C44329 /* Languages.swift in Sources */,
+				80E3783727BDA0530053C2FC /* PostTripPriceViewController.swift in Sources */,
 				80CA933B270A034D009A1469 /* PostTripViewController.swift in Sources */,
 				80CA9347270C7F33009A1469 /* PostTripFromViewController.swift in Sources */,
 				804B3AAB27B54EAF0041A7DC /* SearchFromViewController.swift in Sources */,
