@@ -76,7 +76,7 @@ class FromWhereToViewController: UIViewController{
     
     //BUTTON ACTIONS
     
-    @IBAction func FromButtonAction(_ sender: Any) {  //From button action        
+    @IBAction func FromButtonAction(_ sender: Any) {  //From button action
         let FromViewController = mapsStoryboard.instantiateViewController(withIdentifier:  "FromVC") as! FromViewController
  
         navigationController?.pushViewController(FromViewController, animated: true)
@@ -116,7 +116,7 @@ class FromWhereToViewController: UIViewController{
     {
         var trips:[DriverData] = []
 
-        storageManager.databaseRef.child("Trips")
+        storageManager.ref.child("Trips")
         .observeSingleEvent(of: .value, with: { (snapshot)  in
             for child in snapshot.children
             {

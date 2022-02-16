@@ -82,10 +82,12 @@ class CurrentUserData
         }
         
         guard let uid =  data["uid"] as? String else{
+            print("uid not found")
             return
         }
         
         guard let username = data["username"] as? String else{
+            print("username not found")
             return
         }
         guard let email = data["email"] as? String else{
@@ -103,7 +105,7 @@ class CurrentUserData
         
         self.Fullname = firstname + " " + lastname
         self.Username = "@" + username
-        self.UID = uid
+        self.UID = userID
         self.Email = email
         self.PhoneNumber = phoneNumber
         self.SchoolName = schoolName

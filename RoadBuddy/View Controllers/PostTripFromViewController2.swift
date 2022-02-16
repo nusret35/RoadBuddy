@@ -20,8 +20,8 @@ class PostTripFromViewController2: UIViewController, UISearchResultsUpdating
         super.viewDidLoad()
         fillUserDataToPost()
         view.backgroundColor = .systemBackground
-        navigationItem.title = "Where are you?".localized()
-        navigationItem.backButtonTitle = "Back".localized()
+        navigationItem.title = "Where are you?"
+        navigationItem.backButtonTitle = "Back"
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
 
@@ -47,13 +47,7 @@ class PostTripFromViewController2: UIViewController, UISearchResultsUpdating
     
     func fillUserDataToPost()
     {
-        CurrentUserTripPost.fullname = CurrentUser.Fullname
-
-        CurrentUserTripPost.username = CurrentUser.Username
-
-        CurrentUserTripPost.uid = CurrentUser.UID
-
-        CurrentUserTripPost.profilePictureURL = CurrentUser.profilePictureURL
+        CurrentUserTripPost.fetchData()
     }
 }
     

@@ -17,15 +17,16 @@ class SearchPassengerViewController: UIViewController {
     
     var settingForPost = Bool()
     
+    //let uid = Auth.auth().currentUser?.uid as! String
+    
     @IBOutlet weak var numberLabel: UILabel!
     
     @IBOutlet weak var minusButton: UIButton!
     
     @IBOutlet weak var plusButton: UIButton!
-    
-    var ref:DatabaseReference?
-    
+        
     private var numberOfPassengers = 1
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +101,9 @@ class SearchPassengerViewController: UIViewController {
     
     func uploadTripPostToDatabase()
     {
+        print("CurrentUser: " + CurrentUser.UID)
+        print("CurrentUserTripPostUID: " + CurrentUserTripPost.uid)
+        print("CurrentUserTripPost.time: " + CurrentUserTripPost.time)
         let post = ["fullname": CurrentUserTripPost.fullname,
                     "username":
                         CurrentUserTripPost.username,
@@ -113,10 +117,10 @@ class SearchPassengerViewController: UIViewController {
                     "toCoordinateLatitude": CurrentUserTripPost.toLocationLat,
                     "toCoordinateLongitude": CurrentUserTripPost.toLocationLong
                     ] as [String:Any]
-        storageManager.ref?.child("Trips").child(CurrentUser.UID).setValue(post)
-        print("uid: " + CurrentUserTripPost.uid)
+        storageManager.ref.child("Trips").child(CurrentUserTripPost.uid).setValue(post)
+        //print("uid: " + CurrentUserTripPost.uid)
         storageManager.db.collection("users").document(CurrentUserTripPost.uid).updateData(["TripIsSet":true])
-        let alert = UIAlertController(title: "Trip Posted", message: "Your trip has been posted.".localized(), preferredStyle: .alert)
+        let alert = UIAlertController(title: "Trip Posted", message: "Your trip has been posted.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
             self.dismiss(animated: true, completion: nil)

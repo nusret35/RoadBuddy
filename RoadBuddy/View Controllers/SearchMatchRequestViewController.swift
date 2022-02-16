@@ -25,7 +25,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     private let searchingTripsLabel:UILabel =
     {
         let label = UILabel()
-        label.text = "We took your request. We will inform you when we find a trip.".localized()
+        label.text = "We took your request. We will inform you when we find a trip."
         label.center = CGPoint(x: 160, y: 285)
         label.textAlignment = .center
         label.textColor = .secondaryLabel
@@ -73,7 +73,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         }
         else
         {
-            let alert = UIAlertController(title: "We have received your request".localized(), message: "We will look for your match.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "We have received your request", message: "We will look for your match.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title:"Okay",style: .default, handler:{( action) in
                 alert.dismiss(animated: true, completion: nil)
                 self.searchingTripsLabel.isHidden = false
@@ -125,7 +125,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     func matchRequest()
     {
         storageManager.db.collection("users").document(CurrentUser.UID).updateData(["lookingForATrip":true])
-        storageManager.databaseRef.child("Trips")
+        storageManager.ref.child("Trips")
             .observeSingleEvent(of: .value, with: { [self] (snapshot)  in
             for child in snapshot.children
             {

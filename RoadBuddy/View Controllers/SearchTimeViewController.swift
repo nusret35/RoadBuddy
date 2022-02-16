@@ -22,6 +22,8 @@ class SearchTimeViewController: UIViewController{
         let moment = Date()
         timePicker.minimumDate = moment
         settingType(moment)
+        print(myDateFormat.dateToString(moment))
+        print("tripPost.time: " + CurrentUserTripPost.time)
     }
     
     @IBAction func timeButtonAction(_ sender: Any)
@@ -44,14 +46,17 @@ class SearchTimeViewController: UIViewController{
     
     func settingType(_ date:Date)
     {
+        print("inside settingType")
+        let stringDate =  myDateFormat.dateToString(date)
         if settingForSearch == true
         {
-            UserSearchTripRequest.time = myDateFormat.dateToString(date)
+            UserSearchTripRequest.time = stringDate
             print(UserSearchTripRequest.time)
         }
         else if settingForPost == true
         {
-            CurrentUserTripPost.time = myDateFormat.dateToString(date)
+            print("inside settingForPost")
+            CurrentUserTripPost.time = stringDate
             print(CurrentUserTripPost.time)
         }
     }

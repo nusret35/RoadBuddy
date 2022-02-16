@@ -55,6 +55,17 @@ class UserTripPost
     var price = Int()
     
     var passengerNumber = Int()
+    
+    func fetchData()
+    {
+        self.uid = CurrentUser.UID
+        
+        self.username = CurrentUser.Username
+        
+        self.fullname = CurrentUser.Fullname
+        
+        self.profilePictureURL = CurrentUser.profilePictureURL
+    }
 }
 
 
