@@ -50,9 +50,16 @@ extension PostTripToViewController2: ResultsVCDelegate
 {
     func didTapPlace(with coordinates: CLLocationCoordinate2D, address: String)
     {
-        searhController.searchBar.text = address
+        CurrentUserTripPost.toLocationName = address
         
+        CurrentUserTripPost.toLocationLat = coordinates.latitude
+        
+        CurrentUserTripPost.toLocationLong = coordinates.longitude
+        
+        searhController.searchBar.text = address
+    
         let postMapVC = SearchMapViewController()
+        
         postMapVC.coordinates = coordinates
         
         //NEW ADDED
@@ -76,6 +83,10 @@ extension PostTripToViewController2: ResultsVCDelegate
         let viewController = mainStoryBoard.instantiateViewController(withIdentifier: "SearchTimeVC") as! SearchTimeViewController
         
         viewController.view.backgroundColor = .systemBackground
+        
+        viewController.settingForPost = true
+        
+        viewController.settingForSearch = false
         
         viewController.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         viewController.title = "Set Time".localized()

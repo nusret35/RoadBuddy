@@ -8,18 +8,20 @@
 import UIKit
 import MapKit
 
-class PostTripFromViewController2: UIViewController, UISearchResultsUpdating{
-    
-    
+var CurrentUserTripPost = UserTripPost()
 
+class PostTripFromViewController2: UIViewController, UISearchResultsUpdating
+{
+    
     let searchController = UISearchController(searchResultsController: ResultsVC())
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        fillUserDataToPost()
         view.backgroundColor = .systemBackground
-        navigationItem.title = "Where are you?".localized()
-        navigationItem.backButtonTitle = "Back".localized()
+        navigationItem.title = "Where are you?"
+        navigationItem.backButtonTitle = "Back"
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
 
@@ -42,14 +44,31 @@ class PostTripFromViewController2: UIViewController, UISearchResultsUpdating{
             }
         
     }
-    }
     
+    func fillUserDataToPost()
+    {
+        CurrentUserTripPost.fullname = CurrentUser.Fullname
 
+        CurrentUserTripPost.username = CurrentUser.Username
+
+        CurrentUserTripPost.uid = CurrentUser.UID
+
+        CurrentUserTripPost.profilePictureURL = CurrentUser.profilePictureURL
+    }
+}
+    
 
 
 extension PostTripFromViewController2: ResultsVCDelegate
 {
     func didTapPlace(with coordinates: CLLocationCoordinate2D, address: String) {
+        
+        CurrentUserTripPost.fromLocationName = address
+        
+        CurrentUserTripPost.fromLocationLat = coordinates.latitude
+        
+        CurrentUserTripPost.fromLocationLong = coordinates.longitude
+        
         searchController.searchBar.text = address
         
         let postMapVC = SearchMapViewController()

@@ -26,10 +26,37 @@ class SearchTripRequest
     var toCoordinateLat = Double()
     
     var toCoordinateLong = Double()
-    
-    
-    
 }
+
+class UserTripPost
+{
+    var fullname = String()
+    
+    var username = String()
+    
+    var uid = String()
+    
+    var profilePictureURL = String()
+    
+    var fromLocationName = String()
+    
+    var fromLocationLat = Double()
+    
+    var fromLocationLong = Double()
+    
+    var toLocationName = String()
+    
+    var toLocationLat = Double()
+    
+    var toLocationLong = Double()
+    
+    var time = String()
+    
+    var price = Int()
+    
+    var passengerNumber = Int()
+}
+
 
 struct TaxiTripRequest
 {

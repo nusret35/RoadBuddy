@@ -116,7 +116,7 @@ class FromWhereToViewController: UIViewController{
     {
         var trips:[DriverData] = []
 
-        storageManager.ref.child("Trips")
+        storageManager.databaseRef.child("Trips")
         .observeSingleEvent(of: .value, with: { (snapshot)  in
             for child in snapshot.children
             {

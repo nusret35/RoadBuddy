@@ -6,9 +6,16 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
+import Firebase
+import FirebaseStorage
 
 class SearchPassengerViewController: UIViewController {
 
+    var settingForSearch = Bool()
+    
+    var settingForPost = Bool()
     
     @IBOutlet weak var numberLabel: UILabel!
     
@@ -16,6 +23,7 @@ class SearchPassengerViewController: UIViewController {
     
     @IBOutlet weak var plusButton: UIButton!
     
+    var ref:DatabaseReference?
     
     private var numberOfPassengers = 1
     
@@ -72,10 +80,48 @@ class SearchPassengerViewController: UIViewController {
     
     @IBAction func continueButtonAction(_ sender: Any)
     {
-        UserSearchTripRequest.numberOfPassengers = numberOfPassengers
-        let vc = SearchMatchRequestViewController()
-        vc.title = "Searching for trips".localized()
-        navigationController?.pushViewController(vc, animated: true)
+        print("button pressed")
+        if settingForSearch == true
+        {
+            print("search setting")
+            UserSearchTripRequest.numberOfPassengers = numberOfPassengers
+            let vc = SearchMatchRequestViewController()
+            vc.title = "Searching for trips".localized()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        else if settingForPost == true
+        {
+            print("post setting")
+            CurrentUserTripPost.passengerNumber = numberOfPassengers
+            uploadTripPostToDatabase()
+    
+        }
+    }
+    
+    func uploadTripPostToDatabase()
+    {
+        let post = ["fullname": CurrentUserTripPost.fullname,
+                    "username":
+                        CurrentUserTripPost.username,
+                    "uid": CurrentUserTripPost.uid,
+                    "from": CurrentUserTripPost.fromLocationName,
+                    "to": CurrentUserTripPost.toLocationName,
+                    "time": CurrentUserTripPost.time,
+                    "number of passengers": CurrentUserTripPost.passengerNumber,
+                    "price": CurrentUserTripPost.price,
+                    "fromCoordinateLatitude": CurrentUserTripPost.fromLocationLat, "fromCoordinateLongitude": CurrentUserTripPost.fromLocationLong,
+                    "toCoordinateLatitude": CurrentUserTripPost.toLocationLat,
+                    "toCoordinateLongitude": CurrentUserTripPost.toLocationLong
+                    ] as [String:Any]
+        storageManager.ref?.child("Trips").child(CurrentUser.UID).setValue(post)
+        print("uid: " + CurrentUserTripPost.uid)
+        storageManager.db.collection("users").document(CurrentUserTripPost.uid).updateData(["TripIsSet":true])
+        let alert = UIAlertController(title: "Trip Posted", message: "Your trip has been posted.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     

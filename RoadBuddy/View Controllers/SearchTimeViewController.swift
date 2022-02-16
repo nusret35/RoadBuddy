@@ -12,18 +12,24 @@ class SearchTimeViewController: UIViewController{
     
     @IBOutlet weak var timePicker: UIDatePicker!
     
+    var settingForSearch = Bool()
+    
+    var settingForPost = Bool()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         let moment = Date()
         timePicker.minimumDate = moment
-        UserSearchTripRequest.time = myDateFormat.dateToString(moment)
+        settingType(moment)
     }
     
     @IBAction func timeButtonAction(_ sender: Any)
     {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = mainStoryboard.instantiateViewController(withIdentifier: "SearchPassengerVC") as! SearchPassengerViewController
+        vc.settingForPost = true
+        vc.settingForSearch = false
         vc.title = "How many people are you with?".localized()
         vc.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         navigationController?.pushViewController(vc, animated: true)
@@ -33,8 +39,21 @@ class SearchTimeViewController: UIViewController{
     
     @IBAction func timePickerChangedValue(_ sender: UIDatePicker)
     {
-        UserSearchTripRequest.time = myDateFormat.dateToString(sender.date)
-        print(UserSearchTripRequest.time)
+        settingType(sender.date)
+    }
+    
+    func settingType(_ date:Date)
+    {
+        if settingForSearch == true
+        {
+            UserSearchTripRequest.time = myDateFormat.dateToString(date)
+            print(UserSearchTripRequest.time)
+        }
+        else if settingForPost == true
+        {
+            CurrentUserTripPost.time = myDateFormat.dateToString(date)
+            print(CurrentUserTripPost.time)
+        }
     }
     
 }

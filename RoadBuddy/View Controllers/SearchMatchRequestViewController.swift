@@ -10,7 +10,9 @@ import FirebaseDatabase
 import FirebaseAuth
 import CoreLocation
 
-class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+{
+    
     
     //View Elements
     private let tableView:UITableView = {
@@ -20,13 +22,15 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         return table
     }()
     
-    private let noTripsLabel:UILabel =
+    private let searchingTripsLabel:UILabel =
     {
         let label = UILabel()
         label.text = "We took your request. We will inform you when we find a trip."
+        label.center = CGPoint(x: 160, y: 285)
         label.textAlignment = .center
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 21, weight: .medium)
+        label.textAlignment = .center
         label.isHidden = true
         return label
     }()
@@ -47,28 +51,35 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         view.addSubview(tableView)
-        view.addSubview(noTripsLabel)
+        view.addSubview(searchingTripsLabel)
         sendTheRequest()
         matchRequest()
-
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+        
     }
     
     //SETTING OF VIEW ELEMENTS
     private func setUpView()
     {
-        if requestFound
+        if self.requestFound == true
         {
-            setUpTableView()
+            self.setUpTableView()
         }
         else
         {
-            setUpLabel()
+            let alert = UIAlertController(title: "We have received your request", message: "We will look for your match.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"Okay",style: .default, handler:{( action) in
+                alert.dismiss(animated: true, completion: nil)
+                self.searchingTripsLabel.isHidden = false
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert,animated: true,completion: nil)
         }
     }
     
@@ -80,11 +91,6 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         tableView.register(PostTableViewCell.nib(), forCellReuseIdentifier: PostTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    
-    private func setUpLabel()
-    {
-        noTripsLabel.isHidden = false
     }
     //TABLEVIEW FUNCTIONS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -110,7 +116,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     {
         self.request  = ["fullname": CurrentUser.Fullname, "uid": CurrentUser.UID, "time": UserSearchTripRequest.time ,"number of passengers": UserSearchTripRequest.numberOfPassengers, "fromLocationName": UserSearchTripRequest.fromLocationName, "toLocationName": UserSearchTripRequest.toLocationName, "fromCoordinateLat": UserSearchTripRequest.fromCoordinateLat,"fromCoordinateLong": UserSearchTripRequest.fromCoordinateLong, "toCoordinateLat": UserSearchTripRequest.toCoordinateLat, "toCoordinateLong":
             UserSearchTripRequest.toCoordinateLong] as [String : Any]
-        storageManager.ref.child("Requests").child(CurrentUser.UID).setValue(self.request)
+        storageManager.ref?.child("Requests").child(CurrentUser.UID).setValue(self.request)
         searchFromLocation = CLLocation(latitude: UserSearchTripRequest.fromCoordinateLat, longitude: UserSearchTripRequest.fromCoordinateLong)
         searchToLocation = CLLocation(latitude: UserSearchTripRequest.toCoordinateLat, longitude: UserSearchTripRequest.toCoordinateLong)
     }
@@ -118,8 +124,8 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     
     func matchRequest()
     {
-
-        storageManager.ref.child("Trips")
+        storageManager.db.collection("users").document(CurrentUser.UID).updateData(["lookingForATrip":true])
+        storageManager.databaseRef.child("Trips")
             .observeSingleEvent(of: .value, with: { [self] (snapshot)  in
             for child in snapshot.children
             {
@@ -212,6 +218,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
                     date1_index+=1
                 }
                 let dummy = self.trips.popLast()
+                
             }
             print(sortedRequests[0])
             self.trips = sortedRequests
