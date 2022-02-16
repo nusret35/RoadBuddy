@@ -6,3 +6,25 @@
 "How many people are you with?" = "你们是几位？";
 "Set Time" = "选择时间";
 "Searching for trips" = "正在查找路程";
+"Please make sure your password is at least 8 characters contains a special character and a number." = "请确认你的密码至少八位包含最少一个特殊字符和一个数字。";
+
+"Please fill in all fields." = "请填写所有字段。";
+
+"Log in unsuccessful. Check your email or password." = "登陆不成功，请确认你的邮箱和密码。";
+
+"Your trip has been posted." = "你的行程已发布。";
+
+"We took your request. We will inform you when we find a trip." = "我们收到了你的请求， 我们会通知你当我们找到合适的路程。";
+
+"We have received your request" = "我们收到了你的请求。";
+
+"Sign Out" = "退出";
+
+"Are you sure you want to sign out?" = "你确认要退出吗？";
+
+
+"You can choose your profile picture from your library" = "你可以从照片库选择你的头像";
+
+"Cancel" = "取消";
+
+"Choose Photo" = "选择照片";

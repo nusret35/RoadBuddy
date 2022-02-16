@@ -76,7 +76,7 @@ class ProfilePageViewController: UIViewController, UINavigationControllerDelegat
     
     @IBAction func signOutButtonAction(_ sender: Any)
     {
-        createAlert(title: "Sign Out", message: "Are you sure you want to sign out?")
+        createAlert(title: "Are you sure you want to sign out?".localized(), message: self.UsernameLabel.text ?? "")
     }
     
     
@@ -117,7 +117,7 @@ class ProfilePageViewController: UIViewController, UINavigationControllerDelegat
     {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         
-        alert.addAction(UIAlertAction(title: "Sign Out", style: UIAlertAction.Style.destructive, handler: { [self] (action) in
+        alert.addAction(UIAlertAction(title: "Sign Out".localized(), style: UIAlertAction.Style.destructive, handler: { [self] (action) in
             do
             {
             try Auth.auth().signOut()
@@ -143,11 +143,11 @@ class ProfilePageViewController: UIViewController, UINavigationControllerDelegat
 extension ProfilePageViewController:UIImagePickerControllerDelegate
 {
     func presentPhotoActionSheet(){
-        let actionSheet = UIAlertController(title: "Profile Picture", message: "You can choose your profile picture from your library or take a photo", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "", message: "You can choose your profile picture from your library".localized(), preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil))
         
-        actionSheet.addAction(UIAlertAction(title: "Choose Photo", style: .default, handler: {[weak self]_ in
+        actionSheet.addAction(UIAlertAction(title: "Choose Photo".localized(), style: .default, handler: {[weak self]_ in
             self?.presentPhotoPicker()
             
         }))

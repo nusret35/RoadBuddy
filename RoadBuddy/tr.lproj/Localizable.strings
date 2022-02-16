@@ -6,3 +6,26 @@
 "How many people are you with?" = "Kaç kişisiniz？";
 "Set Time" = "Zamanı Seçin";
 "Searching for trips" = "Yolculuk Aranıyor";
+
+"Please make sure your password is at least 8 characters contains a special character and a number.t" = "Lüfen şifrenizin en az 8 karakter olduğunu ve en az bir özel karakter ve sayı içerdiğini kontrol edin.";
+
+"Please fill in all fields." = "Lütfen tüm boşlukları doldurun.";
+
+"Log in unsuccessful. Check your email or password." = "Giriş başarısız. Mail adresiniz yada şifrenizi kontrol edin.";
+
+"Your trip has been posted." = "Sizin Yolculuğunuz paylaşıldı.";
+
+"We took your request. We will inform you when we find a trip." = "Talebiniz alındı. Yolculuk bulununca size haber vericez.";
+
+"We have received your request" = "Talebiniz alındı.";
+
+"Sign Out" = "Çıkış";
+
+"Are you sure you want to sign out?" = "Çıkış yapmak istediğinize emin mısınız?";
+
+
+"You can choose your profile picture from your library" = "Profil resminizi Fotoğraf albuminden seçebilirsiniz.";
+
+"Cancel" = "İptal";
+
+"Choose Photo" = "Resim Seç";

@@ -306,6 +306,10 @@
 		809F674027B9338000D67E56 /* Old View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				80D5E790271C81ED000F1F5B /* PostViewController.swift */,
+				80D5E7712715B634000F1F5B /* PostFinalViewController.swift */,
+				80CA934A270D91B3009A1469 /* PassengerPriceViewController.swift */,
+				80CA933A270A034D009A1469 /* PostTripViewController.swift */,
 				80D9B0AE26FDE7F5001EB6BD /* FromWhereToViewController.swift */,
 				80CA9344270C3AD9009A1469 /* DateTimeViewController.swift */,
 				80CA9348270C84CF009A1469 /* PostTripToViewController.swift */,
@@ -377,10 +381,6 @@
 				809F674027B9338000D67E56 /* Old View Controllers */,
 				807E9BCC27076DE90008F523 /* ResultsViewController.swift */,
 				80CA933827091D63009A1469 /* ProfilePageViewController.swift */,
-				80CA933A270A034D009A1469 /* PostTripViewController.swift */,
-				80CA934A270D91B3009A1469 /* PassengerPriceViewController.swift */,
-				80D5E7712715B634000F1F5B /* PostFinalViewController.swift */,
-				80D5E790271C81ED000F1F5B /* PostViewController.swift */,
 				80E7A511274587F300423EB3 /* ShareTaxiViewController.swift */,
 				80E7A517274AE5E400423EB3 /* TaxiTripSetViewController.swift */,
 				804AF855279EB80F00315A82 /* TaxiResultViewController.swift */,

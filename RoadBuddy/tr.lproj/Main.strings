@@ -5,13 +5,13 @@
 "8k8-w2-QCx.configuration.title" = "Yolculuk Planınız Yok, Eklemek İçin Tıklayın";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8k8-w2-QCx"; */
-"8k8-w2-QCx.normalTitle" = "Button";
+"8k8-w2-QCx.normalTitle" = "Yolculuk Planınız Yok, Eklemek İçin Tıklayın";
 
 /* Class = "UIButton"; configuration.title = "Delete Trip"; ObjectID = "9kO-rb-ZaN"; */
 "9kO-rb-ZaN.configuration.title" = "Yolculuğu Sil";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9kO-rb-ZaN"; */
-"9kO-rb-ZaN.normalTitle" = "Button";
+"9kO-rb-ZaN.normalTitle" = "Yolculuğu Sil";
 
 /* Class = "UILabel"; text = "namelastname@email.com"; ObjectID = "bqI-jP-TfQ"; */
 "bqI-jP-TfQ.text" = "namelastname@email.com";
@@ -23,7 +23,7 @@
 "hS0-sD-NNV.configuration.title" = "Çıkış Yap";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hS0-sD-NNV"; */
-"hS0-sD-NNV.normalTitle" = "Button";
+"hS0-sD-NNV.normalTitle" = "Çıkış Yap";
 
 /* Class = "UITabBarItem"; title = "Profile"; ObjectID = "jfp-8j-62n"; */
 "jfp-8j-62n.title" = "Profil";
@@ -47,7 +47,7 @@
 "T5c-Jg-WME.configuration.title" = "Profil Resmini Değiştir";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "T5c-Jg-WME"; */
-"T5c-Jg-WME.normalTitle" = "Button";
+"T5c-Jg-WME.normalTitle" = "Profil Resmini Değiştir";
 
 /* Class = "UILabel"; text = "₺"; ObjectID = "tZz-wo-e0P"; */
 "tZz-wo-e0P.text" = "₺";

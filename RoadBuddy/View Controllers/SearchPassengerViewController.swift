@@ -116,7 +116,7 @@ class SearchPassengerViewController: UIViewController {
         storageManager.ref?.child("Trips").child(CurrentUser.UID).setValue(post)
         print("uid: " + CurrentUserTripPost.uid)
         storageManager.db.collection("users").document(CurrentUserTripPost.uid).updateData(["TripIsSet":true])
-        let alert = UIAlertController(title: "Trip Posted", message: "Your trip has been posted.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Trip Posted", message: "Your trip has been posted.".localized(), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
             self.dismiss(animated: true, completion: nil)

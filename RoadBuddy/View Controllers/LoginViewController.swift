@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
         //Check that all fields are filled in
         if EmailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || PasswordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             
-            return "Please fill in all fields."
+            return "Please fill in all fields.".localized()
         }
         return nil
     }
@@ -87,7 +87,7 @@ class LoginViewController: UIViewController {
             if error != nil
             {
                 //Couldn't sign in
-                self.showError(message: "Log in unsuccessful. Check your email or password.")
+                self.showError(message: "Log in unsuccessful. Check your email or password.".localized())
                 
             }
             else
