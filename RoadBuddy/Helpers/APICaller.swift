@@ -29,6 +29,25 @@ struct DriverData
     
 }
 
+class User
+{
+    var userName = String()
+    
+    var passWord = String()
+    
+    var firstName = String()
+    
+    var lastName = String()
+    
+    var email = String()
+    
+    var schoolName = String()
+    
+    var phoneNum = String()
+    
+    
+}
+
 struct TaxiTripData
 {
     var passengerName:String

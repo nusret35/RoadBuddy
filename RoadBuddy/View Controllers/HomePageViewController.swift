@@ -7,6 +7,8 @@
 
 import UIKit
 
+var NewUser = User()
+
 var profileDataLoad = false
 
 class HomePageViewController: UIViewController {
@@ -20,6 +22,7 @@ class HomePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false
         SignUpButton.setTitle("Sign Up".localized(), for: .normal)
         
         LogInButton.setTitle("Login".localized(), for: .normal)

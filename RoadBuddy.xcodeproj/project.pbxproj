@@ -105,6 +105,8 @@
 		C02FE7F827B69860006E5C14 /* PostTripToViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */; };
 		C02FE7FA27B69DBB006E5C14 /* ShareTaxiFromViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7F927B69DBB006E5C14 /* ShareTaxiFromViewController2.swift */; };
 		C02FE7FC27B69DD7006E5C14 /* ShareTaxiToViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7FB27B69DD7006E5C14 /* ShareTaxiToViewController2.swift */; };
+		C032962A27BD2D7600C21736 /* UserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032962927BD2D7600C21736 /* UserNameViewController.swift */; };
+		C032962C27BD400100C21736 /* CreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032962B27BD400100C21736 /* CreatePasswordViewController.swift */; };
 		C07DC91C27BBF03B00C44329 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07DC91B27BBF03B00C44329 /* Languages.swift */; };
 		C07DC92027BBF17D00C44329 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C07DC92227BBF17D00C44329 /* Localizable.strings */; };
 		C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B7A7127B2895D0027684E /* FirstTableViewCell.swift */; };
@@ -184,6 +186,8 @@
 		C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripToViewController2.swift; sourceTree = "<group>"; };
 		C02FE7F927B69DBB006E5C14 /* ShareTaxiFromViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTaxiFromViewController2.swift; sourceTree = "<group>"; };
 		C02FE7FB27B69DD7006E5C14 /* ShareTaxiToViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTaxiToViewController2.swift; sourceTree = "<group>"; };
+		C032962927BD2D7600C21736 /* UserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewController.swift; sourceTree = "<group>"; };
+		C032962B27BD400100C21736 /* CreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordViewController.swift; sourceTree = "<group>"; };
 		C07DC91B27BBF03B00C44329 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		C07DC91D27BBF13600C44329 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		C07DC92127BBF17D00C44329 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -387,6 +391,8 @@
 				80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */,
 				8075BAC227A3F1B70064CCB7 /* InboxViewController.swift */,
 				8075BAD627A6F7E00064CCB7 /* ChatViewController.swift */,
+				C032962927BD2D7600C21736 /* UserNameViewController.swift */,
+				C032962B27BD400100C21736 /* CreatePasswordViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -606,6 +612,7 @@
 				C02FE7FC27B69DD7006E5C14 /* ShareTaxiToViewController2.swift in Sources */,
 				80E7A518274AE5E400423EB3 /* TaxiTripSetViewController.swift in Sources */,
 				807E9BCD27076DE90008F523 /* ResultsViewController.swift in Sources */,
+				C032962C27BD400100C21736 /* CreatePasswordViewController.swift in Sources */,
 				C07DC91C27BBF03B00C44329 /* Languages.swift in Sources */,
 				80CA933B270A034D009A1469 /* PostTripViewController.swift in Sources */,
 				80CA9347270C7F33009A1469 /* PostTripFromViewController.swift in Sources */,
@@ -637,6 +644,7 @@
 				809B9C6D27B39B1E004EB9C4 /* UITableView + ViewAnimator.swift in Sources */,
 				80C996392765697B00B5A3C7 /* SignUpViewController.swift in Sources */,
 				C02FE7FA27B69DBB006E5C14 /* ShareTaxiFromViewController2.swift in Sources */,
+				C032962A27BD2D7600C21736 /* UserNameViewController.swift in Sources */,
 				809B9C7127B39B1E004EB9C4 /* Animation.swift in Sources */,
 				807F1F3B2701E6AB000C89CB /* FromViewController.swift in Sources */,
 				80C9963B2766919300B5A3C7 /* LoginViewController.swift in Sources */,
