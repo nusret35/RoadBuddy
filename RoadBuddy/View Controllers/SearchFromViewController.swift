@@ -83,6 +83,7 @@ class SearchFromViewController: UIViewController, UISearchResultsUpdating {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        UserSearchTripRequest.fetchData()
         view.backgroundColor = .systemBackground
         navigationItem.title = "Where are you?".localized()
         navigationItem.backButtonTitle = "Back".localized()

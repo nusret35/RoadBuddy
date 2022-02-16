@@ -42,8 +42,9 @@ extension SearchToViewController: ResultsVCDelegate
     func didTapPlace(with coordinates: CLLocationCoordinate2D, address: String)
     {
         //adding datas to request
+        UserSearchTripRequest.toLocationName = address
         UserSearchTripRequest.toCoordinateLat = Double(coordinates.latitude)
-        UserSearchTripRequest.fromCoordinateLong = Double(coordinates.longitude)
+        UserSearchTripRequest.toCoordinateLong = Double(coordinates.longitude)
         //setting up the view controller
         searchController.searchBar.text = address
         let searchMapVC = SearchMapToViewController()
@@ -66,6 +67,8 @@ extension SearchToViewController: ResultsVCDelegate
     {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = mainStoryboard.instantiateViewController(withIdentifier: "SearchTimeVC") as! SearchTimeViewController
+        vc.settingForPost = false
+        vc.settingForSearch = true
         vc.view.backgroundColor = .systemBackground
         vc.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         vc.title = "Set Time".localized()

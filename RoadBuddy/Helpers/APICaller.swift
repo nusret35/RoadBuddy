@@ -19,7 +19,7 @@ struct DriverData
     
     var toLocation:String
     
-    var price:String
+    var price:Int
     
     var time:String
     

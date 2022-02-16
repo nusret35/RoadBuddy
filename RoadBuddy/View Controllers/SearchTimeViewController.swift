@@ -19,20 +19,25 @@ class SearchTimeViewController: UIViewController{
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        timeButton.setTitle("Set Time".localized(), for: .normal)
         let moment = Date()
         timePicker.minimumDate = moment
-        settingType(moment)
-        print(myDateFormat.dateToString(moment))
-        print("tripPost.time: " + CurrentUserTripPost.time)
+        
     }
     
     @IBAction func timeButtonAction(_ sender: Any)
     {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = mainStoryboard.instantiateViewController(withIdentifier: "SearchPassengerVC") as! SearchPassengerViewController
-        vc.settingForPost = true
-        vc.settingForSearch = false
+         if settingForPost == true
+        {
+            vc.settingForPost = true
+            vc.settingForSearch = false
+         }
+        else if settingForSearch == true
+        {
+            vc.settingForPost = false
+            vc.settingForSearch = true
+        }
         vc.title = "How many people are you with?".localized()
         vc.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         navigationController?.pushViewController(vc, animated: true)

@@ -26,6 +26,11 @@ class SearchTripRequest
     var toCoordinateLat = Double()
     
     var toCoordinateLong = Double()
+    
+    func fetchData()
+    {
+        self.time = myDateFormat.dateToString(Date())
+    }
 }
 
 class UserTripPost
@@ -65,6 +70,8 @@ class UserTripPost
         self.fullname = CurrentUser.Fullname
         
         self.profilePictureURL = CurrentUser.profilePictureURL
+        
+        self.time = myDateFormat.dateToString(Date())
     }
 }
 

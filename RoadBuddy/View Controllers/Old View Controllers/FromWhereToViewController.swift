@@ -126,7 +126,7 @@ class FromWhereToViewController: UIViewController{
                 print(name)
                 let from = res["from"] as! String
                 let to = res["to"] as! String
-                let price = res["price"] as! String
+                let price = res["price"] as! Int
                 let time = res["time"] as! String
                 let numberOfPassengers = res["number of passengers"] as! Int
                 let fromLat = res["fromCoordinateLatitude"] as! Double

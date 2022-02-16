@@ -47,7 +47,7 @@ class PostTableViewCell: UITableViewCell {
         self.toLocationLabel.text =  model.toLocation
         self.timeLabel.text =  model.time
         self.numberOfPassengersLabel.text =  String(model.numberOfPassengers)
-        self.priceLabel.text = model.price
+        self.priceLabel.text = String(model.price)
         
     }
     

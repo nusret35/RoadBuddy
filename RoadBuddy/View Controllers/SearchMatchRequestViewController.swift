@@ -116,7 +116,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     {
         self.request  = ["fullname": CurrentUser.Fullname, "uid": CurrentUser.UID, "time": UserSearchTripRequest.time ,"number of passengers": UserSearchTripRequest.numberOfPassengers, "fromLocationName": UserSearchTripRequest.fromLocationName, "toLocationName": UserSearchTripRequest.toLocationName, "fromCoordinateLat": UserSearchTripRequest.fromCoordinateLat,"fromCoordinateLong": UserSearchTripRequest.fromCoordinateLong, "toCoordinateLat": UserSearchTripRequest.toCoordinateLat, "toCoordinateLong":
             UserSearchTripRequest.toCoordinateLong] as [String : Any]
-        storageManager.ref?.child("Requests").child(CurrentUser.UID).setValue(self.request)
+        storageManager.ref.child("Search_Requests").child(CurrentUser.UID).setValue(self.request)
         searchFromLocation = CLLocation(latitude: UserSearchTripRequest.fromCoordinateLat, longitude: UserSearchTripRequest.fromCoordinateLong)
         searchToLocation = CLLocation(latitude: UserSearchTripRequest.toCoordinateLat, longitude: UserSearchTripRequest.toCoordinateLong)
     }
@@ -135,7 +135,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
                 print(name)
                 let from = res["from"] as! String
                 let to = res["to"] as! String
-                let price = res["price"] as! String
+                let price = res["price"] as! Int
                 let time = res["time"] as! String
                 let numberOfPassengers = res["number of passengers"] as! Int
                 let fromLat = res["fromCoordinateLatitude"] as! Double
