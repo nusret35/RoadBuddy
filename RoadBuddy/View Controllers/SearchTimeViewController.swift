@@ -19,6 +19,7 @@ class SearchTimeViewController: UIViewController{
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        timeButton.setTitle("Set Time".localized(), for: .normal)
         let moment = Date()
         timePicker.minimumDate = moment
         settingType(moment)

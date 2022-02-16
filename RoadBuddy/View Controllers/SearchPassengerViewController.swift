@@ -25,11 +25,13 @@ class SearchPassengerViewController: UIViewController {
     
     @IBOutlet weak var plusButton: UIButton!
         
+    @IBOutlet weak var continueButton: UIButton!
     private var numberOfPassengers = 1
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        continueButton.setTitle("Continue".localized(), for: .normal)
         numberLabel.text = String(numberOfPassengers)
         minusButton.tintColor = .secondaryLabel
         minusButton.setTitle("", for: .normal)

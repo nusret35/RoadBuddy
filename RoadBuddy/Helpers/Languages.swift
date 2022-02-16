@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 extension String
@@ -16,3 +17,14 @@ extension String
     }
     
 }
+
+extension UIButton {
+    @IBInspectable var localizedTitle: String {
+        get { return "" }
+        set {
+            self.setTitle(newValue.localized(), for: .normal)
+        }
+    }
+}
+
+
