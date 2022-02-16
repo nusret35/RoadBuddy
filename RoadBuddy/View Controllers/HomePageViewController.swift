@@ -16,9 +16,15 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var SignUpButton: UIButton!
     
     @IBOutlet weak var LogInButton: UIButton!
+    @IBOutlet weak var titlename: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SignUpButton.setTitle("Sign Up".localized(), for: .normal)
+        
+        LogInButton.setTitle("Login".localized(), for: .normal)
+        
+        titlename.text = "Welcome To RoadBuddy".localized()
     }
 
     @IBAction func SignUpButtonTapped(_ sender: Any) {

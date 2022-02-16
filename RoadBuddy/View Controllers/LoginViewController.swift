@@ -24,6 +24,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        LogInButton.setTitle("Login".localized(), for: .normal)
+        
+        EmailTextField.placeholder = "Email".localized()
+        
+        PasswordTextField.placeholder = "Password".localized()
 
         // Do any additional setup after loading the view.
         setUpElements()

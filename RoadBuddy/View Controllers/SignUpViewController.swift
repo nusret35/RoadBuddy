@@ -33,6 +33,14 @@ class SignUpViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        SignUpButton.setTitle("Sign Up".localized(), for: .normal)
+        FirstNameTextField.placeholder = "First Name".localized()
+        LastNameTextField.placeholder = "Last Name".localized()
+        EmailTextField.placeholder = "E-mail".localized()
+        PhoneNumberTextField.placeholder = "Phone Number".localized()
+        SchoolNameTextField.placeholder = "School Name".localized()
+        UsernameTextField.placeholder = "Username".localized()
+        PasswordTextField.placeholder = "Password".localized()
         
         setUpElements()
 
