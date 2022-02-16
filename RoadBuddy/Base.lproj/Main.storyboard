@@ -411,7 +411,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="W6g-7D-bwS"/>
-                        <color key="backgroundColor" red="0.93611103296279907" green="0.97251147031784058" blue="0.97678571939468384" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" title="RoadBuddy" id="VwS-J4-Idv">
@@ -437,7 +437,7 @@
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="hdB-Mx-yJC">
                                 <rect key="frame" x="0.0" y="320" width="414" height="216"/>
-                                <color key="backgroundColor" red="0.93611103296279907" green="0.97251147031784058" blue="0.97678571939468384" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="Jri-Gc-H6S"/>
@@ -468,7 +468,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dJv-ax-AGq"/>
-                        <color key="backgroundColor" red="0.93611103296279907" green="0.97251147031784058" blue="0.97678571939468384" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="zJ6-uV-cx0" firstAttribute="top" secondItem="hdB-Mx-yJC" secondAttribute="bottom" constant="79" id="BY9-y0-0UQ"/>
@@ -508,9 +508,7 @@
                                         <color key="tintColor" systemColor="systemTealColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background" image="minus.circle.fill" catalog="system">
-                                                <color key="backgroundColor" red="0.93611103296279907" green="0.97251147031784058" blue="0.97678571939468384" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </backgroundConfiguration>
+                                            <backgroundConfiguration key="background" image="minus.circle.fill" catalog="system"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="minusButtonAction:" destination="fSZ-sf-Vah" eventType="touchUpInside" id="VK9-Yr-ZP3"/>
@@ -556,13 +554,12 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="37"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="continueButtonAction:" destination="fSZ-sf-Vah" eventType="touchUpInside" id="eqU-Uj-y88"/>
-                                    <action selector="timeButtonAction:" destination="IXm-nh-60V" eventType="touchUpInside" id="85I-Is-5yo"/>
+                                    <action selector="continueButtonAction:" destination="fSZ-sf-Vah" eventType="touchUpInside" id="V38-p4-y9e"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U0y-BU-xoQ"/>
-                        <color key="backgroundColor" red="0.93611103296279907" green="0.97251147031784058" blue="0.97678571939468384" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="U0y-BU-xoQ" firstAttribute="trailing" secondItem="efG-bM-YhE" secondAttribute="trailing" constant="19" id="0jo-Kz-5y7"/>
                             <constraint firstItem="efG-bM-YhE" firstAttribute="top" secondItem="U0y-BU-xoQ" secondAttribute="top" constant="323" id="6da-eu-n1m"/>
