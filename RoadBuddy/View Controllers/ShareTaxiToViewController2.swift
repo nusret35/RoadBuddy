@@ -11,6 +11,8 @@ import MapKit
 class ShareTaxiToViewController2: UIViewController, UISearchResultsUpdating
 {
     let searhController = UISearchController(searchResultsController: ResultsVC())
+    
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,53 +42,58 @@ class ShareTaxiToViewController2: UIViewController, UISearchResultsUpdating
             }
     }
     
-
-
 }
 
 extension ShareTaxiToViewController2: ResultsVCDelegate
 {
-    func didTapPlace(with coordinates: CLLocationCoordinate2D, address: String) {
+    func didTapPlace(with coordinates: CLLocationCoordinate2D, address: String)
+    {
         searhController.searchBar.text = address
+    
+        UserTaxiTripRequest.toLocationName = address
         
-        let ShareMapVC = SearchMapViewController()
-        ShareMapVC.coordinates = coordinates
+        UserTaxiTripRequest.toCoordinateLat = coordinates.latitude
+        
+        UserTaxiTripRequest.toCoordinateLong = coordinates.longitude
+        
+        let shareMapVC = mainStoryboard.instantiateViewController(withIdentifier: "SearchMapVC") as! SearchMapViewController
+        
+        shareMapVC.coordinates = coordinates
+        
+        shareMapVC.buttonAction =
+        {
+            let viewController = self.mainStoryboard.instantiateViewController(withIdentifier: "SearchTimeVC") as! SearchTimeViewController
+            
+            viewController.settingForTaxi = true
+            
+            viewController.settingForPost = false
+            
+            viewController.settingForSearch = false
+            
+            viewController.view.backgroundColor = .systemBackground
+            
+            viewController.navigationItem.backBarButtonItem = Buttons.defaultBackButton
+            
+            viewController.title = "Set Time".localized()
+            
+            viewController.navigationItem.largeTitleDisplayMode = .always
+            
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
         
         let backButton = UIBarButtonItem()
         backButton.title = "Back".localized()
         
         navigationItem.backBarButtonItem = backButton
         
-        let rightBarButton = UIBarButtonItem(image:
-                                                UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(rightButtonAction))
-        
-        ShareMapVC.navigationItem.rightBarButtonItem = rightBarButton
-        
         //ShareMapVC.title = address
-        ShareMapVC.navigationItem.largeTitleDisplayMode = .never
+        shareMapVC.navigationItem.largeTitleDisplayMode = .never
         
         navigationController?.navigationBar.backgroundColor = .systemBackground
         
-        navigationController?.pushViewController(ShareMapVC, animated: true)
+        navigationController?.pushViewController(shareMapVC, animated: true)
 
     }
     
-    
-    @objc func rightButtonAction()
-    {
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let viewController = mainStoryBoard.instantiateViewController(withIdentifier: "SearchTimeVC") as! SearchTimeViewController
-        
-        viewController.view.backgroundColor = .systemBackground
-        
-        viewController.navigationItem.backBarButtonItem = Buttons.defaultBackButton
-        
-        viewController.title = "Set Time".localized()
-        
-        viewController.navigationItem.largeTitleDisplayMode = .always
-        
-        navigationController?.pushViewController(viewController, animated: true)
-    }
 
 }

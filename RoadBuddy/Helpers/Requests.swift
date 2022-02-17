@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import UIKit
 
 class SearchTripRequest
 {
@@ -76,24 +77,43 @@ class UserTripPost
 }
 
 
-struct TaxiTripRequest
+class TaxiTripRequest
 {
-    var fullname:String
+    var fullname = String()
+    
+    var uid = String()
+    
+    var time = String()
+    
+    var fromLocationName = String()
+    
+    var toLocationName = String()
+    
+    var fromCoordinateLat = Double()
+    
+    var fromCoordinateLong = Double()
+    
+    var toCoordinateLat = Double()
+    
+    var toCoordinateLong = Double()
+}
+
+struct TripPost
+{
+    var driverName:String
     
     var uid:String
     
+    var profilePicture:UIImage
+    
+    var fromLocation:String
+    
+    var toLocation:String
+    
     var time:String
     
-    var fromLocationName:String
+    var numberOfPassengers:Int
     
-    var toLocationName:String
-    
-    var fromCoordinateLat:Double
-    
-    var fromCoordinateLong:Double
-    
-    var toCoordinateLat:Double
-    
-    var toCoordinateLong:Double
+    var price:Int
 }
 

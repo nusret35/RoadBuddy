@@ -6,6 +6,7 @@
 //
 
 import UIKit
+/*
 import FirebaseDatabase
 import CoreLocation
 import FirebaseAuth
@@ -138,7 +139,7 @@ class TaxiResultViewController: UIViewController, UITableViewDelegate, UITableVi
         self.present(alert, animated:true, completion: nil)
     }
     
-}
+}*/
 
 struct TaxiTripPost
 {

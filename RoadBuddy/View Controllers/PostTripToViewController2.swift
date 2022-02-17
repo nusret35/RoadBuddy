@@ -14,6 +14,8 @@ class PostTripToViewController2: UIViewController, UISearchResultsUpdating
     
     let searhController = UISearchController(searchResultsController: ResultsVC())
 
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -58,42 +60,38 @@ extension PostTripToViewController2: ResultsVCDelegate
         
         searhController.searchBar.text = address
     
-        let postMapVC = SearchMapViewController()
+        let postMapVC = mainStoryboard.instantiateViewController(withIdentifier: "SearchMapVC") as! SearchMapViewController
         
         postMapVC.coordinates = coordinates
         
-        //NEW ADDED
-        let action = #selector(rightButtonAction)
-        postMapVC.navigationItem.rightBarButtonItem = Buttons.createDefaultRightButton(self,action)
-        postMapVC.navigationItem.backBarButtonItem = Buttons.defaultBackButton
-        //
+        postMapVC.buttonAction =
+        {
+            let viewController = self.mainStoryboard.instantiateViewController(withIdentifier: "SearchTimeVC") as! SearchTimeViewController
+            
+            viewController.view.backgroundColor = .systemBackground
+            
+            viewController.settingForPost = true
+            
+            viewController.settingForSearch = false
+            
+            viewController.settingForTaxi = false
+            
+            viewController.navigationItem.backBarButtonItem = Buttons.defaultBackButton
+            viewController.title = "Set Time".localized()
+            
+            viewController.navigationItem.largeTitleDisplayMode = .always
+            
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
         
-        //postMapVC.title = address
+        
+        postMapVC.navigationItem.backBarButtonItem = Buttons.defaultBackButton
+        
+        
         postMapVC.navigationItem.largeTitleDisplayMode = .never
         
         navigationController?.navigationBar.backgroundColor = .systemBackground
         
         navigationController?.pushViewController(postMapVC, animated: true)
-    }
-    
-    @objc func rightButtonAction()
-    {
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let viewController = mainStoryBoard.instantiateViewController(withIdentifier: "SearchTimeVC") as! SearchTimeViewController
-        
-        viewController.view.backgroundColor = .systemBackground
-        
-        viewController.settingForPost = true
-        
-        viewController.settingForSearch = false
-        
-        viewController.navigationItem.backBarButtonItem = Buttons.defaultBackButton
-        viewController.title = "Set Time".localized()
-        
-        viewController.navigationItem.largeTitleDisplayMode = .always
-        
-        navigationController?.pushViewController(viewController, animated: true)
-        
     }
 }

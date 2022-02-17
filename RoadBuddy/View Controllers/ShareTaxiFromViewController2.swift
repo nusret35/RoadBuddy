@@ -8,12 +8,14 @@
 import UIKit
 import MapKit
 
+var UserTaxiTripRequest = TaxiTripRequest()
+
 class ShareTaxiFromViewController2: UIViewController, UISearchResultsUpdating
 {
-    
-
     let searchController = UISearchController(searchResultsController: ResultsVC())
 
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -37,12 +39,11 @@ class ShareTaxiFromViewController2: UIViewController, UISearchResultsUpdating
                 {
                     
                         ViewController.updateData(locations)
-                    }
                 }
             }
-        
+        }
     }
-    }
+}
     
 
 
@@ -52,32 +53,29 @@ extension ShareTaxiFromViewController2: ResultsVCDelegate
     func didTapPlace(with coordinates: CLLocationCoordinate2D, address: String) {
         searchController.searchBar.text = address
         
-        let ShareMapVC = SearchMapViewController()
-        ShareMapVC.coordinates = coordinates
+        UserTaxiTripRequest.fromLocationName = address
         
+        UserTaxiTripRequest.fromCoordinateLat = coordinates.latitude
         
+        UserTaxiTripRequest.fromCoordinateLong = coordinates.longitude
         
-        let rightBarButton = UIBarButtonItem(image:
-                                                UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(rightButtonAction))
+        let shareMapVC = mainStoryboard.instantiateViewController(withIdentifier: "SearchMapVC") as! SearchMapViewController
         
-        ShareMapVC.navigationItem.rightBarButtonItem = rightBarButton
+        shareMapVC.coordinates = coordinates
         
-        //ShareMapVC.title = address
-        ShareMapVC.navigationItem.largeTitleDisplayMode = .never
+        shareMapVC.buttonAction =
+        {
+            let viewController = ShareTaxiToViewController2()
+            viewController.navigationItem.largeTitleDisplayMode = .always
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
+        
+        shareMapVC.navigationItem.largeTitleDisplayMode = .never
         
         navigationController?.navigationBar.backgroundColor = .systemBackground
         
-        navigationController?.pushViewController(ShareMapVC, animated: true)
-
+        navigationController?.pushViewController(shareMapVC, animated: true)
     }
-    
-    @objc func rightButtonAction()
-    {
-        let viewController = ShareTaxiToViewController2()
-        viewController.navigationItem.largeTitleDisplayMode = .always
-        navigationController?.pushViewController(viewController, animated: true)
-    }
-
 }
 
 

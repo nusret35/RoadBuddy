@@ -13,6 +13,8 @@ var CurrentUserTripPost = UserTripPost()
 class PostTripFromViewController2: UIViewController, UISearchResultsUpdating
 {
     
+    let mainStoryboard = UIStoryboard(name:"Main",bundle: nil)
+    
     let searchController = UISearchController(searchResultsController: ResultsVC())
 
     override func viewDidLoad()
@@ -65,16 +67,18 @@ extension PostTripFromViewController2: ResultsVCDelegate
         
         searchController.searchBar.text = address
         
-        let postMapVC = SearchMapViewController()
+        let postMapVC = mainStoryboard.instantiateViewController(withIdentifier: "SearchMapVC") as! SearchMapViewController
         
         postMapVC.coordinates = coordinates
         
         //NEW ADDED
-        let action = #selector(rightButtonAction)
+        postMapVC.buttonAction =
+        {
+            let viewController = PostTripToViewController2()
+            viewController.navigationItem.largeTitleDisplayMode = .never
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
         
-        let rightBarButton = Buttons.createDefaultRightButton(self,action)
-
-        postMapVC.navigationItem.rightBarButtonItem = rightBarButton
         
         postMapVC.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         
@@ -83,14 +87,7 @@ extension PostTripFromViewController2: ResultsVCDelegate
         navigationController?.navigationBar.backgroundColor = .systemBackground
         
         navigationController?.pushViewController(postMapVC, animated: true)
-
-    }
-    
-    @objc func rightButtonAction()
-    {
-        let viewController = PostTripToViewController2()
-        viewController.navigationItem.largeTitleDisplayMode = .never
-        navigationController?.pushViewController(viewController, animated: true)
+        
     }
 
 }

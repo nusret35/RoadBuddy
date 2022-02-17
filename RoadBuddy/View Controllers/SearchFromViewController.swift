@@ -77,6 +77,7 @@ class ResultsVC: UIViewController,UITableViewDelegate,UITableViewDataSource
 
 class SearchFromViewController: UIViewController, UISearchResultsUpdating {
     
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     let searchController = UISearchController(searchResultsController: ResultsVC())
     
@@ -117,47 +118,52 @@ extension SearchFromViewController: ResultsVCDelegate
         UserSearchTripRequest.fromCoordinateLat = Double(coordinates.latitude)
         UserSearchTripRequest.fromCoordinateLong = Double(coordinates.longitude)
         //Setting the next map view controller
-        let searchMapVC = SearchMapViewController()
+        let searchMapVC = mainStoryboard.instantiateViewController(withIdentifier: "SearchMapVC") as! SearchMapViewController
         searchMapVC.coordinates = coordinates
-        //Setting navigation bar buttons
-        //right bar button setting
-        let action = #selector(rightButtonAction)
-        let rightBarButton = Buttons.createDefaultRightButton(self,action)
-        searchMapVC.navigationItem.rightBarButtonItem = rightBarButton
+        searchMapVC.buttonAction = {
+            let vc = SearchToViewController()
+            vc.navigationItem.largeTitleDisplayMode = .always
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         searchMapVC.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         //Setting navigation bar title
         searchMapVC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.backgroundColor = .systemBackground
         navigationController?.pushViewController(searchMapVC, animated: true)
     }
-    
-    @objc func rightButtonAction()
-    {
-        let vc = SearchToViewController()
-        vc.navigationItem.largeTitleDisplayMode = .always
-        navigationController?.pushViewController(vc, animated: true)
-    }
 
 }
 
-
+/*
 class SearchMapViewController: UIViewController
 {
-    let mapView = MKMapView()
+    @IBOutlet weak var mapView: MKMapView!
+    //let mapView = MKMapView()
     var coordinates = CLLocationCoordinate2D()
+    
+    @IBOutlet weak var continueButton: UIButton!
+    
+    
+    var buttonAction: ( () -> () )?
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        view.addSubview(mapView)
+        //view.addSubview(mapView)
         view.backgroundColor = .systemBackground
         pinTheLocation()
     }
     
-    override func viewDidLayoutSubviews() {
-        mapView.frame = CGRect(x:0,y:view.safeAreaInsets.top,width:view.frame.size.width,height: view.frame.size.height)
+    
+    @IBAction func continueButton(_ sender: Any)
+    {
+        buttonAction!()
     }
     
-    func pinTheLocation() {
+    
+    func pinTheLocation()
+    {
         let pin = MKPointAnnotation()
         pin.coordinate = coordinates
         mapView.addAnnotation(pin)
@@ -167,4 +173,4 @@ class SearchMapViewController: UIViewController
     
 }
 
-
+*/

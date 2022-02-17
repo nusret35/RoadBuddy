@@ -176,6 +176,7 @@ extension Date {
 
     let startTimeFormatter = DateFormatter()
     startTimeFormatter.dateFormat = "HH:mm"
+        
     
     
     return String(format: "%@ (%@)",
@@ -206,5 +207,20 @@ class myDateFormat
     {
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "EEEE, MMM d, yyyy '('HH:mm')'"
+    }
+    
+    static func formateTime(_ formatter: DateFormatter)
+    {
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "HH:mm"
+        
+    }
+    
+    static func takeTimeFromStringDate(_ stringDate: String) -> String
+    {
+        let time = stringToDate(stringDate)
+        formateTime(dateFormatter)
+        let stringTime = dateFormatter.string(from:time)
+        return stringTime
     }
 }

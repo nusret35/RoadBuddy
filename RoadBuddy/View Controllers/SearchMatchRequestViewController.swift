@@ -234,7 +234,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     {
         for i in self.trips
         {
-            self.models.append(TripPost(username: i.driverName, uid: i.uid, profilePicture: UIImage(named:"emptyProfilePicture")!, fromLocation: i.fromLocation, toLocation: i.toLocation, time: i.time, numberOfPassengers: i.numberOfPassengers, price: i.price))
+            self.models.append(TripPost(driverName: i.driverName, uid: i.uid, profilePicture: UIImage(named:"emptyProfilePicture")!, fromLocation: i.fromLocation, toLocation: i.toLocation, time: i.time, numberOfPassengers: i.numberOfPassengers, price: i.price))
         }
         print(String(models.count))
         self.tableView.reloadData()

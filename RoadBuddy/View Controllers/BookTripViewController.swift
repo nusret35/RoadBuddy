@@ -4,7 +4,7 @@
 //
 //  Created by Nusret Kızılaslan on 25.01.2022.
 //
-
+/*
 import UIKit
 import FirebaseDatabase
 
@@ -78,3 +78,4 @@ class BookTripViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     
 }
+*/

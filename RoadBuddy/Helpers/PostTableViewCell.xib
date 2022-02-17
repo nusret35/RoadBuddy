@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,19 +12,19 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="289" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="RoadBuddy" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="385" height="289"/>
+            <rect key="frame" x="0.0" y="0.0" width="392" height="289"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="385" height="289"/>
+                <rect key="frame" x="0.0" y="0.0" width="392" height="289"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-N2-TXR">
-                        <rect key="frame" x="0.0" y="0.0" width="388" height="289"/>
+                        <rect key="frame" x="0.0" y="0.0" width="392" height="289"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sfg-MB-wh2">
-                                <rect key="frame" x="8" y="13" width="372" height="267"/>
+                                <rect key="frame" x="20" y="11" width="352" height="267"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2tA-iE-xPo">
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2tA-iE-xPo">
                                         <rect key="frame" x="28" y="6" width="315" height="254"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0y-Lc-Hx8">
@@ -165,12 +165,9 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.28530097007751465" green="0.62027055025100708" blue="0.61529642343521118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="2tA-iE-xPo" firstAttribute="leading" secondItem="Sfg-MB-wh2" secondAttribute="leading" constant="28" id="AZg-eO-2tR"/>
-                                    <constraint firstAttribute="trailing" secondItem="2tA-iE-xPo" secondAttribute="trailing" constant="29" id="MKb-bj-LGR"/>
-                                    <constraint firstItem="2tA-iE-xPo" firstAttribute="top" secondItem="Sfg-MB-wh2" secondAttribute="top" constant="6" id="Wqk-4T-TwR"/>
-                                    <constraint firstAttribute="bottom" secondItem="2tA-iE-xPo" secondAttribute="bottom" constant="7" id="dwk-cP-Nuy"/>
+                                    <constraint firstAttribute="width" constant="352" id="eNQ-3x-k6x"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -181,17 +178,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Sfg-MB-wh2" firstAttribute="leading" secondItem="Yyg-N2-TXR" secondAttribute="leading" constant="8" id="D4z-MO-Rlo"/>
-                            <constraint firstItem="Sfg-MB-wh2" firstAttribute="top" secondItem="Yyg-N2-TXR" secondAttribute="top" constant="13" id="XfC-JA-PJl"/>
-                            <constraint firstAttribute="trailing" secondItem="Sfg-MB-wh2" secondAttribute="trailing" constant="8" id="a5c-Ma-t4H"/>
-                            <constraint firstAttribute="bottom" secondItem="Sfg-MB-wh2" secondAttribute="bottom" constant="9" id="dWr-6x-vYt"/>
+                            <constraint firstItem="Sfg-MB-wh2" firstAttribute="centerX" secondItem="Yyg-N2-TXR" secondAttribute="centerX" id="4Iq-t5-7cS"/>
+                            <constraint firstAttribute="bottom" secondItem="Sfg-MB-wh2" secondAttribute="bottom" constant="11" id="V2P-dl-fKd"/>
+                            <constraint firstItem="Sfg-MB-wh2" firstAttribute="top" secondItem="Yyg-N2-TXR" secondAttribute="top" constant="11" id="jwg-gc-GFY"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="Yyg-N2-TXR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KT8-Fj-8oI"/>
+                    <constraint firstAttribute="bottom" secondItem="Yyg-N2-TXR" secondAttribute="bottom" id="KZm-Kg-Bg8"/>
                     <constraint firstAttribute="bottom" secondItem="Yyg-N2-TXR" secondAttribute="bottom" id="X8z-zH-dg3"/>
+                    <constraint firstItem="Yyg-N2-TXR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XgE-3h-vBQ"/>
+                    <constraint firstItem="Yyg-N2-TXR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bi6-kI-UMG"/>
+                    <constraint firstAttribute="trailing" secondItem="Yyg-N2-TXR" secondAttribute="trailing" id="iUL-WK-dSM"/>
                     <constraint firstItem="Yyg-N2-TXR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="jdD-MM-Fgc"/>
                 </constraints>
             </tableViewCellContentView>
@@ -204,7 +204,7 @@
                 <outlet property="timeLabel" destination="HE9-Tn-5Tp" id="dUK-mT-d43"/>
                 <outlet property="toLocationLabel" destination="A9V-JT-JsA" id="8Ca-FG-IEO"/>
             </connections>
-            <point key="canvasLocation" x="1234.0579710144928" y="-61.272321428571423"/>
+            <point key="canvasLocation" x="1165.217391304348" y="-61.272321428571423"/>
         </tableViewCell>
     </objects>
     <resources>

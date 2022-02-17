@@ -12,6 +12,7 @@ import CoreLocation
 class SearchToViewController: UIViewController, UISearchResultsUpdating {
     let searchController = UISearchController(searchResultsController: ResultsVC())
     
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,15 +48,27 @@ extension SearchToViewController: ResultsVCDelegate
         UserSearchTripRequest.toCoordinateLong = Double(coordinates.longitude)
         //setting up the view controller
         searchController.searchBar.text = address
-        let searchMapVC = SearchMapToViewController()
+        let searchMapVC = mainStoryboard.instantiateViewController(withIdentifier: "SearchMapVC") as! SearchMapViewController
 
         searchMapVC.coordinates = coordinates
         //Setting navigation bar buttons
         navigationItem.backBarButtonItem = Buttons.defaultBackButton
-        //right bar button action
-        let action = #selector(rightButtonAction)
-        let rightBarButton = Buttons.createDefaultRightButton(self,action)
-        searchMapVC.navigationItem.rightBarButtonItem = rightBarButton
+        searchMapVC.buttonAction =
+        {
+            let vc = self.mainStoryboard.instantiateViewController(withIdentifier: "SearchTimeVC") as! SearchTimeViewController
+            
+            vc.settingForSearch = true
+            
+            vc.settingForPost = false
+            
+            vc.settingForTaxi = false
+            
+            vc.view.backgroundColor = .systemBackground
+            vc.navigationItem.backBarButtonItem = Buttons.defaultBackButton
+            vc.title = "Set Time".localized()
+            vc.navigationItem.largeTitleDisplayMode = .always
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         searchMapVC.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         //Setting navigation bar title
         //searchMapVC.title = address
@@ -63,19 +76,6 @@ extension SearchToViewController: ResultsVCDelegate
         navigationController?.pushViewController(searchMapVC, animated: true)
     }
     
-    @objc func rightButtonAction()
-    {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = mainStoryboard.instantiateViewController(withIdentifier: "SearchTimeVC") as! SearchTimeViewController
-        vc.settingForPost = false
-        vc.settingForSearch = true
-        vc.view.backgroundColor = .systemBackground
-        vc.navigationItem.backBarButtonItem = Buttons.defaultBackButton
-        vc.title = "Set Time".localized()
-        vc.navigationItem.largeTitleDisplayMode = .always
-        navigationController?.pushViewController(vc, animated: true)
-    }
-
 }
 
 class SearchMapToViewController: UIViewController

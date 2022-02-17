@@ -34,7 +34,11 @@ class PostTableViewCell: UITableViewCell {
     override func awakeFromNib()
     {
         super.awakeFromNib()
-        BackgroundColor.setTableViewCellBackgroundColor(groundView)
+        groundView.layer.shadowColor = UIColor.black.cgColor
+        groundView.layer.shadowOpacity = 1
+        groundView.layer.shadowOffset = .zero
+        groundView.layer.shadowRadius = 5
+        groundView.layer.shouldRasterize = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -45,7 +49,7 @@ class PostTableViewCell: UITableViewCell {
     {
         self.fromLocationLabel.text = model.fromLocation
         self.toLocationLabel.text =  model.toLocation
-        self.timeLabel.text =  model.time
+        self.timeLabel.text =  myDateFormat.takeTimeFromStringDate(model.time)
         self.numberOfPassengersLabel.text =  String(model.numberOfPassengers)
         self.priceLabel.text = String(model.price)
         
