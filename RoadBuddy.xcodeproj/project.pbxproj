@@ -15,7 +15,6 @@
 		804B3AAD27B64C9D0041A7DC /* SearchToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B3AAC27B64C9D0041A7DC /* SearchToViewController.swift */; };
 		804B3AAF27B66F320041A7DC /* SearchTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B3AAE27B66F320041A7DC /* SearchTimeViewController.swift */; };
 		805A7B4E27B26DCE00DDB80A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A7B4D27B26DCC00DDB80A /* FirstViewController.swift */; };
-		8073AA1F2773DC88007457FD /* ResultsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073AA1E2773DC88007457FD /* ResultsNavigationController.swift */; };
 		8073AA222775CCCD007457FD /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 8073AA212775CCCD007457FD /* SkeletonView */; };
 		8075BAC327A3F1B70064CCB7 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8075BAC227A3F1B70064CCB7 /* InboxViewController.swift */; };
 		8075BAC627A3F4B70064CCB7 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8075BAC427A3F4B70064CCB7 /* MessageTableViewCell.swift */; };
@@ -75,15 +74,9 @@
 		80C996392765697B00B5A3C7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C996382765697B00B5A3C7 /* SignUpViewController.swift */; };
 		80C9963B2766919300B5A3C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C9963A2766919300B5A3C7 /* LoginViewController.swift */; };
 		80CA933927091D63009A1469 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA933827091D63009A1469 /* ProfilePageViewController.swift */; };
-		80CA933B270A034D009A1469 /* PostTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA933A270A034D009A1469 /* PostTripViewController.swift */; };
 		80CA933D270B1AAA009A1469 /* DateTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA933C270B1AAA009A1469 /* DateTimePicker.swift */; };
 		80CA933F270B2150009A1469 /* DateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA933E270B2150009A1469 /* DateButton.swift */; };
 		80CA9345270C3AD9009A1469 /* DateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA9344270C3AD9009A1469 /* DateTimeViewController.swift */; };
-		80CA9347270C7F33009A1469 /* PostTripFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA9346270C7F33009A1469 /* PostTripFromViewController.swift */; };
-		80CA9349270C84CF009A1469 /* PostTripToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA9348270C84CF009A1469 /* PostTripToViewController.swift */; };
-		80CA934B270D91B4009A1469 /* PassengerPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA934A270D91B3009A1469 /* PassengerPriceViewController.swift */; };
-		80D5E7722715B634000F1F5B /* PostFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5E7712715B634000F1F5B /* PostFinalViewController.swift */; };
-		80D5E791271C81ED000F1F5B /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D5E790271C81ED000F1F5B /* PostViewController.swift */; };
 		80D9B09626FC9249001EB6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B09526FC9249001EB6BD /* AppDelegate.swift */; };
 		80D9B09826FC9249001EB6BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B09726FC9249001EB6BD /* SceneDelegate.swift */; };
 		80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D9B09E26FC9251001EB6BD /* Assets.xcassets */; };
@@ -93,7 +86,6 @@
 		80DDEBFE277347E10093BB3F /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80DDEBFC277347E10093BB3F /* PostTableViewCell.xib */; };
 		80E3783727BDA0530053C2FC /* PostTripPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3783627BDA0530053C2FC /* PostTripPriceViewController.swift */; };
 		80E3783927BE54390053C2FC /* SearchMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3783827BE54380053C2FC /* SearchMapViewController.swift */; };
-		80E7A510274550DD00423EB3 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E7A50F274550DD00423EB3 /* MainTabController.swift */; };
 		C02FE7F627B68AE6006E5C14 /* PostTripFromViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7F527B68AE6006E5C14 /* PostTripFromViewController2.swift */; };
 		C02FE7F827B69860006E5C14 /* PostTripToViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */; };
 		C02FE7FA27B69DBB006E5C14 /* ShareTaxiFromViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7F927B69DBB006E5C14 /* ShareTaxiFromViewController2.swift */; };
@@ -116,7 +108,6 @@
 		804B3AAC27B64C9D0041A7DC /* SearchToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchToViewController.swift; sourceTree = "<group>"; };
 		804B3AAE27B66F320041A7DC /* SearchTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTimeViewController.swift; sourceTree = "<group>"; };
 		805A7B4D27B26DCC00DDB80A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		8073AA1E2773DC88007457FD /* ResultsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsNavigationController.swift; sourceTree = "<group>"; };
 		8075BAC227A3F1B70064CCB7 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		8075BAC427A3F4B70064CCB7 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		8075BAC527A3F4B70064CCB7 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
@@ -146,15 +137,9 @@
 		80C996382765697B00B5A3C7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		80C9963A2766919300B5A3C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		80CA933827091D63009A1469 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
-		80CA933A270A034D009A1469 /* PostTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripViewController.swift; sourceTree = "<group>"; };
 		80CA933C270B1AAA009A1469 /* DateTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimePicker.swift; sourceTree = "<group>"; };
 		80CA933E270B2150009A1469 /* DateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateButton.swift; sourceTree = "<group>"; };
 		80CA9344270C3AD9009A1469 /* DateTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeViewController.swift; sourceTree = "<group>"; };
-		80CA9346270C7F33009A1469 /* PostTripFromViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripFromViewController.swift; sourceTree = "<group>"; };
-		80CA9348270C84CF009A1469 /* PostTripToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripToViewController.swift; sourceTree = "<group>"; };
-		80CA934A270D91B3009A1469 /* PassengerPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerPriceViewController.swift; sourceTree = "<group>"; };
-		80D5E7712715B634000F1F5B /* PostFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFinalViewController.swift; sourceTree = "<group>"; };
-		80D5E790271C81ED000F1F5B /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		80D9B09226FC9249001EB6BD /* RoadBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D9B09526FC9249001EB6BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80D9B09726FC9249001EB6BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,7 +151,6 @@
 		80DDEBFC277347E10093BB3F /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		80E3783627BDA0530053C2FC /* PostTripPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripPriceViewController.swift; sourceTree = "<group>"; };
 		80E3783827BE54380053C2FC /* SearchMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapViewController.swift; sourceTree = "<group>"; };
-		80E7A50F274550DD00423EB3 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		BD4FE229515EAE9346E4B422 /* Pods_RoadBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02FE7F527B68AE6006E5C14 /* PostTripFromViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripFromViewController2.swift; sourceTree = "<group>"; };
 		C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripToViewController2.swift; sourceTree = "<group>"; };
@@ -296,13 +280,7 @@
 		809F674027B9338000D67E56 /* Old View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				80D5E790271C81ED000F1F5B /* PostViewController.swift */,
-				80D5E7712715B634000F1F5B /* PostFinalViewController.swift */,
-				80CA934A270D91B3009A1469 /* PassengerPriceViewController.swift */,
-				80CA933A270A034D009A1469 /* PostTripViewController.swift */,
 				80CA9344270C3AD9009A1469 /* DateTimeViewController.swift */,
-				80CA9348270C84CF009A1469 /* PostTripToViewController.swift */,
-				80CA9346270C7F33009A1469 /* PostTripFromViewController.swift */,
 			);
 			path = "Old View Controllers";
 			sourceTree = "<group>";
@@ -334,9 +312,7 @@
 				80D9B0A926FC926D001EB6BD /* View Controllers */,
 				80D9B09526FC9249001EB6BD /* AppDelegate.swift */,
 				80D9B09726FC9249001EB6BD /* SceneDelegate.swift */,
-				80E7A50F274550DD00423EB3 /* MainTabController.swift */,
 				80D9B0AA26FC938B001EB6BD /* LocationManager.swift */,
-				8073AA1E2773DC88007457FD /* ResultsNavigationController.swift */,
 				80A8933527A8014900CE83AB /* Main.storyboard */,
 				8075BADC27A7EBA30064CCB7 /* Registration.storyboard */,
 				80D9B09E26FC9251001EB6BD /* Assets.xcassets */,
@@ -592,10 +568,7 @@
 				C032962C27BD400100C21736 /* CreatePasswordViewController.swift in Sources */,
 				C07DC91C27BBF03B00C44329 /* Languages.swift in Sources */,
 				80E3783727BDA0530053C2FC /* PostTripPriceViewController.swift in Sources */,
-				80CA933B270A034D009A1469 /* PostTripViewController.swift in Sources */,
-				80CA9347270C7F33009A1469 /* PostTripFromViewController.swift in Sources */,
 				804B3AAB27B54EAF0041A7DC /* SearchFromViewController.swift in Sources */,
-				80CA934B270D91B4009A1469 /* PassengerPriceViewController.swift in Sources */,
 				809B9C6F27B39B1E004EB9C4 /* ViewAnimatorConfig.swift in Sources */,
 				80C996372765682100B5A3C7 /* HomePageViewController.swift in Sources */,
 				8075BAC627A3F4B70064CCB7 /* MessageTableViewCell.swift in Sources */,
@@ -603,7 +576,6 @@
 				80D9B0AB26FC938B001EB6BD /* LocationManager.swift in Sources */,
 				804B3AAF27B66F320041A7DC /* SearchTimeViewController.swift in Sources */,
 				805A7B4E27B26DCE00DDB80A /* FirstViewController.swift in Sources */,
-				80E7A510274550DD00423EB3 /* MainTabController.swift in Sources */,
 				809F674227B937E400D67E56 /* SearchPassengerViewController.swift in Sources */,
 				80E3783927BE54390053C2FC /* SearchMapViewController.swift in Sources */,
 				C02FE7F627B68AE6006E5C14 /* PostTripFromViewController2.swift in Sources */,
@@ -613,7 +585,6 @@
 				804AF861279EBCC200315A82 /* TaxiTableViewCell.swift in Sources */,
 				809F674427B949C100D67E56 /* SearchMatchRequestViewController.swift in Sources */,
 				80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */,
-				80D5E791271C81ED000F1F5B /* PostViewController.swift in Sources */,
 				C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */,
 				809B9C6D27B39B1E004EB9C4 /* UITableView + ViewAnimator.swift in Sources */,
 				80C996392765697B00B5A3C7 /* SignUpViewController.swift in Sources */,
@@ -622,7 +593,6 @@
 				809B9C7127B39B1E004EB9C4 /* Animation.swift in Sources */,
 				80C9963B2766919300B5A3C7 /* LoginViewController.swift in Sources */,
 				80CA933927091D63009A1469 /* ProfilePageViewController.swift in Sources */,
-				80CA9349270C84CF009A1469 /* PostTripToViewController.swift in Sources */,
 				80D9B09626FC9249001EB6BD /* AppDelegate.swift in Sources */,
 				80DDEBF8276BCFFC0093BB3F /* APICaller.swift in Sources */,
 				809B9C7327B3A395004EB9C4 /* Requests.swift in Sources */,
@@ -639,8 +609,6 @@
 				80CA933F270B2150009A1469 /* DateButton.swift in Sources */,
 				C02FE7F827B69860006E5C14 /* PostTripToViewController2.swift in Sources */,
 				8075BAD727A6F7E10064CCB7 /* ChatViewController.swift in Sources */,
-				80D5E7722715B634000F1F5B /* PostFinalViewController.swift in Sources */,
-				8073AA1F2773DC88007457FD /* ResultsNavigationController.swift in Sources */,
 				8075BAC327A3F1B70064CCB7 /* InboxViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

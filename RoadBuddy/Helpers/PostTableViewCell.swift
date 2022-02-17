@@ -23,7 +23,9 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet var numberOfPassengersLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var groundView: UIView!
+    @IBOutlet weak var passengerImage: UIImageView!
     
+    @IBOutlet weak var arrowImage: UIImageView!
     
     static let identifier = "PostTableViewCell"
     
@@ -34,6 +36,28 @@ class PostTableViewCell: UITableViewCell {
     override func awakeFromNib()
     {
         super.awakeFromNib()
+        if traitCollection.userInterfaceStyle == .dark
+        {
+            groundView.backgroundColor = .secondarySystemBackground
+            fromLocationLabel.textColor = .white
+            toLocationLabel.textColor = .white
+            timeLabel.textColor = .white
+            numberOfPassengersLabel.textColor = .white
+            priceLabel.textColor = .white
+            passengerImage.tintColor = .white
+            arrowImage.tintColor = .systemTeal
+        }
+        else if traitCollection.userInterfaceStyle == .light
+        {
+            groundView.backgroundColor = .white
+            fromLocationLabel.textColor = .midnightBlue
+            toLocationLabel.textColor = .midnightBlue
+            timeLabel.textColor = .midnightBlue
+            numberOfPassengersLabel.textColor = .midnightBlue
+            priceLabel.textColor = .midnightBlue
+            passengerImage.tintColor = .midnightBlue
+            arrowImage.tintColor = .systemTeal
+        }
         groundView.layer.shadowColor = UIColor.black.cgColor
         groundView.layer.shadowOpacity = 1
         groundView.layer.shadowOffset = .zero
@@ -45,13 +69,40 @@ class PostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?)
+    {
+        if traitCollection.userInterfaceStyle == .dark
+        {
+            groundView.backgroundColor = .secondarySystemBackground
+            fromLocationLabel.textColor = .white
+            toLocationLabel.textColor = .white
+            timeLabel.textColor = .white
+            numberOfPassengersLabel.textColor = .white
+            priceLabel.textColor = .white
+            passengerImage.tintColor = .white
+            arrowImage.tintColor = .systemTeal
+        }
+        else if traitCollection.userInterfaceStyle == .light
+        {
+            groundView.backgroundColor = .white
+            fromLocationLabel.textColor = .midnightBlue
+            toLocationLabel.textColor = .midnightBlue
+            timeLabel.textColor = .midnightBlue
+            numberOfPassengersLabel.textColor = .midnightBlue
+            priceLabel.textColor = .midnightBlue
+            passengerImage.tintColor = .midnightBlue
+            arrowImage.tintColor = .systemTeal
+        }
+        
+    }
+    
     func configure(with model: TripPost)
     {
         self.fromLocationLabel.text = model.fromLocation
         self.toLocationLabel.text =  model.toLocation
         self.timeLabel.text =  myDateFormat.takeTimeFromStringDate(model.time)
         self.numberOfPassengersLabel.text =  String(model.numberOfPassengers)
-        self.priceLabel.text = String(model.price)
+        self.priceLabel.text = String(model.price) + " ₺"
         
     }
     

@@ -53,6 +53,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
+        tableView.separatorStyle = .none
         view.addSubview(searchingTripsLabel)
         sendTheRequest()
         matchRequest()
@@ -69,6 +70,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     {
         if self.requestFound == true
         {
+            self.title = "Trips"
             self.setUpTableView()
         }
         else
