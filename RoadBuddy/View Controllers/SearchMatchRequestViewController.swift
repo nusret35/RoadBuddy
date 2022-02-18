@@ -49,6 +49,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     
     private var requestFound = false
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -70,13 +71,13 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     {
         if self.requestFound == true
         {
-            self.title = "Trips"
+            self.title = "Trips".localized()
             self.setUpTableView()
         }
         else
         {
-            let alert = UIAlertController(title: "We have received your request", message: "We will look for your match.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title:"Okay",style: .default, handler:{( action) in
+            let alert = UIAlertController(title: "We have received your request".localized(), message: "We will look for your match and notify you when we found one.".localized(), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"Okay".localized(),style: .default, handler:{( action) in
                 alert.dismiss(animated: true, completion: nil)
                 self.searchingTripsLabel.isHidden = false
                 self.dismiss(animated: true, completion: nil)
@@ -110,6 +111,54 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         return 270
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        var boolReturn = false
+        
+        storageManager.ref.child("User_Inbox").child(models[indexPath.row].uid).observeSingleEvent(of: .value) { [self] snapshot in
+            if snapshot.exists() == true
+            {
+                for child in snapshot.children
+                {
+                    let snap = child as! DataSnapshot
+                    guard let res = snap.value as? [String:Any] else {return}
+                    let uid = res["uid"] as! String
+                    print(uid)
+                    if (uid == CurrentUser.UID)
+                    {
+                        boolReturn = true
+                    }
+                }
+            }
+            if boolReturn == false
+            {
+                let alert = UIAlertController(title: "Booking Trip?".localized(), message: "Do you want to book this trip?".localized(), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Yes".localized(), style: .default, handler: { (action) in
+                    storageManager.ref?.child("User_Inbox").child(models[indexPath.row].uid).child(CurrentUser.UID).setValue(request)
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                alert.addAction(UIAlertAction(title: "No".localized(), style: .default, handler: { action in
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                present(alert, animated: true)
+            }
+            else
+            {
+                let alert = UIAlertController(title: "You already sent your request".localized(), message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { action in
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                present(alert,animated: true)
+            }
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return myDateFormat.takeDayFromStringDate(UserSearchTripRequest.time)
+    }
+    
+
     
     
     
@@ -195,6 +244,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         if self.trips.isEmpty == false
         {
             print("match found")
+            self.title = "Trips"
             var sortedRequests:[DriverData] = []
             while self.trips.isEmpty == false
             {

@@ -86,6 +86,7 @@
 		80DDEBFE277347E10093BB3F /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80DDEBFC277347E10093BB3F /* PostTableViewCell.xib */; };
 		80E3783727BDA0530053C2FC /* PostTripPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3783627BDA0530053C2FC /* PostTripPriceViewController.swift */; };
 		80E3783927BE54390053C2FC /* SearchMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3783827BE54380053C2FC /* SearchMapViewController.swift */; };
+		80E3783B27BFF6BF0053C2FC /* BookedTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3783A27BFF6BF0053C2FC /* BookedTripsViewController.swift */; };
 		C02FE7F627B68AE6006E5C14 /* PostTripFromViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7F527B68AE6006E5C14 /* PostTripFromViewController2.swift */; };
 		C02FE7F827B69860006E5C14 /* PostTripToViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */; };
 		C02FE7FA27B69DBB006E5C14 /* ShareTaxiFromViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7F927B69DBB006E5C14 /* ShareTaxiFromViewController2.swift */; };
@@ -151,6 +152,7 @@
 		80DDEBFC277347E10093BB3F /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		80E3783627BDA0530053C2FC /* PostTripPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripPriceViewController.swift; sourceTree = "<group>"; };
 		80E3783827BE54380053C2FC /* SearchMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapViewController.swift; sourceTree = "<group>"; };
+		80E3783A27BFF6BF0053C2FC /* BookedTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookedTripsViewController.swift; sourceTree = "<group>"; };
 		BD4FE229515EAE9346E4B422 /* Pods_RoadBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02FE7F527B68AE6006E5C14 /* PostTripFromViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripFromViewController2.swift; sourceTree = "<group>"; };
 		C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripToViewController2.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				809F674127B937E400D67E56 /* SearchPassengerViewController.swift */,
 				809F674327B949C100D67E56 /* SearchMatchRequestViewController.swift */,
 				80E3783827BE54380053C2FC /* SearchMapViewController.swift */,
+				80E3783A27BFF6BF0053C2FC /* BookedTripsViewController.swift */,
 				C02FE7F527B68AE6006E5C14 /* PostTripFromViewController2.swift */,
 				C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */,
 				80E3783627BDA0530053C2FC /* PostTripPriceViewController.swift */,
@@ -603,6 +606,7 @@
 				80D9B09826FC9249001EB6BD /* SceneDelegate.swift in Sources */,
 				807E9BCB270769E30008F523 /* Utilities.swift in Sources */,
 				809B9C6B27B39B1E004EB9C4 /* Directions.swift in Sources */,
+				80E3783B27BFF6BF0053C2FC /* BookedTripsViewController.swift in Sources */,
 				80DDEBFD277347E10093BB3F /* PostTableViewCell.swift in Sources */,
 				809B9C6C27B39B1E004EB9C4 /* AnimationType.swift in Sources */,
 				807F1F262700B892000C89CB /* Constants.swift in Sources */,

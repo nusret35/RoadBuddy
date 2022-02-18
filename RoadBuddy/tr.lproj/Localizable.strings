@@ -1,4 +1,5 @@
 "Where are you?" = "Neredesin?";
+
 "Where will you go?" = "Nereye?";
 "From where?" = "Nereden？";
 "Where to?" = "Nereye？";
@@ -17,7 +18,9 @@
 
 "We took your request. We will inform you when we find a trip." = "Talebiniz alındı. Yolculuk bulununca bildirim gönderilecektir.";
 
-"We have received your request" = "Talebiniz alındı.";
+"We have received your request" = "Talebiniz alındı";
+
+"We will look for your match and notify you when we found one." = "Talebinize göre bir eşleşme bulununca bildirim gönderilecektir.";
 
 "Sign Out" = "Çıkış";
 
@@ -53,3 +56,21 @@
 "Email" = "E-posta";
 
 "Welcome To RoadBuddy" = "RoadBuddy'ye Hoş Geldiniz";
+
+"Trips" = "Yolculuklar";
+
+"Booking Trip?" = "Yolculuğu rezerve et?";
+
+"Do you want to book this trip?" = "Yolculuğu rezerve etmek istiyor musun?";
+
+"Yes" = "Evet";
+
+"No" = "Hayır";
+
+"Okay" = "Tamam";
+
+"You already sent your request" = "Yolculuk talebini zaten gönderdin";
+
+"en_US_POSIX" = "tr";
+
+"Today" = "Bugün";

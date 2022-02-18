@@ -98,22 +98,34 @@ class TaxiTripRequest
     var toCoordinateLong = Double()
 }
 
-struct TripPost
+class TripPost
 {
-    var driverName:String
+    var driverName = String()
     
-    var uid:String
+    var uid = String()
     
-    var profilePicture:UIImage
+    var profilePicture = UIImage()
     
-    var fromLocation:String
+    var fromLocation = String()
     
-    var toLocation:String
+    var toLocation = String()
     
-    var time:String
+    var time = String()
     
-    var numberOfPassengers:Int
+    var numberOfPassengers = Int()
     
-    var price:Int
+    var price = Int()
+    
+    init(driverName: String, uid: String, profilePicture: UIImage, fromLocation: String, toLocation: String, time: String, numberOfPassengers: Int, price: Int)
+    {
+        self.driverName = driverName
+        self.uid = uid
+        self.profilePicture = profilePicture
+        self.fromLocation = fromLocation
+        self.toLocation = toLocation
+        self.time = time
+        self.numberOfPassengers = numberOfPassengers
+        self.price = price
+    }
 }
 

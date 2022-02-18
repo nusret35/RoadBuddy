@@ -189,6 +189,8 @@ class myDateFormat
 {
     static let dateFormatter = DateFormatter()
     
+    //static let today = Date()
+    
     static func stringToDate(_ from:String) -> Date
     {
         formatDate(dateFormatter)
@@ -216,11 +218,30 @@ class myDateFormat
         
     }
     
+    static func formateDay(_ formatter: DateFormatter)
+    {
+        formatter.locale = Locale(identifier: "en_US_POSIX".localized())
+        formatter.dateFormat = "EEEE, MMM d, yyyy"
+    }
+    
     static func takeTimeFromStringDate(_ stringDate: String) -> String
     {
         let time = stringToDate(stringDate)
         formateTime(dateFormatter)
         let stringTime = dateFormatter.string(from:time)
         return stringTime
+    }
+    
+    static func takeDayFromStringDate(_ stringDate: String) -> String
+    {
+        let day = stringToDate(stringDate)
+        formateDay(dateFormatter)
+        var stringDay = dateFormatter.string(from: day)
+        let todayString = dateFormatter.string(from: Date())
+        if stringDay == todayString
+        {
+            stringDay = "Today".localized()
+        }
+        return stringDay
     }
 }
