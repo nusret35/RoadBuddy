@@ -15,6 +15,7 @@ class UserNameViewController: UIViewController {
     @IBOutlet weak var toPasswordButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
 
         
@@ -26,6 +27,7 @@ class UserNameViewController: UIViewController {
 
         NewUser.userName = userNameTexiField.text!
         let viewController = storyboard?.instantiateViewController(withIdentifier: "SetPasswordVC") as! CreatePasswordViewController
+        viewController.title = "Create a password"
         
         navigationController?.pushViewController(viewController, animated: true)
         
@@ -41,3 +43,14 @@ class UserNameViewController: UIViewController {
     
 
 }
+
+    
+    
+
+    
+    
+    
+
+    
+
+

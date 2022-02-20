@@ -45,6 +45,8 @@ class User
     
     var phoneNum = String()
     
+    var birthdate = String()
+    
     
 }
 

@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         LogInButton.setTitle("Login".localized(), for: .normal)
         
         EmailTextField.placeholder = "Email".localized()

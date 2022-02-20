@@ -29,10 +29,15 @@ class HomePageViewController: UIViewController {
         
         titlename.text = "Welcome To RoadBuddy".localized()
     }
-
-    @IBAction func SignUpButtonTapped(_ sender: Any) {
+    @IBAction func signUpAction(_ sender: Any)
+    {
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "CheckEmailVC") as! CheckEmailViewController
+        
+        viewController.title = "Enter the E-mail"
+        
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
-    @IBAction func LogInButtonTapped(_ sender: Any) {
-    }
+    
+    
 }

@@ -99,9 +99,8 @@ class PostFinalViewController: UIViewController
                     ] as [String:Any]
         ref?.child("Trips").child(CurrentUser.UID).setValue(post)
         db.collection("users").document(CurrentUser.UID).updateData(["TripIsSet":true])
-            let mainTabController = storyboard?.instantiateViewController(withIdentifier: "MainTabController") as! MainTabController
-            mainTabController.selectedViewController = mainTabController.viewControllers?[2]
-            present(mainTabController, animated: true, completion: nil)
+
+
     }
     
 }

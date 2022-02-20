@@ -40,7 +40,7 @@ class PostViewController: UIViewController {
     
     var uid = ""
     
-    lazy var mainTabController = storyboard?.instantiateViewController(withIdentifier: "MainTabController") as! MainTabController
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,12 +132,11 @@ class PostViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Delete", style: UIAlertAction.Style.destructive, handler: { [self] (action) in
             Database.database().reference().child("Trips").child(self.uid).removeValue()
             self.db.collection("users").document(self.uid).updateData(["TripIsSet":false])
-            mainTabController.selectedViewController = mainTabController.viewControllers?[2]
+
             FromLoc = "Choose a location..."
             ToLoc = "Choose a location..."
             TimeString = "Choose date and time..."
-            present(mainTabController, animated: false, completion: nil)
-            alert.dismiss(animated: true, completion: nil)
+
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {(action) in
