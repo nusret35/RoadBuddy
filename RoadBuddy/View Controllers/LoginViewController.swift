@@ -44,6 +44,17 @@ class LoginViewController: UIViewController {
         toolBar.setItems([doneButton], animated: false)
         
     }
+    @IBAction func emailTextFielInputAction(_ sender: Any)
+    {
+        errorLabel.text = ""
+    }
+    
+    @IBAction func passwordTextFielInputAction(_ sender: Any)
+    {
+        errorLabel.text = ""
+    }
+    
+    
     
     @objc func doneClicked() {
         view.endEditing(true)

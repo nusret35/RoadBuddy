@@ -18,6 +18,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     private let tableView:UITableView = {
         let table = UITableView()
         table.isHidden = true
+        
         table.register(PostTableViewCell.nib(), forCellReuseIdentifier: PostTableViewCell.identifier)
         return table
     }()

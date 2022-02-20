@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 var NewUser = User()
 
 var profileDataLoad = false

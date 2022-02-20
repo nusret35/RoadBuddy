@@ -28,6 +28,12 @@ class CreatePasswordViewController: UIViewController {
 
     }
     
+    @IBAction func passwordTextFieldInputAction(_ sender: Any)
+    {
+        errorlable.text = ""
+    }
+    
+    
     func validatePassword() -> String?
     {
                 

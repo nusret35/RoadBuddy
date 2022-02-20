@@ -19,6 +19,7 @@ class CheckEmailViewController: UIViewController {
         errorLable.alpha = 0
         self.hideKeyboardWhenTappedAround()
 
+
         
     }
     
@@ -56,7 +57,11 @@ class CheckEmailViewController: UIViewController {
         
         return nil
     }
-
+    @IBAction func textFieldInputAction(_ sender: Any)
+    {
+        errorLable.text = ""
+    }
+    
     
 
     
