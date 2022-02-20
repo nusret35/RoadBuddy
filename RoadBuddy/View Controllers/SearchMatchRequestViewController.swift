@@ -154,7 +154,8 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
         return myDateFormat.takeDayFromStringDate(UserSearchTripRequest.time)
     }
     

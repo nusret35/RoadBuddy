@@ -16,6 +16,7 @@ class PostTableViewCell: UITableViewCell {
 
     var cellDelegate: PostTableViewCellDelegate?
     
+    var taxiPost = false
     
     @IBOutlet var fromLocationLabel: UILabel!
     @IBOutlet var toLocationLabel: UILabel!
@@ -36,27 +37,56 @@ class PostTableViewCell: UITableViewCell {
     override func awakeFromNib()
     {
         super.awakeFromNib()
-        if traitCollection.userInterfaceStyle == .dark
+        if taxiPost == false
         {
-            groundView.backgroundColor = .secondarySystemBackground
-            fromLocationLabel.textColor = .white
-            toLocationLabel.textColor = .white
-            timeLabel.textColor = .white
-            numberOfPassengersLabel.textColor = .white
-            priceLabel.textColor = .white
-            passengerImage.tintColor = .white
-            arrowImage.tintColor = .systemTeal
+            if traitCollection.userInterfaceStyle == .dark
+            {
+                groundView.backgroundColor = .secondarySystemBackground
+                fromLocationLabel.textColor = .white
+                toLocationLabel.textColor = .white
+                timeLabel.textColor = .white
+                numberOfPassengersLabel.textColor = .white
+                priceLabel.textColor = .white
+                passengerImage.tintColor = .white
+                arrowImage.tintColor = .systemTeal
+            }
+            else if traitCollection.userInterfaceStyle == .light
+            {
+                groundView.backgroundColor = .white
+                fromLocationLabel.textColor = .midnightBlue
+                toLocationLabel.textColor = .midnightBlue
+                timeLabel.textColor = .midnightBlue
+                numberOfPassengersLabel.textColor = .midnightBlue
+                priceLabel.textColor = .midnightBlue
+                passengerImage.tintColor = .midnightBlue
+                arrowImage.tintColor = .systemTeal
+            }
         }
-        else if traitCollection.userInterfaceStyle == .light
+        else
         {
-            groundView.backgroundColor = .white
-            fromLocationLabel.textColor = .midnightBlue
-            toLocationLabel.textColor = .midnightBlue
-            timeLabel.textColor = .midnightBlue
-            numberOfPassengersLabel.textColor = .midnightBlue
-            priceLabel.textColor = .midnightBlue
-            passengerImage.tintColor = .midnightBlue
-            arrowImage.tintColor = .systemTeal
+            if traitCollection.userInterfaceStyle == .dark
+            {
+                groundView.backgroundColor = .systemYellow
+                fromLocationLabel.textColor = .white
+                toLocationLabel.textColor = .white
+                timeLabel.textColor = .white
+                numberOfPassengersLabel.isHidden = false
+                priceLabel.isHidden = false
+                passengerImage.isHidden = false
+                arrowImage.tintColor = .systemTeal
+            }
+            else if traitCollection.userInterfaceStyle == .light
+            {
+                groundView.backgroundColor = .systemYellow
+                fromLocationLabel.textColor = .midnightBlue
+                toLocationLabel.textColor = .midnightBlue
+                timeLabel.textColor = .midnightBlue
+                numberOfPassengersLabel.isHidden = false
+                priceLabel.isHidden = false
+                passengerImage.isHidden = false
+                arrowImage.tintColor = .systemTeal
+            }
+
         }
         groundView.layer.shadowColor = UIColor.black.cgColor
         groundView.layer.shadowOpacity = 1

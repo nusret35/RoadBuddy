@@ -87,8 +87,8 @@ class SearchTimeViewController: UIViewController{
                        "toLocationLat":UserTaxiTripRequest.toCoordinateLat,
                        "toLocationLong":UserTaxiTripRequest.toCoordinateLong] as [String:Any]
         storageManager.ref.child("Taxi_Requests").child(CurrentUser.UID).setValue(request)
-        let alert = UIAlertController(title: "We have received your request", message: "We will look for your match.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title:"Okay",style: .default, handler:{( action) in
+        let alert = UIAlertController(title: "We have received your request".localized(), message: "We will look for your match and notify you when we found one.".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:"Okay".localized(),style: .default, handler:{( action) in
             alert.dismiss(animated: true, completion: nil)
             self.dismiss(animated: true, completion: nil)
         }))
