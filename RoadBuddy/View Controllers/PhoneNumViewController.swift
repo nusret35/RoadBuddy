@@ -8,6 +8,8 @@
 import UIKit
 
 class PhoneNumViewController: UIViewController {
+    
+    let searchController = UISearchController(searchResultsController: PhoneRegionCodeViewController2())
 
     
     @IBOutlet weak var phoneNumTextField: UITextField!
@@ -19,10 +21,14 @@ class PhoneNumViewController: UIViewController {
     
     @IBOutlet weak var regionButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
     
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        errorLable.alpha = 0
+        self.hideKeyboardWhenTappedAround()
+        regionButton.setTitle("+90", for: .normal)
         phoneNumTextField.leftView = leftview
         phoneNumTextField.leftViewMode = . always
     
@@ -76,8 +82,10 @@ class PhoneNumViewController: UIViewController {
     
     @IBAction func regionButtonAction(_ sender: Any)
     {
-        let vc = PhoneRegionCodeViewController()
-        present(vc, animated: true, completion: nil)
+        let vc =  storyboard?.instantiateViewController(withIdentifier: "RegionCodeVC") as! PhoneRegionCodeViewController2
+        vc.delegate = self
+        present(vc, animated: true, completion : nil)
+
     }
     
     
@@ -89,8 +97,10 @@ class PhoneNumViewController: UIViewController {
     }
 
 
-    
-    
-
-
+}
+extension PhoneNumViewController: PhoneRegionCodeDelegate
+{
+    func didTapRegion(regionCode: String) {
+        regionButton.setTitle(regionCode, for: .normal)
+    }
 }

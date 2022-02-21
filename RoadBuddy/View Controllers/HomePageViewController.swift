@@ -34,7 +34,7 @@ class HomePageViewController: UIViewController {
     {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "CheckEmailVC") as! CheckEmailViewController
         
-        viewController.title = "Enter the E-mail"
+        viewController.title = "Enter the E-mail".localized()
         
         navigationController?.pushViewController(viewController, animated: true)
     }

@@ -79,7 +79,7 @@ class CheckEmailViewController: UIViewController {
             
             
             let viewController = storyboard?.instantiateViewController(withIdentifier: "UserNameVC") as! UserNameViewController
-            viewController.title = "Create Username"
+            viewController.title = "Create Username".localized()
             
             navigationController?.pushViewController(viewController, animated: true)
         }

@@ -27,7 +27,7 @@ class UserNameViewController: UIViewController {
 
         NewUser.userName = userNameTexiField.text!
         let viewController = storyboard?.instantiateViewController(withIdentifier: "SetPasswordVC") as! CreatePasswordViewController
-        viewController.title = "Create a password"
+        viewController.title = "Create a password".localized()
         
         navigationController?.pushViewController(viewController, animated: true)
         

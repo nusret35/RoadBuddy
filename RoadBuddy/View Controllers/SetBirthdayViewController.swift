@@ -26,7 +26,7 @@ class SetBirthdayViewController: UIViewController {
     {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "PhoneNumVC") as! PhoneNumViewController
         
-        viewController.title = "Add Phone Number"
+        viewController.title = "Add Phone Number".localized()
         
         navigationController?.pushViewController(viewController, animated: true)
         

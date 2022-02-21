@@ -64,7 +64,7 @@ class CreatePasswordViewController: UIViewController {
             
             let viewController = storyboard?.instantiateViewController(withIdentifier: "SetBirthdayVC") as! SetBirthdayViewController
             
-            viewController.title = "Add Your Birthday"
+            viewController.title = "Add Your Birthday".localized()
             
             navigationController?.pushViewController(viewController, animated: true)
         }

@@ -24,7 +24,6 @@
 		8075BAD327A6EF020064CCB7 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 8075BAD227A6EF020064CCB7 /* SDWebImage */; };
 		8075BAD527A6EF020064CCB7 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8075BAD427A6EF020064CCB7 /* SDWebImageMapKit */; };
 		8075BAD727A6F7E10064CCB7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8075BAD627A6F7E00064CCB7 /* ChatViewController.swift */; };
-		8075BADD27A7EBA30064CCB7 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8075BADC27A7EBA30064CCB7 /* Registration.storyboard */; };
 		8076F138275AAF2D00BC6EB2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8076F137275AAF2D00BC6EB2 /* FirebaseAnalytics */; };
 		8076F13A275AAF2D00BC6EB2 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 8076F139275AAF2D00BC6EB2 /* FirebaseAnalyticsSwift-Beta */; };
 		8076F13C275AAF2D00BC6EB2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 8076F13B275AAF2D00BC6EB2 /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -88,6 +87,10 @@
 		80E3783927BE54390053C2FC /* SearchMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3783827BE54380053C2FC /* SearchMapViewController.swift */; };
 		80E3783B27BFF6BF0053C2FC /* BookedTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3783A27BFF6BF0053C2FC /* BookedTripsViewController.swift */; };
 		80E3784127C228880053C2FC /* TaxiTripsMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3784027C228880053C2FC /* TaxiTripsMatchViewController.swift */; };
+		C01EB40D27C3943000C75552 /* PhoneRegionCodeViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01EB40C27C3943000C75552 /* PhoneRegionCodeViewController2.swift */; };
+		C01EB41027C3A78B00C75552 /* RegionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01EB40E27C3A78A00C75552 /* RegionCell.swift */; };
+		C01EB41127C3A78B00C75552 /* RegionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01EB40F27C3A78A00C75552 /* RegionCell.xib */; };
+		C01EB41227C3D81800C75552 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C01EB41427C3D81800C75552 /* Registration.storyboard */; };
 		C02FE7F627B68AE6006E5C14 /* PostTripFromViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7F527B68AE6006E5C14 /* PostTripFromViewController2.swift */; };
 		C02FE7F827B69860006E5C14 /* PostTripToViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */; };
 		C02FE7FA27B69DBB006E5C14 /* ShareTaxiFromViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02FE7F927B69DBB006E5C14 /* ShareTaxiFromViewController2.swift */; };
@@ -98,7 +101,6 @@
 		C032963827BEAF1400C21736 /* NamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032963727BEAF1400C21736 /* NamesViewController.swift */; };
 		C032963A27BEAF3C00C21736 /* PhoneNumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032963927BEAF3C00C21736 /* PhoneNumViewController.swift */; };
 		C032963C27BEAF6900C21736 /* SetBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032963B27BEAF6900C21736 /* SetBirthdayViewController.swift */; };
-		C032963F27C2551300C21736 /* PhoneRegionCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C032963E27C2551300C21736 /* PhoneRegionCodeViewController.swift */; };
 		C07DC91C27BBF03B00C44329 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07DC91B27BBF03B00C44329 /* Languages.swift */; };
 		C07DC92027BBF17D00C44329 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C07DC92227BBF17D00C44329 /* Localizable.strings */; };
 		C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08B7A7127B2895D0027684E /* FirstTableViewCell.swift */; };
@@ -119,7 +121,6 @@
 		8075BAC427A3F4B70064CCB7 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		8075BAC527A3F4B70064CCB7 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		8075BAD627A6F7E00064CCB7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		8075BADC27A7EBA30064CCB7 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		8076F16B275ABE0500BC6EB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		807E9BCA270769E30008F523 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		807F1F252700B892000C89CB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -161,6 +162,12 @@
 		80E3783A27BFF6BF0053C2FC /* BookedTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookedTripsViewController.swift; sourceTree = "<group>"; };
 		80E3784027C228880053C2FC /* TaxiTripsMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiTripsMatchViewController.swift; sourceTree = "<group>"; };
 		BD4FE229515EAE9346E4B422 /* Pods_RoadBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C01EB40C27C3943000C75552 /* PhoneRegionCodeViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRegionCodeViewController2.swift; sourceTree = "<group>"; };
+		C01EB40E27C3A78A00C75552 /* RegionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCell.swift; sourceTree = "<group>"; };
+		C01EB40F27C3A78A00C75552 /* RegionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegionCell.xib; sourceTree = "<group>"; };
+		C01EB41627C3D82300C75552 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Registration.strings; sourceTree = "<group>"; };
+		C01EB41827C3D85A00C75552 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Registration.strings"; sourceTree = "<group>"; };
+		C01EB41927C3D87000C75552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Registration.storyboard; sourceTree = "<group>"; };
 		C02FE7F527B68AE6006E5C14 /* PostTripFromViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripFromViewController2.swift; sourceTree = "<group>"; };
 		C02FE7F727B69860006E5C14 /* PostTripToViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTripToViewController2.swift; sourceTree = "<group>"; };
 		C02FE7F927B69DBB006E5C14 /* ShareTaxiFromViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTaxiFromViewController2.swift; sourceTree = "<group>"; };
@@ -171,7 +178,6 @@
 		C032963727BEAF1400C21736 /* NamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesViewController.swift; sourceTree = "<group>"; };
 		C032963927BEAF3C00C21736 /* PhoneNumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumViewController.swift; sourceTree = "<group>"; };
 		C032963B27BEAF6900C21736 /* SetBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBirthdayViewController.swift; sourceTree = "<group>"; };
-		C032963E27C2551300C21736 /* PhoneRegionCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRegionCodeViewController.swift; sourceTree = "<group>"; };
 		C07DC91B27BBF03B00C44329 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		C07DC91D27BBF13600C44329 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		C07DC92127BBF17D00C44329 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -246,6 +252,8 @@
 				C08B7A7227B2895D0027684E /* FirstTableViewCell.xib */,
 				80AE818927B45240007BBC2B /* ProfileHeaderTableViewCell.swift */,
 				80AE818A27B45240007BBC2B /* ProfileHeaderTableViewCell.xib */,
+				C01EB40E27C3A78A00C75552 /* RegionCell.swift */,
+				C01EB40F27C3A78A00C75552 /* RegionCell.xib */,
 				C07DC91B27BBF03B00C44329 /* Languages.swift */,
 			);
 			path = Helpers;
@@ -331,7 +339,7 @@
 				80D9B09726FC9249001EB6BD /* SceneDelegate.swift */,
 				80D9B0AA26FC938B001EB6BD /* LocationManager.swift */,
 				80A8933527A8014900CE83AB /* Main.storyboard */,
-				8075BADC27A7EBA30064CCB7 /* Registration.storyboard */,
+				C01EB41427C3D81800C75552 /* Registration.storyboard */,
 				C07DC92227BBF17D00C44329 /* Localizable.strings */,
 			);
 			path = RoadBuddy;
@@ -368,8 +376,8 @@
 				C032962B27BD400100C21736 /* CreatePasswordViewController.swift */,
 				C032963B27BEAF6900C21736 /* SetBirthdayViewController.swift */,
 				C032963927BEAF3C00C21736 /* PhoneNumViewController.swift */,
+				C01EB40C27C3943000C75552 /* PhoneRegionCodeViewController2.swift */,
 				C032963727BEAF1400C21736 /* NamesViewController.swift */,
-				C032963E27C2551300C21736 /* PhoneRegionCodeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -531,11 +539,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				804AF862279EBCC300315A82 /* TaxiTableViewCell.xib in Resources */,
+				C01EB41127C3A78B00C75552 /* RegionCell.xib in Resources */,
 				C08B7A7427B2895D0027684E /* FirstTableViewCell.xib in Resources */,
 				C07DC92027BBF17D00C44329 /* Localizable.strings in Resources */,
 				809B9C6A27B39B1E004EB9C4 /* .gitkeep in Resources */,
 				80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */,
-				8075BADD27A7EBA30064CCB7 /* Registration.storyboard in Resources */,
+				C01EB41227C3D81800C75552 /* Registration.storyboard in Resources */,
 				80A8933727A8014A00CE83AB /* Main.storyboard in Resources */,
 				80AE818C27B45240007BBC2B /* ProfileHeaderTableViewCell.xib in Resources */,
 				8076F16C275ABE0500BC6EB2 /* GoogleService-Info.plist in Resources */,
@@ -608,6 +617,7 @@
 				804B3AAF27B66F320041A7DC /* SearchTimeViewController.swift in Sources */,
 				805A7B4E27B26DCE00DDB80A /* FirstViewController.swift in Sources */,
 				809F674227B937E400D67E56 /* SearchPassengerViewController.swift in Sources */,
+				C01EB40D27C3943000C75552 /* PhoneRegionCodeViewController2.swift in Sources */,
 				80E3783927BE54390053C2FC /* SearchMapViewController.swift in Sources */,
 				C02FE7F627B68AE6006E5C14 /* PostTripFromViewController2.swift in Sources */,
 				809B9C6E27B39B1E004EB9C4 /* UICollectionView + ViewAnimator.swift in Sources */,
@@ -631,6 +641,7 @@
 				809B9C7327B3A395004EB9C4 /* Requests.swift in Sources */,
 				804AF856279EB80F00315A82 /* TaxiResultViewController.swift in Sources */,
 				80CA933D270B1AAA009A1469 /* DateTimePicker.swift in Sources */,
+				C01EB41027C3A78B00C75552 /* RegionCell.swift in Sources */,
 				80CA9345270C3AD9009A1469 /* DateTimeViewController.swift in Sources */,
 				809B9C7027B39B1E004EB9C4 /* ViewAnimator.swift in Sources */,
 				80D9B09826FC9249001EB6BD /* SceneDelegate.swift in Sources */,
@@ -643,7 +654,6 @@
 				807F1F262700B892000C89CB /* Constants.swift in Sources */,
 				80CA933F270B2150009A1469 /* DateButton.swift in Sources */,
 				C02FE7F827B69860006E5C14 /* PostTripToViewController2.swift in Sources */,
-				C032963F27C2551300C21736 /* PhoneRegionCodeViewController.swift in Sources */,
 				8075BAD727A6F7E10064CCB7 /* ChatViewController.swift in Sources */,
 				8075BAC327A3F1B70064CCB7 /* InboxViewController.swift in Sources */,
 			);
@@ -787,6 +797,16 @@
 				C07DC92427BBF54300C44329 /* tr */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C01EB41427C3D81800C75552 /* Registration.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C01EB41627C3D82300C75552 /* tr */,
+				C01EB41827C3D85A00C75552 /* zh-Hans */,
+				C01EB41927C3D87000C75552 /* Base */,
+			);
+			name = Registration.storyboard;
 			sourceTree = "<group>";
 		};
 		C07DC92227BBF17D00C44329 /* Localizable.strings */ = {
