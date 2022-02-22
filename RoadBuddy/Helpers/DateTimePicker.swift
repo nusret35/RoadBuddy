@@ -218,11 +218,18 @@ class myDateFormat
         
     }
     
+    static func formateSeconds(_ formatter: DateFormatter)
+    {
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "EEEE, MMM d, yyyy '('HH:mm:ss')'"
+    }
+    
     static func formateDay(_ formatter: DateFormatter)
     {
         formatter.locale = Locale(identifier: "en_US_POSIX".localized())
         formatter.dateFormat = "EEEE, MMM d, yyyy"
     }
+    
     
     static func takeTimeFromStringDate(_ stringDate: String) -> String
     {
@@ -245,10 +252,24 @@ class myDateFormat
         return stringDay
     }
     
+    static func returnMessageTime() -> String
+    {
+        formateSeconds(dateFormatter)
+        let stringSeconds = dateFormatter.string(from: Date())
+        return stringSeconds
+    }
+    
     static func dateInFormat(_ date:Date) -> Date?
     {
         formatDate(dateFormatter)
         let returnDate = dateFormatter.date(from: dateToString(date))
         return returnDate
+    }
+    
+    static func secondsInFormat(_ date:Date) -> Date?
+    {
+        formateSeconds(dateFormatter)
+        let returnSeconds = dateFormatter.date(from: dateToString(date))
+        return returnSeconds
     }
 }

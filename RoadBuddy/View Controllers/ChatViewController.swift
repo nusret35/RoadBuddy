@@ -65,10 +65,19 @@ class ChatViewController: MessagesViewController
                     let snap = child as! DataSnapshot
                     guard let res = snap.value as?
                             [String:Any] else {return}
-                    let messageId = res["messageId"] as! Int
+                    let messageId = res["messageId"] as! String
                     let date = res["sendDate"] as! String
                     let messageText = res["text"] as! String
-                    let sender = Sender(photoURL: CurrentUser.profilePictureURL, senderId: otherUserUID, displayName: otherUserUsername)
+                    let senderUID = res["sender"] as! String
+                    var sender = Sender(photoURL: "", senderId: "", displayName: "")
+                    if senderUID == CurrentUser.UID
+                    {
+                        sender = selfSender
+                    }
+                    else
+                    {
+                        sender = Sender(photoURL: CurrentUser.profilePictureURL, senderId: otherUserUID, displayName: otherUserUsername)
+                    }
                     let storedMessage = Message(sender: sender, messageId: createMessageId(), sentDate: myDateFormat.stringToDate(date), kind: .text(messageText))
                     messages.append(storedMessage)
                     print(messageText)
@@ -86,15 +95,16 @@ class ChatViewController: MessagesViewController
     
 }
 extension ChatViewController: InputBarAccessoryViewDelegate {
+    
+    
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String){
         print("Sending: \(text)")
         //Send message
         
-        let message = Message(sender: selfSender, messageId: createMessageId(), sentDate: myDateFormat.dateInFormat(Date())!, kind: .text(text))
+        let message = Message(sender: selfSender, messageId: createMessageId(), sentDate: myDateFormat.secondsInFormat(Date())!, kind: .text(text))
         
         let messageForFirebase = ["messageId":message.messageId,"sendDate":myDateFormat.dateToString(message.sentDate),"text":text,"sender":message.sender.senderId] as [String : Any]
-        
-        storageManager.ref.child(CurrentUser.UID).child(otherUserUID).child("chat").child(message.messageId).setValue(messageForFirebase)
+        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child(otherUserUID).child("chat").child(message.messageId).setValue(messageForFirebase)
         
         messages.append(message)
         messagesCollectionView.reloadData()
@@ -104,7 +114,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
 
     private func createMessageId() -> String
     {
-        let newIdentifier = "\(CurrentUser.Username)_\(otherUserUsername)_\(myDateFormat.dateToString(Date()))"
+        let newIdentifier = "\(CurrentUser.Username)_\(otherUserUsername)_\(myDateFormat.returnMessageTime())"
         return newIdentifier
     }
 }

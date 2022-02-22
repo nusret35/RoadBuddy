@@ -330,7 +330,6 @@
 			children = (
 				80D9B09E26FC9251001EB6BD /* Assets.xcassets */,
 				80D9B0A326FC9251001EB6BD /* Info.plist */,
-				C032963D27BEB09E00C21736 /* Important Stuff */,
 				809B9C5E27B39B1E004EB9C4 /* Sources */,
 				809B9C5D27B39933004EB9C4 /* ViewAnimator-master */,
 				807F1F242700B78A000C89CB /* Helpers */,
@@ -397,13 +396,6 @@
 				348D7082296F1E38F77D0A60 /* Pods-RoadBuddy.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		C032963D27BEB09E00C21736 /* Important Stuff */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Important Stuff";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -947,7 +939,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G789X37L59;
+				DEVELOPMENT_TEAM = PVXU599K2W;
 				INFOPLIST_FILE = RoadBuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -967,7 +959,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G789X37L59;
+				DEVELOPMENT_TEAM = PVXU599K2W;
 				INFOPLIST_FILE = RoadBuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
