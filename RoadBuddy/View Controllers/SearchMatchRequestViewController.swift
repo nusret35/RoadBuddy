@@ -100,7 +100,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     {
         var boolReturn = false
         
-        storageManager.ref.child("User_Inbox").child(models[indexPath.row].uid).observeSingleEvent(of: .value) { [self] snapshot in
+        storageManager.ref.child("User_Inbox").child(models[indexPath.row].uid).child("request").observeSingleEvent(of: .value) { [self] snapshot in
             if snapshot.exists() == true
             {
                 for child in snapshot.children
@@ -119,7 +119,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
             {
                 let alert = UIAlertController(title: "Booking Trip?".localized(), message: "Do you want to book this trip?".localized(), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Yes".localized(), style: .default, handler: { (action) in
-                    storageManager.ref?.child("User_Inbox").child(models[indexPath.row].uid).child(CurrentUser.UID).setValue(request)
+                    storageManager.ref?.child("User_Inbox").child(models[indexPath.row].uid).child("request").child(CurrentUser.UID).setValue(request)
                     alert.dismiss(animated: true, completion: nil)
                 }))
                 alert.addAction(UIAlertAction(title: "No".localized(), style: .default, handler: { action in

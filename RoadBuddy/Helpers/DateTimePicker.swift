@@ -198,6 +198,13 @@ class myDateFormat
         return date
     }
     
+    static func stringToMessageDate(_ from:String) -> Date
+    {
+        formateSeconds(dateFormatter)
+        let date = dateFormatter.date(from: from)!
+        return date
+    }
+    
     static func dateToString(_ from:Date) -> String
     {
         formatDate(dateFormatter)

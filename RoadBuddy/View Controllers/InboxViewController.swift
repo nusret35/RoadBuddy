@@ -85,9 +85,9 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        tableView.deselectRow(at: indexPath, animated: true)
         if models[indexPath.row].requestPending == false && models[indexPath.row].requestAccepted == true
         {
-            tableView.deselectRow(at: indexPath, animated: true)
             let vc = ChatViewController()
             vc.title = models[indexPath.row].username
             vc.otherUserUID = models[indexPath.row].uid
@@ -104,7 +104,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func getInboxData()
     {
-        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).observeSingleEvent(of: .value) { [self] snapshot in
+        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("request").observeSingleEvent(of: .value) { [self] snapshot in
             for child in snapshot.children
             {
                 let snap = child as! DataSnapshot
@@ -117,19 +117,33 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 let uid = res["uid"] as! String
                 let requestPending = res["requestPending"] as! Bool
                 let requestAccepted = res["requestAccepted"] as! Bool
-                if (requestPending == true && requestAccepted == false) || (requestPending == false && requestAccepted == true)
+                if (requestPending == true && requestAccepted == false)
                 {
                    let data = InboxObject(username: username, profilePictureURL: "", message: "Wants to join your trip", uid: uid, requestPending:  requestPending,requestAccepted:requestAccepted)
 
                     models.append(data)
-                    tableView.reloadData()
                 }
+            }
+        
+            storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("chats").observeSingleEvent(of: .value) { [self] snapshot in
+                for child in snapshot.children
+                {
+                    let snap = child as! DataSnapshot
+                    guard let res = snap.value as? [String:Any]
+                    else {return}
+                    let chatId = res["chatId"] as! String
+                    let otherUsername = res["otherUsername"] as! String
+                    let otherUserUID = res["otherUserUID"] as! String
+                    let data = InboxObject(username: otherUsername, profilePictureURL: "", message: "Wants to join your trip", uid: otherUserUID, requestPending: false, requestAccepted: true)
+                    models.append(data)
+                }
+                tableView.reloadData()
             }
         }
     }
     
     func didPressAccept(_ tag: Int) {
-        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child(self.models[tag].uid).updateChildValues(["requestAccepted":true, "requestPending":false])
+        storageManager.ref.child("User_Inbox").child("request").child(CurrentUser.UID).child(self.models[tag].uid).updateChildValues(["requestAccepted":true, "requestPending":false])
         models[tag].requestPending = false
         models[tag].requestAccepted = true
         tableView.reloadData()

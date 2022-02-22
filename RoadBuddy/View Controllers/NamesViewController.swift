@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class NamesViewController: UIViewController {
 
@@ -78,7 +79,32 @@ class NamesViewController: UIViewController {
         }
         else
         {
-           
+            Auth.auth().createUser(withEmail: NewUser.email, password: NewUser.passWord) { (result, err) in
+                //Check for errors
+                if err != nil {
+                    // There was an error creating the user
+                    self.showError(message: "Error creating user")
+                }
+                else{
+                    
+                    // User was created successfully, now store the first name and last name of the user
+                    
+                    let uid = result!.user.uid
+                    storageManager.db.collection("users").document(String(uid)).setData( ["firstname":NewUser.firstName,"lastname":NewUser.lastName,"username":NewUser.userName,"uid":result!.user.uid,"email":NewUser.email,"password":NewUser.passWord,"phoneNumber":NewUser.phoneNum,"schoolName":NewUser.schoolName,
+                        "TripIsSet":false,"TaxiTripIsSet":false,"profilePictureIsSet":false
+                        ,"lookingForATrip":false]) { (error) in
+                        
+                        if error != nil {
+                            //Show error message
+                            self.showError(message: "Error saving user data")
+                        }
+                    }
+                    //Transition to the home screen
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let nc = mainStoryboard.instantiateViewController(withIdentifier: "FirstNC") as! UINavigationController
+                    self.present(nc,animated: true)
+                }
+            }
         }
     }
     
