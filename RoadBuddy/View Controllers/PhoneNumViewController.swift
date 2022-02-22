@@ -37,6 +37,21 @@ class PhoneNumViewController: UIViewController {
         
     }
     
+    @IBAction func phoneNumAction(_ sender: Any)
+    {
+        errorLable.text = ""
+    }
+    
+    @IBAction func phoneNumCleanAction(_ sender: Any)
+    {
+        if errorLable.text != ""
+        {
+            phoneNumTextField.text = ""
+        }
+    }
+    
+    
+    
     override func viewDidLayoutSubviews()
     {
     }

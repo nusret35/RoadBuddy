@@ -57,10 +57,24 @@ class CheckEmailViewController: UIViewController {
         
         return nil
     }
+
+    
+    
     @IBAction func textFieldInputAction(_ sender: Any)
     {
         errorLable.text = ""
+        
+        
     }
+    
+    @IBAction func emailCleanAction(_ sender: Any)
+    {
+        if errorLable.text != ""
+        {
+            setEmailTextField.text = ""
+        }
+    }
+    
     
     
 
@@ -69,19 +83,46 @@ class CheckEmailViewController: UIViewController {
     {
         let error = validateEmail()
         
+        var emailExists = false
+        
         if error != nil
         {
             showError(message: error!)
         }
         else
         {
-            NewUser.email = setEmailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            
-            let viewController = storyboard?.instantiateViewController(withIdentifier: "UserNameVC") as! UserNameViewController
-            viewController.title = "Create Username".localized()
-            
-            navigationController?.pushViewController(viewController, animated: true)
+            storageManager.db.collection("users").getDocuments()
+            {
+                snapshot, error in
+                if let error = error {
+                    print("error finding documents")
+                }
+                for document in snapshot!.documents
+                {
+                    let data = document.data()
+                    let email = data["email"] as! String
+                    print(email)
+                    if self.setEmailTextField.text! == email
+                    {
+                        emailExists = true
+                    }
+                }
+                if emailExists == false
+                {
+                    NewUser.email = self.setEmailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+                    
+                    
+                    let viewController = self.storyboard?.instantiateViewController(withIdentifier: "UserNameVC") as! UserNameViewController
+                    viewController.title = "Create Username".localized()
+                    
+                    self.navigationController?.pushViewController(viewController, animated: true)
+                }
+                else
+                {
+                    self.showError(message: "The E-mail already been used, please log in or enter different E-mail.")
+                }
+                
+            }
         }
         
         

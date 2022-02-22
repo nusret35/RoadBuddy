@@ -30,8 +30,18 @@ class CreatePasswordViewController: UIViewController {
     
     @IBAction func passwordTextFieldInputAction(_ sender: Any)
     {
-        errorlable.text = ""
+            errorlable.text = ""
+            
     }
+    
+    @IBAction func passwordCleanAction(_ sender: Any)
+    {
+        if errorlable.text != ""
+        {
+            userPasswordTexiField.text = ""
+        }
+    }
+    
     
     
     func validatePassword() -> String?
@@ -77,7 +87,10 @@ class CreatePasswordViewController: UIViewController {
         
         errorlable.text = message
         errorlable.alpha = 1
+        
     }
+    
+    
     
     
 

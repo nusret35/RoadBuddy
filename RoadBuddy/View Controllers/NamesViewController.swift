@@ -27,6 +27,45 @@ class NamesViewController: UIViewController {
         errorLabel.alpha = 0
 
     }
+    
+    @IBAction func firstnameActionField(_ sender: Any)
+    {
+        if errorLabel.text != "Please make sure lastname does not contain any numbers or special characters"
+        {
+            errorLabel.text = ""
+            
+        }
+        
+    }
+    
+    @IBAction func firstnamecleanActionField(_ sender: Any)
+    {
+        if errorLabel.text != "Please make sure lastname does not contain any numbers or special characters" && errorLabel.text != ""
+        {
+            firstNameTextField.text = ""
+            errorLabel.text = ""
+        }
+    }
+    
+    @IBAction func lastnameActionField(_ sender: Any)
+    {
+        if errorLabel.text != "Please make sure firstname does not contain any numbers or special characters"
+        {
+            errorLabel.text = ""
+        }
+    }
+    
+    @IBAction func lastnameCleanActionField(_ sender: Any)
+    {
+       if errorLabel.text != "Please make sure firstname does not contain any numbers or special characters" && errorLabel.text != ""
+        {
+            lastNameTextField.text = ""
+            errorLabel.text = ""
+        }
+    }
+    
+    
+    
 
 
     @IBAction func completeSignUpAction(_ sender: Any)
@@ -42,21 +81,13 @@ class NamesViewController: UIViewController {
            
         }
     }
-    let allowedCharacters = CharacterSet(charactersIn:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvxyz").inverted
+    
+    
+    func isValid(testStr:String) -> Bool {
+        guard testStr.count > 1, testStr.count < 50 else { return false }
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        let components = string.components(separatedBy: allowedCharacters)
-        let filtered = components.joined(separator: "")
-        
-        if string == filtered {
-            
-            return true
-
-        } else {
-            
-            return false
-        }
+        let predicateTest = NSPredicate(format: "SELF MATCHES %@", "^(([^ ]?)(^[a-zA-Z].*[a-zA-Z]$)([^ ]?))$")
+        return predicateTest.evaluate(with: testStr)
     }
     
     func validateNames() -> String?
@@ -66,13 +97,19 @@ class NamesViewController: UIViewController {
             
             return "Please fill in all fields.".localized()
         }
-        else if textField(firstNameTextField, shouldChangeCharactersIn: NSMakeRange(1, 75), replacementString: "hdh") == false
+        else if isValid(testStr: firstNameTextField.text!) == false && isValid(testStr: lastNameTextField.text!) == false
         {
-            return "Please make sure Firstname does not contain any numbers or special characters"
+            lastNameTextField.text = ""
+            firstNameTextField.text = ""
+            return "Please make sure firstname and lastname does not contain any numbers or special characters"
         }
-        else if textField(lastNameTextField, shouldChangeCharactersIn: NSMakeRange(1, 75), replacementString: "") == false
+        else if isValid(testStr: lastNameTextField.text!) == false
         {
-            return "Please make sure Lastname does not contain any numbers or special characters"
+            return "Please make sure lastname does not contain any numbers or special characters"
+        }
+        else if isValid(testStr: firstNameTextField.text!) == false
+        {
+            return "Please make sure firstname does not contain any numbers or special characters"
         }
         return nil
         
