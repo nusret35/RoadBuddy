@@ -45,7 +45,9 @@ class SearchTimeViewController: UIViewController{
         }
         else if settingForTaxi == true
         {
-            sendTaxiRequest()
+            let taxiResultViewController = TaxiTripsMatchViewController()
+            taxiResultViewController.title = "Searching for taxi trips"
+            navigationController?.pushViewController(taxiResultViewController, animated: true)
         }
     }
     
@@ -57,7 +59,7 @@ class SearchTimeViewController: UIViewController{
     
     func settingType(_ date:Date)
     {
-        let stringDate =  myDateFormat.dateToString(date)
+        let stringDate = myDateFormat.dateToString(date)
         if settingForSearch == true
         {
             UserSearchTripRequest.time = stringDate
@@ -72,29 +74,10 @@ class SearchTimeViewController: UIViewController{
         else if settingForTaxi == true
         {
             UserTaxiTripRequest.time = stringDate
+            print(UserTaxiTripRequest.time)
         }
     }
     
-    func sendTaxiRequest()
-    {
-        let request = ["fullname":UserTaxiTripRequest.fullname,
-                       "uid":UserTaxiTripRequest.uid,
-                       "time":UserTaxiTripRequest.time,
-                       "fromLocationName":UserTaxiTripRequest.fromLocationName,
-                       "fromLocationLat":UserTaxiTripRequest.fromCoordinateLat,
-                       "fromLocationLong":UserTaxiTripRequest.fromCoordinateLong,
-                       "toLocationName":UserTaxiTripRequest.toLocationName,
-                       "toLocationLat":UserTaxiTripRequest.toCoordinateLat,
-                       "toLocationLong":UserTaxiTripRequest.toCoordinateLong] as [String:Any]
-        storageManager.ref.child("Taxi_Requests").child(CurrentUser.UID).setValue(request)
-        let alert = UIAlertController(title: "We have received your request".localized(), message: "We will look for your match and notify you when we found one.".localized(), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title:"Okay".localized(),style: .default, handler:{( action) in
-            alert.dismiss(animated: true, completion: nil)
-            self.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert,animated: true,completion: nil)
-        
-    }
     
     func pushToPassengerVC(_ vc:UIViewController)
     {

@@ -12,6 +12,7 @@ import CoreLocation
 
 class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    private var request = [String:Any]()
     
     private let tableView:UITableView = {
         let table = UITableView()
@@ -37,6 +38,7 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
         tableView.register(PostTableViewCell.nib(), forCellReuseIdentifier: PostTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
     }
     
     
@@ -64,11 +66,52 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
         return myDateFormat.takeDayFromStringDate(UserTaxiTripRequest.time)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        var boolReturn = false
+        
+        storageManager.ref.child("User_Inbox").child(models[indexPath.row].uid).observeSingleEvent(of: .value) { [self] snapshot in
+            if snapshot.exists() == true
+            {
+                for child in snapshot.children
+                {
+                    let snap = child as! DataSnapshot
+                    guard let res = snap.value as? [String:Any] else {return}
+                    let uid = res["uid"] as! String
+                    print(uid)
+                    if (uid == CurrentUser.UID)
+                    {
+                        boolReturn = true
+                    }
+                }
+            }
+            if boolReturn == false
+            {
+                let alert = UIAlertController(title: "Booking Trip?".localized(), message: "Do you want to book this trip?".localized(), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Yes".localized(), style: .default, handler: { (action) in
+                    storageManager.ref?.child("User_Inbox").child(models[indexPath.row].uid).child(CurrentUser.UID).setValue(self.request)
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                alert.addAction(UIAlertAction(title: "No".localized(), style: .default, handler: { action in
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                present(alert, animated: true)
+            }
+            else
+            {
+                let alert = UIAlertController(title: "You already sent your request".localized(), message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { action in
+                    alert.dismiss(animated: true, completion: nil)
+                }))
+                present(alert,animated: true)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
-        tableView.separatorStyle = .none
+        setUpTableView()
         sendTaxiRequest()
         matchRequest()
     }
@@ -84,8 +127,6 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
         if self.matchFound == true
         {
             self.title = "Taxi Trips".localized()
-            sendTaxiRequest()
-            self.setUpTableView()
         }
         else
         {
@@ -103,13 +144,13 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
     
     func sendTaxiRequest()
     {
-        let request = ["fullname":UserTaxiTripRequest.fullname,
-                       "uid":UserTaxiTripRequest.uid,
+        self.request = ["fullname":CurrentUser.Fullname,
+                       "uid":CurrentUser.UID,
                        "time":UserTaxiTripRequest.time,
-                       "fromLocationName":UserTaxiTripRequest.fromLocationName,
+                       "from":UserTaxiTripRequest.fromLocationName,
                        "fromLocationLat":UserTaxiTripRequest.fromCoordinateLat,
                        "fromLocationLong":UserTaxiTripRequest.fromCoordinateLong,
-                       "toLocationName":UserTaxiTripRequest.toLocationName,
+                       "to":UserTaxiTripRequest.toLocationName,
                        "toLocationLat":UserTaxiTripRequest.toCoordinateLat,
                        "toLocationLong":UserTaxiTripRequest.toCoordinateLong] as [String:Any]
         storageManager.ref.child("Taxi_Requests").child(CurrentUser.UID).setValue(request)
@@ -129,10 +170,10 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
                 let from = res["from"] as! String
                 let to = res["to"] as! String
                 let time = res["time"] as! String
-                let fromLat = res["fromCoordinateLat"] as! Double
-                let fromLong = res["fromCoordinateLong"] as! Double
-                let toLat = res["toCoordinateLat"] as! Double
-                let toLong = res["toCoordinateLong"] as! Double
+                let fromLat = res["fromLocationLat"] as! Double
+                let fromLong = res["fromLocationLong"] as! Double
+                let toLat = res["toLocationLat"] as! Double
+                let toLong = res["toLocationLong"] as! Double
                 let dUID = res["uid"] as! String
                 let dataFromLocation = CLLocation(latitude: fromLat, longitude: fromLong)
                 
@@ -141,16 +182,16 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
                 let currentUserID = CurrentUser.UID
                 if (currentUserID != dUID)
                 {
-                    if (fromDistance <= 8)
+                    if (fromDistance <= 3)
                     {
                         print("inside from distance")
                         let dataToLocation = CLLocation(latitude: toLat, longitude: toLong)
                         let toDistance = self.taxiTripRequestToLocation.distance(from: dataToLocation) / 1000
-                        if (toDistance <= 8)
+                        if (toDistance <= 3)
                         {
                             print("inside to distance")
                             let dataTime = myDateFormat.stringToDate(time)
-                            let requestTime = myDateFormat.stringToDate(UserSearchTripRequest.time)
+                            let requestTime = myDateFormat.stringToDate(UserTaxiTripRequest.time)
     
                             if dataTime <= (requestTime.addingTimeInterval(60*120)) && dataTime >= requestTime
                             {

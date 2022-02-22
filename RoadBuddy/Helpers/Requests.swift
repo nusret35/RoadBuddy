@@ -83,7 +83,7 @@ class TaxiTripRequest
     
     var uid = String()
     
-    var time = String()
+    var time =  myDateFormat.dateToString(Date())
     
     var fromLocationName = String()
     
@@ -127,5 +127,20 @@ class TripPost
         self.numberOfPassengers = numberOfPassengers
         self.price = price
     }
+}
+
+struct InboxObject
+{
+    var username:String
+    
+    var profilePictureURL:String
+    
+    var message:String
+    
+    var uid:String
+    
+    var requestPending:Bool
+    
+    var requestAccepted:Bool
 }
 

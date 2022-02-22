@@ -118,8 +118,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if indexPath.row == 2
         {
-            let shareTaxiNavigationController2 = storyboard?.instantiateViewController(withIdentifier: "ShareTaxiNC") as! UINavigationController
-            present(shareTaxiNavigationController2, animated:true)
+            /*let shareTaxiNavigationController2 = storyboard?.instantiateViewController(withIdentifier: "ShareTaxiNC") as! UINavigationController
+            present(shareTaxiNavigationController2, animated:true)*/
+            let vc = storyboard?.instantiateViewController(withIdentifier: "InboxVC") as! InboxViewController
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
     

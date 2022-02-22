@@ -244,4 +244,11 @@ class myDateFormat
         }
         return stringDay
     }
+    
+    static func dateInFormat(_ date:Date) -> Date?
+    {
+        formatDate(dateFormatter)
+        let returnDate = dateFormatter.date(from: dateToString(date))
+        return returnDate
+    }
 }

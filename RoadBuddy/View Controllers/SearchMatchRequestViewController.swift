@@ -18,22 +18,8 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     private let tableView:UITableView = {
         let table = UITableView()
         table.isHidden = true
-        
         table.register(PostTableViewCell.nib(), forCellReuseIdentifier: PostTableViewCell.identifier)
         return table
-    }()
-    
-    private let searchingTripsLabel:UILabel =
-    {
-        let label = UILabel()
-        label.text = "We took your request. We will inform you when we find a trip."
-        label.center = CGPoint(x: 160, y: 285)
-        label.textAlignment = .center
-        label.textColor = .secondaryLabel
-        label.font = .systemFont(ofSize: 21, weight: .medium)
-        label.textAlignment = .center
-        label.isHidden = true
-        return label
     }()
     
     
@@ -56,7 +42,6 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
         tableView.separatorStyle = .none
-        view.addSubview(searchingTripsLabel)
         sendTheRequest()
         matchRequest()
     }
@@ -80,7 +65,6 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
             let alert = UIAlertController(title: "We have received your request".localized(), message: "We will look for your match and notify you when we found one.".localized(), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title:"Okay".localized(),style: .default, handler:{( action) in
                 alert.dismiss(animated: true, completion: nil)
-                self.searchingTripsLabel.isHidden = false
                 self.dismiss(animated: true, completion: nil)
             }))
             self.present(alert,animated: true,completion: nil)

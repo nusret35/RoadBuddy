@@ -7,17 +7,74 @@
 
 import UIKit
 
+protocol MessageTableViewCellDelegate: AnyObject
+{
+    func didPressAccept(_ tag:Int)
+    func didPressReject(_ tag:Int)
+}
+
 class MessageTableViewCell: UITableViewCell {
 
+    static let identifier = "MessageTableViewCell"
+    
+    static func nib() -> UINib
+    {
+        return UINib(nibName: "MessageTableViewCell", bundle: nil)
+    }
+    
+    var cellDelegate:MessageTableViewCellDelegate?
+    
+    @IBOutlet weak var acceptButton: UIButton!
+    
+    @IBOutlet weak var rejectButton: UIButton!
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    
+    @IBOutlet weak var profilePicture: UIImageView!
+    
+    
+    @IBOutlet weak var messageLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
+        profilePicture.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
+    
+    func configure(with model: InboxObject)
+    {
+        self.usernameLabel.text = model.username
+        
+        self.profilePicture.image = UIImage(named: "emptyProfilePicture")
+        
+        self.messageLabel.text = model.message
+        
+        if model.requestAccepted == true
+        {
+            acceptButton.isHidden = true
+            rejectButton.isHidden = true
+        }
+    }
+    
+    
+    @IBAction func acceptButtonAction(_ sender: UIButton)
+    {
+        cellDelegate?.didPressAccept(sender.tag)
+    }
+    
+    @IBAction func rejectButtonAction(_ sender: UIButton)
+    
+    {
+        cellDelegate?.didPressReject(sender.tag)
+    }
+    
+    
     
 }
