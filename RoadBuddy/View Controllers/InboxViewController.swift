@@ -92,6 +92,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
             vc.title = models[indexPath.row].username
             vc.otherUserUID = models[indexPath.row].uid
             vc.otherUserUsername = models[indexPath.row].username
+            vc.chatId = chatID(indexPath.row)
             vc.navigationItem.largeTitleDisplayMode = .never
             navigationController?.pushViewController(vc, animated: true)
         }
@@ -141,11 +142,32 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
     }
+    func chatID(_ row:Int) -> String
+    {
+        var id = String()
+        if models[row].username > CurrentUser.Username
+        {
+            id = CurrentUser.Username + "_" + models[row].username
+        }
+        else
+        {
+            id = models[row].username + "_" + CurrentUser.Username
+        }
+        return id
+    }
+
     
     func didPressAccept(_ tag: Int) {
+        let chatId = chatID(tag)
         storageManager.ref.child("User_Inbox").child("request").child(CurrentUser.UID).child(self.models[tag].uid).updateChildValues(["requestAccepted":true, "requestPending":false])
         models[tag].requestPending = false
         models[tag].requestAccepted = true
+        //Add chat to other user's inbox
+        let otherUserConversationInfo = ["chatId":chatId,"otherUserUID":CurrentUser.UID,"otherUsername":CurrentUser.Username] as [String:Any]
+        storageManager.ref.child("User_Inbox").child(self.models[tag].uid).child("chats").child(chatId).setValue(otherUserConversationInfo)
+        //Add chat to current user's inbox
+        let currentUserConversationInfo = ["chatId":chatId,"otherUserUID":self.models[tag].uid,"otherUsername":self.models[tag].username] as [String:Any]
+        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("chats").child(chatId).setValue(currentUserConversationInfo)
         tableView.reloadData()
         print("accept button pushed")
     }

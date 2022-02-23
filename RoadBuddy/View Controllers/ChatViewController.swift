@@ -34,6 +34,8 @@ class ChatViewController: MessagesViewController
     
     var otherUserUsername = String()
     
+    var chatId = String()
+    
     private var messages = [Message]()
     
     private let selfSender = Sender(photoURL: CurrentUser.profilePictureURL, senderId: CurrentUser.UID, displayName: CurrentUser.Fullname)
@@ -87,8 +89,7 @@ class ChatViewController: MessagesViewController
             
         }
     }
-    
-    func chatID() -> String
+func chatID() -> String
     {
         var id = String()
         if otherUserUsername > CurrentUser.Username
@@ -101,7 +102,7 @@ class ChatViewController: MessagesViewController
         }
         return id
     }
-    
+
 }
 extension ChatViewController: InputBarAccessoryViewDelegate
 {
