@@ -151,8 +151,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     //SETTING OF REQUEST ELEMENTS
     func sendTheRequest()
     {
-        self.request  = ["fullname": CurrentUser.Fullname, "uid": CurrentUser.UID, "time": UserSearchTripRequest.time ,"number of passengers": UserSearchTripRequest.numberOfPassengers, "fromLocationName": UserSearchTripRequest.fromLocationName, "toLocationName": UserSearchTripRequest.toLocationName, "fromCoordinateLat": UserSearchTripRequest.fromCoordinateLat,"fromCoordinateLong": UserSearchTripRequest.fromCoordinateLong, "toCoordinateLat": UserSearchTripRequest.toCoordinateLat, "toCoordinateLong":
-            UserSearchTripRequest.toCoordinateLong] as [String : Any]
+        self.request  = ["requestAccepted":false,"requestPending":true,"uid":CurrentUser.UID,"username":CurrentUser.Username] as [String : Any]u
         storageManager.ref.child("Search_Requests").child(CurrentUser.UID).setValue(self.request)
         searchFromLocation = CLLocation(latitude: UserSearchTripRequest.fromCoordinateLat, longitude: UserSearchTripRequest.fromCoordinateLong)
         searchToLocation = CLLocation(latitude: UserSearchTripRequest.toCoordinateLat, longitude: UserSearchTripRequest.toCoordinateLong)

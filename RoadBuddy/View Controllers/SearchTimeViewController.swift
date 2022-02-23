@@ -23,7 +23,7 @@ class SearchTimeViewController: UIViewController{
         super.viewDidLoad()
         let moment = Date()
         timePicker.minimumDate = moment
-        timePicker.locale = Locale(identifier: "en_US_POSIX".localized())
+        //timePicker.locale = Locale(identifier: "en_US_POSIX".localized())
         
     }
     
