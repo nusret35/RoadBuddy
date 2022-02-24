@@ -20,6 +20,8 @@ class StorageManager
     let storage = Storage.storage().reference()
     var profileImage = UIImage()
     
+    typealias FinishedDownload = (UIImage?) -> ()
+    
     func profilePictureLoad()
     {
         let docRef = db.collection("users").document(CurrentUser.UID)
@@ -44,4 +46,36 @@ class StorageManager
             })
             }
     }
+    
+    func otherUserProfilePictureLoad(_ otherUser:InboxObject,completion: @escaping FinishedDownload)
+    {
+        var data = Data()
+        let docRef = db.collection("users").document(otherUser.uid)
+        docRef.getDocument { snapshot, error in
+            self.storage.child(otherUser.profilePictureURL).downloadURL {
+                (url, error) in
+                guard let url = url else
+                {
+                    print("profile photo url not found")
+                    return
+                }
+                do
+                {
+                    let data = try Data(contentsOf: url)
+                    let image = UIImage(data: data)
+                    completion(image)
+                }
+                catch
+                {
+                    print("profile photo error")
+                }
+            }
+        }
+    }
+    
+    func userProfilePictureString(_ uid:String) -> String
+    {
+        return "/images/\(uid)"
+    }
+    
 }

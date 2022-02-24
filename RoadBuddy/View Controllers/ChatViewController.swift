@@ -48,6 +48,7 @@ class ChatViewController: MessagesViewController
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         getMessages()
+        //listenForMessages()
         //messagesCollectionView.reloadData()
          
     }
@@ -57,9 +58,11 @@ class ChatViewController: MessagesViewController
         messageInputBar.inputTextView.becomeFirstResponder()
     }
     
+    
     func getMessages()
     {
-        storageManager.ref.child("Chats").child(chatID()).observeSingleEvent(of: .value){ [self] snapshot in
+        storageManager.ref.child("Chats").child(self.chatId).child("messages").observe(.value){ [self] snapshot in
+            var loadedMessages = [Message]()
             if snapshot.exists() == true
             {
                 for child in snapshot.children
@@ -80,28 +83,23 @@ class ChatViewController: MessagesViewController
                         sender = Sender(photoURL: CurrentUser.profilePictureURL, senderId: otherUserUID, displayName: otherUserUsername)
                     }
                     let storedMessage = Message(sender: sender, messageId: createMessageId(), sentDate: myDateFormat.stringToMessageDate(date), kind: .text(messageText))
-                    messages.append(storedMessage)
-                    //print(messageText)
-                    messagesCollectionView.reloadData()
-
+                    loadedMessages.append(storedMessage)
                 }
+                self.messages = loadedMessages
+                self.messagesCollectionView.reloadDataAndKeepOffset()
             }
             
         }
+
     }
-func chatID() -> String
+    /*
+    func listenForMessages()
     {
-        var id = String()
-        if otherUserUsername > CurrentUser.Username
+        DispatchQueue.main.async
         {
-            id = CurrentUser.Username + "_" + otherUserUsername
+            self.getMessages()
         }
-        else
-        {
-            id = otherUserUsername + "_" + CurrentUser.Username
-        }
-        return id
-    }
+    }*/
 
 }
 extension ChatViewController: InputBarAccessoryViewDelegate
@@ -113,8 +111,8 @@ extension ChatViewController: InputBarAccessoryViewDelegate
         let message = Message(sender: selfSender, messageId: createMessageId(), sentDate: myDateFormat.secondsInFormat(Date())!, kind: .text(text))
         
         let messageForFirebase = ["messageId":message.messageId,"sendDate":myDateFormat.returnMessageTime(),"text":text,"senderUID":message.sender.senderId,"senderUsername":message.sender.displayName] as [String : Any]
-        storageManager.ref.child("Chats").child(chatID()).child(message.messageId).setValue(messageForFirebase)
-        
+        storageManager.ref.child("Chats").child(chatId).child("messages").child(message.messageId).setValue(messageForFirebase)
+        storageManager.ref.child("Chats").child(chatId).child("last_message").setValue(text)
         messages.append(message)
         messagesCollectionView.reloadData()
         messageInputBar.inputTextView.text = ""
@@ -123,7 +121,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate
 
     private func createMessageId() -> String
     {
-        let newIdentifier = "\(chatID())_\(myDateFormat.returnMessageTime())"
+        let newIdentifier = "\(chatId)_\(myDateFormat.returnMessageTime())"
         return newIdentifier
     }
 }

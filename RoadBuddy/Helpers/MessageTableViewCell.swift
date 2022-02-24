@@ -24,6 +24,7 @@ class MessageTableViewCell: UITableViewCell {
     
     var cellDelegate:MessageTableViewCellDelegate?
     
+    
     @IBOutlet weak var acceptButton: UIButton!
     
     @IBOutlet weak var rejectButton: UIButton!
@@ -48,7 +49,7 @@ class MessageTableViewCell: UITableViewCell {
         
     }
     
-    func configure(with model: InboxObject)
+    func configure(with model: InboxObject, completion: @escaping () -> ())
     {
         self.usernameLabel.text = model.username
         
@@ -61,7 +62,15 @@ class MessageTableViewCell: UITableViewCell {
             acceptButton.isHidden = true
             rejectButton.isHidden = true
         }
+        
+        storageManager.otherUserProfilePictureLoad(model, completion: { [self] image in
+            profilePicture.image = image
+            profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
+            profilePicture.clipsToBounds = true
+            completion()
+        })
     }
+    
     
     
     @IBAction func acceptButtonAction(_ sender: UIButton)

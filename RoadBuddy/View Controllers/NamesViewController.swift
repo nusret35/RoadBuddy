@@ -90,7 +90,7 @@ class NamesViewController: UIViewController {
                     // User was created successfully, now store the first name and last name of the user
                     
                     let uid = result!.user.uid
-                    storageManager.db.collection("users").document(String(uid)).setData( ["firstname":NewUser.firstName,"lastname":NewUser.lastName,"username":NewUser.userName,"uid":result!.user.uid,"email":NewUser.email,"password":NewUser.passWord,"phoneNumber":NewUser.phoneNum,"schoolName":NewUser.schoolName,
+                    storageManager.db.collection("users").document(String(uid)).setData( ["firstname":self.firstNameTextField.text!,"lastname":self.lastNameTextField.text!,"username":NewUser.userName,"uid":result!.user.uid,"email":NewUser.email,"password":NewUser.passWord,"phoneNumber":NewUser.phoneNum,"schoolName":NewUser.schoolName,
                         "TripIsSet":false,"TaxiTripIsSet":false,"profilePictureIsSet":false
                         ,"lookingForATrip":false]) { (error) in
                         

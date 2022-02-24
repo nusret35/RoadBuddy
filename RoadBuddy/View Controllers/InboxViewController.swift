@@ -45,8 +45,13 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         view.addSubview(noMessagesLabel)
         setUpTableView()
         fetchConversations()
-        getInboxData()
+        //getInboxData()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getInboxData()
     }
     
     override func viewDidLayoutSubviews()
@@ -76,10 +81,12 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.identifier, for: indexPath) as! MessageTableViewCell
-        cell.configure(with: self.models[indexPath.row])
-        cell.cellDelegate = self
-        cell.acceptButton.tag = indexPath.row
-        cell.rejectButton.tag = indexPath.row
+        cell.configure(with: self.models[indexPath.row], completion: {
+            cell.cellDelegate = self
+            cell.acceptButton.tag = indexPath.row
+            cell.rejectButton.tag = indexPath.row
+            print("cell completion")
+        })
         return cell
     }
     
@@ -93,6 +100,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
             vc.otherUserUID = models[indexPath.row].uid
             vc.otherUserUsername = models[indexPath.row].username
             vc.chatId = chatID(indexPath.row)
+            //self.models.remove(at: indexPath.row)
             vc.navigationItem.largeTitleDisplayMode = .never
             navigationController?.pushViewController(vc, animated: true)
         }
@@ -105,7 +113,11 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func getInboxData()
     {
-        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("request").observeSingleEvent(of: .value) { [self] snapshot in
+        DispatchQueue.main.async
+        {
+        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("request").observe(.value) { [self] snapshot in
+            //models = [InboxObject]()
+            var object = [InboxObject]()
             for child in snapshot.children
             {
                 let snap = child as! DataSnapshot
@@ -118,15 +130,16 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 let uid = res["uid"] as! String
                 let requestPending = res["requestPending"] as! Bool
                 let requestAccepted = res["requestAccepted"] as! Bool
+                let profilePictureURL = "/images/\(uid)"
                 if (requestPending == true && requestAccepted == false)
                 {
-                   let data = InboxObject(username: username, profilePictureURL: "", message: "Wants to join your trip", uid: uid, requestPending:  requestPending,requestAccepted:requestAccepted)
+                   let data = InboxObject(username: username, profilePictureURL: profilePictureURL, message: "Wants to join your trip", uid: uid, requestPending:  requestPending,requestAccepted:requestAccepted)
 
-                    models.append(data)
+                    object.append(data)
                 }
             }
         
-            storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("chats").observeSingleEvent(of: .value) { [self] snapshot in
+            storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("chats").observe(.value) { [self] snapshot in
                 for child in snapshot.children
                 {
                     let snap = child as! DataSnapshot
@@ -135,10 +148,20 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     let chatId = res["chatId"] as! String
                     let otherUsername = res["otherUsername"] as! String
                     let otherUserUID = res["otherUserUID"] as! String
-                    let data = InboxObject(username: otherUsername, profilePictureURL: "", message: "Wants to join your trip", uid: otherUserUID, requestPending: false, requestAccepted: true)
-                    models.append(data)
+                    storageManager.ref.child("Chats").child(chatId).observe(.value) { snapshot2 in
+                        guard let value = snapshot2.value as? [String:Any]
+                        else {return}
+                        let lastMessage = value["last_message"] as! String
+                        let data = InboxObject(username: otherUsername, profilePictureURL: storageManager.userProfilePictureString(otherUserUID), message: lastMessage, uid: otherUserUID, requestPending: false, requestAccepted: true)
+                            object.append(data)
+                        self.models = object
+                
+                            self.tableView.reloadData()
+                        
+                        }
+                    }
+                
                 }
-                tableView.reloadData()
             }
         }
     }
@@ -159,7 +182,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func didPressAccept(_ tag: Int) {
         let chatId = chatID(tag)
-        storageManager.ref.child("User_Inbox").child("request").child(CurrentUser.UID).child(self.models[tag].uid).updateChildValues(["requestAccepted":true, "requestPending":false])
+        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("request").child(self.models[tag].uid).updateChildValues(["requestAccepted":true, "requestPending":false])
         models[tag].requestPending = false
         models[tag].requestAccepted = true
         //Add chat to other user's inbox
@@ -173,7 +196,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func didPressReject(_ tag: Int) {
-        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child(self.models[tag].uid).updateChildValues(["requestAccepted":false, "requestPending":false])
+        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("request").child(self.models[tag].uid).updateChildValues(["requestAccepted":false, "requestPending":false])
         //models[tag].requestPending = false
         //models[tag].requestAccepted = false
         models.remove(at: tag)
