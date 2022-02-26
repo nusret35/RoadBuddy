@@ -52,7 +52,7 @@
 
 "Email" = "邮箱";
 
-"Welcome To RoadBuddy" = "欢迎来到 RoadBuddy";
+"Welcome To Nothing" = "欢迎来到 Nothing";
 
 "Enter the E-mail" = "电子邮箱";
 
@@ -65,3 +65,34 @@
 "Add Phone Number" = "电话号码";
 
 "Personal Info" = "个人信息";
+
+"Please enter a valid E-mail adress" = "请输入有效的电子邮箱";
+
+"The E-mail already been used, please log in or enter different E-mail." = "邮箱已被注册，请登录或输入不同的邮箱。";
+
+"Please enter a valid username" = "请输入有效的用户名。";
+
+"The Username already been used, please enter a different username" = "用户名已被注册，请输入不同的用户名。";
+
+"Please make sure your password is at least 8 characters contain at least one upper case letter" = "请确认您的密码至少八位和包含至少一个大写字母。";
+
+"Please enter the phone number" = "请输入电话号码";
+
+"Please enter a valid phone number" = "请输入有效的电话号码。";
+
+"Please make sure the phone number is in the range." = "请确保电话号码在范围内。";
+
+
+
+"Please choose the regional code" = "选择国家/地区";
+
+"Please fill in all fields." = "请填写所有字段。";
+
+"Please make sure firstname and lastname does not contain any numbers or special characters" = "请确保姓名不包含任何数字和特殊字符。";
+
+"Please make sure lastname does not contain any numbers or special characters" = "请确保姓不包含任何数字和特殊字符。";
+
+
+"Please make sure firstname does not contain any numbers or special characters" = "请确保名不包含任何数字和特殊字符。";
+
+

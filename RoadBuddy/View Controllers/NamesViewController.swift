@@ -90,7 +90,7 @@ class NamesViewController: UIViewController {
                     // User was created successfully, now store the first name and last name of the user
                     
                     let uid = result!.user.uid
-                    storageManager.db.collection("users").document(String(uid)).setData( ["firstname":self.firstNameTextField.text!,"lastname":self.lastNameTextField.text!,"username":NewUser.userName,"uid":result!.user.uid,"email":NewUser.email,"password":NewUser.passWord,"phoneNumber":NewUser.phoneNum,"schoolName":NewUser.schoolName,
+                    storageManager.db.collection("users").document(String(uid)).setData( ["firstname":NewUser.firstName,"lastname":NewUser.lastName,"username":NewUser.userName,"uid":result!.user.uid,"email":NewUser.email,"password":NewUser.passWord,"phoneNumber":NewUser.phoneNum,"schoolName":NewUser.schoolName,
                         "TripIsSet":false,"TaxiTripIsSet":false,"profilePictureIsSet":false
                         ,"lookingForATrip":false]) { (error) in
                         
@@ -101,7 +101,8 @@ class NamesViewController: UIViewController {
                     }
                     //Transition to the home screen
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let nc = mainStoryboard.instantiateViewController(withIdentifier: "FirstNC") as! UINavigationController
+                    let nc = mainStoryboard.instantiateViewController(withIdentifier: "homeVC") as! UINavigationController
+
                     self.present(nc,animated: true)
                 }
             }
@@ -127,15 +128,15 @@ class NamesViewController: UIViewController {
         {
             lastNameTextField.text = ""
             firstNameTextField.text = ""
-            return "Please make sure firstname and lastname does not contain any numbers or special characters"
+            return "Please make sure firstname and lastname does not contain any numbers or special characters".localized()
         }
         else if isValid(testStr: lastNameTextField.text!) == false
         {
-            return "Please make sure lastname does not contain any numbers or special characters"
+            return "Please make sure lastname does not contain any numbers or special characters".localized()
         }
         else if isValid(testStr: firstNameTextField.text!) == false
         {
-            return "Please make sure firstname does not contain any numbers or special characters"
+            return "Please make sure firstname does not contain any numbers or special characters".localized()
         }
         return nil
         

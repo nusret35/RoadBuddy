@@ -87,6 +87,9 @@
 		80E3783927BE54390053C2FC /* SearchMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3783827BE54380053C2FC /* SearchMapViewController.swift */; };
 		80E3783B27BFF6BF0053C2FC /* BookedTripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3783A27BFF6BF0053C2FC /* BookedTripsViewController.swift */; };
 		80E3784127C228880053C2FC /* TaxiTripsMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E3784027C228880053C2FC /* TaxiTripsMatchViewController.swift */; };
+		C00640CE27CA41D7004B419E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00640CD27CA41D7004B419E /* HomeViewController.swift */; };
+		C00640D027CA4210004B419E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00640CF27CA4210004B419E /* MenuViewController.swift */; };
+		C00640D227CA428D004B419E /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00640D127CA428D004B419E /* SidebarViewController.swift */; };
 		C01EB40D27C3943000C75552 /* PhoneRegionCodeViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01EB40C27C3943000C75552 /* PhoneRegionCodeViewController2.swift */; };
 		C01EB41027C3A78B00C75552 /* RegionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01EB40E27C3A78A00C75552 /* RegionCell.swift */; };
 		C01EB41127C3A78B00C75552 /* RegionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01EB40F27C3A78A00C75552 /* RegionCell.xib */; };
@@ -162,6 +165,9 @@
 		80E3783A27BFF6BF0053C2FC /* BookedTripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookedTripsViewController.swift; sourceTree = "<group>"; };
 		80E3784027C228880053C2FC /* TaxiTripsMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiTripsMatchViewController.swift; sourceTree = "<group>"; };
 		BD4FE229515EAE9346E4B422 /* Pods_RoadBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00640CD27CA41D7004B419E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C00640CF27CA4210004B419E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C00640D127CA428D004B419E /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
 		C01EB40C27C3943000C75552 /* PhoneRegionCodeViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRegionCodeViewController2.swift; sourceTree = "<group>"; };
 		C01EB40E27C3A78A00C75552 /* RegionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionCell.swift; sourceTree = "<group>"; };
 		C01EB40F27C3A78A00C75552 /* RegionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegionCell.xib; sourceTree = "<group>"; };
@@ -377,6 +383,9 @@
 				C032963927BEAF3C00C21736 /* PhoneNumViewController.swift */,
 				C01EB40C27C3943000C75552 /* PhoneRegionCodeViewController2.swift */,
 				C032963727BEAF1400C21736 /* NamesViewController.swift */,
+				C00640CD27CA41D7004B419E /* HomeViewController.swift */,
+				C00640CF27CA4210004B419E /* MenuViewController.swift */,
+				C00640D127CA428D004B419E /* SidebarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -622,9 +631,11 @@
 				80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */,
 				C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */,
 				809B9C6D27B39B1E004EB9C4 /* UITableView + ViewAnimator.swift in Sources */,
+				C00640D227CA428D004B419E /* SidebarViewController.swift in Sources */,
 				80C996392765697B00B5A3C7 /* SignUpViewController.swift in Sources */,
 				C02FE7FA27B69DBB006E5C14 /* ShareTaxiFromViewController2.swift in Sources */,
 				C032962A27BD2D7600C21736 /* UserNameViewController.swift in Sources */,
+				C00640D027CA4210004B419E /* MenuViewController.swift in Sources */,
 				809B9C7127B39B1E004EB9C4 /* Animation.swift in Sources */,
 				80C9963B2766919300B5A3C7 /* LoginViewController.swift in Sources */,
 				80CA933927091D63009A1469 /* ProfilePageViewController.swift in Sources */,
@@ -634,6 +645,7 @@
 				804AF856279EB80F00315A82 /* TaxiResultViewController.swift in Sources */,
 				80CA933D270B1AAA009A1469 /* DateTimePicker.swift in Sources */,
 				C01EB41027C3A78B00C75552 /* RegionCell.swift in Sources */,
+				C00640CE27CA41D7004B419E /* HomeViewController.swift in Sources */,
 				80CA9345270C3AD9009A1469 /* DateTimeViewController.swift in Sources */,
 				809B9C7027B39B1E004EB9C4 /* ViewAnimator.swift in Sources */,
 				80D9B09826FC9249001EB6BD /* SceneDelegate.swift in Sources */,

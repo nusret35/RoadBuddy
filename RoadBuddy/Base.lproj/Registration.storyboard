@@ -17,13 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To RoadBuddy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7z-aZ-620">
-                                <rect key="frame" x="36" y="371" width="342" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="JKt-Od-h50">
-                                <rect key="frame" x="30" y="550" width="354" height="130"/>
+                                <rect key="frame" x="30" y="522" width="354" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQj-Pb-EHr">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
@@ -59,23 +54,30 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8U-JW-arH">
+                                <rect key="frame" x="40" y="245" width="334" height="57"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u1M-V3-Gzw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JKt-Od-h50" firstAttribute="top" secondItem="S7z-aZ-620" secondAttribute="bottom" constant="140.5" id="6Cd-YG-kCk"/>
+                            <constraint firstItem="JKt-Od-h50" firstAttribute="top" secondItem="t8U-JW-arH" secondAttribute="bottom" constant="220" id="5gN-kH-J1J"/>
                             <constraint firstItem="JKt-Od-h50" firstAttribute="leading" secondItem="u1M-V3-Gzw" secondAttribute="leading" constant="30" id="Aml-it-7Pq"/>
-                            <constraint firstItem="u1M-V3-Gzw" firstAttribute="trailing" secondItem="S7z-aZ-620" secondAttribute="trailing" constant="36" id="E4R-Lt-nXT"/>
+                            <constraint firstItem="t8U-JW-arH" firstAttribute="leading" secondItem="u1M-V3-Gzw" secondAttribute="leading" constant="40" id="NWR-Xo-aJ8"/>
+                            <constraint firstItem="u1M-V3-Gzw" firstAttribute="trailing" secondItem="t8U-JW-arH" secondAttribute="trailing" constant="40" id="NaS-dS-sPU"/>
                             <constraint firstItem="u1M-V3-Gzw" firstAttribute="trailing" secondItem="JKt-Od-h50" secondAttribute="trailing" constant="30" id="Q1d-9W-6G6"/>
-                            <constraint firstItem="S7z-aZ-620" firstAttribute="top" secondItem="u1M-V3-Gzw" secondAttribute="top" constant="231" id="YEk-5y-GY7"/>
-                            <constraint firstItem="S7z-aZ-620" firstAttribute="leading" secondItem="u1M-V3-Gzw" secondAttribute="leading" constant="36" id="bdk-Tf-cgv"/>
+                            <constraint firstItem="u1M-V3-Gzw" firstAttribute="bottom" secondItem="JKt-Od-h50" secondAttribute="bottom" constant="210" id="gZR-K9-Awy"/>
+                            <constraint firstItem="t8U-JW-arH" firstAttribute="top" secondItem="u1M-V3-Gzw" secondAttribute="top" constant="105" id="jkX-hU-T7Y"/>
+                            <constraint firstItem="JKt-Od-h50" firstAttribute="top" secondItem="t8U-JW-arH" secondAttribute="bottom" constant="220" id="y4h-af-rpp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3DN-3u-WyC"/>
                     <connections>
                         <outlet property="LogInButton" destination="J12-Pj-b8z" id="ItH-1K-Gvk"/>
                         <outlet property="SignUpButton" destination="oQj-Pb-EHr" id="t4s-Rg-o1U"/>
-                        <outlet property="titlename" destination="S7z-aZ-620" id="Nuk-tJ-egH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RkG-rv-XPz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -91,7 +93,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="rXS-BA-Top">
-                                <rect key="frame" x="40" y="160" width="334" height="241"/>
+                                <rect key="frame" x="40" y="310" width="334" height="241"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="erg-Om-4QX">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -147,13 +149,35 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brq-e3-7Qg">
+                                <rect key="frame" x="40" y="185" width="334" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3rU-4m-jA0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Black" family="Snell Roundhand" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NSH Tech" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RB5-zQ-0NS">
+                                <rect key="frame" x="160" y="794" width="94" height="25"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vfl-fc-0Pp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vfl-fc-0Pp" firstAttribute="trailing" secondItem="brq-e3-7Qg" secondAttribute="trailing" constant="40" id="4Cu-yi-w7g"/>
                             <constraint firstItem="vfl-fc-0Pp" firstAttribute="trailing" secondItem="rXS-BA-Top" secondAttribute="trailing" constant="40" id="5Mc-aK-LcE"/>
+                            <constraint firstItem="vfl-fc-0Pp" firstAttribute="trailing" secondItem="RB5-zQ-0NS" secondAttribute="trailing" constant="160" id="8PW-3e-81i"/>
+                            <constraint firstItem="vfl-fc-0Pp" firstAttribute="bottom" secondItem="RB5-zQ-0NS" secondAttribute="bottom" constant="43" id="KdF-sG-eWv"/>
+                            <constraint firstItem="RB5-zQ-0NS" firstAttribute="top" secondItem="rXS-BA-Top" secondAttribute="bottom" constant="243" id="RLC-qJ-bT2"/>
+                            <constraint firstItem="rXS-BA-Top" firstAttribute="top" secondItem="brq-e3-7Qg" secondAttribute="bottom" constant="75" id="UAr-gk-rGB"/>
                             <constraint firstItem="rXS-BA-Top" firstAttribute="leading" secondItem="vfl-fc-0Pp" secondAttribute="leading" constant="40" id="Wcm-4W-dUr"/>
-                            <constraint firstItem="rXS-BA-Top" firstAttribute="top" secondItem="vfl-fc-0Pp" secondAttribute="top" constant="20" id="eei-zw-asz"/>
+                            <constraint firstItem="brq-e3-7Qg" firstAttribute="top" secondItem="vfl-fc-0Pp" secondAttribute="top" constant="45" id="XBB-yp-EJs"/>
+                            <constraint firstItem="RB5-zQ-0NS" firstAttribute="leading" secondItem="vfl-fc-0Pp" secondAttribute="leading" constant="160" id="l5J-h5-MlD"/>
+                            <constraint firstItem="brq-e3-7Qg" firstAttribute="leading" secondItem="vfl-fc-0Pp" secondAttribute="leading" constant="40" id="vcj-MY-c6t"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NDe-JX-MtF"/>
@@ -188,7 +212,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0u-Zp-Ooj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1536" y="-2115"/>
+            <point key="canvasLocation" x="-1709" y="-2117"/>
         </scene>
         <!--Create Username-->
         <scene sceneID="GOS-97-SUE">

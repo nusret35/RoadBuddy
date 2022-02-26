@@ -76,3 +76,45 @@
 "Today" = "Bugün";
 
 "Taxi Trips" = "Taksi Yolculukları";
+
+"Enter the E-mail" = "E-posta";
+
+"Create Username" = "Kullanıcı adı";
+
+"Create a password" = "Şifre";
+
+"Add Your Birthday" = "Doğum günü";
+ 
+"Add Phone Number" = "Telefon Numarası";
+
+"Personal Info" = "Kişisel Bilgi";
+
+"Please enter a valid E-mail adress" = "Lütfen geçerli bir E-posta giriniz.";
+
+"The E-mail already been used, please log in or enter different E-mail." = "E-posta adresi zaten kullanılmış, lütfen giriş yapın yada farklı bir E-posta adressi giriniz.";
+
+"Please enter a valid username" = "Lütfen geçerli bir Kullanıcı adı giriniz.";
+
+"The Username already been used, please enter a different username" = "Kullanıcı adı kullanımda, lütfen farklı bir kullanıcı adı giriniz.";
+
+"Please make sure your password is at least 8 characters contain at least one upper case letter" = "Lütfen şifrenizin en az 8 haneli olduğunu ve en az bir büyük harf içerdiğini kontrol ediniz.";
+
+
+
+"Please enter a valid phone number" = "Lütfen geçerli telefon numarası giriniz.";
+
+"Please make sure the phone number is in the range." = "Lütfen telefon numarasının geçerli aralıkta olduğunu kontrol ediniz.";
+
+
+"Please choose the regional code" = "Ülke/Bölge seçin";
+
+"Please fill in all fields." = "Lütfen tüm boşlukları doldurunuz.";
+
+"Please make sure firstname and lastname does not contain any numbers or special characters" = "Lütfen isim ve soyismin sayı yada özel karakter içermediğini kontrol ediniz.";
+
+"Please make sure lastname does not contain any numbers or special characters" = "Lütfen soyismin sayı yada özel karakter içermediğini kontrol ediniz.";
+
+
+"Please make sure firstname does not contain any numbers or special characters" = "Lütfen ismin sayı yada özel karakter içermediğini kontrol ediniz.";
+
+

@@ -64,11 +64,11 @@ class PhoneNumViewController: UIViewController {
         if phoneNumTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
         {
             
-            return "Please enter the phone number".localized()
+            return "Please enter a valid phone number".localized()
         }
         else if phoneNumTextField.text!.count > 11
         {
-            return "Please make sure the phone number is in the range."
+            return "Please make sure the phone number is in the range.".localized()
         }
         return nil
     }
@@ -87,7 +87,7 @@ class PhoneNumViewController: UIViewController {
             
             let viewController = storyboard?.instantiateViewController(withIdentifier: "NamesVC") as! NamesViewController
             
-            viewController.title = "Personal Info"
+            viewController.title = "Personal Info".localized()
             
             navigationController?.pushViewController(viewController, animated: true)
         }

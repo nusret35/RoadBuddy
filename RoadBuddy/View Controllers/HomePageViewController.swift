@@ -28,7 +28,7 @@ class HomePageViewController: UIViewController {
         
         LogInButton.setTitle("Login".localized(), for: .normal)
         
-        titlename.text = "Welcome To RoadBuddy".localized()
+        
     }
     @IBAction func signUpAction(_ sender: Any)
     {

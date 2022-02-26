@@ -50,19 +50,10 @@ class PhoneRegionCodeViewController2: UIViewController, UITableViewDelegate, UIT
         cell.regionNumberCodeText.text = "+" + value!
         return cell
     }
-    /*
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let key = Array(countryPrefixes)[indexPath.row].key
-        let value = countryPrefixes[key]
-        cell.textLabel?.text = key + "                                                                         +" + value!
-        print(cell.textLabel?.text)
-        return cell
-    }
-     */
+
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Please choose the regional code"
+        return "Please choose the regional code".localized()
     }
     
 

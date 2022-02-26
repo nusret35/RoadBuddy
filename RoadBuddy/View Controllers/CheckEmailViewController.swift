@@ -52,7 +52,7 @@ class CheckEmailViewController: UIViewController {
         
         if isValidEmailAddress(emailAddressString: cleanEmail) == false
         {
-            return "Please enter a valid E-mail adress"
+            return "Please enter a valid E-mail adress".localized()
         }
         
         return nil
@@ -119,7 +119,7 @@ class CheckEmailViewController: UIViewController {
                 }
                 else
                 {
-                    self.showError(message: "The E-mail already been used, please log in or enter different E-mail.")
+                    self.showError(message: "The E-mail already been used, please log in or enter different E-mail.".localized())
                 }
                 
             }

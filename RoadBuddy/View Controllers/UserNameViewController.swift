@@ -91,7 +91,7 @@ class UserNameViewController: UIViewController {
                 }
                 else
                 {
-                    self.showError(message: "The Username already been used, please enter a different username")
+                    self.showError(message: "The Username already been used, please enter a different username".localized())
                 }
                 
             }

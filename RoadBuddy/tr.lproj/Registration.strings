@@ -1,69 +1,69 @@
 
 /* Class = "UIButton"; configuration.title = "Complete"; ObjectID = "2pl-38-pll"; */
-"2pl-38-pll.configuration.title" = "Complete";
+"2pl-38-pll.configuration.title" = "Tamamla";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "2pl-38-pll"; */
-"2pl-38-pll.normalTitle" = "Button";
+"2pl-38-pll.normalTitle" = "Tamamla";
 
 /* Class = "UILabel"; text = "Please enter the phone number"; ObjectID = "68H-do-tOC"; */
-"68H-do-tOC.text" = "Please enter the phone number";
+"68H-do-tOC.text" = "Lütfen telefon numaranızı giriniz";
 
 /* Class = "UITextField"; placeholder = "FirstName"; ObjectID = "9ab-z2-M3h"; */
-"9ab-z2-M3h.placeholder" = "FirstName";
+"9ab-z2-M3h.placeholder" = "İsim";
 
 /* Class = "UILabel"; text = "Please enter a valid university email "; ObjectID = "A3L-9l-zeL"; */
-"A3L-9l-zeL.text" = "Please enter a valid university email ";
+"A3L-9l-zeL.text" = "Lütfen okul mail adresinizi giriniz";
 
 /* Class = "UIButton"; configuration.title = "Next"; ObjectID = "C87-Me-ae1"; */
-"C87-Me-ae1.configuration.title" = "Next";
+"C87-Me-ae1.configuration.title" = "Devam";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "C87-Me-ae1"; */
-"C87-Me-ae1.normalTitle" = "Button";
+"C87-Me-ae1.normalTitle" = "Devam";
 
 /* Class = "UINavigationItem"; title = "Create a password"; ObjectID = "Exg-2D-McQ"; */
-"Exg-2D-McQ.title" = "Create a password";
+"Exg-2D-McQ.title" = "Şifre";
 
 /* Class = "UINavigationItem"; title = "Create Username"; ObjectID = "F0o-eK-6Kz"; */
-"F0o-eK-6Kz.title" = "Create Username";
+"F0o-eK-6Kz.title" = "Kullanıcı adı";
 
 /* Class = "UIButton"; configuration.title = "Next"; ObjectID = "FPf-iY-doi"; */
-"FPf-iY-doi.configuration.title" = "Next";
+"FPf-iY-doi.configuration.title" = "Devam";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "FPf-iY-doi"; */
-"FPf-iY-doi.normalTitle" = "Button";
+"FPf-iY-doi.normalTitle" = "Devam";
 
 /* Class = "UILabel"; text = "Please choose a username for your new account"; ObjectID = "GqX-UM-cn7"; */
-"GqX-UM-cn7.text" = "Please choose a username for your new account";
+"GqX-UM-cn7.text" = "Lütfen yeni hesabınız için bir Kullanıcı adı giriniz";
 
 /* Class = "UIButton"; configuration.title = "Login"; ObjectID = "J12-Pj-b8z"; */
-"J12-Pj-b8z.configuration.title" = "Login";
+"J12-Pj-b8z.configuration.title" = "Giriş Yap";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "J12-Pj-b8z"; */
-"J12-Pj-b8z.normalTitle" = "Button";
+"J12-Pj-b8z.normalTitle" = "Giriş Yap";
 
 /* Class = "UILabel"; text = "Error"; ObjectID = "JxT-yV-G72"; */
 "JxT-yV-G72.text" = "Error";
 
 /* Class = "UILabel"; text = "Please enter a password at least 8 characters"; ObjectID = "LtY-OL-HS6"; */
-"LtY-OL-HS6.text" = "Please enter a password at least 8 characters";
+"LtY-OL-HS6.text" = "Lütfen 8 haneli bir şifre giriniz";
 
 /* Class = "UIButton"; configuration.title = "Login"; ObjectID = "Ng2-nv-RH9"; */
-"Ng2-nv-RH9.configuration.title" = "Login";
+"Ng2-nv-RH9.configuration.title" = "Giriş Yap";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Ng2-nv-RH9"; */
-"Ng2-nv-RH9.normalTitle" = "Login";
+"Ng2-nv-RH9.normalTitle" = "Giriş Yap";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "Oep-IA-ab0"; */
-"Oep-IA-ab0.placeholder" = "Email";
+"Oep-IA-ab0.placeholder" = "E-posta";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "P4P-ds-R8m"; */
 "P4P-ds-R8m.text" = "Title";
 
 /* Class = "UILabel"; text = "Welcome To RoadBuddy"; ObjectID = "S7z-aZ-620"; */
-"S7z-aZ-620.text" = "Welcome To RoadBuddy";
+"S7z-aZ-620.text" = "Nothing e Hoş geldiniz";
 
 /* Class = "UITextField"; placeholder = "Username"; ObjectID = "See-Oe-mnP"; */
-"See-Oe-mnP.placeholder" = "Username";
+"See-Oe-mnP.placeholder" = "Kullanıcı adı";
 
 /* Class = "UILabel"; text = "Error"; ObjectID = "Sf3-sf-4Xw"; */
 "Sf3-sf-4Xw.text" = "Error";
@@ -75,16 +75,16 @@
 "VZZ-OD-UlW.text" = "Error";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "WAh-LJ-Qy0"; */
-"WAh-LJ-Qy0.placeholder" = "Password";
+"WAh-LJ-Qy0.placeholder" = "Şifre";
 
 /* Class = "UIButton"; configuration.title = "Next"; ObjectID = "WbC-51-drt"; */
-"WbC-51-drt.configuration.title" = "Next";
+"WbC-51-drt.configuration.title" = "Devam";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "WbC-51-drt"; */
-"WbC-51-drt.normalTitle" = "Button";
+"WbC-51-drt.normalTitle" = "Devam";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "erg-Om-4QX"; */
-"erg-Om-4QX.placeholder" = "Email";
+"erg-Om-4QX.placeholder" = "E-posta";
 
 /* Class = "UILabel"; text = "Error"; ObjectID = "k47-Wl-zZI"; */
 "k47-Wl-zZI.text" = "Error";
@@ -93,22 +93,22 @@
 "oEw-TN-DEr.text" = "Error";
 
 /* Class = "UIButton"; configuration.title = "Sign Up"; ObjectID = "oQj-Pb-EHr"; */
-"oQj-Pb-EHr.configuration.title" = "Sign Up";
+"oQj-Pb-EHr.configuration.title" = "Kaydol";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oQj-Pb-EHr"; */
-"oQj-Pb-EHr.normalTitle" = "Button";
+"oQj-Pb-EHr.normalTitle" = "Kaydol";
 
 /* Class = "UILabel"; text = "Error"; ObjectID = "okL-oc-Bk2"; */
 "okL-oc-Bk2.text" = "Error";
 
 /* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "qiM-sL-eDT"; */
-"qiM-sL-eDT.placeholder" = "Phone Number";
+"qiM-sL-eDT.placeholder" = "Telefon numara";
 
 /* Class = "UILabel"; text = "Detail"; ObjectID = "s6Q-s4-RtM"; */
 "s6Q-s4-RtM.text" = "Detail";
 
 /* Class = "UILabel"; text = "Please fill the firstname and lastname to complete sign up"; ObjectID = "s88-DN-I8u"; */
-"s88-DN-I8u.text" = "Please fill the firstname and lastname to complete sign up";
+"s88-DN-I8u.text" = "Lütfen isim ve soyisimi giriniz";
 
 /* Class = "UIButton"; configuration.title = "Button"; ObjectID = "sXk-Kt-7de"; */
 "sXk-Kt-7de.configuration.title" = "Button";
@@ -117,25 +117,25 @@
 "sXk-Kt-7de.normalTitle" = "Button";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "tkc-7q-vVy"; */
-"tkc-7q-vVy.placeholder" = "Password";
+"tkc-7q-vVy.placeholder" = "Şifre";
 
 /* Class = "UITextField"; placeholder = "LastName"; ObjectID = "ueH-kB-PfM"; */
-"ueH-kB-PfM.placeholder" = "LastName";
+"ueH-kB-PfM.placeholder" = "Soyisim";
 
 /* Class = "UIButton"; configuration.title = "Next"; ObjectID = "wlm-UI-XEb"; */
-"wlm-UI-XEb.configuration.title" = "Next";
+"wlm-UI-XEb.configuration.title" = "Devam";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "wlm-UI-XEb"; */
-"wlm-UI-XEb.normalTitle" = "Button";
+"wlm-UI-XEb.normalTitle" = "Devam";
 
 /* Class = "UIButton"; configuration.title = "Next"; ObjectID = "zSM-oo-i2Z"; */
-"zSM-oo-i2Z.configuration.title" = "Next";
+"zSM-oo-i2Z.configuration.title" = "Devam";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "zSM-oo-i2Z"; */
-"zSM-oo-i2Z.normalTitle" = "Button";
+"zSM-oo-i2Z.normalTitle" = "Devam";
 
 /* Class = "UILabel"; text = "This won't be part of your public profile."; ObjectID = "zbL-D6-NJV"; */
-"zbL-D6-NJV.text" = "This won't be part of your public profile.";
+"zbL-D6-NJV.text" = "Bu, herkese açık profilinin parçası olmayacak.";
 
 /* Class = "UIViewController"; title = "Please choose the regional code"; ObjectID = "zdI-dD-dfc"; */
-"zdI-dD-dfc.title" = "Please choose the regional code";
+"zdI-dD-dfc.title" = "TÜM ÜLKELER";
