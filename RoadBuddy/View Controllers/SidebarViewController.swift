@@ -33,7 +33,6 @@ class SidebarViewController: UIViewController
         super.viewDidLoad()
         view.backgroundColor = .red
         addChildVCs()
-
         
     }
     
@@ -48,6 +47,7 @@ class SidebarViewController: UIViewController
         //Home
         homeVC.delegate = self
         let navVC = UINavigationController(rootViewController: homeVC)
+        navVC.navigationBar.prefersLargeTitles = true
         addChild(navVC)
         view.addSubview(navVC.view)
         homeVC.didMove(toParent: self)
@@ -136,19 +136,18 @@ extension SidebarViewController: MenuViewControllerDelegate
     func addProfile()
     {
         let vc = profilevc
-        
+        vc.title = "Profile"
         homeVC.addChild(vc)
         homeVC.view.addSubview(vc.view)
         vc.view.frame = view.frame
         vc.didMove(toParent: homeVC)
-        homeVC.title = vc.title
     }
     
     func resetToHome()
     {
         profilevc.view.removeFromSuperview()
         profilevc.didMove(toParent: nil)
-        homeVC.title = "Home"
+        homeVC.title = "My Trip"
         
     }
 }

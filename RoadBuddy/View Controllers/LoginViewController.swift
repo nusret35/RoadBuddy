@@ -123,9 +123,14 @@ class LoginViewController: UIViewController {
     
 func transitionToHome ()
     {
+        /*
         let mainStoryboard = UIStoryboard(name:"Main",bundle:nil)
         let firstNavigationController = mainStoryboard.instantiateViewController(withIdentifier: "homeNC") as! UINavigationController
         present(firstNavigationController, animated: true, completion: nil)
+         */
+        let vc = SidebarViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
 }

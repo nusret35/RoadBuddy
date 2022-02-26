@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ovi-9n-lgS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ovi-9n-lgS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -445,13 +445,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wym-rz-kEg">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XXS-ME-WK5">
-                                <rect key="frame" x="291" y="686" width="123" height="127"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="otl-bJ-xEU"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6v3-kT-IRK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6v3-kT-IRK">
                                 <rect key="frame" x="291" y="691" width="123" height="117"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="117" id="RR4-yZ-k2o"/>
@@ -469,13 +463,10 @@
                         <viewLayoutGuide key="safeArea" id="hz8-qw-EsL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XXS-ME-WK5" firstAttribute="leading" secondItem="hz8-qw-EsL" secondAttribute="leading" constant="291" id="2Tp-qx-7ex"/>
                             <constraint firstItem="wym-rz-kEg" firstAttribute="trailing" secondItem="hz8-qw-EsL" secondAttribute="trailing" id="6i8-OF-Swh"/>
-                            <constraint firstItem="XXS-ME-WK5" firstAttribute="trailing" secondItem="hz8-qw-EsL" secondAttribute="trailing" id="8L1-Mf-KaI"/>
                             <constraint firstItem="6v3-kT-IRK" firstAttribute="leading" secondItem="hz8-qw-EsL" secondAttribute="leading" constant="291" id="Mpa-Ki-mKR"/>
                             <constraint firstItem="6v3-kT-IRK" firstAttribute="trailing" secondItem="hz8-qw-EsL" secondAttribute="trailing" id="QSs-Hd-Ee0"/>
                             <constraint firstItem="hz8-qw-EsL" firstAttribute="bottom" secondItem="6v3-kT-IRK" secondAttribute="bottom" constant="54" id="RVc-7w-m2S"/>
-                            <constraint firstItem="hz8-qw-EsL" firstAttribute="bottom" secondItem="XXS-ME-WK5" secondAttribute="bottom" constant="48.5" id="Udj-4V-B6X"/>
                             <constraint firstItem="wym-rz-kEg" firstAttribute="top" secondItem="2as-sq-f60" secondAttribute="top" id="ldV-nd-4QP"/>
                             <constraint firstAttribute="bottom" secondItem="wym-rz-kEg" secondAttribute="bottom" id="pCq-CL-qML"/>
                             <constraint firstItem="wym-rz-kEg" firstAttribute="leading" secondItem="hz8-qw-EsL" secondAttribute="leading" id="vbd-qM-4XT"/>
@@ -668,7 +659,6 @@
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="arrow.right.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="imageView:jXJ-h9-ipr:image" width="555.5" height="555.5">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T

@@ -53,6 +53,8 @@
 		8076F16C275ABE0500BC6EB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8076F16B275ABE0500BC6EB2 /* GoogleService-Info.plist */; };
 		807E9BCB270769E30008F523 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E9BCA270769E30008F523 /* Utilities.swift */; };
 		807F1F262700B892000C89CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F1F252700B892000C89CB /* Constants.swift */; };
+		8089A87327CA46E3006744F4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089A87127CA46E3006744F4 /* ProfileViewController.swift */; };
+		8089A87427CA46E3006744F4 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8089A87227CA46E3006744F4 /* ProfileViewController.xib */; };
 		809B9C6A27B39B1E004EB9C4 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 809B9C5F27B39B1E004EB9C4 /* .gitkeep */; };
 		809B9C6B27B39B1E004EB9C4 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6127B39B1E004EB9C4 /* Directions.swift */; };
 		809B9C6C27B39B1E004EB9C4 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6227B39B1E004EB9C4 /* AnimationType.swift */; };
@@ -127,6 +129,8 @@
 		8076F16B275ABE0500BC6EB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		807E9BCA270769E30008F523 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		807F1F252700B892000C89CB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8089A87127CA46E3006744F4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8089A87227CA46E3006744F4 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		809B9C5D27B39933004EB9C4 /* ViewAnimator-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ViewAnimator-master"; path = "../../../Downloads/ViewAnimator-master"; sourceTree = "<group>"; };
 		809B9C5F27B39B1E004EB9C4 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		809B9C6127B39B1E004EB9C4 /* Directions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
@@ -370,6 +374,8 @@
 				C02FE7F927B69DBB006E5C14 /* ShareTaxiFromViewController2.swift */,
 				C02FE7FB27B69DD7006E5C14 /* ShareTaxiToViewController2.swift */,
 				80E3784027C228880053C2FC /* TaxiTripsMatchViewController.swift */,
+				8089A87127CA46E3006744F4 /* ProfileViewController.swift */,
+				8089A87227CA46E3006744F4 /* ProfileViewController.xib */,
 				809F674027B9338000D67E56 /* Old View Controllers */,
 				80CA933827091D63009A1469 /* ProfilePageViewController.swift */,
 				804AF855279EB80F00315A82 /* TaxiResultViewController.swift */,
@@ -542,6 +548,7 @@
 				804AF862279EBCC300315A82 /* TaxiTableViewCell.xib in Resources */,
 				C01EB41127C3A78B00C75552 /* RegionCell.xib in Resources */,
 				C08B7A7427B2895D0027684E /* FirstTableViewCell.xib in Resources */,
+				8089A87427CA46E3006744F4 /* ProfileViewController.xib in Resources */,
 				C07DC92027BBF17D00C44329 /* Localizable.strings in Resources */,
 				809B9C6A27B39B1E004EB9C4 /* .gitkeep in Resources */,
 				80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */,
@@ -645,6 +652,7 @@
 				804AF856279EB80F00315A82 /* TaxiResultViewController.swift in Sources */,
 				80CA933D270B1AAA009A1469 /* DateTimePicker.swift in Sources */,
 				C01EB41027C3A78B00C75552 /* RegionCell.swift in Sources */,
+				8089A87327CA46E3006744F4 /* ProfileViewController.swift in Sources */,
 				C00640CE27CA41D7004B419E /* HomeViewController.swift in Sources */,
 				80CA9345270C3AD9009A1469 /* DateTimeViewController.swift in Sources */,
 				809B9C7027B39B1E004EB9C4 /* ViewAnimator.swift in Sources */,
