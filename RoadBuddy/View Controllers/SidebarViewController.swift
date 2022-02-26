@@ -19,8 +19,9 @@ class SidebarViewController: UIViewController
     private var menuState: MenuStates = .closed
     
     let menuVC = MenuViewController()
-    let homeVC = HomeViewController()
     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    lazy var homeVC = mainStoryboard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+    
     
     var navVC: UINavigationController?
     
@@ -33,6 +34,7 @@ class SidebarViewController: UIViewController
         super.viewDidLoad()
         view.backgroundColor = .red
         addChildVCs()
+        //navVC?.navigationBar.prefersLargeTitles = true
         
     }
     
@@ -46,6 +48,7 @@ class SidebarViewController: UIViewController
         
         //Home
         homeVC.delegate = self
+        homeVC.title = "My Trip"
         let navVC = UINavigationController(rootViewController: homeVC)
         navVC.navigationBar.prefersLargeTitles = true
         addChild(navVC)
@@ -53,6 +56,8 @@ class SidebarViewController: UIViewController
         homeVC.didMove(toParent: self)
         self.navVC = navVC
         
+        //Profile
+        //addProfile()
         
         
     }
@@ -136,7 +141,7 @@ extension SidebarViewController: MenuViewControllerDelegate
     func addProfile()
     {
         let vc = profilevc
-        vc.title = "Profile"
+        homeVC.title = "Profile"
         homeVC.addChild(vc)
         homeVC.view.addSubview(vc.view)
         vc.view.frame = view.frame
@@ -145,9 +150,10 @@ extension SidebarViewController: MenuViewControllerDelegate
     
     func resetToHome()
     {
+        homeVC.title = "My Trip"
         profilevc.view.removeFromSuperview()
         profilevc.didMove(toParent: nil)
-        homeVC.title = "My Trip"
+        //homeVC.title = "My Trip"
         
     }
 }

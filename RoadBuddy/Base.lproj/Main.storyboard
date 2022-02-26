@@ -38,7 +38,7 @@
         <!--Profile-->
         <scene sceneID="DPz-VS-XE6">
             <objects>
-                <viewController storyboardIdentifier="ProfilePageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B2c-Bq-G5Q" customClass="ProfilePageViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfilePageVC" title="Profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B2c-Bq-G5Q" customClass="ProfilePageViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fx6-ew-wc1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,7 +150,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="oth-w4-j3t"/>
+                    <navigationItem key="navigationItem" title="Profile" id="oth-w4-j3t"/>
                     <connections>
                         <outlet property="EmailLabel" destination="bqI-jP-TfQ" id="eT7-Qg-p9B"/>
                         <outlet property="NameLastnameLabel" destination="4YK-0W-0J4" id="nHf-eU-EJx"/>
@@ -621,7 +621,7 @@
             </objects>
             <point key="canvasLocation" x="-6220.289855072464" y="103.79464285714285"/>
         </scene>
-        <!--My Trip-->
+        <!--Home View Controller-->
         <scene sceneID="P2w-fo-Mig">
             <objects>
                 <viewController storyboardIdentifier="homeVC" id="G5X-gs-35C" customClass="HomeViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
@@ -631,7 +631,7 @@
                         <viewLayoutGuide key="safeArea" id="g46-g7-TUY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Trip" id="KQE-yJ-dbw"/>
+                    <navigationItem key="navigationItem" id="KQE-yJ-dbw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6A3-mC-2Ow" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
