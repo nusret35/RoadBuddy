@@ -85,8 +85,10 @@ class ChatViewController: MessagesViewController
                     let storedMessage = Message(sender: sender, messageId: createMessageId(), sentDate: myDateFormat.stringToMessageDate(date), kind: .text(messageText))
                     loadedMessages.append(storedMessage)
                 }
-                self.messages = loadedMessages
-                self.messagesCollectionView.reloadDataAndKeepOffset()
+                
+                messages = sortMessages(loadedMessages)
+                messagesCollectionView.reloadData()
+                messagesCollectionView.layoutIfNeeded()
             }
             
         }
@@ -100,6 +102,38 @@ class ChatViewController: MessagesViewController
             self.getMessages()
         }
     }*/
+    
+    func sortMessages(_ messages:[Message]) -> [Message]
+    {
+        var loadedMessages = messages
+        var sortedMessages:[Message] = []
+        while loadedMessages.isEmpty == false
+        {
+            var date1 = loadedMessages[0].sentDate
+           // print(myDateFormat.messageDateToString(date1))
+            var date1_index = 0
+            if (loadedMessages.count != 1)
+            {
+                for temp in 0...loadedMessages.count-1
+                {
+                    let date2 = loadedMessages[temp].sentDate
+                    if date2 < date1
+                    {
+                        date1_index = temp
+                        date1 = date2
+                    }
+                }
+            }
+            sortedMessages.append(loadedMessages[date1_index])
+            while date1_index != loadedMessages.count-1
+            {
+                loadedMessages[date1_index] = loadedMessages[date1_index+1]
+                date1_index+=1
+            }
+            let dummy = loadedMessages.popLast()
+        }
+        return sortedMessages
+    }
 
 }
 extension ChatViewController: InputBarAccessoryViewDelegate
@@ -113,8 +147,11 @@ extension ChatViewController: InputBarAccessoryViewDelegate
         let messageForFirebase = ["messageId":message.messageId,"sendDate":myDateFormat.returnMessageTime(),"text":text,"senderUID":message.sender.senderId,"senderUsername":message.sender.displayName] as [String : Any]
         storageManager.ref.child("Chats").child(chatId).child("messages").child(message.messageId).setValue(messageForFirebase)
         storageManager.ref.child("Chats").child(chatId).child("last_message").setValue(text)
+        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("Inbox").child(otherUserUID).child("last_message").setValue(text)
+        storageManager.ref.child("User_Inbox").child(otherUserUID).child("Inbox").child(CurrentUser.UID).child("last_message").setValue(text)
         messages.append(message)
-        messagesCollectionView.reloadData()
+        messagesCollectionView.reloadDataAndKeepOffset()
+        messagesCollectionView.layoutIfNeeded()
         messageInputBar.inputTextView.text = ""
         //storageManager.ref.child
     }

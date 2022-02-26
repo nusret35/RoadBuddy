@@ -117,6 +117,13 @@ class PostTableViewCell: UITableViewCell {
 
         }
     }
-    
+    /*
+    func handleScale(recognizer: UIPinchGestureRecognizer)
+    {
+        recognizer.view!.transform = recognizer.view!.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
+        recognizer.scale = 1
+        recognizer.view!.frame = CGRect(0, recognizer.view!.frame.minY, recognizer.view!.frame.width, recognizer.view!.frame.height)
+    }
+    */
     
 }

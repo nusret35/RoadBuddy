@@ -12,8 +12,8 @@ import FirebaseAuth
 import JGProgressHUD
 import CoreMedia
 
-class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MessageTableViewCellDelegate {
-    
+class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MessageTableViewCellDelegate
+{
     private var models = [InboxObject]()
     
     private let spinner = JGProgressHUD(style: .dark)
@@ -45,13 +45,13 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         view.addSubview(noMessagesLabel)
         setUpTableView()
         fetchConversations()
-        //getInboxData()
+        getInboxData()
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        getInboxData()
+        //getInboxData()
     }
     
     override func viewDidLayoutSubviews()
@@ -81,12 +81,13 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.identifier, for: indexPath) as! MessageTableViewCell
+        cell.cellDelegate = self
+        cell.acceptButton.tag = indexPath.row
+        cell.rejectButton.tag = indexPath.row
         cell.configure(with: self.models[indexPath.row], completion: {
-            cell.cellDelegate = self
-            cell.acceptButton.tag = indexPath.row
-            cell.rejectButton.tag = indexPath.row
             print("cell completion")
         })
+
         return cell
     }
     
@@ -95,14 +96,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.deselectRow(at: indexPath, animated: true)
         if models[indexPath.row].requestPending == false && models[indexPath.row].requestAccepted == true
         {
-            let vc = ChatViewController()
-            vc.title = models[indexPath.row].username
-            vc.otherUserUID = models[indexPath.row].uid
-            vc.otherUserUsername = models[indexPath.row].username
-            vc.chatId = chatID(indexPath.row)
-            //self.models.remove(at: indexPath.row)
-            vc.navigationItem.largeTitleDisplayMode = .never
-            navigationController?.pushViewController(vc, animated: true)
+            pushToChatView(indexPath.row)
         }
     }
     
@@ -113,58 +107,41 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func getInboxData()
     {
-        DispatchQueue.main.async
-        {
-        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("request").observe(.value) { [self] snapshot in
-            //models = [InboxObject]()
-            var object = [InboxObject]()
-            for child in snapshot.children
-            {
-                let snap = child as! DataSnapshot
-                guard let res = snap.value as? [String:Any]
-                else {return}
-                let username = res["username"] as! String
-                print(username)
-               // let message = res["message"] as! String
-               // let profilePictureURL = res["profilePictureURL"] as! String
-                let uid = res["uid"] as! String
-                let requestPending = res["requestPending"] as! Bool
-                let requestAccepted = res["requestAccepted"] as! Bool
-                let profilePictureURL = "/images/\(uid)"
-                if (requestPending == true && requestAccepted == false)
-                {
-                   let data = InboxObject(username: username, profilePictureURL: profilePictureURL, message: "Wants to join your trip", uid: uid, requestPending:  requestPending,requestAccepted:requestAccepted)
-
-                    object.append(data)
-                }
-            }
-        
-            storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("chats").observe(.value) { [self] snapshot in
+        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("Inbox").observe(.value) { [self] snapshot in
+                var objects = [InboxObject]()
                 for child in snapshot.children
                 {
                     let snap = child as! DataSnapshot
                     guard let res = snap.value as? [String:Any]
                     else {return}
                     let chatId = res["chatId"] as! String
-                    let otherUsername = res["otherUsername"] as! String
-                    let otherUserUID = res["otherUserUID"] as! String
-                    storageManager.ref.child("Chats").child(chatId).observe(.value) { snapshot2 in
-                        guard let value = snapshot2.value as? [String:Any]
-                        else {return}
-                        let lastMessage = value["last_message"] as! String
-                        let data = InboxObject(username: otherUsername, profilePictureURL: storageManager.userProfilePictureString(otherUserUID), message: lastMessage, uid: otherUserUID, requestPending: false, requestAccepted: true)
-                            object.append(data)
-                        self.models = object
-                
-                            self.tableView.reloadData()
-                        
-                        }
-                    }
-                
+                    let otherUsername = res["username"] as! String
+                    print(otherUsername)
+                    let otherUserUID = res["uid"] as! String
+                    let requestIsAccepted = res["requestIsAccepted"] as! Bool
+                    let requestIsPending = res["requestIsPending"] as! Bool
+                    let lastMessage = res["last_message"] as! String
+                    let data = InboxObject(username: otherUsername, profilePictureURL: storageManager.userProfilePictureString(otherUserUID), message: lastMessage, uid: otherUserUID, requestPending: requestIsPending, requestAccepted: requestIsAccepted)
+                    objects.append(data)
                 }
+                self.models = objects
+                self.tableView.reloadData()
             }
-        }
     }
+    
+    
+    func pushToChatView(_ indexPathRow:Int)
+    {
+        let vc = ChatViewController()
+        vc.title = models[indexPathRow].username
+        vc.otherUserUID = models[indexPathRow].uid
+        vc.otherUserUsername = models[indexPathRow].username
+        vc.chatId = chatID(indexPathRow)
+        //self.models.remove(at: indexPath.row)
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func chatID(_ row:Int) -> String
     {
         var id = String()
@@ -178,29 +155,39 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         return id
     }
+    
 
     
-    func didPressAccept(_ tag: Int) {
+    func didPressAccept(_ tag: Int)
+    {
         let chatId = chatID(tag)
-        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("request").child(self.models[tag].uid).updateChildValues(["requestAccepted":true, "requestPending":false])
+        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("Inbox").child(self.models[tag].uid).updateChildValues(["requestIsAccepted":true, "requestIsPending":false,"last_message":""])
         models[tag].requestPending = false
         models[tag].requestAccepted = true
         //Add chat to other user's inbox
-        let otherUserConversationInfo = ["chatId":chatId,"otherUserUID":CurrentUser.UID,"otherUsername":CurrentUser.Username] as [String:Any]
-        storageManager.ref.child("User_Inbox").child(self.models[tag].uid).child("chats").child(chatId).setValue(otherUserConversationInfo)
+        let otherUserInboxInfo = ["chatId":chatId,"last_message":"","requestIsAccepted":true,"requestIsPending":false,"uid":CurrentUser.UID,"username":CurrentUser.Username] as [String:Any]
+        storageManager.ref.child("User_Inbox").child(self.models[tag].uid).child("Inbox").child(CurrentUser.UID).child(chatId).setValue(otherUserInboxInfo)
         //Add chat to current user's inbox
-        let currentUserConversationInfo = ["chatId":chatId,"otherUserUID":self.models[tag].uid,"otherUsername":self.models[tag].username] as [String:Any]
-        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("chats").child(chatId).setValue(currentUserConversationInfo)
+        let currentUserInboxInfo = ["chatId":chatId,"last_message":"","requestIsAccepted":true,"requestIsPending":false,"uid":models[tag].uid,"username":models[tag].username] as [String:Any]
+        let lastMessageValueForFirebase = ["last_message":""] as [String:Any]
+        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child(models[tag].uid).setValue(currentUserInboxInfo)
+        //update chat
+        storageManager.ref.child("Chats").child(chatId).setValue(lastMessageValueForFirebase)
         tableView.reloadData()
-        print("accept button pushed")
+        pushToChatView(tag)
     }
     
-    func didPressReject(_ tag: Int) {
-        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("request").child(self.models[tag].uid).updateChildValues(["requestAccepted":false, "requestPending":false])
-        //models[tag].requestPending = false
-        //models[tag].requestAccepted = false
-        models.remove(at: tag)
-        tableView.reloadData()
+    func didPressReject(_ tag: Int)
+    {
+        let alert = UIAlertController(title: "Reject Request?", message: "Do you want to reject this request? You won't be able to undo this.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler:{ action in storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("request").child(self.models[tag].uid).updateChildValues(["requestAccepted":false, "requestPending":false])
+            self.models.remove(at: tag)
+            self.tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler:{ action in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        present(alert,animated:true)
         print("reject button pushed")
     }
 
