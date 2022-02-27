@@ -119,7 +119,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if indexPath.row == 2
         {
 
-            let vc = storyboard?.instantiateViewController(withIdentifier: "InboxVC") as! InboxViewController
+            let vc = storyboard?.instantiateViewController(withIdentifier: "ShareTaxiNC") as! UINavigationController
             navigationController?.pushViewController(vc, animated: true)
         }
     }

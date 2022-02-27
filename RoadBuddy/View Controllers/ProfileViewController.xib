@@ -45,6 +45,9 @@
                                     <color key="tintColor" name="label"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="envelope" catalog="system" imagePlacement="leading" title="Inbox" imagePadding="30"/>
+                                    <connections>
+                                        <action selector="inboxButtonAction:" destination="-1" eventType="touchUpInside" id="oAY-4d-wBm"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLw-TL-vTO">
                                     <rect key="frame" x="0.0" y="64" width="357" height="50"/>
@@ -71,7 +74,7 @@
                                     </constraints>
                                     <color key="tintColor" name="label"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="dial.min" catalog="system" imagePlacement="leading" title="Settings" imagePadding="30"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="gearshape" catalog="system" imagePlacement="leading" title="Settings" imagePadding="30"/>
                                 </button>
                             </subviews>
                         </stackView>
@@ -174,8 +177,8 @@
         <image name="circle.grid.cross" catalog="system" width="128" height="125"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="creditcard" catalog="system" width="128" height="88"/>
-        <image name="dial.min" catalog="system" width="128" height="106"/>
         <image name="envelope" catalog="system" width="128" height="93"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <namedColor name="label">

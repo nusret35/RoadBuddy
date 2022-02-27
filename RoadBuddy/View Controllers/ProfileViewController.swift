@@ -74,4 +74,14 @@ class ProfileViewController: UIViewController {
         })
     }
     
+    
+    
+    @IBAction func inboxButtonAction(_ sender: Any)
+    {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = mainStoryboard.instantiateViewController(withIdentifier: "InboxVC") as! InboxViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }

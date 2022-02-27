@@ -165,7 +165,7 @@
             </objects>
             <point key="canvasLocation" x="2000.0000000000002" y="81.696428571428569"/>
         </scene>
-        <!--RoadBuddy-->
+        <!--Choose-->
         <scene sceneID="HEn-14-RIJ">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="lS8-Hq-lzc" customClass="FirstViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
@@ -176,14 +176,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" systemColor="labelColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="RoadBuddy" id="VwS-J4-Idv">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="fbM-Iq-wJa">
-                            <color key="tintColor" systemColor="labelColor"/>
-                            <connections>
-                                <action selector="profileButtonAction:" destination="lS8-Hq-lzc" id="Jkb-ac-4IN"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Choose" id="VwS-J4-Idv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Myb-wm-dMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -644,6 +637,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title=" ">
                                     <backgroundConfiguration key="background" image="plus.circle.fill" catalog="system"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="lS8-Hq-lzc" kind="show" id="F3c-eL-z9f"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g46-g7-TUY"/>
@@ -678,6 +674,9 @@
             <point key="canvasLocation" x="-7528.985507246377" y="920.75892857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="F3c-eL-z9f"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="arrow.right.circle.fill" catalog="system" width="128" height="121"/>
@@ -1387,7 +1386,6 @@ nQAAAAAAAAAAAAAAAAAAoos
         </image>
         <image name="minus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
