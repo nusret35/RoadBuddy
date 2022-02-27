@@ -25,7 +25,9 @@ class SidebarViewController: UIViewController
     
     var navVC: UINavigationController?
     
-    lazy var profilevc = mainStoryboard.instantiateViewController(withIdentifier: "ProfilePageVC") as! ProfilePageViewController
+    lazy var profilevc = ProfileViewController(nibName:"ProfileViewController",bundle:nil)
+    
+    //lazy var profilevc = mainStoryboard.instantiateViewController(withIdentifier: "ProfilePageVC") as! ProfilePageViewController
     
     
     

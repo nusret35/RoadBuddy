@@ -22,11 +22,12 @@ class StorageManager
     
     typealias FinishedDownload = (UIImage?) -> ()
     
-    func profilePictureLoad()
+    func currentUserProfilePictureLoad(completion: @escaping (UIImage?) -> ())
     {
         let docRef = db.collection("users").document(CurrentUser.UID)
         docRef.getDocument{ snapshot, error in
-            self.storage.child("/images/\(CurrentUser.profilePictureURL)").downloadURL(completion: { (url, error) in
+            self.storage.child(CurrentUser.profilePictureURL).downloadURL(completion: { (url, error) in
+                print("profilePictureURL: " + CurrentUser.profilePictureURL)
                 guard let url = url else
                 {
                     print("profile photo url not found")
@@ -37,7 +38,7 @@ class StorageManager
                 {
                     let data = try Data(contentsOf: url)
                     let image = UIImage(data: data)
-                    self.profileImage = image!
+                    completion(image)
                 }
                 catch
                 {
@@ -77,5 +78,6 @@ class StorageManager
     {
         return "/images/\(uid)"
     }
+    
     
 }
