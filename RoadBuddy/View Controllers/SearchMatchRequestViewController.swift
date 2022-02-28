@@ -42,8 +42,10 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
         tableView.separatorStyle = .none
-        sendTheRequest()
-        matchRequest()
+        sendTheRequest(completion:{ () in
+            print("this is completion")
+            self.matchRequest()
+        })
     }
     
     override func viewDidLayoutSubviews() {
@@ -100,7 +102,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     {
         var boolReturn = false
         
-        storageManager.ref.child("User_Inbox").child(models[indexPath.row].uid).child("request").observeSingleEvent(of: .value) { [self] snapshot in
+        storageManager.ref.child("User_Inbox").child(models[indexPath.row].uid).child("Inbox").observeSingleEvent(of: .value) { [self] snapshot in
             if snapshot.exists() == true
             {
                 for child in snapshot.children
@@ -119,7 +121,10 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
             {
                 let alert = UIAlertController(title: "Booking Trip?".localized(), message: "Do you want to book this trip?".localized(), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Yes".localized(), style: .default, handler: { (action) in
-                    storageManager.ref?.child("User_Inbox").child(models[indexPath.row].uid).child("request").child(CurrentUser.UID).setValue(request)
+                    storageManager.ref?.child("Search_Requests").child(CurrentUser.UID).child(UserSearchTripRequest.time).updateChildValues(["status":"Pending"])
+                    request["chatId"] = ""
+                    request["last_message"] = ""
+                    storageManager.ref?.child("User_Inbox").child(models[indexPath.row].uid).child("Inbox").child(CurrentUser.UID).setValue(request)
                     alert.dismiss(animated: true, completion: nil)
                 }))
                 alert.addAction(UIAlertAction(title: "No".localized(), style: .default, handler: { action in
@@ -149,12 +154,15 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     
     
     //SETTING OF REQUEST ELEMENTS
-    func sendTheRequest()
+    func sendTheRequest(completion: @escaping () -> ())
     {
-        self.request  = ["requestAccepted":false,"requestPending":true,"uid":CurrentUser.UID,"username":CurrentUser.Username] as [String : Any]
-        storageManager.ref.child("Search_Requests").child(CurrentUser.UID).setValue(self.request)
+        
+        request  = ["requestAccepted":false,"requestPending":true,"uid":CurrentUser.UID,"username":CurrentUser.Username, "fromLocationLat": UserSearchTripRequest.fromCoordinateLat, "fromLocationLong":UserSearchTripRequest.fromCoordinateLong,"toLocationLat":UserSearchTripRequest.toCoordinateLat,"toLocationLong":UserSearchTripRequest.toCoordinateLong, "time": UserSearchTripRequest.time, "status": "Searching"] as [String : Any]
+        storageManager.ref.child("Search_Requests").child(CurrentUser.UID).child(UserSearchTripRequest.time).setValue(self.request)
+            print("request sent")
         searchFromLocation = CLLocation(latitude: UserSearchTripRequest.fromCoordinateLat, longitude: UserSearchTripRequest.fromCoordinateLong)
         searchToLocation = CLLocation(latitude: UserSearchTripRequest.toCoordinateLat, longitude: UserSearchTripRequest.toCoordinateLong)
+        completion()
     }
     
     
@@ -275,6 +283,23 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         }
         print(String(models.count))
         self.tableView.reloadData()
+    }
+    
+    func checkIfThereIsAnotherRequestWithSameTime(completion: @escaping (String) -> ())
+    {
+        storageManager.ref.child("Search_Requests").child(CurrentUser.UID).observeSingleEvent(of: .value, with: { snapshot in
+            for child in snapshot.children
+            {
+                let snap = child as! DataSnapshot
+                guard let res = snap.value as? [String:Any] else {return}
+                let time = res["time"] as! String
+                if time == UserSearchTripRequest.time
+                {
+                    let error = "You already have a request for the same time"
+                    completion(error)
+                }
+            }
+        })
     }
 
 }

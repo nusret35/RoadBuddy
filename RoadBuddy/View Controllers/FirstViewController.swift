@@ -120,7 +120,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         {
 
             let vc = storyboard?.instantiateViewController(withIdentifier: "ShareTaxiNC") as! UINavigationController
-            navigationController?.pushViewController(vc, animated: true)
+            present(vc,animated: true)
         }
     }
     

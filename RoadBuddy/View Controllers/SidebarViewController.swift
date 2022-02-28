@@ -52,6 +52,7 @@ class SidebarViewController: UIViewController
         homeVC.delegate = self
         homeVC.title = "My Trip"
         let navVC = UINavigationController(rootViewController: homeVC)
+        navVC.navigationBar.tintColor = .label
         navVC.navigationBar.prefersLargeTitles = true
         addChild(navVC)
         view.addSubview(navVC.view)
@@ -129,8 +130,6 @@ extension SidebarViewController: MenuViewControllerDelegate
             break
         case .shareApp:
             break
-        case .settings:
-            break
         }
         
             
@@ -143,6 +142,7 @@ extension SidebarViewController: MenuViewControllerDelegate
     func addProfile()
     {
         let vc = profilevc
+        homeVC.scrollToTop()
         homeVC.title = "Profile"
         homeVC.addChild(vc)
         homeVC.view.addSubview(vc.view)

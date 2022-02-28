@@ -42,6 +42,7 @@ class PostTableViewCell: UITableViewCell {
         groundView.layer.shadowOffset = .zero
         groundView.layer.shadowRadius = 5
         groundView.layer.shouldRasterize = true
+        groundView.layer.rasterizationScale = UIScreen.main.scale
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

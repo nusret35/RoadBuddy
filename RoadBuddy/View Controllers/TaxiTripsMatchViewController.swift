@@ -152,8 +152,8 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
                        "fromLocationLong":UserTaxiTripRequest.fromCoordinateLong,
                        "to":UserTaxiTripRequest.toLocationName,
                        "toLocationLat":UserTaxiTripRequest.toCoordinateLat,
-                       "toLocationLong":UserTaxiTripRequest.toCoordinateLong] as [String:Any]
-        storageManager.ref.child("Taxi_Requests").child(CurrentUser.UID).setValue(request)
+                        "toLocationLong":UserTaxiTripRequest.toCoordinateLong, "status": "Searching"] as [String:Any]
+        storageManager.ref.child("Taxi_Requests").child(CurrentUser.UID).child(myDateFormat.returnMessageTime() + "-" + CurrentUser.Username).setValue(request)
     }
    
     func matchRequest()

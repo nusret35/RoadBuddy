@@ -20,7 +20,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="OMC-ST-YcW">
-            <rect key="frame" x="0.0" y="0.0" width="470" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbd-NR-SA0">
@@ -34,47 +34,58 @@
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="hQU-WF-Uz8">
-                            <rect key="frame" x="15" y="288" width="357" height="242"/>
+                            <rect key="frame" x="15" y="288" width="370" height="242"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKo-II-jDr">
-                                    <rect key="frame" x="0.0" y="0.0" width="357" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="370" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="934-bA-6oE"/>
-                                        <constraint firstAttribute="width" constant="357" id="wqW-k8-uhj"/>
+                                        <constraint firstAttribute="width" constant="370" id="RqD-wl-La0"/>
                                     </constraints>
                                     <color key="tintColor" name="label"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="envelope" catalog="system" imagePlacement="leading" title="Inbox" imagePadding="30"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="envelope" catalog="system" imagePlacement="leading" title="Inbox" imagePadding="30">
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    </buttonConfiguration>
                                     <connections>
                                         <action selector="inboxButtonAction:" destination="-1" eventType="touchUpInside" id="oAY-4d-wBm"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLw-TL-vTO">
-                                    <rect key="frame" x="0.0" y="64" width="357" height="50"/>
+                                    <rect key="frame" x="0.0" y="64" width="370" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="KIp-wx-7Tm"/>
                                     </constraints>
                                     <color key="tintColor" name="label"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system" imagePlacement="leading" title="Legal" imagePadding="30"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="info.circle" catalog="system" imagePlacement="leading" title="Legal" imagePadding="30">
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    </buttonConfiguration>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXz-pc-M6E">
-                                    <rect key="frame" x="0.0" y="128" width="357" height="50"/>
+                                    <rect key="frame" x="0.0" y="128" width="370" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="vBj-gI-pMO"/>
                                     </constraints>
                                     <color key="tintColor" name="label"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="pencil.circle" catalog="system" imagePlacement="leading" title="Edit Profile" imagePadding="30" titleAlignment="leading"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="pencil.circle" catalog="system" imagePlacement="leading" title="Edit Profile" imagePadding="30" titleAlignment="leading">
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    </buttonConfiguration>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9R-pL-Wjv">
-                                    <rect key="frame" x="0.0" y="192" width="357" height="50"/>
+                                    <rect key="frame" x="0.0" y="192" width="370" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="97a-Z8-S7f"/>
                                     </constraints>
                                     <color key="tintColor" name="label"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="gearshape" catalog="system" imagePlacement="leading" title="Settings" imagePadding="30"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="gearshape" catalog="system" imagePlacement="leading" title="Settings" imagePadding="30">
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="settingsButtonAction:" destination="-1" eventType="touchUpInside" id="Tfv-34-tWy"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -93,6 +104,7 @@
                                         <backgroundConfiguration key="background">
                                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         </backgroundConfiguration>
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
                                     </buttonConfiguration>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWw-O2-mCm">
@@ -107,6 +119,7 @@
                                         <backgroundConfiguration key="background">
                                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         </backgroundConfiguration>
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
                                     </buttonConfiguration>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lic-CX-OkK">
@@ -120,6 +133,7 @@
                                         <backgroundConfiguration key="background">
                                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         </backgroundConfiguration>
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
                                     </buttonConfiguration>
                                 </button>
                             </subviews>
@@ -184,6 +198,9 @@
         <namedColor name="label">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

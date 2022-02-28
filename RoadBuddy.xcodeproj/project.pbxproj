@@ -55,6 +55,10 @@
 		807F1F262700B892000C89CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F1F252700B892000C89CB /* Constants.swift */; };
 		8089A87327CA46E3006744F4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089A87127CA46E3006744F4 /* ProfileViewController.swift */; };
 		8089A87427CA46E3006744F4 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8089A87227CA46E3006744F4 /* ProfileViewController.xib */; };
+		8089A87B27CBBFF8006744F4 /* MyTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089A87927CBBFF8006744F4 /* MyTripTableViewCell.swift */; };
+		8089A87C27CBBFF8006744F4 /* MyTripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8089A87A27CBBFF8006744F4 /* MyTripTableViewCell.xib */; };
+		8089A87F27CD2A5E006744F4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089A87D27CD2A5D006744F4 /* SettingsViewController.swift */; };
+		8089A88027CD2A5E006744F4 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8089A87E27CD2A5D006744F4 /* SettingsViewController.xib */; };
 		809B9C6A27B39B1E004EB9C4 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 809B9C5F27B39B1E004EB9C4 /* .gitkeep */; };
 		809B9C6B27B39B1E004EB9C4 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6127B39B1E004EB9C4 /* Directions.swift */; };
 		809B9C6C27B39B1E004EB9C4 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B9C6227B39B1E004EB9C4 /* AnimationType.swift */; };
@@ -131,6 +135,10 @@
 		807F1F252700B892000C89CB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8089A87127CA46E3006744F4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8089A87227CA46E3006744F4 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		8089A87927CBBFF8006744F4 /* MyTripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTripTableViewCell.swift; sourceTree = "<group>"; };
+		8089A87A27CBBFF8006744F4 /* MyTripTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTripTableViewCell.xib; sourceTree = "<group>"; };
+		8089A87D27CD2A5D006744F4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8089A87E27CD2A5D006744F4 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		809B9C5D27B39933004EB9C4 /* ViewAnimator-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "ViewAnimator-master"; path = "../../../Downloads/ViewAnimator-master"; sourceTree = "<group>"; };
 		809B9C5F27B39B1E004EB9C4 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		809B9C6127B39B1E004EB9C4 /* Directions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
@@ -254,6 +262,8 @@
 				809B9C7227B3A395004EB9C4 /* Requests.swift */,
 				80DDEBFB277347E10093BB3F /* PostTableViewCell.swift */,
 				80DDEBFC277347E10093BB3F /* PostTableViewCell.xib */,
+				8089A87927CBBFF8006744F4 /* MyTripTableViewCell.swift */,
+				8089A87A27CBBFF8006744F4 /* MyTripTableViewCell.xib */,
 				804AF85F279EBCC200315A82 /* TaxiTableViewCell.swift */,
 				804AF860279EBCC200315A82 /* TaxiTableViewCell.xib */,
 				8075BAC427A3F4B70064CCB7 /* MessageTableViewCell.swift */,
@@ -376,6 +386,8 @@
 				80E3784027C228880053C2FC /* TaxiTripsMatchViewController.swift */,
 				8089A87127CA46E3006744F4 /* ProfileViewController.swift */,
 				8089A87227CA46E3006744F4 /* ProfileViewController.xib */,
+				8089A87D27CD2A5D006744F4 /* SettingsViewController.swift */,
+				8089A87E27CD2A5D006744F4 /* SettingsViewController.xib */,
 				809F674027B9338000D67E56 /* Old View Controllers */,
 				80CA933827091D63009A1469 /* ProfilePageViewController.swift */,
 				804AF855279EB80F00315A82 /* TaxiResultViewController.swift */,
@@ -549,10 +561,12 @@
 				C01EB41127C3A78B00C75552 /* RegionCell.xib in Resources */,
 				C08B7A7427B2895D0027684E /* FirstTableViewCell.xib in Resources */,
 				8089A87427CA46E3006744F4 /* ProfileViewController.xib in Resources */,
+				8089A88027CD2A5E006744F4 /* SettingsViewController.xib in Resources */,
 				C07DC92027BBF17D00C44329 /* Localizable.strings in Resources */,
 				809B9C6A27B39B1E004EB9C4 /* .gitkeep in Resources */,
 				80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */,
 				C01EB41227C3D81800C75552 /* Registration.storyboard in Resources */,
+				8089A87C27CBBFF8006744F4 /* MyTripTableViewCell.xib in Resources */,
 				80A8933727A8014A00CE83AB /* Main.storyboard in Resources */,
 				80AE818C27B45240007BBC2B /* ProfileHeaderTableViewCell.xib in Resources */,
 				8076F16C275ABE0500BC6EB2 /* GoogleService-Info.plist in Resources */,
@@ -633,9 +647,11 @@
 				80AE818B27B45240007BBC2B /* ProfileHeaderTableViewCell.swift in Sources */,
 				80AE818E27B45928007BBC2B /* StorageManager.swift in Sources */,
 				C032963827BEAF1400C21736 /* NamesViewController.swift in Sources */,
+				8089A87F27CD2A5E006744F4 /* SettingsViewController.swift in Sources */,
 				804AF861279EBCC200315A82 /* TaxiTableViewCell.swift in Sources */,
 				809F674427B949C100D67E56 /* SearchMatchRequestViewController.swift in Sources */,
 				80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */,
+				8089A87B27CBBFF8006744F4 /* MyTripTableViewCell.swift in Sources */,
 				C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */,
 				809B9C6D27B39B1E004EB9C4 /* UITableView + ViewAnimator.swift in Sources */,
 				C00640D227CA428D004B419E /* SidebarViewController.swift in Sources */,

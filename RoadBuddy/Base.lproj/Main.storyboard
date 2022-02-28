@@ -9,22 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Inbox-->
-        <scene sceneID="yJW-Lq-PK3">
-            <objects>
-                <viewController storyboardIdentifier="InboxVC" id="2cD-0u-Jox" customClass="InboxViewController" customModule="RoadBuddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="whO-Wb-p7K">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="4xj-Tp-Q3d"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Inbox" id="KDD-zS-CVN"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FFC-oo-mP0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2279.7101449275365" y="1005.8035714285713"/>
-        </scene>
         <!--Search From View Controller-->
         <scene sceneID="6c2-XX-aS4">
             <objects>
@@ -622,9 +606,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nZR-QI-vVz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nZR-QI-vVz">
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujW-KP-K4X">
@@ -635,7 +618,7 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemTealColor"/>
                                 <buttonConfiguration key="configuration" style="plain" title=" ">
-                                    <backgroundConfiguration key="background" image="plus.circle.fill" catalog="system"/>
+                                    <backgroundConfiguration key="background" image="plus"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="lS8-Hq-lzc" kind="show" id="F3c-eL-z9f"/>
@@ -645,11 +628,18 @@
                         <viewLayoutGuide key="safeArea" id="g46-g7-TUY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="nZR-QI-vVz" firstAttribute="top" secondItem="g46-g7-TUY" secondAttribute="top" id="bBf-jX-NWZ"/>
+                            <constraint firstItem="nZR-QI-vVz" firstAttribute="trailing" secondItem="g46-g7-TUY" secondAttribute="trailing" id="d1c-Vm-och"/>
+                            <constraint firstAttribute="bottom" secondItem="nZR-QI-vVz" secondAttribute="bottom" id="dsh-3E-lad"/>
                             <constraint firstItem="ujW-KP-K4X" firstAttribute="bottom" secondItem="g46-g7-TUY" secondAttribute="bottom" id="kmq-yP-PKV"/>
                             <constraint firstItem="ujW-KP-K4X" firstAttribute="centerX" secondItem="tr4-YQ-5Oc" secondAttribute="centerX" id="vXg-0o-DmD"/>
+                            <constraint firstItem="nZR-QI-vVz" firstAttribute="leading" secondItem="g46-g7-TUY" secondAttribute="leading" id="xQe-3Y-FyB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KQE-yJ-dbw"/>
+                    <connections>
+                        <outlet property="tableView" destination="nZR-QI-vVz" id="I9G-vO-qFU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6A3-mC-2Ow" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1386,6 +1376,7 @@ nQAAAAAAAAAAAAAAAAAAoos
         </image>
         <image name="minus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="plus" width="512" height="512"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

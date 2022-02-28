@@ -47,7 +47,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         case profile = "Profile"
         case appRating = "App Rating"
         case shareApp = "Share App"
-        case settings = "settings"
         
         var imageName: String
         {
@@ -62,8 +61,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
                 return "star"
             case .shareApp:
                 return "message"
-            case .settings:
-                return "gear"
             }
         }
         

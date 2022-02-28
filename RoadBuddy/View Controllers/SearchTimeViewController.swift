@@ -5,6 +5,7 @@
 //  Created by Nusret Kızılaslan on 11.02.2022.
 //
 import UIKit
+import FirebaseDatabase
 
 class SearchTimeViewController: UIViewController{
     
@@ -39,9 +40,22 @@ class SearchTimeViewController: UIViewController{
          }
         else if settingForSearch == true
         {
-            vc.settingForPost = false
-            vc.settingForSearch = true
-            pushToPassengerVC(vc)
+            checkIfThereIsAnotherRequestWithSameTime { error in
+                if error == nil
+                {
+                    vc.settingForPost = false
+                    vc.settingForSearch = true
+                    self.pushToPassengerVC(vc)
+                }
+                else
+                {
+                    let alert = UIAlertController(title: "Choose another time", message: "You already have a request for the selected time.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { action in
+                        alert.dismiss(animated: true, completion: nil)
+                    }))
+                    self.present(alert,animated:true)
+                }
+            }
         }
         else if settingForTaxi == true
         {
@@ -84,5 +98,24 @@ class SearchTimeViewController: UIViewController{
         vc.title = "How many people are you with?".localized()
         vc.navigationItem.backBarButtonItem = Buttons.defaultBackButton
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func checkIfThereIsAnotherRequestWithSameTime(completion: @escaping (String?) -> ())
+    {
+        var error:String? = nil
+        storageManager.ref.child("Search_Requests").child(CurrentUser.UID).observeSingleEvent(of: .value, with: { snapshot in
+            for child in snapshot.children
+            {
+                let snap = child as! DataSnapshot
+                guard let res = snap.value as? [String:Any] else {return}
+                let time = res["time"] as! String
+                if time == UserSearchTripRequest.time
+                {
+                    error = "You already have a request for the same time"
+                }
+            }
+            completion(error)
+        })
     }
 }

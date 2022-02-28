@@ -114,7 +114,6 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     let snap = child as! DataSnapshot
                     guard let res = snap.value as? [String:Any]
                     else {return}
-                    let chatId = res["chatId"] as! String
                     let otherUsername = res["username"] as! String
                     print(otherUsername)
                     let otherUserUID = res["uid"] as! String
@@ -161,7 +160,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func didPressAccept(_ tag: Int)
     {
         let chatId = chatID(tag)
-        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("Inbox").child(self.models[tag].uid).updateChildValues(["requestIsAccepted":true, "requestIsPending":false,"last_message":""])
+        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("Inbox").child(self.models[tag].uid).updateChildValues(["requestIsAccepted":true, "requestIsPending":false,"chatId":chatId])
         models[tag].requestPending = false
         models[tag].requestAccepted = true
         //Add chat to other user's inbox
@@ -180,7 +179,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func didPressReject(_ tag: Int)
     {
         let alert = UIAlertController(title: "Reject Request?", message: "Do you want to reject this request? You won't be able to undo this.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler:{ action in storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("request").child(self.models[tag].uid).updateChildValues(["requestAccepted":false, "requestPending":false])
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler:{ action in storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("Inbox").child(self.models[tag].uid).updateChildValues(["requestAccepted":false, "requestPending":false])
             self.models.remove(at: tag)
             self.tableView.reloadData()
         }))
