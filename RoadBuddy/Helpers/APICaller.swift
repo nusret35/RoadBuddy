@@ -136,6 +136,14 @@ class CurrentUserData
         print("Schoolname: " + self.SchoolName)
         }
     }
+    /*
+    func homeFetchData(completion: @escaping () -> ())
+    {
+        DispatchQueue.main.async {
+            self.fetchData()
+        }
+        completion()
+    }*/
     
 }
 

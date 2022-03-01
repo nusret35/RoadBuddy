@@ -58,7 +58,6 @@ class MyTripTableViewCell: UITableViewCell {
     func configure(with model:Request)
     {
         timeLabel.text = myDateFormat.takeTimeFromStringDate(model.date)
-        passengerLabel.text = String(model.passengerNumber)
         fromLabel.text = model.from
         toLabel.text = model.to
         statusLabel.text = model.status
@@ -81,11 +80,13 @@ class MyTripTableViewCell: UITableViewCell {
         if model.type == "Trip Request"
         {
             typeLabel.text = "Trip Request"
+            passengerLabel.text = String(model.passengerNumber)
             typeImage.image = UIImage(systemName: "figure.wave")
         }
         else if model.type == "Trip Post"
         {
             typeLabel.text = "Trip Post"
+            passengerLabel.text = String(model.passengerNumber)
             typeImage.image = UIImage(systemName: "car.fill")
         }
         else if model.type == "Taxi Share"

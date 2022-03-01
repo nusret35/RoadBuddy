@@ -35,20 +35,40 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var models = [[Request]]()
     
+    //let lock = NSLock()
+    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        CurrentUser.fetchData()
         view.backgroundColor = .systemBackground
         navigationItem.largeTitleDisplayMode = .always
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .done, target: self, action: #selector(didTapMenuButton))
+        DispatchQueue.main.async
+        {
+            CurrentUser.fetchData()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            //self.lock.lock()
+            print("second step")
+            storageManager.retrieveAllRequestsOfUser(completion: { requests in
+                self.models = requests
+                print("count: " + String(self.models.count))
+                self.setUpTableView()
+                //self.lock.unlock()
+            })
+        }
+
+        /*
         let model1 = [defaultRequest]
         let model2 = [defaultRequest2, defaultRequest3]
-        models = [model1,model2]
-        setUpTableView()
+         */
+        //models = [model1,model2]
         
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .done, target: self, action: #selector(didTapMenuButton))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     @objc func didTapMenuButton()
