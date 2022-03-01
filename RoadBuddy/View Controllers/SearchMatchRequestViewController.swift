@@ -43,7 +43,6 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         view.addSubview(tableView)
         tableView.separatorStyle = .none
         sendTheRequest(completion:{ () in
-            print("this is completion")
             self.matchRequest()
         })
     }

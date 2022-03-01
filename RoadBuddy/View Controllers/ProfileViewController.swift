@@ -22,7 +22,9 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        CurrentUser.fetchData()
+        CurrentUser.fetchData {
+            
+        }
         setUpElements()
         
     }

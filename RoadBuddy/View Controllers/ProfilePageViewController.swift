@@ -31,7 +31,9 @@ class ProfilePageViewController: UIViewController, UINavigationControllerDelegat
         super.viewDidLoad()
         print(CurrentUser.Fullname)
       //
-        CurrentUser.fetchData()
+        CurrentUser.fetchData {
+        }
+    
         self.NameLastnameLabel.isSkeletonable = true
         self.UniversityNameLabel.isSkeletonable = true
         self.UsernameLabel.isSkeletonable = true

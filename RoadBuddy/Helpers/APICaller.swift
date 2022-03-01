@@ -84,66 +84,66 @@ class CurrentUserData
     
     var profilePictureURL = ""
     
-    func fetchData()
+    func fetchData(completion:@escaping () -> ())
     {
-        guard let userID = Auth.auth().currentUser?.uid else {
-            print("User not found")
-            return
-        }
-        let docRef = self.db.collection("users").document(userID)
-    docRef.getDocument{ snapshot, error in
-        guard let data = snapshot?.data(), error == nil else {
-            return
-        }
-        guard let firstname = data["firstname"] as? String else{
-            return
-        }
-        guard let lastname = data["lastname"] as? String else{
-            return
-        }
-        
-        guard let uid =  data["uid"] as? String else{
-            print("uid not found")
-            return
-        }
-        
-        guard let username = data["username"] as? String else{
-            print("username not found")
-            return
-        }
-        guard let email = data["email"] as? String else{
-            return
-        }
-        guard let phoneNumber = data["phoneNumber"] as? String else{
-            return
-        }
-        guard let schoolName = data["schoolName"] as? String else{
-            return
-        }
-        guard let ppIsSet = data["profilePictureIsSet"] as? Bool else{
-            return
-        }
-        
-        self.Fullname = firstname + " " + lastname
-        self.Username = "@" + username
-        self.UID = userID
-        self.Email = email
-        self.PhoneNumber = phoneNumber
-        self.SchoolName = schoolName
-        self.profilePictureIsSet = ppIsSet
-        self.profilePictureURL = "/images/\(uid)"
-        print("Fullname: " + self.Fullname)
-        print("Schoolname: " + self.SchoolName)
+            guard let userID = Auth.auth().currentUser?.uid else {
+                print("User not found")
+                return
+            }
+            let docRef = self.db.collection("users").document(userID)
+        docRef.getDocument{ snapshot, error in
+            guard let data = snapshot?.data(), error == nil else {
+                return
+            }
+            guard let firstname = data["firstname"] as? String else{
+                return
+            }
+            guard let lastname = data["lastname"] as? String else{
+                return
+            }
+            
+            guard let uid =  data["uid"] as? String else{
+                print("uid not found")
+                return
+            }
+            
+            guard let username = data["username"] as? String else{
+                print("username not found")
+                return
+            }
+            guard let email = data["email"] as? String else{
+                return
+            }
+            guard let phoneNumber = data["phoneNumber"] as? String else{
+                return
+            }
+            guard let schoolName = data["schoolName"] as? String else{
+                return
+            }
+            guard let ppIsSet = data["profilePictureIsSet"] as? Bool else{
+                return
+            }
+            
+            self.Fullname = firstname + " " + lastname
+            self.Username = "@" + username
+            self.UID = userID
+            self.Email = email
+            self.PhoneNumber = phoneNumber
+            self.SchoolName = schoolName
+            self.profilePictureIsSet = ppIsSet
+            self.profilePictureURL = "/images/\(uid)"
+            print("Fullname: " + self.Fullname)
+            print("Schoolname: " + self.SchoolName)
+            completion()
+            }
+    }
+    
+    func homeFetchData(myGroup: DispatchGroup)
+    {
+        fetchData {
+            myGroup.leave()
         }
     }
-    /*
-    func homeFetchData(completion: @escaping () -> ())
-    {
-        DispatchQueue.main.async {
-            self.fetchData()
-        }
-        completion()
-    }*/
     
 }
 

@@ -35,36 +35,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var models = [[Request]]()
     
-    //let lock = NSLock()
-    
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationItem.largeTitleDisplayMode = .always
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .done, target: self, action: #selector(didTapMenuButton))
-        DispatchQueue.main.async
-        {
-            CurrentUser.fetchData()
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            //self.lock.lock()
-            print("second step")
-            storageManager.retrieveAllRequestsOfUser(completion: { requests in
-                self.models = requests
-                print("count: " + String(self.models.count))
-                self.setUpTableView()
-                //self.lock.unlock()
-            })
-        }
 
-        /*
-        let model1 = [defaultRequest]
-        let model2 = [defaultRequest2, defaultRequest3]
-         */
-        //models = [model1,model2]
-        
+        setUpElements()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -80,21 +58,44 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return models.count
     }
     
+    func setUpElements()
+    {
+        setUpTableView()
+        let group = DispatchGroup()
+        //let queue = DispatchQueue(label: "someQueue")
+        group.enter()
+        CurrentUser.homeFetchData(myGroup: group)
+        group.notify(queue: .main, execute:
+        {
+            print("data has fetched")
+            storageManager.retrieveAllRequestsOfUser(group: group) { requests in
+                self.models = requests
+                print(String(self.models[0].count))
+                self.tableView.reloadData()
+            }
+        })
+        
+    }
+    
     func setUpTableView()
     {
         tableView.register(MyTripTableViewCell.nib(), forCellReuseIdentifier: MyTripTableViewCell.identifier)
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.reloadData()
         tableView.separatorStyle = .none
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 200, right: 0)
         tableView.contentInset = insets
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return models[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: MyTripTableViewCell.identifier, for: indexPath) as! MyTripTableViewCell
         cell.configure(with: self.models[indexPath.section][indexPath.row])
         cell.selectionStyle = .none
@@ -123,8 +124,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         */
+        print(String(models[section].count))
         return myDateFormat.takeDayFromStringDate(models[section][0].date)
     }
+     
     
     func scrollToTop()
     {
