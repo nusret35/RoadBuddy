@@ -117,8 +117,8 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     let otherUsername = res["username"] as! String
                     print(otherUsername)
                     let otherUserUID = res["uid"] as! String
-                    let requestIsAccepted = res["requestIsAccepted"] as! Bool
-                    let requestIsPending = res["requestIsPending"] as! Bool
+                    let requestIsAccepted = res["requestAccepted"] as! Bool
+                    let requestIsPending = res["requestPending"] as! Bool
                     let lastMessage = res["last_message"] as! String
                     let data = InboxObject(username: otherUsername, profilePictureURL: storageManager.userProfilePictureString(otherUserUID), message: lastMessage, uid: otherUserUID, requestPending: requestIsPending, requestAccepted: requestIsAccepted)
                     objects.append(data)

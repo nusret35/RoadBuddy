@@ -126,7 +126,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
                 alert.addAction(UIAlertAction(title: "Yes".localized(), style: .default, handler: { (action) in
                     storageManager.ref?.child("Search_Requests").child(CurrentUser.UID).child(UserSearchTripRequest.time).updateChildValues(["status":"Pending"])
                     request["chatId"] = ""
-                    request["last_message"] = ""
+                    request["last_message"] = "Wants to join your trip"
                     storageManager.ref?.child("User_Inbox").child(models[indexPath.row].uid).child("Inbox").child(CurrentUser.UID).setValue(request)
                     alert.dismiss(animated: true, completion: nil)
                 }))

@@ -12,24 +12,20 @@ class MyTripTableViewCell: UITableViewCell {
     
     @IBOutlet weak var timeLabel: UILabel!
     
-    @IBOutlet weak var passengerSymbol: UIImageView!
+    @IBOutlet weak var passengerButton: UIButton!
     
-    @IBOutlet weak var passengerLabel: UILabel!
     
     @IBOutlet weak var fromLabel: UILabel!
     
     @IBOutlet weak var toLabel: UILabel!
     
-    @IBOutlet weak var statusLabel: UILabel!
-    
-    @IBOutlet weak var statusImageView: UIImageView!
-    
     @IBOutlet weak var groundView: UIView!
     
     @IBOutlet weak var typeLabel: UILabel!
     
-    @IBOutlet weak var typeImage: UIImageView!
+    @IBOutlet weak var statusImageView: UIImageView!
     
+    @IBOutlet weak var statusLabel: UILabel!
     
     static let identifier = "MyTripTableViewCell"
     
@@ -42,6 +38,7 @@ class MyTripTableViewCell: UITableViewCell {
     override func awakeFromNib()
     {
         super.awakeFromNib()
+        //typeImage.isHidden = true
         giveShadowToGroundView()
     }
     
@@ -71,7 +68,8 @@ class MyTripTableViewCell: UITableViewCell {
         }
         else if model.status == "Pending"
         {
-            statusImageView.image = UIImage(named:"status-icon-yellow")
+            statusImageView.image = UIImage(named: "status-icon-yellow")
+
         }
         else if model.status == "Rejected"
         {
@@ -80,19 +78,20 @@ class MyTripTableViewCell: UITableViewCell {
         if model.type == "Trip Request"
         {
             typeLabel.text = "Trip Request"
-            passengerLabel.text = String(model.passengerNumber)
-            typeImage.image = UIImage(systemName: "figure.wave")
+            passengerButton.setTitle(String(model.passengerNumber), for: .normal)
+            //typeImage.image = UIImage(systemName: "figure.wave")
         }
         else if model.type == "Trip Post"
         {
             typeLabel.text = "Trip Post"
-            passengerLabel.text = String(model.passengerNumber)
-            typeImage.image = UIImage(systemName: "car.fill")
+            passengerButton.setTitle(String(model.passengerNumber), for: .normal)
+            //typeImage.image = UIImage(systemName: "car.fill")
         }
         else if model.type == "Taxi Share"
         {
             typeLabel.text = "Taxi Share"
-            typeImage.image = UIImage(named: "type-icon-taxi")
+            //typeImage.image = UIImage(named: "type-icon-taxi")
+            passengerButton.isHidden = true
         }
     }
     
