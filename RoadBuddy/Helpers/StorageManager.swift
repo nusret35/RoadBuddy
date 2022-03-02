@@ -9,6 +9,66 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import FirebaseDatabase
+import CoreLocation
+
+struct Trip
+{
+    var name:String
+    
+    var from:String
+    
+    var to:String
+    
+    var price:Int
+    
+    var time:String
+    
+    var numberOfPassenger:Int
+    
+    var fromLat:Double
+    
+    var fromLong:Double
+    
+    var toLat:Double
+    
+    var toLong:Double
+    
+    var uid:String
+    
+    var dataFromLocation:CLLocation
+    
+    var dataToLocation:CLLocation
+    
+    var status:String
+}
+
+struct TaxiTrip
+{
+    var username:String
+    
+    var from:String
+    
+    var to:String
+    
+    var time:String
+    
+    var fromLat:Double
+    
+    var fromLong:Double
+    
+    var toLat:Double
+    
+    var toLong:Double
+    
+    var uid:String
+    
+    var dataFromLocation:CLLocation
+    
+    var dataToLocation:CLLocation
+    
+    var status:String
+}
+
 
 class StorageManager
 {
@@ -22,6 +82,8 @@ class StorageManager
     
     typealias FinishedDownload = (UIImage?) -> ()
     
+    
+    //******************* General functions *******************************
     func currentUserProfilePictureLoad(completion: @escaping (UIImage?) -> ())
     {
         let docRef = db.collection("users").document(CurrentUser.UID)
@@ -79,7 +141,9 @@ class StorageManager
         return "/images/\(uid)"
     }
     
-    func retrieveAllRequestsOfUser(group:DispatchGroup,completion: @escaping ([[Request]]) -> ())
+    //******************** Home View functions ************************
+    
+    func retrieveAllRequestsOfUser(completion: @escaping ([[Request]]) -> ())
     {
         //First retrieve all request
             self.retrieveSearchRequests { searchRequests in
@@ -249,5 +313,134 @@ class StorageManager
         }
     }
     
+    //********************* Time View functions ***********************
     
+    func checkIfThereIsAnotherRequestWithSameTime(completion: @escaping (String?) -> ())
+    {
+        var error:String? = nil
+        ref.child("Search_Requests").child(CurrentUser.UID).observeSingleEvent(of: .value, with: { snapshot in
+            for child in snapshot.children
+            {
+                let snap = child as! DataSnapshot
+                guard let res = snap.value as? [String:Any] else {return}
+                let time = res["time"] as! String
+                if time == UserSearchTripRequest.time
+                {
+                    error = "You already have a request for the same time"
+                }
+            }
+            completion(error)
+        })
+    }
+    
+    
+    func checkIfThereIsAnotherTaxiRequestWithSameTime(completion: @escaping (String?) -> ())
+    {
+        var error:String? = nil
+        ref.child("Taxi_Requests").child(CurrentUser.UID).observeSingleEvent(of: .value, with: { snapshot in
+            for child in snapshot.children
+            {
+                let snap = child as! DataSnapshot
+                guard let res = snap.value as? [String:Any] else {return}
+                let time = res["time"] as! String
+                if time == UserTaxiTripRequest.time
+                {
+                    error = "You already have a request for the same time"
+                }
+            }
+            completion(error)
+        })
+    }
+    
+    //***************** SearchMatchRequest functions ********************
+    
+    func sendingSearchRequestToFirebase(request:[String:Any])
+    {
+        ref.child("Search_Requests").child(CurrentUser.UID).child(UserSearchTripRequest.time).setValue(request)
+        print("request sent")
+    }
+    
+    func findTripsForTheRequest(group:DispatchGroup, completion: @escaping (Trip) -> ())
+    {
+        db.collection("users").document(CurrentUser.UID).updateData(["lookingForATrip":true])
+        ref.child("Trips")
+            .observeSingleEvent(of: .value, with: { (snapshot)  in
+                if snapshot.exists() == true
+                {
+                    for date in snapshot.children
+                    {
+                        let trip = date as! DataSnapshot
+                        for child in trip.children
+                        {
+                            print("snapshot does exist")
+                            let snap = child as! DataSnapshot
+                            guard let res = snap.value as? [String:Any] else {return}
+                            guard let name = res["fullname"] as? String
+                            else
+                            {
+                                print("fullname not found")
+                                return
+                            }
+                            print(name)
+                            let from = res["from"] as! String
+                            let to = res["to"] as! String
+                            let price = res["price"] as! Int
+                            let time = res["time"] as! String
+                            let numberOfPassengers = res["passengerNumber"] as! Int
+                            let fromLat = res["fromCoordinateLatitude"] as! Double
+                            let fromLong = res["fromCoordinateLongitude"] as! Double
+                            let toLat = res["toCoordinateLatitude"] as! Double
+                            let toLong = res["toCoordinateLongitude"] as! Double
+                            let dUID = res["uid"] as! String
+                            let status = res["status"] as! String
+                            let dataFromLocation = CLLocation(latitude: fromLat, longitude:fromLong)
+                            let dataToLocation = CLLocation(latitude:toLat, longitude:toLong)
+                            let dataTrip = Trip(name: name, from: from, to: to, price: price, time: time, numberOfPassenger: numberOfPassengers, fromLat: fromLat, fromLong: fromLong, toLat: toLat, toLong: toLong, uid: dUID, dataFromLocation: dataFromLocation, dataToLocation: dataToLocation, status:status)
+                            completion(dataTrip)
+                        }
+                    }
+                }
+                group.leave()
+            })
+    }
+    //************* TaxiTripsMatchViewController  ******************
+    func sendingTaxiRequestToFirebase(request:[String:Any])
+    {
+        ref.child("Taxi_Requests").child(CurrentUser.UID).child(UserTaxiTripRequest.time).setValue(request)
+        print("request sent")
+    }
+    
+    func findTripsForTaxiRequest(group:DispatchGroup, completion: @escaping (TaxiTrip) -> ())
+    {
+        db.collection("users").document(CurrentUser.UID).updateData(["TaxiTripIsSet":true])
+        ref.child("Taxi_Requests")
+            .observeSingleEvent(of: .value, with: { (snapshot)  in
+                for date in snapshot.children
+                {
+                    let request = date as! DataSnapshot
+                    for child in request.children
+                    {
+                        let snap = child as! DataSnapshot
+                        guard let res = snap.value as? [String:Any] else {return}
+                        let username = res["username"] as! String
+                        print(username)
+                        let from = res["from"] as! String
+                        let to = res["to"] as! String
+                        let time = res["time"] as! String
+                        let status = res["status"] as! String
+                        let fromLat = res["fromLocationLat"] as! Double
+                        let fromLong = res["fromLocationLong"] as! Double
+                        let toLat = res["toLocationLat"] as! Double
+                        let toLong = res["toLocationLong"] as! Double
+                        let uid = res["uid"] as! String
+                        let dataFromLocation = CLLocation(latitude: fromLat, longitude:fromLong)
+                        let dataToLocation = CLLocation(latitude:toLat, longitude:toLong)
+                        let dataTrip = TaxiTrip(username: username, from: from, to: to, time: time, fromLat: fromLat, fromLong: fromLong, toLat: toLat, toLong: toLong, uid: uid, dataFromLocation: dataFromLocation, dataToLocation: dataToLocation, status: status)
+                        completion(dataTrip)
+                    }
+                }
+                group.leave()
+            })
+    }
+                                
 }

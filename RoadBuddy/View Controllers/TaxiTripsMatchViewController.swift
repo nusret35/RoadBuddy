@@ -112,8 +112,9 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         view.addSubview(tableView)
         setUpTableView()
-        sendTaxiRequest()
-        matchRequest()
+        sendTaxiRequest {
+            self.matchRequest()
+        }
     }
     
     override func viewDidLayoutSubviews()
@@ -142,9 +143,9 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
     
     
     
-    func sendTaxiRequest()
+    func sendTaxiRequest(completion: @escaping () -> ())
     {
-        self.request = ["fullname":CurrentUser.Fullname,
+        request = [
                        "uid":CurrentUser.UID,
                        "time":UserTaxiTripRequest.time,
                        "from":UserTaxiTripRequest.fromLocationName,
@@ -153,62 +154,47 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
                        "to":UserTaxiTripRequest.toLocationName,
                        "toLocationLat":UserTaxiTripRequest.toCoordinateLat,
                         "toLocationLong":UserTaxiTripRequest.toCoordinateLong, "status": "Searching"] as [String:Any]
-        storageManager.ref.child("Taxi_Requests").child(CurrentUser.UID).child(myDateFormat.returnMessageTime() + "-" + CurrentUser.Username).setValue(request)
+        storageManager.sendingSearchRequestToFirebase(request: request)
     }
    
     func matchRequest()
     {
-        storageManager.db.collection("users").document(CurrentUser.UID).updateData(["lookingForATaxiTrip":true])
-        storageManager.ref.child("Taxi_Requests")
-            .observeSingleEvent(of: .value, with: { [self] (snapshot)  in
-            for child in snapshot.children
+        let group = DispatchGroup()
+        group.enter()
+        storageManager.findTripsForTaxiRequest(group: group) { dataTrip in
+            let fromDistance = self.taxiTripRequestToLocation.distance(from: dataTrip.dataFromLocation) / 1000
+            print("fromDistance: " + String(fromDistance))
+            let currentUserID = CurrentUser.UID
+            if (currentUserID != dataTrip.uid)
             {
-                let snap = child as! DataSnapshot
-                guard let res = snap.value as? [String:Any] else {return}
-                let name = res["fullname"] as! String
-                print(name)
-                let from = res["from"] as! String
-                let to = res["to"] as! String
-                let time = res["time"] as! String
-                let fromLat = res["fromLocationLat"] as! Double
-                let fromLong = res["fromLocationLong"] as! Double
-                let toLat = res["toLocationLat"] as! Double
-                let toLong = res["toLocationLong"] as! Double
-                let dUID = res["uid"] as! String
-                let dataFromLocation = CLLocation(latitude: fromLat, longitude: fromLong)
-                
-                let fromDistance = self.taxiTripRequestFromLocation.distance(from: dataFromLocation) / 1000
-                print("fromDistance: " + String(fromDistance))
-                let currentUserID = CurrentUser.UID
-                if (currentUserID != dUID)
+                if (fromDistance <= 3)
                 {
-                    if (fromDistance <= 3)
+                    print("inside from distance")
+                    let toDistance = self.taxiTripRequestToLocation.distance(from: dataTrip.dataToLocation) / 1000
+                    if (toDistance <= 3)
                     {
-                        print("inside from distance")
-                        let dataToLocation = CLLocation(latitude: toLat, longitude: toLong)
-                        let toDistance = self.taxiTripRequestToLocation.distance(from: dataToLocation) / 1000
-                        if (toDistance <= 3)
+                        print("inside to distance")
+                        let dataTime = myDateFormat.stringToDate(dataTrip.time)
+                        let requestTime = myDateFormat.stringToDate(UserTaxiTripRequest.time)
+
+                        if dataTime <= (requestTime.addingTimeInterval(60*120)) && dataTime >= requestTime
                         {
-                            print("inside to distance")
-                            let dataTime = myDateFormat.stringToDate(time)
-                            let requestTime = myDateFormat.stringToDate(UserTaxiTripRequest.time)
-    
-                            if dataTime <= (requestTime.addingTimeInterval(60*120)) && dataTime >= requestTime
-                            {
-                                print("dates are matched")
-                                let data = TaxiTripData(passengerName: name,uid:dUID, fromLocation: from, toLocation: to, time: time)
-                                self.taxiTrips.append(data)
-                                print(self.taxiTrips[0])
-                            }
-                        
+                            print("dates are matched")
+                            let data = TaxiTripData(passengerName: dataTrip.username,uid:dataTrip.uid, fromLocation: dataTrip.from, toLocation: dataTrip.to, time: dataTrip.time)
+                            self.taxiTrips.append(data)
+                            print(self.taxiTrips[0])
                         }
+                    
                     }
                 }
             }
+        }
+        group.notify(queue: .main)
+        {
             self.sortTrips()
             self.fillModelsArray()
             self.setUpView()
-        })
+        }
     }
     
     func sortTrips()

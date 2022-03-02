@@ -36,14 +36,15 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     
     private var requestFound = false
     
-    
+    private let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
         tableView.separatorStyle = .none
         sendTheRequest(completion:{ () in
-            self.matchRequest()
+            self.matchSearchRequest()
         })
     }
     
@@ -82,6 +83,9 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         tableView.dataSource = self
     }
     //TABLEVIEW FUNCTIONS
+    
+   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.models.count
     }
@@ -156,65 +160,46 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     func sendTheRequest(completion: @escaping () -> ())
     {
         
-        request  = ["requestAccepted":false,"requestPending":true,"uid":CurrentUser.UID,"username":CurrentUser.Username, "fromLocationLat": UserSearchTripRequest.fromCoordinateLat, "fromLocationLong":UserSearchTripRequest.fromCoordinateLong,"toLocationLat":UserSearchTripRequest.toCoordinateLat,"toLocationLong":UserSearchTripRequest.toCoordinateLong, "time": UserSearchTripRequest.time, "status": "Searching"] as [String : Any]
-        storageManager.ref.child("Search_Requests").child(CurrentUser.UID).child(UserSearchTripRequest.time).setValue(self.request)
-            print("request sent")
+        request  = ["requestAccepted":false,"requestPending":true,"uid":CurrentUser.UID,"username":CurrentUser.Username, "from":UserSearchTripRequest.fromLocationName,"fromLocationLat": UserSearchTripRequest.fromCoordinateLat, "fromLocationLong":UserSearchTripRequest.fromCoordinateLong, "to":UserSearchTripRequest.toLocationName,"toLocationLat":UserSearchTripRequest.toCoordinateLat,"toLocationLong":UserSearchTripRequest.toCoordinateLong, "time": UserSearchTripRequest.time, "status": "Searching","passengerNumber":UserSearchTripRequest.numberOfPassengers] as [String : Any]
+        storageManager.sendingSearchRequestToFirebase(request: self.request)
         searchFromLocation = CLLocation(latitude: UserSearchTripRequest.fromCoordinateLat, longitude: UserSearchTripRequest.fromCoordinateLong)
         searchToLocation = CLLocation(latitude: UserSearchTripRequest.toCoordinateLat, longitude: UserSearchTripRequest.toCoordinateLong)
         completion()
     }
     
     
-    func matchRequest()
+    func matchSearchRequest()
     {
-        storageManager.db.collection("users").document(CurrentUser.UID).updateData(["lookingForATrip":true])
-        storageManager.ref.child("Trips")
-            .observeSingleEvent(of: .value, with: { [self] (snapshot)  in
-            for child in snapshot.children
+        let group = DispatchGroup()
+        group.enter()
+        storageManager.findTripsForTheRequest(group:group) { [self] dataTrip in
+            let fromDistance = self.searchFromLocation.distance(from: dataTrip.dataFromLocation) / 1000
+            print("searchFromLat: " + String(self.searchFromLocation.coordinate.latitude))
+            print("searchFromLong: " +  String(self.searchFromLocation.coordinate.longitude))
+            print("searchToLat: " + String(self.searchToLocation.coordinate.latitude))
+            print("searchToLong: " + String(self.searchToLocation.coordinate.longitude))
+            print("fromDistance: " + String(fromDistance))
+            if (CurrentUser.UID != dataTrip.uid)
             {
-                let snap = child as! DataSnapshot
-                guard let res = snap.value as? [String:Any] else {return}
-                let name = res["fullname"] as! String
-                print(name)
-                let from = res["from"] as! String
-                let to = res["to"] as! String
-                let price = res["price"] as! Int
-                let time = res["time"] as! String
-                let numberOfPassengers = res["number of passengers"] as! Int
-                let fromLat = res["fromCoordinateLatitude"] as! Double
-                let fromLong = res["fromCoordinateLongitude"] as! Double
-                let toLat = res["toCoordinateLatitude"] as! Double
-                let toLong = res["toCoordinateLongitude"] as! Double
-                let dUID = res["uid"] as! String
-                let dataFromLocation = CLLocation(latitude: fromLat, longitude: fromLong)
-                
-                let fromDistance = self.searchFromLocation.distance(from: dataFromLocation) / 1000
-                print("searchFromLat: " + String(self.searchFromLocation.coordinate.latitude))
-                print("searchFromLong: " +  String(self.searchFromLocation.coordinate.longitude))
-                print("searchToLat: " + String(self.searchToLocation.coordinate.latitude))
-                print("searchToLong: " + String(self.searchToLocation.coordinate.longitude))
-                print("fromDistance: " + String(fromDistance))
-                let currentUserID = CurrentUser.UID
-                if (currentUserID != dUID)
+                if (fromDistance <= 8)
                 {
-                    if (fromDistance <= 8)
+                    print("inside from distance")
+                    let toDistance = self.searchToLocation.distance(from: dataTrip.dataToLocation) / 1000
+                    if (toDistance <= 8)
                     {
-                        print("inside from distance")
-                        let dataToLocation = CLLocation(latitude: toLat, longitude: toLong)
-                        let toDistance = self.searchToLocation.distance(from: dataToLocation) / 1000
-                        if (toDistance <= 8)
+                        print("inside to distance")
+                        if (UserSearchTripRequest.numberOfPassengers <= dataTrip.numberOfPassenger)
                         {
-                            print("inside to distance")
-                            if (UserSearchTripRequest.numberOfPassengers <= numberOfPassengers)
+                            print("passengers found")
+                            let dataTime = myDateFormat.stringToDate(dataTrip.time)
+                            let requestTime = myDateFormat.stringToDate(UserSearchTripRequest.time)
+        
+                            if dataTime <= (requestTime.addingTimeInterval(60*120)) && dataTime >= requestTime
                             {
-                                print("passengers found")
-                                let dataTime = myDateFormat.stringToDate(time)
-                                let requestTime = myDateFormat.stringToDate(UserSearchTripRequest.time)
-            
-                                if dataTime <= (requestTime.addingTimeInterval(60*120)) && dataTime >= requestTime
+                                print("dates are matched")
+                                if dataTrip.status == "Pending"
                                 {
-                                    print("dates are matched")
-                                    let data = DriverData(driverName: name, fromLocation: from, toLocation: to, price: price, time: time, numberOfPassengers: numberOfPassengers,uid:dUID)
+                                    let data = DriverData(driverName: dataTrip.name, fromLocation: dataTrip.from, toLocation: dataTrip.to, price: dataTrip.price, time: dataTrip.time, numberOfPassengers: dataTrip.numberOfPassenger,uid:dataTrip.uid)
                                     self.trips.append(data)
                                     print(self.trips[0].driverName)
                                 }
@@ -223,11 +208,13 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
                     }
                 }
             }
+        }
+        group.notify(queue: .main)
+        {
             self.sortTrips()
             self.fillModelsArray()
             self.setUpView()
-            
-        })
+        }
         
     }
     
@@ -284,21 +271,5 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
         self.tableView.reloadData()
     }
     
-    func checkIfThereIsAnotherRequestWithSameTime(completion: @escaping (String) -> ())
-    {
-        storageManager.ref.child("Search_Requests").child(CurrentUser.UID).observeSingleEvent(of: .value, with: { snapshot in
-            for child in snapshot.children
-            {
-                let snap = child as! DataSnapshot
-                guard let res = snap.value as? [String:Any] else {return}
-                let time = res["time"] as! String
-                if time == UserSearchTripRequest.time
-                {
-                    let error = "You already have a request for the same time"
-                    completion(error)
-                }
-            }
-        })
-    }
 
 }

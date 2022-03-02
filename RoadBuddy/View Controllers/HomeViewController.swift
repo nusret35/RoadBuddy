@@ -68,7 +68,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         group.notify(queue: .main, execute:
         {
             print("data has fetched")
-            storageManager.retrieveAllRequestsOfUser(group: group) { requests in
+            storageManager.retrieveAllRequestsOfUser { requests in
                 self.models = requests
                 print(String(self.models[0].count))
                 self.tableView.reloadData()
@@ -86,8 +86,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.separatorStyle = .none
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 200, right: 0)
         tableView.contentInset = insets
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
     }
     
+    @objc private func didPullToRefresh()
+    {
+        // Re-fetch data
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+            storageManager.retrieveAllRequestsOfUser { [self] requests in
+                tableView.refreshControl?.endRefreshing()
+                models.removeAll()
+                models = requests
+                print(String(models[0].count))
+                tableView.reloadData()
+            }
+            
+        })
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {

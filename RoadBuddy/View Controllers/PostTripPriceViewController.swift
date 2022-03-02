@@ -88,13 +88,14 @@ class PostTripPriceViewController: UIViewController {
                     "from": CurrentUserTripPost.fromLocationName,
                     "to": CurrentUserTripPost.toLocationName,
                     "time": CurrentUserTripPost.time,
-                    "number of passengers": CurrentUserTripPost.passengerNumber,
+                    "status": "Pending",
+                    "passengerNumber": CurrentUserTripPost.passengerNumber,
                     "price": CurrentUserTripPost.price,
                     "fromCoordinateLatitude": CurrentUserTripPost.fromLocationLat, "fromCoordinateLongitude": CurrentUserTripPost.fromLocationLong,
                     "toCoordinateLatitude": CurrentUserTripPost.toLocationLat,
-                    "toCoordinateLongitude": CurrentUserTripPost.toLocationLong
+                    "toCoordinateLongitude": CurrentUserTripPost.toLocationLong,
                     ] as [String:Any]
-        storageManager.ref.child("Trips").child(CurrentUserTripPost.uid).setValue(post)
+        storageManager.ref.child("Trips").child(CurrentUserTripPost.uid).child(CurrentUserTripPost.time).setValue(post)
         //print("uid: " + CurrentUserTripPost.uid)
         storageManager.db.collection("users").document(CurrentUserTripPost.uid).updateData(["TripIsSet":true])
         let alert = UIAlertController(title: "Trip Posted", message: "Your trip has been posted.", preferredStyle: .alert)

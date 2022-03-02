@@ -5,7 +5,6 @@
 //  Created by Nusret Kızılaslan on 11.02.2022.
 //
 import UIKit
-import FirebaseDatabase
 
 class SearchTimeViewController: UIViewController{
     
@@ -40,7 +39,7 @@ class SearchTimeViewController: UIViewController{
          }
         else if settingForSearch == true
         {
-            checkIfThereIsAnotherRequestWithSameTime { error in
+            storageManager.checkIfThereIsAnotherRequestWithSameTime { error in
                 if error == nil
                 {
                     vc.settingForPost = false
@@ -49,19 +48,24 @@ class SearchTimeViewController: UIViewController{
                 }
                 else
                 {
-                    let alert = UIAlertController(title: "Choose another time", message: "You already have a request for the selected time.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { action in
-                        alert.dismiss(animated: true, completion: nil)
-                    }))
-                    self.present(alert,animated:true)
+                    self.showAlert()
                 }
             }
         }
         else if settingForTaxi == true
         {
-            let taxiResultViewController = TaxiTripsMatchViewController()
-            taxiResultViewController.title = "Searching for taxi trips"
-            navigationController?.pushViewController(taxiResultViewController, animated: true)
+            storageManager.checkIfThereIsAnotherTaxiRequestWithSameTime { error in
+                if error == nil
+                {
+                    let taxiResultViewController = TaxiTripsMatchViewController()
+                    taxiResultViewController.title = "Searching for taxi trips"
+                    self.navigationController?.pushViewController(taxiResultViewController, animated: true)
+                }
+                else
+                {
+                    self.showAlert()
+                }
+            }
         }
     }
     
@@ -101,21 +105,13 @@ class SearchTimeViewController: UIViewController{
     }
     
     
-    func checkIfThereIsAnotherRequestWithSameTime(completion: @escaping (String?) -> ())
+    
+    func showAlert()
     {
-        var error:String? = nil
-        storageManager.ref.child("Search_Requests").child(CurrentUser.UID).observeSingleEvent(of: .value, with: { snapshot in
-            for child in snapshot.children
-            {
-                let snap = child as! DataSnapshot
-                guard let res = snap.value as? [String:Any] else {return}
-                let time = res["time"] as! String
-                if time == UserSearchTripRequest.time
-                {
-                    error = "You already have a request for the same time"
-                }
-            }
-            completion(error)
-        })
+        let alert = UIAlertController(title: "Choose another time", message: "You already have a request for the selected time.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { action in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert,animated:true)
     }
 }
