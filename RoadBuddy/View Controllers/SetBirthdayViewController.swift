@@ -13,13 +13,18 @@ class SetBirthdayViewController: UIViewController {
     @IBOutlet weak var SetBirthDateField: UIDatePicker!
     
     @IBOutlet weak var toPhoneNumButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         let year = DateComponents(year:-18)
         SetBirthDateField.maximumDate = Calendar.current.date(byAdding: year, to: Date())
-
-  
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        toPhoneNumButton.isUserInteractionEnabled = true
     }
     
     @IBAction func toPhoneNumAction(_ sender: Any)
@@ -29,7 +34,7 @@ class SetBirthdayViewController: UIViewController {
         viewController.title = "Add Phone Number".localized()
         
         navigationController?.pushViewController(viewController, animated: true)
-        
+        toPhoneNumButton.isUserInteractionEnabled = false
     }
     
     @IBAction func SetBirthdateAction(_ sender: UIDatePicker)

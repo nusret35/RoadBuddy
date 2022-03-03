@@ -24,8 +24,11 @@ class CreatePasswordViewController: UIViewController {
         super.viewDidLoad()
         errorlable.alpha = 0
         self.hideKeyboardWhenTappedAround()
-
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        toBirthDateButton.isUserInteractionEnabled = true
     }
     
     @IBAction func passwordTextFieldInputAction(_ sender: Any)
@@ -77,6 +80,7 @@ class CreatePasswordViewController: UIViewController {
             viewController.title = "Add Your Birthday".localized()
             
             navigationController?.pushViewController(viewController, animated: true)
+            toBirthDateButton.isUserInteractionEnabled = false
         }
         
 

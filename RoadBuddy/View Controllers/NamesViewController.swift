@@ -29,6 +29,11 @@ class NamesViewController: UIViewController {
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        completeSignUpButton.isUserInteractionEnabled = true
+    }
+    
     @IBAction func firstnameActionField(_ sender: Any)
     {
         if errorLabel.text != "Please make sure lastname does not contain any numbers or special characters"
@@ -90,19 +95,23 @@ class NamesViewController: UIViewController {
                     // User was created successfully, now store the first name and last name of the user
                     
                     let uid = result!.user.uid
-                    storageManager.db.collection("users").document(String(uid)).setData( ["firstname":self.firstNameTextField.text,"lastname":self.lastNameTextField.text,"username":NewUser.userName,"uid":result!.user.uid,"email":NewUser.email,"password":NewUser.passWord,"phoneNumber":NewUser.phoneNum,"schoolName":NewUser.schoolName,
-                        "TripIsSet":false,"TaxiTripIsSet":false,"profilePictureIsSet":false
-                        ,"lookingForATrip":false]) { (error) in
-                        
+                    let newUserData = ["firstname":self.firstNameTextField.text,"lastname":self.lastNameTextField.text,"username":NewUser.userName,"uid":result!.user.uid,"email":NewUser.email,"password":NewUser.passWord,"phoneNumber":NewUser.phoneNum,"schoolName":NewUser.schoolName,
+                                       "TripIsSet":false,"TaxiTripIsSet":false,"profilePictureIsSet":false
+                                       ,"lookingForATrip":false] as [String:Any]
+                    
+                    storageManager.db.collection("users").document(String(uid)).setData(newUserData) { (error) in
                         if error != nil {
                             //Show error message
                             self.showError(message: "Error saving user data")
                         }
+                        
+                        storageManager.ref.child("Users").child(uid).setValue(newUserData)
                     }
                     //Transition to the home screen
                     let vc = SidebarViewController()
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true)
+                    self.completeSignUpButton.isUserInteractionEnabled = false
                 }
             }
         }

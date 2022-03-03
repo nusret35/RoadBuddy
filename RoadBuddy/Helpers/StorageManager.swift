@@ -245,7 +245,7 @@ class StorageManager
                     let passengerNumber = res["passengerNumber"] as! Int
                     let from = res["from"] as! String
                     let to = res["to"] as! String
-                    let request = Request(from: from, to: to, passengerNumber: passengerNumber, date: date, status: status, type: "Trip Request")
+                    let request = Request(from: from, to: to, price:0,passengerNumber: passengerNumber, date: date, status: status, type: "Trip Request")
                     requests.append(request)
                 }
                 completion(requests)
@@ -271,7 +271,7 @@ class StorageManager
                     let status = res["status"] as! String
                     let from = res["from"] as! String
                     let to = res["to"] as! String
-                    let request = Request(from: from, to: to, passengerNumber: 0, date: date, status: status, type: "Taxi Request")
+                    let request = Request(from: from, to: to, price: 0,passengerNumber: 0, date: date, status: status, type: "Taxi Request")
                     searchAndTaxiRequests.append(request)
                 }
                 completion(searchAndTaxiRequests)
@@ -296,11 +296,12 @@ class StorageManager
                     guard let res = snap.value as? [String:Any] else { print("something is wrong")
                         return}
                     let date = res["time"] as! String
+                    let price = res["price"] as! Int
                     let status = res["status"] as! String
                     let passengerNumber = res["passengerNumber"] as! Int
                     let from = res["from"] as! String
                     let to = res["to"] as! String
-                    let request = Request(from: from, to: to, passengerNumber: passengerNumber, date: date, status: status, type: "Trip Post")
+                    let request = Request(from: from, to: to,price:price, passengerNumber: passengerNumber, date: date, status: status, type: "Trip Post")
                     searchTaxiAndPostRequests.append(request)
                 }
                 completion(searchTaxiAndPostRequests)

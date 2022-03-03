@@ -18,6 +18,10 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profilePictureImageView: UIImageView!
     
+    @IBOutlet weak var settingsButton: UIButton!
+    
+    @IBOutlet weak var inboxButton: UIButton!
+    
     
     override func viewDidLoad()
     {
@@ -27,6 +31,12 @@ class ProfileViewController: UIViewController {
         }
         setUpElements()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        settingsButton.isUserInteractionEnabled = true
+        inboxButton.isUserInteractionEnabled = true
     }
     
     func setUpElements()
@@ -84,6 +94,7 @@ class ProfileViewController: UIViewController {
         let vc = InboxViewController()
         vc.title = "Inbox"
         navigationController?.pushViewController(vc, animated: true)
+        inboxButton.isUserInteractionEnabled = false
     }
     
     @IBAction func settingsButtonAction(_ sender: Any)
@@ -91,6 +102,7 @@ class ProfileViewController: UIViewController {
         let vc = SettingsViewController()
         vc.title = "Settings"
         navigationController?.pushViewController(vc, animated: true)
+        settingsButton.isUserInteractionEnabled = false
     }
     
     

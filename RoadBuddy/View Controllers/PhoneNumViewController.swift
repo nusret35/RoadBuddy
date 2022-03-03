@@ -31,10 +31,12 @@ class PhoneNumViewController: UIViewController {
         regionButton.setTitle("+90", for: .normal)
         phoneNumTextField.leftView = leftview
         phoneNumTextField.leftViewMode = . always
-    
-       
-
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        toNamesButton.isUserInteractionEnabled = true
     }
     
     @IBAction func phoneNumAction(_ sender: Any)
@@ -90,6 +92,7 @@ class PhoneNumViewController: UIViewController {
             viewController.title = "Personal Info".localized()
             
             navigationController?.pushViewController(viewController, animated: true)
+            toNamesButton.isUserInteractionEnabled = false
         }
             
         

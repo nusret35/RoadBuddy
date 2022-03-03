@@ -14,16 +14,18 @@ class UserNameViewController: UIViewController {
     
     @IBOutlet weak var errorLable: UILabel!
     
-    
     @IBOutlet weak var toPasswordButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLable.alpha = 0
         self.hideKeyboardWhenTappedAround()
-
-        
-
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        toPasswordButton.isUserInteractionEnabled = true
     }
     
     @IBAction func userNameInputAction(_ sender: Any)
@@ -88,6 +90,7 @@ class UserNameViewController: UIViewController {
                     viewController.title = "Create a password".localized()
                     
                     self.navigationController?.pushViewController(viewController, animated: true)
+                    self.toPasswordButton.isUserInteractionEnabled = false
                 }
                 else
                 {

@@ -13,7 +13,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="RoadBuddy" customModuleProvider="target">
             <connections>
                 <outlet property="fullnameLabel" destination="OCk-xM-iBa" id="X0d-vV-lgS"/>
+                <outlet property="inboxButton" destination="cKo-II-jDr" id="KBi-tc-0sh"/>
                 <outlet property="profilePictureImageView" destination="aBe-HW-Rcc" id="PWJ-tq-7gn"/>
+                <outlet property="settingsButton" destination="Z9R-pL-Wjv" id="HWe-cP-BKo"/>
                 <outlet property="usernameLabel" destination="OUi-EJ-0gN" id="f4O-aV-eRt"/>
                 <outlet property="view" destination="OMC-ST-YcW" id="egP-E2-z2e"/>
             </connections>

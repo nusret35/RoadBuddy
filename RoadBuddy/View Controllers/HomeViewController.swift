@@ -11,6 +11,7 @@ struct Request
 {
     var from:String
     var to:String
+    var price:Int
     var passengerNumber:Int
     var date:String
     var status:String
@@ -26,13 +27,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     weak var delegate: HomeViewControllerDelegate?
 
     @IBOutlet weak var tableView: UITableView!
-    
+    /*
     let defaultRequest = Request(from: "Istanbul", to: "Ankara", passengerNumber: 2, date: "Monday, Feb 28 2022 (15:00)", status: "Accepted", type: "Trip Request")
     
     let defaultRequest2 = Request(from: "Istanbul", to: "Ankara", passengerNumber: 2, date: "Tuesday, March 1 2022 (16:00)", status: "Rejected", type: "Taxi Share")
     
     let defaultRequest3 = Request(from: "Istanbul", to: "Izmir", passengerNumber: 2, date: "Tuesday, March 1 2022 (17:00)", status: "Pending", type: "Trip Post")
-    
+    */
     var models = [[Request]]()
     
     override func viewDidLoad()
@@ -120,26 +121,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        let selectedCell = models[indexPath.section][indexPath.row]
+        let vc = SelectedRequestViewController(fromLocation: selectedCell.from, toLocation: selectedCell.to, date: selectedCell.date, type: selectedCell.type, price: String(selectedCell.price), passengerNumber: String(selectedCell.passengerNumber), status: selectedCell.status)
+        present(vc, animated: true, completion: nil)
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 250
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        /*
-        let previousSection = section - 1
-        if previousSection != -1
-        {
-            if myDateFormat.takeDayFromStringDate(models[previousSection].date) == myDateFormat.takeDayFromStringDate(models[previousSection].date)
-            {
-                print("dates are same")
-                return ""
-            }
-        }
-        */
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
         print(String(models[section].count))
         return myDateFormat.takeDayFromStringDate(models[section][0].date)
     }

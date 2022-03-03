@@ -18,9 +18,11 @@ class CheckEmailViewController: UIViewController {
         super.viewDidLoad()
         errorLable.alpha = 0
         self.hideKeyboardWhenTappedAround()
-
-
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        toUsernameButton.isUserInteractionEnabled = true
     }
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {
@@ -116,6 +118,7 @@ class CheckEmailViewController: UIViewController {
                     viewController.title = "Create Username".localized()
                     
                     self.navigationController?.pushViewController(viewController, animated: true)
+                    self.toUsernameButton.isUserInteractionEnabled = false
                 }
                 else
                 {
