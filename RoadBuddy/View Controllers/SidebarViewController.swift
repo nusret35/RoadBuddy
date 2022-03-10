@@ -76,9 +76,6 @@ extension SidebarViewController: HomeViewControllerDelegate
     func didTapMenuButton()
     {
         toggleMenu(completion: nil)
-        
-        
-
     }
     
     func toggleMenu(completion: (() -> Void)?)

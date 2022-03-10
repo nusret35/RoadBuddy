@@ -49,25 +49,28 @@ class MessageTableViewCell: UITableViewCell {
         
     }
     
-    func configure(with model: InboxObject, completion: @escaping () -> ())
+    func configure(with model: InboxObject)
     {
         self.usernameLabel.text = model.username
         
         self.profilePicture.image = UIImage(named: "emptyProfilePicture")
         
-        self.messageLabel.text = model.message
         
         if model.requestAccepted == true
         {
             acceptButton.isHidden = true
             rejectButton.isHidden = true
+            messageLabel.text = model.message
+        }
+        else
+        {
+            messageLabel.text = "Wants to join your trip"
         }
         
         storageManager.otherUserProfilePictureLoad(model, completion: { [self] image in
             profilePicture.image = image
             profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
             profilePicture.clipsToBounds = true
-            completion()
         })
     }
     

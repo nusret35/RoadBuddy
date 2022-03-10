@@ -93,6 +93,7 @@ class ProfileViewController: UIViewController {
         //let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = InboxViewController()
         vc.title = "Inbox"
+        
         navigationController?.pushViewController(vc, animated: true)
         inboxButton.isUserInteractionEnabled = false
     }

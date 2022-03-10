@@ -114,6 +114,9 @@
                         </backgroundConfiguration>
                         <color key="baseForegroundColor" systemColor="systemRedColor"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="deleteButtonAction:" destination="-1" eventType="touchUpInside" id="BkV-yG-JpA"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

@@ -38,7 +38,9 @@ class SelectedRequestViewController: UIViewController {
     
     private let status:String
     
-    init(fromLocation:String,toLocation:String,date:String,type:String,price:String,passengerNumber:String,status:String)
+    private let tripID:String
+    
+    init(fromLocation:String,toLocation:String,date:String,type:String,price:String,passengerNumber:String,status:String,tripID:String)
     {
         self.fromLocationText = fromLocation
         self.toLocationText = toLocation
@@ -47,6 +49,7 @@ class SelectedRequestViewController: UIViewController {
         self.price = price
         self.passengerNumber = passengerNumber
         self.status = status
+        self.tripID = tripID
         super.init(nibName: "SelectedRequestViewController", bundle: nil)
     }
     
@@ -96,5 +99,22 @@ class SelectedRequestViewController: UIViewController {
         priceLabel.text = price + "₺"
         passengerButton.setTitle(passengerNumber, for: .normal)
     }
+    
+    @IBAction func deleteButtonAction(_ sender: Any)
+    {
+        if type == "Trip Request"
+        {
+            
+        }
+        else if type == "Trip Post"
+        {
+            
+        }
+        else if type == "Taxi Request"
+        {
+            
+        }
+    }
+    
 
 }

@@ -36,9 +36,22 @@ class ChatViewController: MessagesViewController
     
     var chatId = String()
     
+    private var tripID = String()
+    
     private var messages = [Message]()
     
     private let selfSender = Sender(photoURL: CurrentUser.profilePictureURL, senderId: CurrentUser.UID, displayName: CurrentUser.Fullname)
+    
+    init(tripID:String)
+    {
+        self.tripID = tripID
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func viewDidLoad()
     {
@@ -147,8 +160,8 @@ extension ChatViewController: InputBarAccessoryViewDelegate
         let messageForFirebase = ["messageId":message.messageId,"sendDate":myDateFormat.returnMessageTime(),"text":text,"senderUID":message.sender.senderId,"senderUsername":message.sender.displayName] as [String : Any]
         storageManager.ref.child("Chats").child(chatId).child("messages").child(message.messageId).setValue(messageForFirebase)
         storageManager.ref.child("Chats").child(chatId).child("last_message").setValue(text)
-        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("Inbox").child(otherUserUID).child("last_message").setValue(text)
-        storageManager.ref.child("User_Inbox").child(otherUserUID).child("Inbox").child(CurrentUser.UID).child("last_message").setValue(text)
+        storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("Inbox").child(tripID).child(otherUserUID).child("last_message").setValue(text)
+        storageManager.ref.child("User_Inbox").child(otherUserUID).child("Inbox").child(tripID).child(CurrentUser.UID).child("last_message").setValue(text)
         messages.append(message)
         messagesCollectionView.reloadDataAndKeepOffset()
         messagesCollectionView.layoutIfNeeded()

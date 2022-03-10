@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		24347E856DDF698E826216F1 /* Pods_RoadBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4FE229515EAE9346E4B422 /* Pods_RoadBuddy.framework */; };
-		804AF856279EB80F00315A82 /* TaxiResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804AF855279EB80F00315A82 /* TaxiResultViewController.swift */; };
-		804AF861279EBCC200315A82 /* TaxiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804AF85F279EBCC200315A82 /* TaxiTableViewCell.swift */; };
-		804AF862279EBCC300315A82 /* TaxiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804AF860279EBCC200315A82 /* TaxiTableViewCell.xib */; };
 		804B3AAB27B54EAF0041A7DC /* SearchFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B3AAA27B54EAF0041A7DC /* SearchFromViewController.swift */; };
 		804B3AAD27B64C9D0041A7DC /* SearchToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B3AAC27B64C9D0041A7DC /* SearchToViewController.swift */; };
 		804B3AAF27B66F320041A7DC /* SearchTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B3AAE27B66F320041A7DC /* SearchTimeViewController.swift */; };
@@ -70,7 +67,6 @@
 		809F674227B937E400D67E56 /* SearchPassengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F674127B937E400D67E56 /* SearchPassengerViewController.swift */; };
 		809F674427B949C100D67E56 /* SearchMatchRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F674327B949C100D67E56 /* SearchMatchRequestViewController.swift */; };
 		80A8933727A8014A00CE83AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A8933527A8014900CE83AB /* Main.storyboard */; };
-		80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */; };
 		80AE818B27B45240007BBC2B /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AE818927B45240007BBC2B /* ProfileHeaderTableViewCell.swift */; };
 		80AE818C27B45240007BBC2B /* ProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80AE818A27B45240007BBC2B /* ProfileHeaderTableViewCell.xib */; };
 		80AE818E27B45928007BBC2B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AE818D27B45928007BBC2B /* StorageManager.swift */; };
@@ -82,7 +78,6 @@
 		80CA933927091D63009A1469 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA933827091D63009A1469 /* ProfilePageViewController.swift */; };
 		80CA933D270B1AAA009A1469 /* DateTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA933C270B1AAA009A1469 /* DateTimePicker.swift */; };
 		80CA933F270B2150009A1469 /* DateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA933E270B2150009A1469 /* DateButton.swift */; };
-		80CA9345270C3AD9009A1469 /* DateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA9344270C3AD9009A1469 /* DateTimeViewController.swift */; };
 		80D9B09626FC9249001EB6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B09526FC9249001EB6BD /* AppDelegate.swift */; };
 		80D9B09826FC9249001EB6BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B09726FC9249001EB6BD /* SceneDelegate.swift */; };
 		80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D9B09E26FC9251001EB6BD /* Assets.xcassets */; };
@@ -120,9 +115,6 @@
 /* Begin PBXFileReference section */
 		07EB3A0D96B15D188E5AB86C /* Pods-RoadBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadBuddy.debug.xcconfig"; path = "Target Support Files/Pods-RoadBuddy/Pods-RoadBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		348D7082296F1E38F77D0A60 /* Pods-RoadBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadBuddy.release.xcconfig"; path = "Target Support Files/Pods-RoadBuddy/Pods-RoadBuddy.release.xcconfig"; sourceTree = "<group>"; };
-		804AF855279EB80F00315A82 /* TaxiResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiResultViewController.swift; sourceTree = "<group>"; };
-		804AF85F279EBCC200315A82 /* TaxiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiTableViewCell.swift; sourceTree = "<group>"; };
-		804AF860279EBCC200315A82 /* TaxiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaxiTableViewCell.xib; sourceTree = "<group>"; };
 		804B3AAA27B54EAF0041A7DC /* SearchFromViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFromViewController.swift; sourceTree = "<group>"; };
 		804B3AAC27B64C9D0041A7DC /* SearchToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchToViewController.swift; sourceTree = "<group>"; };
 		804B3AAE27B66F320041A7DC /* SearchTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTimeViewController.swift; sourceTree = "<group>"; };
@@ -152,7 +144,6 @@
 		809F674127B937E400D67E56 /* SearchPassengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPassengerViewController.swift; sourceTree = "<group>"; };
 		809F674327B949C100D67E56 /* SearchMatchRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMatchRequestViewController.swift; sourceTree = "<group>"; };
 		80A8933627A8014900CE83AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTripViewController.swift; sourceTree = "<group>"; };
 		80AE818927B45240007BBC2B /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		80AE818A27B45240007BBC2B /* ProfileHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		80AE818D27B45928007BBC2B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -164,7 +155,6 @@
 		80CA933827091D63009A1469 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		80CA933C270B1AAA009A1469 /* DateTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimePicker.swift; sourceTree = "<group>"; };
 		80CA933E270B2150009A1469 /* DateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateButton.swift; sourceTree = "<group>"; };
-		80CA9344270C3AD9009A1469 /* DateTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeViewController.swift; sourceTree = "<group>"; };
 		80D9B09226FC9249001EB6BD /* RoadBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D9B09526FC9249001EB6BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80D9B09726FC9249001EB6BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -266,8 +256,6 @@
 				80DDEBFC277347E10093BB3F /* PostTableViewCell.xib */,
 				8089A87927CBBFF8006744F4 /* MyTripTableViewCell.swift */,
 				8089A87A27CBBFF8006744F4 /* MyTripTableViewCell.xib */,
-				804AF85F279EBCC200315A82 /* TaxiTableViewCell.swift */,
-				804AF860279EBCC200315A82 /* TaxiTableViewCell.xib */,
 				8075BAC427A3F4B70064CCB7 /* MessageTableViewCell.swift */,
 				8075BAC527A3F4B70064CCB7 /* MessageTableViewCell.xib */,
 				C08B7A7127B2895D0027684E /* FirstTableViewCell.swift */,
@@ -319,14 +307,6 @@
 				809B9C6927B39B1E004EB9C4 /* Animation.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		809F674027B9338000D67E56 /* Old View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				80CA9344270C3AD9009A1469 /* DateTimeViewController.swift */,
-			);
-			path = "Old View Controllers";
 			sourceTree = "<group>";
 		};
 		80D9B08926FC9249001EB6BD = {
@@ -391,10 +371,7 @@
 				8089A87D27CD2A5D006744F4 /* SettingsViewController.swift */,
 				80C89B98259EA0CE00B98B88 /* SelectedRequestViewController.swift */,
 				80C89B99259EA0CE00B98B88 /* SelectedRequestViewController.xib */,
-				809F674027B9338000D67E56 /* Old View Controllers */,
 				80CA933827091D63009A1469 /* ProfilePageViewController.swift */,
-				804AF855279EB80F00315A82 /* TaxiResultViewController.swift */,
-				80AB375C27A03AA300C4DEE7 /* BookTripViewController.swift */,
 				8075BAC227A3F1B70064CCB7 /* InboxViewController.swift */,
 				8075BAD627A6F7E00064CCB7 /* ChatViewController.swift */,
 				C032963527BEAE8600C21736 /* CheckEmailViewController.swift */,
@@ -560,7 +537,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				804AF862279EBCC300315A82 /* TaxiTableViewCell.xib in Resources */,
 				C01EB41127C3A78B00C75552 /* RegionCell.xib in Resources */,
 				C08B7A7427B2895D0027684E /* FirstTableViewCell.xib in Resources */,
 				8089A87427CA46E3006744F4 /* ProfileViewController.xib in Resources */,
@@ -651,9 +627,7 @@
 				80AE818E27B45928007BBC2B /* StorageManager.swift in Sources */,
 				C032963827BEAF1400C21736 /* NamesViewController.swift in Sources */,
 				8089A87F27CD2A5E006744F4 /* SettingsViewController.swift in Sources */,
-				804AF861279EBCC200315A82 /* TaxiTableViewCell.swift in Sources */,
 				809F674427B949C100D67E56 /* SearchMatchRequestViewController.swift in Sources */,
-				80AB375D27A03AA300C4DEE7 /* BookTripViewController.swift in Sources */,
 				8089A87B27CBBFF8006744F4 /* MyTripTableViewCell.swift in Sources */,
 				C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */,
 				809B9C6D27B39B1E004EB9C4 /* UITableView + ViewAnimator.swift in Sources */,
@@ -669,12 +643,10 @@
 				80D9B09626FC9249001EB6BD /* AppDelegate.swift in Sources */,
 				80DDEBF8276BCFFC0093BB3F /* APICaller.swift in Sources */,
 				809B9C7327B3A395004EB9C4 /* Requests.swift in Sources */,
-				804AF856279EB80F00315A82 /* TaxiResultViewController.swift in Sources */,
 				80CA933D270B1AAA009A1469 /* DateTimePicker.swift in Sources */,
 				C01EB41027C3A78B00C75552 /* RegionCell.swift in Sources */,
 				8089A87327CA46E3006744F4 /* ProfileViewController.swift in Sources */,
 				C00640CE27CA41D7004B419E /* HomeViewController.swift in Sources */,
-				80CA9345270C3AD9009A1469 /* DateTimeViewController.swift in Sources */,
 				809B9C7027B39B1E004EB9C4 /* ViewAnimator.swift in Sources */,
 				80D9B09826FC9249001EB6BD /* SceneDelegate.swift in Sources */,
 				80E3784127C228880053C2FC /* TaxiTripsMatchViewController.swift in Sources */,

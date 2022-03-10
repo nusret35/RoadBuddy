@@ -16,6 +16,7 @@ struct Request
     var date:String
     var status:String
     var type:String
+    var tripID:String
 }
 
 protocol HomeViewControllerDelegate: AnyObject
@@ -27,13 +28,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     weak var delegate: HomeViewControllerDelegate?
 
     @IBOutlet weak var tableView: UITableView!
-    /*
-    let defaultRequest = Request(from: "Istanbul", to: "Ankara", passengerNumber: 2, date: "Monday, Feb 28 2022 (15:00)", status: "Accepted", type: "Trip Request")
     
-    let defaultRequest2 = Request(from: "Istanbul", to: "Ankara", passengerNumber: 2, date: "Tuesday, March 1 2022 (16:00)", status: "Rejected", type: "Taxi Share")
+    @IBOutlet weak var label: UILabel!
     
-    let defaultRequest3 = Request(from: "Istanbul", to: "Izmir", passengerNumber: 2, date: "Tuesday, March 1 2022 (17:00)", status: "Pending", type: "Trip Post")
-    */
+    
     var models = [[Request]]()
     
     override func viewDidLoad()
@@ -48,6 +46,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        viewDidLoad()
     }
     
     @objc func didTapMenuButton()
@@ -61,7 +60,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func setUpElements()
     {
-        setUpTableView()
+        label.isHidden = true
         let group = DispatchGroup()
         //let queue = DispatchQueue(label: "someQueue")
         group.enter()
@@ -69,10 +68,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         group.notify(queue: .main, execute:
         {
             print("data has fetched")
-            storageManager.retrieveAllRequestsOfUser { requests in
-                self.models = requests
-                print(String(self.models[0].count))
-                self.tableView.reloadData()
+            storageManager.retrieveAllRequestsOfUser { [self] requests in
+                if requests.isEmpty == true
+                {
+                    tableView.isHidden = true
+                    label.isHidden = false
+                }
+                else
+                {
+                    tableView.isHidden = false
+                    models = requests
+                    setUpTableView()
+                }
             }
         })
         
@@ -81,9 +88,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func setUpTableView()
     {
         tableView.register(MyTripTableViewCell.nib(), forCellReuseIdentifier: MyTripTableViewCell.identifier)
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.reloadData()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
         tableView.separatorStyle = .none
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 200, right: 0)
         tableView.contentInset = insets
@@ -99,8 +106,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 tableView.refreshControl?.endRefreshing()
                 models.removeAll()
                 models = requests
-                print(String(models[0].count))
                 tableView.reloadData()
+                if requests.isEmpty == true
+                {
+                    tableView.isHidden = true
+                    label.isHidden = false
+                }
             }
             
         })
@@ -122,7 +133,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedCell = models[indexPath.section][indexPath.row]
-        let vc = SelectedRequestViewController(fromLocation: selectedCell.from, toLocation: selectedCell.to, date: selectedCell.date, type: selectedCell.type, price: String(selectedCell.price), passengerNumber: String(selectedCell.passengerNumber), status: selectedCell.status)
+        let vc = SelectedRequestViewController(fromLocation: selectedCell.from, toLocation: selectedCell.to, date: selectedCell.date, type: selectedCell.type, price: String(selectedCell.price), passengerNumber: String(selectedCell.passengerNumber), status: selectedCell.status, tripID: selectedCell.tripID)
         present(vc, animated: true, completion: nil)
     }
     

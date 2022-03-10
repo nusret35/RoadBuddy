@@ -36,6 +36,8 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     
     private var requestFound = false
     
+    private var id = String()
+    
     private let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
     override func viewDidLoad() {
@@ -104,30 +106,49 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         var boolReturn = false
-        
+        let tripID = models[indexPath.row].uid + "_" + models[indexPath.row].time
         storageManager.ref.child("User_Inbox").child(models[indexPath.row].uid).child("Inbox").observeSingleEvent(of: .value) { [self] snapshot in
             if snapshot.exists() == true
             {
-                for child in snapshot.children
+                for trip in snapshot.children
                 {
-                    let snap = child as! DataSnapshot
-                    guard let res = snap.value as? [String:Any] else {return}
-                    let uid = res["uid"] as! String
-                    print(uid)
-                    if (uid == CurrentUser.UID)
+                    let trips = trip as! DataSnapshot
+                    for child in trips.children
                     {
-                        boolReturn = true
+                        let snap = child as! DataSnapshot
+                        guard let res = snap.value as? [String:Any] else {return}
+                        let uid = res["uid"] as! String
+                        id = res["tripID"] as! String
+                        //self.time = res["time"] as! String
+                        print(uid)
+                        print(id)
+                        if (uid == CurrentUser.UID)
+                        {
+                            if tripID == id
+                            {
+                                boolReturn = true
+                            }
+                        }
                     }
                 }
+                
             }
             if boolReturn == false
             {
                 let alert = UIAlertController(title: "Booking Trip?".localized(), message: "Do you want to book this trip?".localized(), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Yes".localized(), style: .default, handler: { (action) in
+                    
+                    //Updating the status of request
                     storageManager.ref?.child("Search_Requests").child(CurrentUser.UID).child(UserSearchTripRequest.time).updateChildValues(["status":"Pending"])
+                    //Updating the inbox of driver
                     request["chatId"] = ""
-                    request["last_message"] = "Wants to join your trip"
-                    storageManager.ref?.child("User_Inbox").child(models[indexPath.row].uid).child("Inbox").child(CurrentUser.UID).setValue(request)
+                    request["last_message"] = ""
+                    request["tripID"] = tripID
+                    request["status"] = "Pending"
+                    storageManager.ref.child("User_Inbox").child(models[indexPath.row].uid).child("Inbox").child(tripID).child(CurrentUser.UID).setValue(request)
+                    storageManager.ref.child("Search_Requests").child(CurrentUser.UID).child(UserSearchTripRequest.time).updateChildValues(["status":"Pending"])
+                        storageManager.ref.child("Search_Requests").child(CurrentUser.UID).child(UserSearchTripRequest.time).child("Pending_Requests").child(tripID).setValue(["status":"Pending"])
+
                     alert.dismiss(animated: true, completion: nil)
                 }))
                 alert.addAction(UIAlertAction(title: "No".localized(), style: .default, handler: { action in
@@ -160,7 +181,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     func sendTheRequest(completion: @escaping () -> ())
     {
         
-        request  = ["requestAccepted":false,"requestPending":true,"uid":CurrentUser.UID,"username":CurrentUser.Username, "from":UserSearchTripRequest.fromLocationName,"fromLocationLat": UserSearchTripRequest.fromCoordinateLat, "fromLocationLong":UserSearchTripRequest.fromCoordinateLong, "to":UserSearchTripRequest.toLocationName,"toLocationLat":UserSearchTripRequest.toCoordinateLat,"toLocationLong":UserSearchTripRequest.toCoordinateLong, "time": UserSearchTripRequest.time, "status": "Searching","passengerNumber":UserSearchTripRequest.numberOfPassengers] as [String : Any]
+        request  = ["requestAccepted":false,"requestPending":true,"uid":CurrentUser.UID,"username":CurrentUser.Username, "from":UserSearchTripRequest.fromLocationName,"fromLocationLat": UserSearchTripRequest.fromCoordinateLat, "fromLocationLong":UserSearchTripRequest.fromCoordinateLong, "to":UserSearchTripRequest.toLocationName,"toLocationLat":UserSearchTripRequest.toCoordinateLat,"toLocationLong":UserSearchTripRequest.toCoordinateLong, "time": UserSearchTripRequest.time, "status": "Searching","passengerNumber":UserSearchTripRequest.numberOfPassengers,"price":0] as [String : Any]
         storageManager.sendingSearchRequestToFirebase(request: self.request)
         searchFromLocation = CLLocation(latitude: UserSearchTripRequest.fromCoordinateLat, longitude: UserSearchTripRequest.fromCoordinateLong)
         searchToLocation = CLLocation(latitude: UserSearchTripRequest.toCoordinateLat, longitude: UserSearchTripRequest.toCoordinateLong)

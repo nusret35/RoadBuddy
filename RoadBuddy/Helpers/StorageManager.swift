@@ -240,12 +240,14 @@ class StorageManager
                 {
                     let snap = child as! DataSnapshot
                     guard let res = snap.value as? [String:Any] else {return}
+                    let uid = res["uid"] as! String
                     let date = res["time"] as! String
                     let status = res["status"] as! String
                     let passengerNumber = res["passengerNumber"] as! Int
                     let from = res["from"] as! String
                     let to = res["to"] as! String
-                    let request = Request(from: from, to: to, price:0,passengerNumber: passengerNumber, date: date, status: status, type: "Trip Request")
+                    let price = res["price"] as! Int
+                    let request = Request(from: from, to: to, price:price,passengerNumber: passengerNumber, date: date, status: status, type: "Trip Request", tripID: self.createTripID(uid: uid, date: date))
                     requests.append(request)
                 }
                 completion(requests)
@@ -267,11 +269,12 @@ class StorageManager
                 {
                     let snap = child as! DataSnapshot
                     guard let res = snap.value as? [String:Any] else {return}
+                    let uid = res["uid"] as! String
                     let date = res["time"] as! String
                     let status = res["status"] as! String
                     let from = res["from"] as! String
                     let to = res["to"] as! String
-                    let request = Request(from: from, to: to, price: 0,passengerNumber: 0, date: date, status: status, type: "Taxi Request")
+                    let request = Request(from: from, to: to, price: 0,passengerNumber: 0, date: date, status: status, type: "Taxi Request", tripID:self.createTripID(uid: uid, date: date))
                     searchAndTaxiRequests.append(request)
                 }
                 completion(searchAndTaxiRequests)
@@ -295,13 +298,14 @@ class StorageManager
                     let snap = child as! DataSnapshot
                     guard let res = snap.value as? [String:Any] else { print("something is wrong")
                         return}
+                    let uid = res["uid"] as! String
                     let date = res["time"] as! String
                     let price = res["price"] as! Int
                     let status = res["status"] as! String
                     let passengerNumber = res["passengerNumber"] as! Int
                     let from = res["from"] as! String
                     let to = res["to"] as! String
-                    let request = Request(from: from, to: to,price:price, passengerNumber: passengerNumber, date: date, status: status, type: "Trip Post")
+                    let request = Request(from: from, to: to,price:price, passengerNumber: passengerNumber, date: date, status: status, type: "Trip Post", tripID: self.createTripID(uid: uid, date: date))
                     searchTaxiAndPostRequests.append(request)
                 }
                 completion(searchTaxiAndPostRequests)
@@ -404,6 +408,11 @@ class StorageManager
                 group.leave()
             })
     }
+    //Add this function later
+    func updateSearchRequestsDatabase()
+    {
+        
+    }
     //************* TaxiTripsMatchViewController  ******************
     func sendingTaxiRequestToFirebase(request:[String:Any])
     {
@@ -443,5 +452,100 @@ class StorageManager
                 group.leave()
             })
     }
-                                
+    
+    //************* InboxViewController ********************
+    
+    func tripRequestAccepted(by:String, sender:InboxObject, chatID:String)
+    {
+        updateCurrentUserInbox(by: by, sender: sender, chatID: chatID)
+        updateSenderInbox(sender: sender, chatID: chatID)
+        updateChat(chatID: chatID)
+        updateSearchRequestStatus(sender: sender, by: by)
+    }
+    
+    func updateCurrentUserInbox(by:String, sender:InboxObject, chatID:String)
+    {
+        let currentUserInboxInfo = ["chatId":chatID,"last_message":"","requestAccepted":sender.requestAccepted,"requestPending":sender.requestPending,"uid":sender.uid,"username":sender.username,"tripID":sender.tripID] as [String:Any]
+        ref.child("User_Inbox").child(by).child("Inbox").child(sender.tripID).child(sender.uid).setValue(currentUserInboxInfo)
+    }
+    
+    func updateSenderInbox(sender:InboxObject,chatID:String)
+    {
+        let senderInboxInfo = ["chatId":chatID,"last_message":"","requestAccepted":true,"requestPending":false,"uid":CurrentUser.UID,"username":CurrentUser.Username,"tripID":sender.tripID] as [String:Any]
+        ref.child("User_Inbox").child(sender.uid).child("Inbox").child(sender.tripID).child(CurrentUser.UID).setValue(senderInboxInfo)
+    }
+    
+    func updateChat(chatID:String)
+    {
+        let lastMessageValueForFirebase = ["last_message":""] as [String:Any]
+        ref.child("Chats").child(chatID).setValue(lastMessageValueForFirebase)
+    }
+    
+    func updateSearchRequestStatus(sender:InboxObject,by:String)
+    {
+        ref.child("Search_Requests").child(sender.uid).observeSingleEvent(of: .value) { snapshot in
+            for child in snapshot.children
+            {
+                let date = child as! DataSnapshot
+                guard let dateForPath = date.key as String?
+                else
+                {
+                    print("date for path string not found")
+                    return
+                }
+                self.ref.child("Search_Requests").child(sender.uid).child(dateForPath).child("Pending_Requests").observeSingleEvent(of: .value) { [self] tripIDs in
+                    for trip in tripIDs.children
+                    {
+                        let id = trip as! DataSnapshot
+                        guard let idString = id.key as String?
+                        else
+                        {
+                            print("id key not found ")
+                            return
+                        }
+                        if idString == sender.tripID
+                        {
+                            returnPriceOfTrip(by: by, tripID: sender.tripID) { price in
+                                ref.child("Search_Requests").child(sender.uid).child(dateForPath).updateChildValues(["status":"Accepted","price":price])
+                                ref.child("Search_Requests").child(sender.uid).child(dateForPath).child("Pending_Requests").child(idString).updateChildValues(["status":"Accepted"])
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func returnPriceOfTrip(by:String, tripID:String,completion: @escaping (Int) -> ())
+    {
+        ref.child("Trips").child(by).child(tripID).observeSingleEvent(of: .value) { snapshot in
+            guard let res = snapshot.value as? [String:Any] else {return}
+            let price = res["price"] as! Int
+            completion(price)
+        }
+    }
+    //**************** PostTripPriceViewController ****************
+    
+    func createTripID(uid:String,date:String) -> String
+    {
+        let tripID = uid + "_" + date
+        return tripID
+    }
+    
+    //**************** SelectedRequestViewController *****************
+    
+    func deleteTripRequest()
+    {
+        
+    }
+    
+    func deleteTaxiRequest()
+    {
+        
+    }
+    
+    func deleteTripPost()
+    {
+        
+    }
 }

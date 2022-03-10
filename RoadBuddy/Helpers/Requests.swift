@@ -142,5 +142,7 @@ struct InboxObject
     var requestPending:Bool
     
     var requestAccepted:Bool
+    
+    var tripID:String
 }
 
