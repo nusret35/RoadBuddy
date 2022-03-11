@@ -58,7 +58,7 @@ class MyTripTableViewCell: UITableViewCell {
         fromLabel.text = model.from
         toLabel.text = model.to
         statusLabel.text = model.status
-        if model.status == "Searching"
+        if model.status == "Searching" 
         {
             statusImageView.image = UIImage(named: "status-icon-teal")
         }
@@ -79,17 +79,19 @@ class MyTripTableViewCell: UITableViewCell {
         {
             typeLabel.text = "Trip Request"
             passengerButton.setTitle(String(model.passengerNumber), for: .normal)
+            passengerButton.isHidden = false
             //typeImage.image = UIImage(systemName: "figure.wave")
         }
         else if model.type == "Trip Post"
         {
             typeLabel.text = "Trip Post"
             passengerButton.setTitle(String(model.passengerNumber), for: .normal)
+            passengerButton.isHidden = false
             //typeImage.image = UIImage(systemName: "car.fill")
         }
-        else if model.type == "Taxi Share"
+        else if model.type == "Taxi Request"
         {
-            typeLabel.text = "Taxi Share"
+            typeLabel.text = "Taxi Request"
             //typeImage.image = UIImage(named: "type-icon-taxi")
             passengerButton.isHidden = true
         }

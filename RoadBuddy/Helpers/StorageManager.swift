@@ -67,6 +67,8 @@ struct TaxiTrip
     var dataToLocation:CLLocation
     
     var status:String
+    
+    var tripID:String
 }
 
 
@@ -416,8 +418,10 @@ class StorageManager
     //************* TaxiTripsMatchViewController  ******************
     func sendingTaxiRequestToFirebase(request:[String:Any])
     {
-        ref.child("Taxi_Requests").child(CurrentUser.UID).child(UserTaxiTripRequest.time).setValue(request)
-        print("request sent")
+        let tripID = "taxi_" + createTripID(uid: UserTaxiTripRequest.uid, date: UserTaxiTripRequest.time)
+        print("tripID: " + tripID)
+        ref.child("Taxi_Requests").child(CurrentUser.UID).child(tripID).setValue(request)
+        print("taxi request sent")
     }
     
     func findTripsForTaxiRequest(group:DispatchGroup, completion: @escaping (TaxiTrip) -> ())
@@ -425,28 +429,40 @@ class StorageManager
         db.collection("users").document(CurrentUser.UID).updateData(["TaxiTripIsSet":true])
         ref.child("Taxi_Requests")
             .observeSingleEvent(of: .value, with: { (snapshot)  in
-                for date in snapshot.children
+                if snapshot.exists() == true
                 {
-                    let request = date as! DataSnapshot
-                    for child in request.children
+                    for date in snapshot.children
                     {
-                        let snap = child as! DataSnapshot
-                        guard let res = snap.value as? [String:Any] else {return}
-                        let username = res["username"] as! String
-                        print(username)
-                        let from = res["from"] as! String
-                        let to = res["to"] as! String
-                        let time = res["time"] as! String
-                        let status = res["status"] as! String
-                        let fromLat = res["fromLocationLat"] as! Double
-                        let fromLong = res["fromLocationLong"] as! Double
-                        let toLat = res["toLocationLat"] as! Double
-                        let toLong = res["toLocationLong"] as! Double
-                        let uid = res["uid"] as! String
-                        let dataFromLocation = CLLocation(latitude: fromLat, longitude:fromLong)
-                        let dataToLocation = CLLocation(latitude:toLat, longitude:toLong)
-                        let dataTrip = TaxiTrip(username: username, from: from, to: to, time: time, fromLat: fromLat, fromLong: fromLong, toLat: toLat, toLong: toLong, uid: uid, dataFromLocation: dataFromLocation, dataToLocation: dataToLocation, status: status)
-                        completion(dataTrip)
+                        let request = date as! DataSnapshot
+                        let parentUID = request.key
+                        if parentUID != CurrentUser.UID
+                        {
+                            for child in request.children
+                            {
+                                print("inside second snapshot")
+                                let snap = child as! DataSnapshot
+                                guard let tripID = snap.key as String? else {
+                                    print("tripID not found")
+                                    return
+                                }
+                                guard let res = snap.value as? [String:Any] else {return}
+                                let username = res["username"] as! String
+                                print(username)
+                                let from = res["from"] as! String
+                                let to = res["to"] as! String
+                                let time = res["time"] as! String
+                                let status = res["status"] as! String
+                                let fromLat = res["fromLocationLat"] as! Double
+                                let fromLong = res["fromLocationLong"] as! Double
+                                let toLat = res["toLocationLat"] as! Double
+                                let toLong = res["toLocationLong"] as! Double
+                                let uid = res["uid"] as! String
+                                let dataFromLocation = CLLocation(latitude: fromLat, longitude:fromLong)
+                                let dataToLocation = CLLocation(latitude:toLat, longitude:toLong)
+                                let dataTrip = TaxiTrip(username: username, from: from, to: to, time: time, fromLat: fromLat, fromLong: fromLong, toLat: toLat, toLong: toLong, uid: uid, dataFromLocation: dataFromLocation, dataToLocation: dataToLocation, status: status, tripID: tripID)
+                                completion(dataTrip)
+                            }
+                        }
                     }
                 }
                 group.leave()
@@ -460,7 +476,16 @@ class StorageManager
         updateCurrentUserInbox(by: by, sender: sender, chatID: chatID)
         updateSenderInbox(sender: sender, chatID: chatID)
         updateChat(chatID: chatID)
-        updateSearchRequestStatus(sender: sender, by: by)
+        let index = sender.tripID.firstIndex(of:"_")!
+        if sender.tripID[...index] != "taxi_"
+        {
+            updateSearchRequestStatus(sender: sender, by: by)
+        }
+        else
+        {
+            print("updating taxi request")
+            ref.child("Taxi_Requests").child(CurrentUser.UID).child(sender.tripID).updateChildValues(["status":"Accepted"])
+        }
     }
     
     func updateCurrentUserInbox(by:String, sender:InboxObject, chatID:String)

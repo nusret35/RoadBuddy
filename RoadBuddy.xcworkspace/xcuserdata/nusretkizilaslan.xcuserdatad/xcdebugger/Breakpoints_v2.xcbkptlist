@@ -158,8 +158,8 @@
             filePath = "RoadBuddy/Helpers/StorageManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "533"
-            endingLineNumber = "533"
+            startingLineNumber = "558"
+            endingLineNumber = "558"
             landmarkName = "createTripID(uid:date:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "RoadBuddy/Helpers/StorageManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "sortAndDivideRequests(allRequests:)"
             landmarkType = "7">
          </BreakpointContent>

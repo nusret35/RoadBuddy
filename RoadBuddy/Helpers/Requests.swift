@@ -79,9 +79,9 @@ class UserTripPost
 
 class TaxiTripRequest
 {
-    var fullname = String()
+    var fullname:String
     
-    var uid = String()
+    var uid:String
     
     var time =  myDateFormat.dateToString(Date())
     
@@ -96,6 +96,12 @@ class TaxiTripRequest
     var toCoordinateLat = Double()
     
     var toCoordinateLong = Double()
+    
+    init(fullname:String,uid:String)
+    {
+        self.fullname = fullname
+        self.uid = uid
+    }
 }
 
 class TripPost

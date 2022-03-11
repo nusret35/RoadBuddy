@@ -27,7 +27,7 @@ class PostTripPriceViewController: UIViewController {
     {
         super.viewDidLoad()
         continueButton.setTitle("Continue".localized(), for: .normal)
-        numberLabel.text = String(minimumPrice)
+        numberLabel.text = String(minimumPrice) + " ₺"
         minusButton.tintColor = .secondaryLabel
         minusButton.setTitle("", for: .normal)
     }

@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-var UserTaxiTripRequest = TaxiTripRequest()
+var UserTaxiTripRequest = TaxiTripRequest(fullname: CurrentUser.Fullname, uid: CurrentUser.UID)
 
 class ShareTaxiFromViewController2: UIViewController, UISearchResultsUpdating
 {

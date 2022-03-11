@@ -31,6 +31,27 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
     
     private let taxiTripRequestToLocation = CLLocation(latitude: UserTaxiTripRequest.toCoordinateLat, longitude: UserTaxiTripRequest.toCoordinateLong)
     
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        view.addSubview(tableView)
+        setUpElements()
+    }
+    
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+    }
+    
+    private func setUpElements()
+    {
+        setUpTableView()
+        sendTaxiRequest
+        {
+            self.matchRequest()
+        }
+    }
+
     private func setUpTableView()
     {
         tableView.isHidden = false
@@ -108,21 +129,6 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubview(tableView)
-        setUpTableView()
-        sendTaxiRequest {
-            self.matchRequest()
-        }
-    }
-    
-    override func viewDidLayoutSubviews()
-    {
-        super.viewDidLayoutSubviews()
-        tableView.frame = view.bounds
-    }
-    
     private func setUpView()
     {
         if self.matchFound == true
@@ -147,14 +153,16 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
     {
         request = [
                        "uid":CurrentUser.UID,
+                       "username":CurrentUser.Username,
                        "time":UserTaxiTripRequest.time,
                        "from":UserTaxiTripRequest.fromLocationName,
                        "fromLocationLat":UserTaxiTripRequest.fromCoordinateLat,
                        "fromLocationLong":UserTaxiTripRequest.fromCoordinateLong,
                        "to":UserTaxiTripRequest.toLocationName,
                        "toLocationLat":UserTaxiTripRequest.toCoordinateLat,
-                        "toLocationLong":UserTaxiTripRequest.toCoordinateLong, "status": "Searching"] as [String:Any]
-        storageManager.sendingSearchRequestToFirebase(request: request)
+                        "toLocationLong":UserTaxiTripRequest.toCoordinateLong, "status": "Pending"] as [String:Any]
+        storageManager.sendingTaxiRequestToFirebase(request: request)
+        completion()
     }
    
     func matchRequest()
@@ -191,6 +199,7 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
         }
         group.notify(queue: .main)
         {
+            print("notifying group")
             self.sortTrips()
             self.fillModelsArray()
             self.setUpView()
@@ -242,11 +251,11 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
     
     func fillModelsArray()
     {
-        for i in self.taxiTrips
+        for i in taxiTrips
         {
-            self.models.append(TripPost(driverName: i.passengerName, uid: i.uid, profilePicture: UIImage(named:"emptyProfilePicture")!, fromLocation: i.fromLocation, toLocation: i.toLocation, time: i.time, numberOfPassengers: 0, price: 0))
+            models.append(TripPost(driverName: i.passengerName, uid: i.uid, profilePicture: UIImage(named:"emptyProfilePicture")!, fromLocation: i.fromLocation, toLocation: i.toLocation, time: i.time, numberOfPassengers: 0, price: 0))
         }
         print(String(models.count))
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
 }
