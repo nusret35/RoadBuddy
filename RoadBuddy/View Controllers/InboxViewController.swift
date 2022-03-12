@@ -16,6 +16,8 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
 {
     private var models = [InboxObject]()
     
+    private var idKeys = [String]()
+    
     private let spinner = JGProgressHUD(style: .dark)
     
     private let tableView : UITableView =
@@ -92,7 +94,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         tableView.deselectRow(at: indexPath, animated: true)
-        if models[indexPath.row].requestPending == false && models[indexPath.row].requestAccepted == true
+        if models[indexPath.row].status == "Accepted"
         {
             pushToChatView(indexPath.row)
         }
@@ -107,22 +109,23 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     {
         storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("Inbox").observe(.value) { [self] snapshot in
             var objects = [InboxObject]()
-            for user in snapshot.children
+            for trip in snapshot.children
             {
-                let date = user as! DataSnapshot
-                for child in date.children
+                let id = trip as! DataSnapshot
+                for user in id.children
                 {
-                    let snap = child as! DataSnapshot
+                    print(id.key)
+                    idKeys.append(id.key)
+                    let snap = user as! DataSnapshot
                     guard let res = snap.value as? [String:Any]
                     else {return}
                     let otherUsername = res["username"] as! String
                     print(otherUsername)
                     let otherUserUID = res["uid"] as! String
-                    let requestIsAccepted = res["requestAccepted"] as! Bool
-                    let requestIsPending = res["requestPending"] as! Bool
+                    let status = res["status"] as! String
                     let lastMessage = res["last_message"] as! String
                     let tripID = res["tripID"] as! String
-                    let data = InboxObject(username: otherUsername, profilePictureURL: storageManager.userProfilePictureString(otherUserUID), message: lastMessage, uid: otherUserUID, requestPending: requestIsPending, requestAccepted: requestIsAccepted, tripID:tripID)
+                    let data = InboxObject(username: otherUsername, profilePictureURL: storageManager.userProfilePictureString(otherUserUID), message: lastMessage, uid: otherUserUID, status: status, tripID:tripID)
                     objects.append(data)
                 }
             }
@@ -155,7 +158,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         {
             id = models[row].username + "_" + CurrentUser.Username
         }
-        id = id + "_" + models[row].tripID
+        id = id + "_" + idKeys[row]
         return id
     }
     
@@ -163,9 +166,10 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     {
         let chatId = chatID(tag)
         var sender = models[tag]
-        sender.requestPending = false
-        sender.requestAccepted = true
-        storageManager.tripRequestAccepted(by: CurrentUser.UID, sender: sender , chatID: chatId)
+        let idKey = idKeys[tag]
+        print(idKey)
+        sender.status = "Accepted"
+        storageManager.tripRequestAccepted(by: CurrentUser.UID, sender: sender , chatID: chatId,taxiTripID:idKey)
         tableView.reloadData()
         pushToChatView(tag)
     }
@@ -173,7 +177,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func didPressReject(_ tag: Int)
     {
         let alert = UIAlertController(title: "Reject Request?", message: "Do you want to reject this request? You won't be able to undo this.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler:{ action in storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("Inbox").child(self.models[tag].tripID).child(self.models  [tag].uid).updateChildValues(["requestAccepted":false, "requestPending":false])
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler:{ action in storageManager.ref.child("User_Inbox").child(CurrentUser.UID).child("Inbox").child(self.models[tag].tripID).child(self.models  [tag].uid).updateChildValues(["status":"Rejected"])
             self.models.remove(at: tag)
             self.tableView.reloadData()
         }))

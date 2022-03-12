@@ -56,7 +56,7 @@ class MessageTableViewCell: UITableViewCell {
         self.profilePicture.image = UIImage(named: "emptyProfilePicture")
         
         
-        if model.requestAccepted == true
+        if model.status == "Accepted"
         {
             acceptButton.isHidden = true
             rejectButton.isHidden = true
@@ -64,6 +64,9 @@ class MessageTableViewCell: UITableViewCell {
         }
         else
         {
+
+            acceptButton.isHidden = false
+            rejectButton.isHidden = false
             messageLabel.text = "Wants to join your trip"
         }
         

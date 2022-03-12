@@ -416,12 +416,13 @@ class StorageManager
         
     }
     //************* TaxiTripsMatchViewController  ******************
-    func sendingTaxiRequestToFirebase(request:[String:Any])
+    func sendingTaxiRequestToFirebase(request:[String:Any],completion: @escaping (String)->())
     {
         let tripID = "taxi_" + createTripID(uid: UserTaxiTripRequest.uid, date: UserTaxiTripRequest.time)
         print("tripID: " + tripID)
         ref.child("Taxi_Requests").child(CurrentUser.UID).child(tripID).setValue(request)
         print("taxi request sent")
+        completion(tripID)
     }
     
     func findTripsForTaxiRequest(group:DispatchGroup, completion: @escaping (TaxiTrip) -> ())
@@ -469,34 +470,34 @@ class StorageManager
             })
     }
     
-    //************* InboxViewController ********************
+    //************* InboxViewController ******************************************
     
-    func tripRequestAccepted(by:String, sender:InboxObject, chatID:String)
+    func tripRequestAccepted(by:String, sender:InboxObject, chatID:String,taxiTripID:String)
     {
-        updateCurrentUserInbox(by: by, sender: sender, chatID: chatID)
-        updateSenderInbox(sender: sender, chatID: chatID)
-        updateChat(chatID: chatID)
         let index = sender.tripID.firstIndex(of:"_")!
+        updateChat(chatID: chatID)
         if sender.tripID[...index] != "taxi_"
         {
+            updateCurrentUserInbox(by: by, sender: sender, chatID: chatID)
+            updateSenderInbox(sender: sender, chatID: chatID)
             updateSearchRequestStatus(sender: sender, by: by)
         }
         else
         {
             print("updating taxi request")
-            ref.child("Taxi_Requests").child(CurrentUser.UID).child(sender.tripID).updateChildValues(["status":"Accepted"])
+            updateTaxiRequestStatus(sender: sender, by: by, tripID: taxiTripID,chatID:chatID)
         }
     }
     
     func updateCurrentUserInbox(by:String, sender:InboxObject, chatID:String)
     {
-        let currentUserInboxInfo = ["chatId":chatID,"last_message":"","requestAccepted":sender.requestAccepted,"requestPending":sender.requestPending,"uid":sender.uid,"username":sender.username,"tripID":sender.tripID] as [String:Any]
+        let currentUserInboxInfo = ["chatId":chatID,"last_message":"", "status":sender.status,"uid":sender.uid,"username":sender.username,"tripID":sender.tripID] as [String:Any]
         ref.child("User_Inbox").child(by).child("Inbox").child(sender.tripID).child(sender.uid).setValue(currentUserInboxInfo)
     }
     
     func updateSenderInbox(sender:InboxObject,chatID:String)
     {
-        let senderInboxInfo = ["chatId":chatID,"last_message":"","requestAccepted":true,"requestPending":false,"uid":CurrentUser.UID,"username":CurrentUser.Username,"tripID":sender.tripID] as [String:Any]
+        let senderInboxInfo = ["chatId":chatID,"last_message":"","status":"Accepted","uid":CurrentUser.UID,"username":CurrentUser.Username,"tripID":sender.tripID] as [String:Any]
         ref.child("User_Inbox").child(sender.uid).child("Inbox").child(sender.tripID).child(CurrentUser.UID).setValue(senderInboxInfo)
     }
     
@@ -505,6 +506,18 @@ class StorageManager
         let lastMessageValueForFirebase = ["last_message":""] as [String:Any]
         ref.child("Chats").child(chatID).setValue(lastMessageValueForFirebase)
     }
+    
+    func updateTaxiRequestStatus(sender:InboxObject,by:String, tripID:String,chatID:String)
+    {
+        let senderInboxInfo = ["chatId":chatID,"last_message":"","status":"Accepted","uid":CurrentUser.UID,"username":CurrentUser.Username,"tripID":tripID] as [String:Any]
+        print("tripID: " + tripID + " sender.tripID: " + sender.tripID)
+        ref.child("Taxi_Requests").child(CurrentUser.UID).child(tripID).updateChildValues(["status":"Accepted"])
+        ref.child("User_Inbox").child(CurrentUser.UID).child("Inbox").child(tripID).child(sender.uid).updateChildValues(["status":"Accepted","chatId":chatID])
+        ref.child("User_Inbox").child(sender.uid).child("Inbox").child(tripID).child(CurrentUser.UID).setValue(senderInboxInfo)
+        ref.child("Taxi_Requests").child(sender.uid).child(sender.tripID).updateChildValues(["status":"Accepted"])
+        ref.child("Taxi_Requests").child(sender.uid).child(sender.tripID).child("Pending_Requests").child(tripID).updateChildValues(["status":"Accepted"])
+    }
+    
     
     func updateSearchRequestStatus(sender:InboxObject,by:String)
     {

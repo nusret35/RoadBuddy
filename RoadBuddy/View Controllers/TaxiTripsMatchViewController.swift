@@ -27,6 +27,8 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
     
     private var matchFound = false
     
+    private var userTripID = String()
+    
     private let taxiTripRequestFromLocation = CLLocation(latitude: UserTaxiTripRequest.fromCoordinateLat, longitude: UserTaxiTripRequest.fromCoordinateLong)
     
     private let taxiTripRequestToLocation = CLLocation(latitude: UserTaxiTripRequest.toCoordinateLat, longitude: UserTaxiTripRequest.toCoordinateLong)
@@ -47,7 +49,8 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
     {
         setUpTableView()
         sendTaxiRequest
-        {
+        {   userTripID in
+            self.userTripID = userTripID
             self.matchRequest()
         }
     }
@@ -90,19 +93,29 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         var boolReturn = false
-        
-        storageManager.ref.child("User_Inbox").child(models[indexPath.row].uid).observeSingleEvent(of: .value) { [self] snapshot in
+        let tripID = "taxi_" + models[indexPath.row].uid + "_" + models[indexPath.row].time
+        storageManager.ref.child("User_Inbox").child(models[indexPath.row].uid).child("Inbox").observeSingleEvent(of: .value) { [self] snapshot in
             if snapshot.exists() == true
             {
-                for child in snapshot.children
+                for trip in snapshot.children
                 {
-                    let snap = child as! DataSnapshot
-                    guard let res = snap.value as? [String:Any] else {return}
-                    let uid = res["uid"] as! String
-                    print(uid)
-                    if (uid == CurrentUser.UID)
+                    let trips = trip as! DataSnapshot
+                    for child in trips.children
                     {
-                        boolReturn = true
+                        let snap = child as! DataSnapshot
+                        guard let res = snap.value as? [String:Any] else {return}
+                        let uid = res["uid"] as! String
+                        let id = res["tripID"] as! String
+                        //self.time = res["time"] as! String
+                        print(uid)
+                        print(id)
+                        if (uid == CurrentUser.UID)
+                        {
+                            if tripID == id
+                            {
+                                boolReturn = true
+                            }
+                        }
                     }
                 }
             }
@@ -110,7 +123,12 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
             {
                 let alert = UIAlertController(title: "Booking Trip?".localized(), message: "Do you want to book this trip?".localized(), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Yes".localized(), style: .default, handler: { (action) in
-                    storageManager.ref?.child("User_Inbox").child(models[indexPath.row].uid).child(CurrentUser.UID).setValue(self.request)
+                    
+                    request["chatId"] = ""
+                    request["last_message"] = ""
+                    request["tripID"] = userTripID
+                    storageManager.ref?.child("User_Inbox").child(models[indexPath.row].uid).child("Inbox").child(tripID).child(CurrentUser.UID).setValue(request)
+                    storageManager.ref.child("Taxi_Requests").child(CurrentUser.UID).child(userTripID).child("Pending_Requests").child(tripID).setValue(["status":"Pending"])
                     alert.dismiss(animated: true, completion: nil)
                 }))
                 alert.addAction(UIAlertAction(title: "No".localized(), style: .default, handler: { action in
@@ -149,7 +167,7 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
     
     
     
-    func sendTaxiRequest(completion: @escaping () -> ())
+    func sendTaxiRequest(completion: @escaping (String) -> ())
     {
         request = [
                        "uid":CurrentUser.UID,
@@ -161,8 +179,9 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
                        "to":UserTaxiTripRequest.toLocationName,
                        "toLocationLat":UserTaxiTripRequest.toCoordinateLat,
                         "toLocationLong":UserTaxiTripRequest.toCoordinateLong, "status": "Pending"] as [String:Any]
-        storageManager.sendingTaxiRequestToFirebase(request: request)
-        completion()
+        storageManager.sendingTaxiRequestToFirebase(request: request,completion:{ tripID in
+            completion(tripID)
+        })
     }
    
     func matchRequest()
@@ -170,7 +189,7 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
         let group = DispatchGroup()
         group.enter()
         storageManager.findTripsForTaxiRequest(group: group) { dataTrip in
-            let fromDistance = self.taxiTripRequestToLocation.distance(from: dataTrip.dataFromLocation) / 1000
+            let fromDistance = self.taxiTripRequestFromLocation.distance(from: dataTrip.dataFromLocation) / 1000
             print("fromDistance: " + String(fromDistance))
             let currentUserID = CurrentUser.UID
             if (currentUserID != dataTrip.uid)
@@ -199,7 +218,6 @@ class TaxiTripsMatchViewController: UIViewController, UITableViewDelegate, UITab
         }
         group.notify(queue: .main)
         {
-            print("notifying group")
             self.sortTrips()
             self.fillModelsArray()
             self.setUpView()

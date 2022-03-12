@@ -181,7 +181,7 @@ class SearchMatchRequestViewController: UIViewController, UITableViewDelegate, U
     func sendTheRequest(completion: @escaping () -> ())
     {
         
-        request  = ["requestAccepted":false,"requestPending":true,"uid":CurrentUser.UID,"username":CurrentUser.Username, "from":UserSearchTripRequest.fromLocationName,"fromLocationLat": UserSearchTripRequest.fromCoordinateLat, "fromLocationLong":UserSearchTripRequest.fromCoordinateLong, "to":UserSearchTripRequest.toLocationName,"toLocationLat":UserSearchTripRequest.toCoordinateLat,"toLocationLong":UserSearchTripRequest.toCoordinateLong, "time": UserSearchTripRequest.time, "status": "Searching","passengerNumber":UserSearchTripRequest.numberOfPassengers,"price":0] as [String : Any]
+        request  = ["uid":CurrentUser.UID,"username":CurrentUser.Username, "from":UserSearchTripRequest.fromLocationName,"fromLocationLat": UserSearchTripRequest.fromCoordinateLat, "fromLocationLong":UserSearchTripRequest.fromCoordinateLong, "to":UserSearchTripRequest.toLocationName,"toLocationLat":UserSearchTripRequest.toCoordinateLat,"toLocationLong":UserSearchTripRequest.toCoordinateLong, "time": UserSearchTripRequest.time, "status": "Searching","passengerNumber":UserSearchTripRequest.numberOfPassengers,"price":0] as [String : Any]
         storageManager.sendingSearchRequestToFirebase(request: self.request)
         searchFromLocation = CLLocation(latitude: UserSearchTripRequest.fromCoordinateLat, longitude: UserSearchTripRequest.fromCoordinateLong)
         searchToLocation = CLLocation(latitude: UserSearchTripRequest.toCoordinateLat, longitude: UserSearchTripRequest.toCoordinateLong)
