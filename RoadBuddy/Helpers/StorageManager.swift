@@ -11,6 +11,14 @@ import FirebaseStorage
 import FirebaseDatabase
 import CoreLocation
 
+
+struct TemporaryStruct
+{
+    var tripID:String
+    
+    var status:String
+}
+
 struct Trip
 {
     var name:String
@@ -320,6 +328,40 @@ class StorageManager
         }
     }
     
+    func getPendingSearchRequestsArray(date:String, completion: @escaping ([TemporaryStruct]) -> () )
+    {
+        var array = [TemporaryStruct]()
+        
+        ref.child("Search_Requests").child(CurrentUser.UID).child(date).child("Pending_Requests").observeSingleEvent(of: .value) { snapshot in
+            for child in snapshot.children
+            {
+                let trip = child as! DataSnapshot
+                guard let res = trip.value as? [String:Any] else {return}
+                let status = res["status"] as! String
+                let element = TemporaryStruct(tripID: trip.key, status: status)
+                array.append(element)
+            }
+            completion(array)
+        }
+    }
+    
+    func getPendingTaxiRequestsArray(tripID:String, completion: @escaping ([TemporaryStruct]) -> ())
+    {
+        var array = [TemporaryStruct]()
+        
+        ref.child("Taxi_Requests").child(CurrentUser.UID).child(tripID).child("Pending_Requests").observeSingleEvent(of: .value) { snapshot in
+            for child in snapshot.children
+            {
+                let trip = child as! DataSnapshot
+                guard let res = trip.value as? [String:Any] else {return}
+                let status = res["status"] as! String
+                let element = TemporaryStruct(tripID: trip.key, status: status)
+                array.append(element)
+            }
+            completion(array)
+        }
+    }
+    
     //********************* Time View functions ***********************
     
     func checkIfThereIsAnotherRequestWithSameTime(completion: @escaping (String?) -> ())
@@ -461,7 +503,10 @@ class StorageManager
                                 let dataFromLocation = CLLocation(latitude: fromLat, longitude:fromLong)
                                 let dataToLocation = CLLocation(latitude:toLat, longitude:toLong)
                                 let dataTrip = TaxiTrip(username: username, from: from, to: to, time: time, fromLat: fromLat, fromLong: fromLong, toLat: toLat, toLong: toLong, uid: uid, dataFromLocation: dataFromLocation, dataToLocation: dataToLocation, status: status, tripID: tripID)
-                                completion(dataTrip)
+                                if status == "Pending"
+                                {
+                                    completion(dataTrip)
+                                }
                             }
                         }
                     }

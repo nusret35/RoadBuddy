@@ -79,6 +79,13 @@ class SelectedRequestViewController: UIViewController {
             {
                 pricePassengerStackView.isHidden = true
             }
+            
+            storageManager.getPendingSearchRequestsArray(date: dateText) { array in
+                for i in array
+                {
+                    print("tripID: " + i.tripID + " status: " + i.status)
+                }
+            }
         }
         else if type == "Taxi Request"
         {
@@ -86,6 +93,12 @@ class SelectedRequestViewController: UIViewController {
             //later add status features
             pricePassengerStackView.isHidden = true
             
+            storageManager.getPendingTaxiRequestsArray(tripID: tripID) { array in
+                for i in array
+                {
+                    print("tripID: " + i.tripID + " status: " + i.status)
+                }
+            }
         }
         else if type == "Trip Post"
         {
