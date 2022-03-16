@@ -122,7 +122,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return models[section].count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: MyTripTableViewCell.identifier, for: indexPath) as! MyTripTableViewCell
         cell.configure(with: self.models[indexPath.section][indexPath.row])
@@ -130,7 +131,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedCell = models[indexPath.section][indexPath.row]
         let vc = SelectedRequestViewController(fromLocation: selectedCell.from, toLocation: selectedCell.to, date: selectedCell.date, type: selectedCell.type, price: String(selectedCell.price), passengerNumber: String(selectedCell.passengerNumber), status: selectedCell.status, tripID: selectedCell.tripID)

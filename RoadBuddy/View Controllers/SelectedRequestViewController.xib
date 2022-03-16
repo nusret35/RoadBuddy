@@ -17,6 +17,7 @@
                 <outlet property="passengerButton" destination="vaU-so-wFu" id="8hZ-7i-zPh"/>
                 <outlet property="priceLabel" destination="q1a-42-fMi" id="4L1-v6-JuF"/>
                 <outlet property="pricePassengerStackView" destination="Xyo-MS-ZHQ" id="eMj-GC-qnd"/>
+                <outlet property="tableView" destination="Z1d-1A-YDn" id="cZe-rJ-6j8"/>
                 <outlet property="toLocationLabel" destination="aO5-Aa-5DM" id="yG9-Sb-GQU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -103,7 +104,7 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ega-EM-qPH">
-                    <rect key="frame" x="20" y="439" width="374" height="50"/>
+                    <rect key="frame" x="20" y="615" width="374" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="teb-S2-nBZ"/>
                     </constraints>
@@ -118,18 +119,28 @@
                         <action selector="deleteButtonAction:" destination="-1" eventType="touchUpInside" id="BkV-yG-JpA"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Z1d-1A-YDn">
+                    <rect key="frame" x="20" y="413.5" width="374" height="171.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="171.5" id="gRM-oK-5X9"/>
+                    </constraints>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Ega-EM-qPH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="8LY-or-CVF"/>
+                <constraint firstItem="Z1d-1A-YDn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="A6z-s0-6l3"/>
                 <constraint firstItem="Rm5-1d-RfH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="AsK-8M-yVM"/>
+                <constraint firstItem="Z1d-1A-YDn" firstAttribute="top" secondItem="vc9-RV-zZ5" secondAttribute="bottom" constant="30" id="G7E-Qi-wGj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vc9-RV-zZ5" secondAttribute="trailing" constant="20" id="J6b-3s-pwU"/>
                 <constraint firstItem="Rm5-1d-RfH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="M1i-4o-QKn"/>
                 <constraint firstItem="vc9-RV-zZ5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="TRV-qc-azn"/>
-                <constraint firstItem="Ega-EM-qPH" firstAttribute="top" secondItem="vc9-RV-zZ5" secondAttribute="bottom" constant="55.5" id="dXj-tr-Cji"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Rm5-1d-RfH" secondAttribute="trailing" constant="20" id="iDW-nn-Vlm"/>
+                <constraint firstItem="Ega-EM-qPH" firstAttribute="top" secondItem="Z1d-1A-YDn" secondAttribute="bottom" constant="30" id="o95-SF-gp8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ega-EM-qPH" secondAttribute="trailing" constant="20" id="taX-HN-L2Z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Z1d-1A-YDn" secondAttribute="trailing" constant="20" id="tfn-Tx-c1n"/>
                 <constraint firstItem="vc9-RV-zZ5" firstAttribute="top" secondItem="Rm5-1d-RfH" secondAttribute="bottom" constant="26" id="uDL-Te-dXi"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>

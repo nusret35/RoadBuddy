@@ -70,7 +70,7 @@ class MessageTableViewCell: UITableViewCell {
             messageLabel.text = "Wants to join your trip"
         }
         
-        storageManager.otherUserProfilePictureLoad(model, completion: { [self] image in
+        storageManager.otherUserProfilePictureLoad(model.uid, completion: { [self] image in
             profilePicture.image = image
             profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
             profilePicture.clipsToBounds = true

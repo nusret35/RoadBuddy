@@ -14,9 +14,14 @@ import CoreLocation
 
 struct TemporaryStruct
 {
+    var username:String
+ 
+    var uid:String
+    
     var tripID:String
     
     var status:String
+    
 }
 
 struct Trip
@@ -120,12 +125,12 @@ class StorageManager
             }
     }
     
-    func otherUserProfilePictureLoad(_ otherUser:InboxObject,completion: @escaping FinishedDownload)
+    func otherUserProfilePictureLoad(_ uid:String,completion: @escaping FinishedDownload)
     {
         var data = Data()
-        let docRef = db.collection("users").document(otherUser.uid)
-        docRef.getDocument { snapshot, error in
-            self.storage.child(otherUser.profilePictureURL).downloadURL {
+        let docRef = db.collection("users").document(uid)
+        docRef.getDocument { [self] snapshot, error in
+            storage.child(userProfilePictureString(uid)).downloadURL {
                 (url, error) in
                 guard let url = url else
                 {
@@ -141,6 +146,8 @@ class StorageManager
                 catch
                 {
                     print("profile photo error")
+                    let image = UIImage(named: "emptyProfilePicture")
+                    completion(image)
                 }
             }
         }
@@ -151,6 +158,46 @@ class StorageManager
         return "/images/\(uid)"
     }
     
+    
+    func getUsernameByUID(_ uid:String,completion: @escaping (String) -> ())
+    {
+        ref.child("Users").child(uid).observeSingleEvent(of: .value) { snapshot in
+            if snapshot.exists() == true
+            {
+                guard let res = snapshot.value as? [String:Any]
+                else
+                {
+                    print("user not found")
+                    return
+                }
+                let username = res["username"] as! String
+                completion(username)
+            }
+            else
+            {
+                print("user not found")
+            }
+        }
+    }
+    
+    func getUidByTripID(_ tripID:String) -> String
+    {
+        let index = tripID.firstIndex(of: "_")!
+        let uid = tripID[..<index]
+        return String(uid)
+    }
+    
+    func getUidByTaxiTripID(_ tripID:String) -> String
+    {
+        let start_index = tripID.index(tripID.startIndex,offsetBy: 5)
+        let sub_str = String(tripID[start_index...])
+        let end_index = sub_str.firstIndex(of: "_")!
+        guard let final_str = sub_str[..<end_index] as? String.SubSequence else
+        {
+            print("final_str was not created")
+        }
+        return String(final_str)
+    }
     //******************** Home View functions ************************
     
     func retrieveAllRequestsOfUser(completion: @escaping ([[Request]]) -> ())
@@ -331,38 +378,67 @@ class StorageManager
     func getPendingSearchRequestsArray(date:String, completion: @escaping ([TemporaryStruct]) -> () )
     {
         var array = [TemporaryStruct]()
-        
+        let group = DispatchGroup()
         ref.child("Search_Requests").child(CurrentUser.UID).child(date).child("Pending_Requests").observeSingleEvent(of: .value) { snapshot in
             for child in snapshot.children
             {
                 let trip = child as! DataSnapshot
                 guard let res = trip.value as? [String:Any] else {return}
+                let uid = String(self.getUidByTripID(trip.key))
                 let status = res["status"] as! String
-                let element = TemporaryStruct(tripID: trip.key, status: status)
-                array.append(element)
+                group.enter()
+                self.getUsernameByUID(uid) { username in
+                    let element = TemporaryStruct(username:username, uid: uid ,tripID: trip.key, status: status)
+                    array.append(element)
+                    group.leave()
+                }
             }
-            completion(array)
+            group.notify(queue: .main) {
+                completion(array)
+            }
         }
     }
     
     func getPendingTaxiRequestsArray(tripID:String, completion: @escaping ([TemporaryStruct]) -> ())
     {
+        let group = DispatchGroup()
         var array = [TemporaryStruct]()
-        
-        ref.child("Taxi_Requests").child(CurrentUser.UID).child(tripID).child("Pending_Requests").observeSingleEvent(of: .value) { snapshot in
-            for child in snapshot.children
+        let uid = getUidByTripID(tripID)
+        print(uid)
+        let tid = "taxi_" + tripID
+        ref.child("Taxi_Requests").child(CurrentUser.UID).child(tid).child("Pending_Requests").observeSingleEvent(of: .value) { [self] snapshot in
+            if snapshot.exists() == true
             {
-                let trip = child as! DataSnapshot
-                guard let res = trip.value as? [String:Any] else {return}
-                let status = res["status"] as! String
-                let element = TemporaryStruct(tripID: trip.key, status: status)
-                array.append(element)
+                for child in snapshot.children
+                {
+                    let trip = child as! DataSnapshot
+                    guard let res = trip.value as? [String:Any] else {
+                        print("no value")
+                        return
+                    }
+                    print(trip.key)
+                    let tripOwnerUID = String(getUidByTaxiTripID(trip.key))
+                    let status = res["status"] as! String
+                    group.enter()
+                    getUsernameByUID(tripOwnerUID) { username in
+                        
+                        let element = TemporaryStruct(username:username, uid: tripOwnerUID, tripID: trip.key, status: status)
+                        array.append(element)
+                        group.leave()
+                    }
+                }
+                group.notify(queue: .main) {
+                    completion(array)
+                }
             }
-            completion(array)
+            else
+            {
+                print("snapshot does not exist")
+            }
         }
     }
     
-    //********************* Time View functions ***********************
+    //***************************************************** Time View functions *********************************************************
     
     func checkIfThereIsAnotherRequestWithSameTime(completion: @escaping (String?) -> ())
     {
