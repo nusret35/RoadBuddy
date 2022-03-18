@@ -106,6 +106,16 @@ class ProfileViewController: UIViewController {
         settingsButton.isUserInteractionEnabled = false
     }
     
+    @IBAction func editProfileButtonAction(_ sender: Any)
+    {
+        let vc = EditProfileViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
+    
+    
+    
+    
     
     
 }

@@ -86,7 +86,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.cellDelegate = self
         cell.acceptButton.tag = indexPath.row
         cell.rejectButton.tag = indexPath.row
-        cell.configure(with: self.models[indexPath.row])
+        cell.configure(with: models[indexPath.row])
 
         return cell
     }

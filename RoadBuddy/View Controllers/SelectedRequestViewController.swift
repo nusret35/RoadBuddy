@@ -121,7 +121,7 @@ class SelectedRequestViewController: UIViewController, UITableViewDelegate, UITa
     
     func setUpTableView()
     {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(SelectedRequestTableViewCell.self, forCellReuseIdentifier: SelectedRequestTableViewCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = .systemBackground
@@ -153,35 +153,11 @@ class SelectedRequestViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let group = DispatchGroup()
-        let trip = array[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        //let group = DispatchGroup()
+        let cell = tableView.dequeueReusableCell(withIdentifier: SelectedRequestTableViewCell.identifier, for: indexPath) as! SelectedRequestTableViewCell
         cell.tintColor = .label
         cell.backgroundColor = .systemBackground
-        var image = UIImage()
-        if trip.status == "Accepted"
-        {
-            image = UIImage(named: "status-icon-green")!
-        }
-        else if trip.status == "Pending"
-        {
-            image = UIImage(named: "status-icon-yellow")!
-        }
-        cell.accessoryView = UIImageView(image: image)
-        cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 35 , height: 35)
-        cell.textLabel?.text = trip.username
-        group.enter()
-        storageManager.otherUserProfilePictureLoad(trip.uid, completion: { profilePicture in
-            print("profile photo is setting")
-            cell.imageView?.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-            cell.imageView?.image = profilePicture
-            cell.imageView!.layer.cornerRadius = cell.imageView!.frame.size.width/2
-            cell.imageView!.clipsToBounds = true
-            group.leave()
-        })
-        group.notify(queue: .main) {
-            self.tableView.reloadData()
-        }
+        cell.configure(with: array[indexPath.row])
         return cell
     }
     
