@@ -93,7 +93,6 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         //create new custom type cell and make it look good
         if indexPath.row == 0
         {
-
             cell.textLabel?.text = "Fullname"
         }
         else if indexPath.row == 1
