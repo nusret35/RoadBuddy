@@ -55,11 +55,12 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidAppear(animated)
         //getInboxData()
     }
-    
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
-        tableView.frame = view.bounds
+        var frame = view.bounds
+        frame.origin.y = navigationController!.navigationBar.frame.size.height + 52
+        tableView.frame = frame
     }
     
     private func setUpTableView()
@@ -67,6 +68,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.isHidden = false
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
     private func fetchConversations()
@@ -96,6 +98,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.deselectRow(at: indexPath, animated: true)
         if models[indexPath.row].status == "Accepted"
         {
+            navigationController?.navigationBar.tintColor = .label
             pushToChatView(indexPath.row)
         }
     }
@@ -137,7 +140,7 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func pushToChatView(_ indexPathRow:Int)
     {
-        let vc = ChatViewController(tripID: models[indexPathRow].tripID)
+        let vc = ChatViewController(tripID: idKeys[indexPathRow])
         vc.title = models[indexPathRow].username
         vc.otherUserUID = models[indexPathRow].uid
         vc.otherUserUsername = models[indexPathRow].username

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EditProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
     
 
     private var tableView:UITableView = {
@@ -35,7 +35,7 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         let button = UIButton()
         button.setTitle("Change Profile Picture", for: .normal)
         button.setTitleColor(.systemTeal, for: .normal)
-        //add button action
+        button.addTarget(self, action: #selector( changeProfilePictureButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -102,6 +102,54 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
         return 65
     }
     
+    @objc func changeProfilePictureButtonAction(sender:UIButton)
+    {
+        presentPhotoActionSheet()
+    }
+    
 
+
+}
+
+extension EditProfileViewController:UIImagePickerControllerDelegate
+{
+    func presentPhotoActionSheet(){
+        let actionSheet = UIAlertController(title: "", message: "You can choose your profile picture from your library".localized(), preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil))
+        
+        actionSheet.addAction(UIAlertAction(title: "Choose Photo".localized(), style: .default, handler: {[weak self]_ in
+            self?.presentPhotoPicker()
+            
+        }))
+    present(actionSheet, animated: true)
+    }
+    
+    func presentPhotoPicker(){
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else{
+            return
+        }
+        profilePictureImageView.image = selectedImage
+        guard let imageData = selectedImage.pngData() else {
+            return
+        }
+        
+        storageManager.changeProfilePicture(imageData: imageData)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
 
 }

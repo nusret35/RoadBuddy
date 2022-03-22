@@ -20,8 +20,6 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var settingsButton: UIButton!
     
-    @IBOutlet weak var inboxButton: UIButton!
-    
     
     override func viewDidLoad()
     {
@@ -36,7 +34,6 @@ class ProfileViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         settingsButton.isUserInteractionEnabled = true
-        inboxButton.isUserInteractionEnabled = true
     }
     
     func setUpElements()
@@ -86,17 +83,6 @@ class ProfileViewController: UIViewController {
         })
     }
     
-    
-    
-    @IBAction func inboxButtonAction(_ sender: Any)
-    {
-        //let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = InboxViewController()
-        vc.title = "Inbox"
-        
-        navigationController?.pushViewController(vc, animated: true)
-        inboxButton.isUserInteractionEnabled = false
-    }
     
     @IBAction func settingsButtonAction(_ sender: Any)
     {

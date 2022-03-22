@@ -26,12 +26,9 @@ class SidebarViewController: UIViewController
     var navVC: UINavigationController?
     
     lazy var profilevc = ProfileViewController(nibName:"ProfileViewController",bundle:nil)
-    
-    //lazy var profilevc = mainStoryboard.instantiateViewController(withIdentifier: "ProfilePageVC") as! ProfilePageViewController
-    
-    
-    
 
+    lazy var inboxVC = InboxViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
@@ -123,13 +120,12 @@ extension SidebarViewController: MenuViewControllerDelegate
             self.resetToHome()
         case .profile:
             self.addProfile()
-        case .appRating:
-            break
+        case .inbox:
+            self.addInbox()
         case .shareApp:
             break
-        }
-        
             
+        }
             
             
         
@@ -152,7 +148,19 @@ extension SidebarViewController: MenuViewControllerDelegate
         homeVC.title = "My Trip"
         profilevc.view.removeFromSuperview()
         profilevc.didMove(toParent: nil)
-        //homeVC.title = "My Trip"
+        inboxVC.view.removeFromSuperview()
+        inboxVC.didMove(toParent: nil)
         
+    }
+    
+    func addInbox()
+    {
+        let vc = inboxVC
+        homeVC.scrollToTop()
+        homeVC.title = "Inbox"
+        homeVC.addChild(vc)
+        homeVC.view.addSubview(vc.view)
+        vc.view.frame = view.frame
+        vc.didMove(toParent: homeVC)
     }
 }

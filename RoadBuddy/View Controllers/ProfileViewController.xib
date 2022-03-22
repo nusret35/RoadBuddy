@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,7 +13,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="RoadBuddy" customModuleProvider="target">
             <connections>
                 <outlet property="fullnameLabel" destination="OCk-xM-iBa" id="X0d-vV-lgS"/>
-                <outlet property="inboxButton" destination="cKo-II-jDr" id="KBi-tc-0sh"/>
                 <outlet property="profilePictureImageView" destination="aBe-HW-Rcc" id="PWJ-tq-7gn"/>
                 <outlet property="settingsButton" destination="Z9R-pL-Wjv" id="HWe-cP-BKo"/>
                 <outlet property="usernameLabel" destination="OUi-EJ-0gN" id="f4O-aV-eRt"/>
@@ -36,27 +35,13 @@
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="hQU-WF-Uz8">
-                            <rect key="frame" x="15" y="288" width="370" height="242"/>
+                            <rect key="frame" x="15" y="288" width="370" height="178"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKo-II-jDr">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLw-TL-vTO">
                                     <rect key="frame" x="0.0" y="0.0" width="370" height="50"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="934-bA-6oE"/>
-                                        <constraint firstAttribute="width" constant="370" id="RqD-wl-La0"/>
-                                    </constraints>
-                                    <color key="tintColor" name="label"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="envelope" catalog="system" imagePlacement="leading" title="Inbox" imagePadding="30">
-                                        <color key="baseForegroundColor" systemColor="labelColor"/>
-                                    </buttonConfiguration>
-                                    <connections>
-                                        <action selector="inboxButtonAction:" destination="-1" eventType="touchUpInside" id="oAY-4d-wBm"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLw-TL-vTO">
-                                    <rect key="frame" x="0.0" y="64" width="370" height="50"/>
-                                    <constraints>
                                         <constraint firstAttribute="height" constant="50" id="KIp-wx-7Tm"/>
+                                        <constraint firstAttribute="width" constant="370" id="TO7-f3-aqE"/>
                                     </constraints>
                                     <color key="tintColor" name="label"/>
                                     <state key="normal" title="Button"/>
@@ -65,7 +50,7 @@
                                     </buttonConfiguration>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXz-pc-M6E">
-                                    <rect key="frame" x="0.0" y="128" width="370" height="50"/>
+                                    <rect key="frame" x="0.0" y="64" width="370" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="vBj-gI-pMO"/>
                                     </constraints>
@@ -79,7 +64,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9R-pL-Wjv">
-                                    <rect key="frame" x="0.0" y="192" width="370" height="50"/>
+                                    <rect key="frame" x="0.0" y="128" width="370" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="97a-Z8-S7f"/>
                                     </constraints>
@@ -196,7 +181,6 @@
         <image name="circle.grid.cross" catalog="system" width="128" height="125"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="creditcard" catalog="system" width="128" height="88"/>
-        <image name="envelope" catalog="system" width="128" height="93"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>

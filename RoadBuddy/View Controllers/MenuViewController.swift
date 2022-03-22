@@ -45,8 +45,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     {
         case home = "Home"
         case profile = "Profile"
-        case appRating = "App Rating"
         case shareApp = "Share App"
+        case inbox = "Inbox"
         
         var imageName: String
         {
@@ -57,8 +57,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
                 return "house"
             case .profile:
                 return "person.crop.circle"
-            case .appRating:
-                return "star"
+            case .inbox:
+                return "tray.fill"
             case .shareApp:
                 return "message"
             }

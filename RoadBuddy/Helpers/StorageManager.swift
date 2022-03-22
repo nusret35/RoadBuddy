@@ -198,6 +198,7 @@ class StorageManager
         }
         return String(final_str)
     }
+    
     //******************** Home View functions ************************
     
     func retrieveAllRequestsOfUser(completion: @escaping ([[Request]]) -> ())
@@ -714,5 +715,16 @@ class StorageManager
     func deleteTripPost()
     {
         
+    }
+    
+    //********** EditProfileViewController **********
+    func changeProfilePicture(imageData:Data)
+    {
+        let docRef = storageManager.db.collection("users").document(CurrentUser.UID)
+        docRef.updateData(["profilePictureIsSet":true])
+        
+        docRef.getDocument{ snapshot, error in
+            self.storage.child("/images/\(CurrentUser.UID)").putData(imageData, metadata: nil, completion: nil)
+            }
     }
 }
