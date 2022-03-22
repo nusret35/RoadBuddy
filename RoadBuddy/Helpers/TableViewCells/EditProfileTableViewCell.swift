@@ -15,7 +15,6 @@ class EditProfileTableViewCell: UITableViewCell {
     {
         let label = UILabel()
         label.textColor = .label
-        label.text = "Fullname"
         return label
     }()
     
@@ -23,7 +22,6 @@ class EditProfileTableViewCell: UITableViewCell {
     {
         let label = UILabel()
         label.textColor = .label
-        label.text = "Nusret Kızılaslan"
         return label
     }()
     
@@ -49,8 +47,32 @@ class EditProfileTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        sectionLabel.frame = CGRect(x: 5, y: 0, width: 30, height: contentView.frame.size.height)
-        infoLabel.frame = CGRect(x: contentView.frame.size.width-40, y: 0, width: 50, height: contentView.frame.size.height)
+        sectionLabel.frame = CGRect(x: 10, y: 0, width: 120, height: contentView.frame.size.height)
+        infoLabel.frame = CGRect(x: contentView.frame.size.width-150, y: 0, width: 150, height: contentView.frame.size.height)
+    }
+    
+    func configure(indexPathRow:Int)
+    {
+        if indexPathRow == 0
+        {
+            sectionLabel.text = "Fullname"
+            infoLabel.text = CurrentUser.Fullname
+        }
+        else if indexPathRow == 1
+        {
+            sectionLabel.text = "Username"
+            infoLabel.text = CurrentUser.Username
+        }
+        else if indexPathRow == 2
+        {
+            sectionLabel.text = "Email"
+            infoLabel.text = CurrentUser.Email
+        }
+        else if indexPathRow == 3
+        {
+            sectionLabel.text = "Phone Number"
+            infoLabel.text = "+90" + CurrentUser.PhoneNumber
+        }
     }
 
 }

@@ -110,7 +110,10 @@ class ProfileViewController: UIViewController {
     {
         let vc = EditProfileViewController()
         vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        vc.title = "Edit Profile"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.topItem?.backButtonTitle = "Back"
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
