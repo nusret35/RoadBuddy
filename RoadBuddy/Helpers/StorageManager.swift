@@ -477,6 +477,14 @@ class StorageManager
         })
     }
     
+    func checkIfUserLoggedIn() -> Bool
+    {
+        if Auth.auth().currentUser?.uid == nil
+        {
+            return false
+        }
+        return true
+    }
     //***************** SearchMatchRequest functions ********************
     
     func sendingSearchRequestToFirebase(request:[String:Any])

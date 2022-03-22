@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,6 +56,9 @@
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8U-JW-arH">
                                 <rect key="frame" x="40" y="245" width="334" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="LV6-SU-U7n"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,14 +67,12 @@
                         <viewLayoutGuide key="safeArea" id="u1M-V3-Gzw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JKt-Od-h50" firstAttribute="top" secondItem="t8U-JW-arH" secondAttribute="bottom" constant="220" id="5gN-kH-J1J"/>
                             <constraint firstItem="JKt-Od-h50" firstAttribute="leading" secondItem="u1M-V3-Gzw" secondAttribute="leading" constant="30" id="Aml-it-7Pq"/>
                             <constraint firstItem="t8U-JW-arH" firstAttribute="leading" secondItem="u1M-V3-Gzw" secondAttribute="leading" constant="40" id="NWR-Xo-aJ8"/>
                             <constraint firstItem="u1M-V3-Gzw" firstAttribute="trailing" secondItem="t8U-JW-arH" secondAttribute="trailing" constant="40" id="NaS-dS-sPU"/>
                             <constraint firstItem="u1M-V3-Gzw" firstAttribute="trailing" secondItem="JKt-Od-h50" secondAttribute="trailing" constant="30" id="Q1d-9W-6G6"/>
                             <constraint firstItem="u1M-V3-Gzw" firstAttribute="bottom" secondItem="JKt-Od-h50" secondAttribute="bottom" constant="210" id="gZR-K9-Awy"/>
                             <constraint firstItem="t8U-JW-arH" firstAttribute="top" secondItem="u1M-V3-Gzw" secondAttribute="top" constant="105" id="jkX-hU-T7Y"/>
-                            <constraint firstItem="JKt-Od-h50" firstAttribute="top" secondItem="t8U-JW-arH" secondAttribute="bottom" constant="220" id="y4h-af-rpp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3DN-3u-WyC"/>
@@ -172,7 +173,6 @@
                             <constraint firstItem="vfl-fc-0Pp" firstAttribute="trailing" secondItem="rXS-BA-Top" secondAttribute="trailing" constant="40" id="5Mc-aK-LcE"/>
                             <constraint firstItem="vfl-fc-0Pp" firstAttribute="trailing" secondItem="RB5-zQ-0NS" secondAttribute="trailing" constant="160" id="8PW-3e-81i"/>
                             <constraint firstItem="vfl-fc-0Pp" firstAttribute="bottom" secondItem="RB5-zQ-0NS" secondAttribute="bottom" constant="43" id="KdF-sG-eWv"/>
-                            <constraint firstItem="RB5-zQ-0NS" firstAttribute="top" secondItem="rXS-BA-Top" secondAttribute="bottom" constant="243" id="RLC-qJ-bT2"/>
                             <constraint firstItem="rXS-BA-Top" firstAttribute="top" secondItem="brq-e3-7Qg" secondAttribute="bottom" constant="75" id="UAr-gk-rGB"/>
                             <constraint firstItem="rXS-BA-Top" firstAttribute="leading" secondItem="vfl-fc-0Pp" secondAttribute="leading" constant="40" id="Wcm-4W-dUr"/>
                             <constraint firstItem="brq-e3-7Qg" firstAttribute="top" secondItem="vfl-fc-0Pp" secondAttribute="top" constant="45" id="XBB-yp-EJs"/>

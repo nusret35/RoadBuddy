@@ -12,6 +12,7 @@
 		804B3AAD27B64C9D0041A7DC /* SearchToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B3AAC27B64C9D0041A7DC /* SearchToViewController.swift */; };
 		804B3AAF27B66F320041A7DC /* SearchTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B3AAE27B66F320041A7DC /* SearchTimeViewController.swift */; };
 		805A7B4E27B26DCE00DDB80A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805A7B4D27B26DCC00DDB80A /* FirstViewController.swift */; };
+		8070892227E9B63400A4D263 /* EditProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8070892127E9B63400A4D263 /* EditProfileTableViewCell.swift */; };
 		8073AA222775CCCD007457FD /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 8073AA212775CCCD007457FD /* SkeletonView */; };
 		8074361E27E32D160089E3C9 /* SelectedRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074361D27E32D150089E3C9 /* SelectedRequestTableViewCell.swift */; };
 		8074362527E486690089E3C9 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8074362427E486690089E3C9 /* EditProfileViewController.swift */; };
@@ -120,6 +121,7 @@
 		804B3AAC27B64C9D0041A7DC /* SearchToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchToViewController.swift; sourceTree = "<group>"; };
 		804B3AAE27B66F320041A7DC /* SearchTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTimeViewController.swift; sourceTree = "<group>"; };
 		805A7B4D27B26DCC00DDB80A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		8070892127E9B63400A4D263 /* EditProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewCell.swift; sourceTree = "<group>"; };
 		8074361D27E32D150089E3C9 /* SelectedRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedRequestTableViewCell.swift; sourceTree = "<group>"; };
 		8074362427E486690089E3C9 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		8075BAC227A3F1B70064CCB7 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				C01EB40E27C3A78A00C75552 /* RegionCell.swift */,
 				C01EB40F27C3A78A00C75552 /* RegionCell.xib */,
 				8074361D27E32D150089E3C9 /* SelectedRequestTableViewCell.swift */,
+				8070892127E9B63400A4D263 /* EditProfileTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				8089A87F27CD2A5E006744F4 /* SettingsViewController.swift in Sources */,
 				809F674427B949C100D67E56 /* SearchMatchRequestViewController.swift in Sources */,
 				8089A87B27CBBFF8006744F4 /* MyTripTableViewCell.swift in Sources */,
+				8070892227E9B63400A4D263 /* EditProfileTableViewCell.swift in Sources */,
 				C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */,
 				809B9C6D27B39B1E004EB9C4 /* UITableView + ViewAnimator.swift in Sources */,
 				C00640D227CA428D004B419E /* SidebarViewController.swift in Sources */,

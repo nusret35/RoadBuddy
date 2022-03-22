@@ -37,6 +37,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        logInCheck()
         view.backgroundColor = .systemBackground
         navigationItem.largeTitleDisplayMode = .always
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .done, target: self, action: #selector(didTapMenuButton))
@@ -157,8 +158,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let topOffest = CGPoint(x: 0, y: -(tableView.contentInset.top + 20))
         tableView.setContentOffset(topOffest, animated: false)
     }
-    
 
+    func logInCheck()
+    {
+        if storageManager.checkIfUserLoggedIn() == false
+        {
+            let storyboard = UIStoryboard(name: "Registration", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "HomePageNC") as! UINavigationController
+            present(vc,animated: true)
+        }
+    }
 
 
 }

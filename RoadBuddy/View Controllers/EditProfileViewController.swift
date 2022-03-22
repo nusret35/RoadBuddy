@@ -12,7 +12,7 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
 
     private var tableView:UITableView = {
         let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.register(EditProfileTableViewCell.self, forCellReuseIdentifier: EditProfileTableViewCell.identifier)
         table.backgroundColor = .systemBackground
         return table
     }()
@@ -89,24 +89,9 @@ class EditProfileViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: EditProfileTableViewCell.identifier, for: indexPath) as! EditProfileTableViewCell
         //create new custom type cell and make it look good
-        if indexPath.row == 0
-        {
-            cell.textLabel?.text = "Fullname"
-        }
-        else if indexPath.row == 1
-        {
-            cell.textLabel?.text = "Username"
-        }
-        else if indexPath.row == 2
-        {
-            cell.textLabel?.text = "Schoolname"
-        }
-        else if indexPath.row == 3
-        {
-            cell.textLabel?.text = "Email"
-        }
+        
         return cell
     }
     
