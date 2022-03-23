@@ -68,7 +68,6 @@ class InboxViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.isHidden = false
         tableView.delegate = self
         tableView.dataSource = self
-        
     }
     
     private func fetchConversations()

@@ -23,13 +23,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let registrationStoryboard = UIStoryboard(name: "Registration", bundle: nil)
     
     
-    @IBAction func profileButtonAction(_ sender: Any)
-    {
-        let profilePageViewController = storyboard?.instantiateViewController(withIdentifier:"ProfilePageVC") as! ProfilePageViewController
-        present(profilePageViewController,animated: true,completion: nil)
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticateUser()
