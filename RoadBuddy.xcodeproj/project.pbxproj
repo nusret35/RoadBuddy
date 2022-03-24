@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24347E856DDF698E826216F1 /* Pods_RoadBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4FE229515EAE9346E4B422 /* Pods_RoadBuddy.framework */; };
+		80330FF927EC68DA00F23540 /* CurrentTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80330FF827EC68DA00F23540 /* CurrentTripViewController.swift */; };
 		804B3AAB27B54EAF0041A7DC /* SearchFromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B3AAA27B54EAF0041A7DC /* SearchFromViewController.swift */; };
 		804B3AAD27B64C9D0041A7DC /* SearchToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B3AAC27B64C9D0041A7DC /* SearchToViewController.swift */; };
 		804B3AAF27B66F320041A7DC /* SearchTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B3AAE27B66F320041A7DC /* SearchTimeViewController.swift */; };
@@ -116,6 +117,7 @@
 /* Begin PBXFileReference section */
 		07EB3A0D96B15D188E5AB86C /* Pods-RoadBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadBuddy.debug.xcconfig"; path = "Target Support Files/Pods-RoadBuddy/Pods-RoadBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		348D7082296F1E38F77D0A60 /* Pods-RoadBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadBuddy.release.xcconfig"; path = "Target Support Files/Pods-RoadBuddy/Pods-RoadBuddy.release.xcconfig"; sourceTree = "<group>"; };
+		80330FF827EC68DA00F23540 /* CurrentTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTripViewController.swift; sourceTree = "<group>"; };
 		804B3AAA27B54EAF0041A7DC /* SearchFromViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFromViewController.swift; sourceTree = "<group>"; };
 		804B3AAC27B64C9D0041A7DC /* SearchToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchToViewController.swift; sourceTree = "<group>"; };
 		804B3AAE27B66F320041A7DC /* SearchTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTimeViewController.swift; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 				C00640CD27CA41D7004B419E /* HomeViewController.swift */,
 				C00640CF27CA4210004B419E /* MenuViewController.swift */,
 				C00640D127CA428D004B419E /* SidebarViewController.swift */,
+				80330FF827EC68DA00F23540 /* CurrentTripViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				80CA933F270B2150009A1469 /* DateButton.swift in Sources */,
 				C02FE7F827B69860006E5C14 /* PostTripToViewController2.swift in Sources */,
 				8075BAD727A6F7E10064CCB7 /* ChatViewController.swift in Sources */,
+				80330FF927EC68DA00F23540 /* CurrentTripViewController.swift in Sources */,
 				8075BAC327A3F1B70064CCB7 /* InboxViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

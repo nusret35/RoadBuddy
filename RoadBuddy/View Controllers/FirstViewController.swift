@@ -113,9 +113,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if indexPath.row == 2
         {
-
+            /*
             let vc = storyboard?.instantiateViewController(withIdentifier: "ShareTaxiNC") as! UINavigationController
             present(vc,animated: true)
+             */
+            let vc = CurrentTripViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            vc.title = "Current Trip"
+            nav.navigationBar.prefersLargeTitles = true
+            nav.modalPresentationStyle = .fullScreen
+            present(nav,animated: true)
         }
     }
     
