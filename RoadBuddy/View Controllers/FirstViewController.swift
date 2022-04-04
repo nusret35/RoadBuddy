@@ -119,7 +119,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
              */
             let vc = CurrentTripViewController()
             let nav = UINavigationController(rootViewController: vc)
-            vc.title = "Current Trip"
             nav.navigationBar.prefersLargeTitles = true
             nav.modalPresentationStyle = .fullScreen
             present(nav,animated: true)

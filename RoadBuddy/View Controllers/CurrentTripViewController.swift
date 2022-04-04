@@ -10,20 +10,30 @@ import MapKit
 import FloatingPanel
 import CoreLocation
 
-class CurrentTripViewController: UIViewController, CLLocationManagerDelegate{
+class CurrentTripViewController: UIViewController, CLLocationManagerDelegate, FloatingPanelControllerDelegate{
     
     private let mapView = MKMapView()
     
-    private var locationManager:CLLocationManager?
+    private let manager = CLLocationManager()
     
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.requestAlwaysAuthorization()
+        setUpFloatingPanel()
     }
     
-    override func viewDidLayoutSubviews() {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        manager.desiredAccuracy = kCLLocationAccuracyBest // battery
+        manager.delegate = self
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+    }
+    
+    
+    override func viewDidLayoutSubviews()
+    {
         setUpSubViews()
     }
     
@@ -31,17 +41,43 @@ class CurrentTripViewController: UIViewController, CLLocationManagerDelegate{
     {
         mapView.frame = view.bounds
         view.addSubview(mapView)
+        view.sendSubviewToBack(mapView)
     }
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedAlways {
-            if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
-                if CLLocationManager.isRangingAvailable() {
-                    // do stuff
-                    //mapView.showsUserLocation = true
-                }
-            }
+    func setUpFloatingPanel()
+    {
+        let fpc = FloatingPanelController()
+        let content_view = ContentViewController()
+        fpc.delegate = self
+        fpc.set(contentViewController: content_view)
+        fpc.addPanel(toParent: self)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            manager.stopUpdatingLocation()
+            
+            render(location)
         }
     }
-
+    
+    func render(_ location:CLLocation)
+    {
+        let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        
+        let pin = MKPointAnnotation()
+        
+        pin.coordinate = coordinate
+        
+        print(String(location.coordinate.latitude))
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        
+        let region = MKCoordinateRegion(center: coordinate, span: span)
+        
+        mapView.setRegion(region, animated: true)
+        
+        mapView.addAnnotation(pin)
+    }
+    
 }

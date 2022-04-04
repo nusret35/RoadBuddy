@@ -81,6 +81,7 @@
 		80C9963B2766919300B5A3C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C9963A2766919300B5A3C7 /* LoginViewController.swift */; };
 		80CA933D270B1AAA009A1469 /* DateTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA933C270B1AAA009A1469 /* DateTimePicker.swift */; };
 		80CA933F270B2150009A1469 /* DateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA933E270B2150009A1469 /* DateButton.swift */; };
+		80D1D2A427FB13A400983717 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1D2A327FB13A400983717 /* ContentViewController.swift */; };
 		80D9B09626FC9249001EB6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B09526FC9249001EB6BD /* AppDelegate.swift */; };
 		80D9B09826FC9249001EB6BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D9B09726FC9249001EB6BD /* SceneDelegate.swift */; };
 		80D9B09F26FC9251001EB6BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D9B09E26FC9251001EB6BD /* Assets.xcassets */; };
@@ -160,6 +161,8 @@
 		80C9963A2766919300B5A3C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		80CA933C270B1AAA009A1469 /* DateTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimePicker.swift; sourceTree = "<group>"; };
 		80CA933E270B2150009A1469 /* DateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateButton.swift; sourceTree = "<group>"; };
+		80D1D2A327FB13A400983717 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		80D1D2A527FB3BD500983717 /* RoadBuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RoadBuddy.entitlements; sourceTree = "<group>"; };
 		80D9B09226FC9249001EB6BD /* RoadBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D9B09526FC9249001EB6BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80D9B09726FC9249001EB6BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -394,6 +397,7 @@
 		80D9B09426FC9249001EB6BD /* RoadBuddy */ = {
 			isa = PBXGroup;
 			children = (
+				80D1D2A527FB3BD500983717 /* RoadBuddy.entitlements */,
 				80D9B09E26FC9251001EB6BD /* Assets.xcassets */,
 				80D9B0A326FC9251001EB6BD /* Info.plist */,
 				809B9C5E27B39B1E004EB9C4 /* Sources */,
@@ -430,6 +434,7 @@
 				C00640CF27CA4210004B419E /* MenuViewController.swift */,
 				C00640D127CA428D004B419E /* SidebarViewController.swift */,
 				80330FF827EC68DA00F23540 /* CurrentTripViewController.swift */,
+				80D1D2A327FB13A400983717 /* ContentViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -678,6 +683,7 @@
 				8089A87B27CBBFF8006744F4 /* MyTripTableViewCell.swift in Sources */,
 				8070892227E9B63400A4D263 /* EditProfileTableViewCell.swift in Sources */,
 				C08B7A7327B2895D0027684E /* FirstTableViewCell.swift in Sources */,
+				80D1D2A427FB13A400983717 /* ContentViewController.swift in Sources */,
 				809B9C6D27B39B1E004EB9C4 /* UITableView + ViewAnimator.swift in Sources */,
 				C00640D227CA428D004B419E /* SidebarViewController.swift in Sources */,
 				80C996392765697B00B5A3C7 /* SignUpViewController.swift in Sources */,
@@ -998,6 +1004,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RoadBuddy/RoadBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PVXU599K2W;
 				INFOPLIST_FILE = RoadBuddy/Info.plist;
@@ -1018,6 +1025,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RoadBuddy/RoadBuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PVXU599K2W;
 				INFOPLIST_FILE = RoadBuddy/Info.plist;
