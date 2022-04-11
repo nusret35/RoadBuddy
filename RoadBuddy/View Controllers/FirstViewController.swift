@@ -25,10 +25,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        authenticateUser()
-        CurrentUser.fetchData {
-            
-        }
         view.addSubview(tableView)
         navigationItem.backBarButtonItem = Buttons.defaultBackButtonWithoutTitle
         tableView.register(FirstTableViewCell.nib(),forCellReuseIdentifier: FirstTableViewCell.identifier)
